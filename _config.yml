@@ -5,10 +5,10 @@ url: "https://soohee410.github.io"
 author:
   name: "Soohee Park"
   email: "ggohee0410@gmail.com"
-  url: " "
+  url: ""
 
 # Build settings
-baseurl: "/"
+baseurl: /
 markdown: kramdown
 source: .
 destination: ./_site
