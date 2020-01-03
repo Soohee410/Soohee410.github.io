@@ -1,11 +1,11 @@
 # Site settings
-title: Emerald | A simple Jekyll blog
-description: "A minimal blog template, build with Jekyll."
+title: Soo.P's Data Study
+description: "이론과 실전을 모두 잡고 싶은 Soo.P의 기록 블로그"
 url: "http://soohee410.github.io"
 author:
-  name: "Jacopo Rabolini"
-  email: "hello@jacoporabolini.com"
-  url: "http://www.jacoporabolini.com"
+  name: "Soohee Park"
+  email: "ggohee0410@gmail.com"
+  url: " "
 
 # Build settings
 baseurl: " "
@@ -33,6 +33,6 @@ gems:
 version: "1.1.0"
 
 # Options
-custom_header: false
-custom_nav_footer: false
+custom_header: true
+custom_nav_footer: true
 reverse: false
