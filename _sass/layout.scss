@@ -7,7 +7,7 @@ html, body {
 
 /* Navigation */
 
-#nav, #nav-left { 
+#nav, #nav-left {
   a {
     display: block;
     color: $background-color;
@@ -132,7 +132,7 @@ html, body {
   	display: inline-block;
   }
   img {
-  	max-height: 72px;
+  	max-height: 200px;
   	margin: 0 auto;
   	display: block;
   }
@@ -260,7 +260,7 @@ footer {
 }
 
 #wrap {
-	min-height:100%; 
+	min-height:100%;
 	position:relative;
 	padding-bottom: 105px;
 }
