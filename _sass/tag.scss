@@ -6,17 +6,11 @@
   border-radius: 4px;
   color: rgb(100,100,100);
   font-size: 90%;
-  &:before {
-    content: "\f02b";
-    font-family: $font-font-awesome;
-    padding-right: .5em;
-  }
   &:hover {
     text-decoration: none;
-    background: $theme-color;
+    background: rgb(222,98,92);
     color: 'black';
   }
-  @include transition(all .1s ease-in-out);
 }
 
 .tags-expo {
@@ -55,7 +49,7 @@
     .post-date {
       display: inline-block;
       font-size: 80%;
-      color: $post-date-color;
+      color: 'black';
       margin: 0;
       padding: 0;
     }
