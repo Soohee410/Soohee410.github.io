@@ -3,13 +3,22 @@
  * https://github.com/mojombo/tpw/blob/master/css/syntax.css
  */
 
- pre.highlight {
-   background: #343434;
-   color: #aab1bf;
-   padding: 5px;
+ code.highlighter-rouge {
+   font-size: 90%;
+   color: rgb(100,100,100);
+   background-color: rgba(222,98,92,0.3);
+   padding: .1em .2em;
+   border-radius: 3px;
+ }
+ pre.hightlight{
+   padding: .45em;
+   border: 1px solid #dee2e6;
+   border-radius: 4px;
+   margin: 1em 0;
+   overflow: scroll;
  }
 
-.highlight  { background-color: #FFF; }
+.highlight  { background-color: rgb(230,230,230); }
 .lineno { color: darken($background-color, 25%); margin-right: 1em; }
 .highlight .c { color: #999988; font-style: italic } /* Comment */
 .highlight .err { color: #a61717; background-color: #e3d2d2 } /* Error */
