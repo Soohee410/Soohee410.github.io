@@ -14,10 +14,11 @@ title: About
 일단 꾸준히 하는 게 목표입니다! 부족한 점도 많습니다.   
 포스트 중에 부족하거나 잘못된 내용이 있다면 피드백 주시면 감사하겠습니다:)
 
-Hi! I am Soo.P from South Korea. I'm studying for a master's degree in Statistics.   
+Hi! I am Soo.P from South Korea.
+ I'm studying for a master's degree in Statistics.   
 I am interested in Data Science. If you have any question, feel free to send me an email. Thank you.  
 
 
-- Contact : ggohee0410@gmail.com  
+**Contact** : ggohee0410@gmail.com  
 
   2020.01.20
