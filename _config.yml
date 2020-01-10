@@ -11,7 +11,7 @@ author:
 encoding: "utf-8"
 
 # Build settings
-baseurl: "https://soohee410.github.io"
+baseurl: /
 markdown: kramdown
 source: .
 destination: ./_site
