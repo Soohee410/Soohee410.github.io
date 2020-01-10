@@ -59,13 +59,14 @@ p, ul, ol {
 }
 
 h1 {
-	font-size: 2.6667em; /* 48px/18px */
+	font-size: 2.3em; /* 48px/18px */
 	line-height: 1em; /* 48px/48px */
+	font-weight: bold;
 	padding: 0.25em 0; /* 12px/48px * 2 (Use padding instead of margin to maintain proximity with paragraph) */
 }
 
 h2 {
-	font-size: 2em; /* 36px/18px */
+	font-size: 1.9em; /* 36px/18px */
 	line-height: 1.3334em; /* 48px/36px */
 	padding: 0.66667em 0 0 0; /* 12px/36px * 2, pnly top (Use padding instead of margin to maintain proximity with paragraph) */
 }
