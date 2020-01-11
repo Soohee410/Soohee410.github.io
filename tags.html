@@ -5,9 +5,9 @@ permalink: /tags/
 ---
 
 <div class="tags-expo">
-  <h1 style="color: #ff6666">TAGS</h1>
 
   <div class="tags-expo-list">
+    <h1 style="color: rgb(222,98,92)">TAGS</h1> <br><br>
     {% for tag in site.tags %}
     <a href="#{{ tag[0] | slugify }}" class="post-tag">{{ tag[0] }}</a>
     {% endfor %}
@@ -16,7 +16,7 @@ permalink: /tags/
   <hr/>
   <div class="tags-expo-section">
     {% for tag in site.tags %}
-    <h2 id="{{ tag[0] | slugify }}">{{ tag[0] }}</h2>
+    <h3 id="{{ tag[0] | slugify }}">{{ tag[0] }}</h3>
     <ul class="tags-expo-posts">
       {% for post in tag[1] %}
         <a class="post-title" href="{{ site.baseurl }}{{ post.url }}">
