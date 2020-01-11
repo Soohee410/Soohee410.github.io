@@ -3,10 +3,6 @@ layout: page
 title: About
 ---
 
-<center>
-
-<h1 style="color: rgb(222,98,92); font-weight: bold">ABOUT</h1>
-<br>
 
 안녕하세요! **Soo.P** 입니다:)
 
