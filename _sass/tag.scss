@@ -1,14 +1,14 @@
 .post-tag {
   display: inline-block;
   background: rgba(222,98,92,0.3);
-  padding: 0 .5rem;
+  padding: .1em .2em;
   margin-right: .5rem;
   border-radius: 4px;
   color: rgb(100,100,100);
   font-size: 90%;
   &:hover {
     text-decoration: none;
-    background: rgb(222,98,92);
+    background: rgba(222,98,92,0.7);
     color: 'black';
   }
 }
