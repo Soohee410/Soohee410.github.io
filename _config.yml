@@ -43,4 +43,4 @@ reverse: false
 #Conversion
 markdown: kramdown
 kramdown:
-  math_engine: mathjax
+  math_engine: katex
