@@ -13,8 +13,10 @@ encoding: "utf-8"
 # Build settings
 baseurl: /
 markdown: kramdown
-kramdown:
-  math_engine: KaTeX
+highlighter: rouge
+lsi: false
+excerpt_separator: "\n\n"
+incremental: false
 source: .
 destination: ./_site
 permalink: /:title

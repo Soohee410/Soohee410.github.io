@@ -2,7 +2,7 @@
 layout: post
 title: 선형대수 Eigenvalue, Eigenvector, Character Equation
 tags: [Linear Algebra]
-
+use_math: true
 ---
 안녕하세요 여러분! 이번 글에서는 **고유벡터(Eigenvector)** 와 **고유값(Eigenvalue)**, 그리고 **특성방정식(Characteristic Equation)** 의 개념에 대해서 정리하고자 합니다. 고유값과 고유벡터는 앞으로 포스트할 내용들의 베이스이기 때문에 간단하게 한번 짚고 넘어가겠습니다! 교재로는 $\footnotesize Linear\space Algebra\space and\space its\space Applications\space 5th\space edition\space (David C.Lay, Stephen R.Lay, Judi J.McDonald)$ 를 참고했습니다.
 
