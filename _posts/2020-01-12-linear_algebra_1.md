@@ -19,12 +19,12 @@ use_math: true
 
 $$A\boldsymbol{x}=\lambda\boldsymbol{x}\Longrightarrow (A-\lambda I)\boldsymbol{x}=0\quad\cdots (1)$$
 
-이 때, 식 (1)을 만족하는 모든 해  $\boldsymbol{x}$들의 집합이 $A-\lambda I$의 **영공간(null space)** 이 될 것입니다! 따라서 이 집합은 n차 실수 공간 $\mathbb{R}^n$의 **부분공간(subspace)** 이고, 이 부분공간을 $\lambda$에 해당하는 $A$의 **고유공간(eigenspace)** 이라고 부릅니다. 다시 말해서, <u>**고유공간** 은 영벡터와 λ에 해당하는 모든 고유벡터들로 구성됩니다.</u>
+이 때, 식 (1)을 만족하는 모든 해  $\boldsymbol{x}$들의 집합이 $A-\lambda I$의 **영공간(null space)** 이 될 것입니다! 따라서 이 집합은 n차 실수 공간 $\mathbb{R}^n$의 **부분공간(subspace)** 이고, 이 부분공간을 $\lambda$에 해당하는 $A$의 **고유공간(eigenspace)** 이라고 부릅니다. 다시 말해서, <u>고유공간은 영벡터와 λ에 해당하는 모든 고유벡터들로 구성됩니다.</u>
 이제 이와 관련하여 다음의 중요한 정리(theorem)를 하나 짚고 넘어가겠습니다!
 > 어떤 nxn 행렬 $A$가 서로 다른 r개의 고유값 $\lambda_1, \lambda_2, \cdots, \lambda_r$을 가지고 있고, $v_1,v_2, \cdots v_r$이 이들 각각에 해당하는 고유벡터일 때, 집합 $\{v_1, v_2, \cdots v_r\}$은 선형독립$(linearly\space independent)$이다.
 
 고유값들이 서로 다르면 이에 해당하는 서로 다른 고유공간이 존재하겠죠? 즉, ``서로 다른 고유공간의 고유벡터들은 서로 선형독립``이라는 것입니다. 간단하게 증명해봅시다! 독립이 아니라고 가정했을 때 이 가정이 모순이 되는 것을 보이는 논리입니다.
-<img src="/assets/그림1추가.png" width="780px">
+<img src="/assets/그림1추가.png" width="800px">
 
 이해되셨나요? 이제 예제를 하나 보면서  정리해보겠습니다!
 - $x,y,z$ 세 축이 있을 때, $T:\mathbb{R}^3\rightarrow \mathbb{R}^3$이 $x-y$ 평면으로의 정사영 함수$(projection function)$라고 하자. 이 때 $T$에 해당하는 $ transformation\space matrix\space A$의 고유값과 고유벡터를 구해보자.
@@ -64,5 +64,5 @@ $$det(A)=\beta=(-1)^n\cdot\lambda_1\lambda_2\cdots\lambda_n$$
 그런데 여기서 고유값 중 하나가 0이 되면 어떻게 되나요? $\lambda_1,\lambda_2,\cdots,\lambda_n$중 하나라도 0인게 있다면 $det(A)=0$이 될 것입니다. 우리는 선형대수를 배우면서 어떤 행렬의 역행렬이 존재하는지(invertible) 아닌지의 여부를 정말 다양한 표현들로 배우게 됩니다. ``고유값이 0이다``도 그중 하나가 되는 것입니다!
 <br>
 
-여기까지 전반적인 고유값, 고유벡터, 특성방정식의 기초 개념에 대해서 알아보았습니다. 다음에는 **대각화(Diagonalization)** 에 대해 포스팅하려고 합니다. 감사합니다 :) \\한국어 \한국어\ \한국어 \\한국어\\ __한국어__ 
+여기까지 전반적인 고유값, 고유벡터, 특성방정식의 기초 개념에 대해서 알아보았습니다. 다음에는 **대각화(Diagonalization)** 에 대해 포스팅하려고 합니다. 감사합니다 :)
 <br><br>
