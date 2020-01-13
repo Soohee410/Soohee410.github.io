@@ -19,7 +19,7 @@ use_math: true
 
 $$A\boldsymbol{x}=\lambda\boldsymbol{x}\Longrightarrow (A-\lambda I)\boldsymbol{x}=0\quad\cdots (1)$$
 
-이 때, 식 (1)을 만족하는 모든 해  $\boldsymbol{x}$들의 집합이 $A-\lambda I$의 **영공간(null space)** 이 될 것입니다! 따라서 이 집합은 n차 실수 공간 $\mathbb{R}^n$의 **부분공간(subspace)** 이고, 이 부분공간을 $\lambda$에 해당하는 $A$의 **고유공간(eigenspace)** 이라고 부릅니다. 다시 말해서, <u>고유공간은 영벡터와 λ에 해당하는 모든 고유벡터들로 구성됩니다.</u>
+이 때, 식 (1)을 만족하는 모든 해  $\boldsymbol{x}$들의 집합이 $A-\lambda I$의 **영공간(null space)** 이 될 것입니다! 따라서 이 집합은 n차 실수 공간 $\mathbb{R}^n$의 **부분공간(subspace)** 이고, 이 부분공간을 $\lambda$에 해당하는 $A$의 **고유공간(eigenspace)** 이라고 부릅니다. 다시 말해서, <h5>고유공간은 영벡터와 λ에 해당하는 모든 고유벡터들로 구성됩니다.</h5>
 이제 이와 관련하여 다음의 중요한 정리(theorem)를 하나 짚고 넘어가겠습니다!
 > 어떤 nxn 행렬 $A$가 서로 다른 r개의 고유값 $\lambda_1, \lambda_2, \cdots, \lambda_r$을 가지고 있고, $v_1,v_2, \cdots v_r$이 이들 각각에 해당하는 고유벡터일 때, 집합 $\{v_1, v_2, \cdots v_r\}$은 선형독립$(linearly\space independent)$이다.
 
@@ -52,7 +52,7 @@ $\iff Nul(A-\lambda I)\not=\{0\} $
 $\iff det(A-\lambda I)=0 $  
 $\iff A-\lambda I$는 역행렬이 존재하지 않는다.
 
-위 필요충분조건의 여러가지 표현들 잘 이해가 가시나요? 앞서 배웠던 고유값과 고유벡터의 개념, 그리고 이 포스트에서는 다루지 않았지만 determinant의 성질을 생각해본다면 충분히 이해가 되실 거라 생각합니다! (참고로 $A$가 역행렬이 존재하기 위한 필요충분조건은 $det(A)\not=0$입니다.) 마지막으로, 여기서 고려해볼 점이 하나 있습니다. 만약 $\lambda$가 0이면 어떻게 될까요? 위 필요충분조건들에서 마지막 줄을 보면, ``0이 A의 고유값이기 위한 필요충분조건은  A의 역행렬이 존재하지 않는다``는 것이 됩니다! 이걸 조금 더 이해해보고 포스팅을 마무리하도록 하겠습니다.  
+위 필요충분조건의 여러가지 표현들 잘 이해가 가시나요? 앞서 배웠던 고유값과 고유벡터의 개념, 그리고 이 포스트에서는 다루지 않았지만 determinant의 성질을 생각해본다면 충분히 이해가 되실 거라 생각합니다! (참고로 $A$가 역행렬이 존재하기 위한 필요충분조건은 $det(A)\not=0$입니다.) 마지막으로, 여기서 고려해볼 점이 하나 있습니다. 만약 고유값이 0이라면 이건 어떤 의미일까요? 위 필요충분조건들에서 마지막 줄을 보면, ``0이 A의 고유값이기 위한 필요충분조건은  A의 역행렬이 존재하지 않는다``는 것이 될 것입니다! 이걸 조금 더 이해해봅시다.
  $A$가 nxn행렬이라고 할 때, $det(A-\lambda I)=0$을 풀어서 $\lambda$에 대한 방정식으로 나타내봅시다.
 
 $$det(A-\lambda I)=\lambda^n+\alpha\lambda^{n-1}+\cdots+ \beta=(\lambda-\lambda_1)(\lambda-\lambda_2)\cdots(\lambda-\lambda_n)=0$$
