@@ -1,3 +1,21 @@
 <meta charset="utf-8">
 <footer class="footer" style='font-size:0.8em'>
 <span>Soo.P의 기록 블로그</span></footer>
+
+<script type="text/javascript">
+$("script[type='math/tex']").replaceWith(
+  function(){
+    var tex = $(this).text();
+    return "<span class=\"inline-equation\">" +
+           katex.renderToString(tex) +
+           "</span>";
+});
+
+$("script[type='math/tex; mode=display']").replaceWith(
+  function(){
+    var tex = $(this).text();
+    return "<div class=\"equation\">" +
+           katex.renderToString("\\displaystyle "+tex) +
+           "</div>";
+});
+</script>
