@@ -12,12 +12,14 @@ use_math: true
 > - 정방행렬 $A$에 대하여 식 $A\boldsymbol{x}=\lambda\boldsymbol{x}$이 $ nontrivial\space solution$ 을 가질 때, 이 때의 $ scalar\space \lambda$를 고유값(Eigenvalue)이라 하고, $\boldsymbol{x}$를 $\lambda$에 해당하는 고유벡터라 한다.
 
 결국 식 $A\boldsymbol{x}=\lambda\boldsymbol{x}$을 만족하는 $\lambda$와  $\boldsymbol{x}$가 각각 고유값, 고유벡터라는 것이 내용의 전부입니다.  물론, $\boldsymbol{x}$가 nontrivial solution일 때만 해당합니다! 당연히 $\boldsymbol{x}$가 0이면 항상 위 식은 자명하게 성립하겠죠? 따라서 $\boldsymbol{x}$가 0인 경우를 제외하고도 위 식이 풀릴 때, 그 때의 $\lambda$, $\boldsymbol{x}$ 가 우리의 관심사입니다.  
-그렇다면 $A\boldsymbol{x}=\lambda\boldsymbol{x}$ 이 식이 의미하는 게 무엇일까요? $A$는 행렬(nxn)이고$\lambda$는 스칼라(1x1)입니다. 이 식의 좌변$(A\boldsymbol{x})$은 어떠한 벡터(nx1) $\boldsymbol{x}$가 행렬 $A$에 의해 **선형변환(linear transformation)** 된 벡터를 의미하고, 우변$(\lambda \boldsymbol{x})$은 똑같은 벡터 $\boldsymbol{x}$에 어떠한 상수$\lambda$를 곱함으로써 이것의 크기(scale)가 변화된 벡터를 의미할 것입니다. 이 둘이 같다는 것은 결국,``어떠한 벡터를 선형변환 했는데 이것의 방향은 유지된 채 크기만 변했다``를 의미할 수 있겠네요!
+그렇다면 $A\boldsymbol{x}=\lambda\boldsymbol{x}$ 이 식이 의미하는 게 무엇일까요? $A$는 행렬(nxn)이고$\lambda$는 스칼라(1x1)입니다. 이 식의 좌변$(A\boldsymbol{x})$은 어떠한 벡터(nx1) $\boldsymbol{x}$가 행렬 $A$에 의해 **선형변환(linear transformation)** 된 벡터를 의미하고, 우변$(\lambda \boldsymbol{x})$은 똑같은 벡터 $\boldsymbol{x}$에 어떠한 상수$\lambda$를 곱함으로써 이것의 크기(scale)가 변화된 벡터를 의미할 것입니다. 이 둘이 같다는 것은 결국,``어떠한 벡터를 선형변환 했는데 이것의 방향은 유지된 채 크기만 변했다``는 것을 의미할 수 있겠네요!
 
 자, 그럼 실제로 nxn행렬인 $A$에 대하여, $A\boldsymbol{x}=\lambda\boldsymbol{x}$을 푼다고 해봅시다. 우변을 넘기면 다음과 같이 되겠죠.
+
 $$A\boldsymbol{x}=\lambda\boldsymbol{x}\Longrightarrow (A-\lambda I)\boldsymbol{x}=0\quad\cdots (1)$$
-즉, 식 (1)을 만족하는 모든 해  $\boldsymbol{x}$들의 집합이 $A-\lambda I$의 **영공간(null space)** 이 될 것입니다! 따라서 이 집합은 n차 실수 공간 $\mathbb{R}^n$의 **부분공간(subspace)** 이고, 이 부분공간을 $\lambda$에 해당하는 $A$의 **고유공간(eigenspace)** 이라고 부릅니다. 다시 말해서, ``고유공간은 영벡터와 λ에 해당하는 모든 고유벡터들로 구성됩니다.``
-이제 이와 관련하여 다음의 중요한 정리(theorem)를 하나 짚고 넘어가겠습니다!
+
+즉, 식 (1)을 만족하는 모든 해  $\boldsymbol{x}$들의 집합이 $A-\lambda I$의 **영공간(null space)** 이 될 것입니다! 따라서 이 집합은 n차 실수 공간 $\mathbb{R}^n$의 **부분공간(subspace)** 이고, 이 부분공간을 $\lambda$에 해당하는 $A$의 **고유공간(eigenspace)** 이라고 부릅니다. 다시 말해서, <u>고유공간은 영벡터와 λ에 해당하는 모든 고유벡터들로 구성됩니다.</u>
+\이제 이와 관련하여 다음의 중요한 정리(theorem)를 하나 짚고 넘어가겠습니다!
 > 어떤 nxn 행렬 $A$가 서로 다른 r개의 고유값 $\lambda_1, \lambda_2, \cdots, \lambda_r$을 가지고 있고, $v_1,v_2, \cdots v_r$이 이에 해당하는 고유벡터일 때, 집합 $\{v_1, v_2, \cdots v_r\}$은 선형독립$(linearly\space independent)$이다.
 
 고유값들이 서로 다르면 이에 해당하는 서로 다른 고유공간이 존재하겠죠? 즉, ``서로 다른 고유공간의 고유벡터들은 서로 선형독립``이라는 것입니다. 간단하게 증명해봅시다!
@@ -59,7 +61,7 @@ $$det(A-\lambda I)=\lambda^n+\alpha\lambda^{n-1}+\cdots+ \beta=(\lambda-\lambda_
 $$det(A)=\beta=(-1)^n\cdot\lambda_1\lambda_2\cdots\lambda_n$$
 
 그런데 여기서 고유값 중 하나가 0이 되면 어떻게 되나요? $\lambda_1,\lambda_2,\cdots,\lambda_n$중 하나라도 0인게 있다면 $det(A)=0$이 될 것입니다. 우리는 선형대수를 배우면서 어떤 행렬의 역행렬이 존재하는지(invertible) 아닌지의 여부를 정말 다양한 표현들로 배우게 됩니다. ``고유값이 0이다``도 그중 하나가 되는 것입니다!
-
 <br>
 
-이해가 좀 되셨나요? 여기까지 전반적인 고유값, 고유벡터, 특성방정식의 기초 개념에 대해서 알아보았습니다. 다음에는 **대각화(Diagonalization)** 에 대해 포스팅하려고 합니다. 감사합니다 :)
+여기까지 전반적인 고유값, 고유벡터, 특성방정식의 기초 개념에 대해서 알아보았습니다. 다음에는 **대각화(Diagonalization)** 에 대해 포스팅하려고 합니다. 감사합니다 :)
+<br>
