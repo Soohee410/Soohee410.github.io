@@ -19,7 +19,7 @@ use_math: true
 
 $$A\boldsymbol{x}=\lambda\boldsymbol{x}\Longrightarrow (A-\lambda I)\boldsymbol{x}=0\quad\cdots (1)$$
 
-이 때, 식 (1)을 만족하는 모든 해  $\boldsymbol{x}$들의 집합이 $A-\lambda I$의 **영공간(null space)** 이 될 것입니다! 따라서 이 집합은 n차 실수 공간 $\mathbb{R}^n$의 **부분공간(subspace)** 이고, 이 부분공간을 $\lambda$에 해당하는 $A$의 **고유공간(eigenspace)** 이라고 부릅니다. 다시 말해서, <h5>고유공간은 영벡터와 λ에 해당하는 모든 고유벡터들로 구성됩니다.</h5>
+이 때, 식 (1)을 만족하는 모든 해  $\boldsymbol{x}$들의 집합이 $A-\lambda I$의 **영공간(null space)** 이 될 것입니다! 따라서 이 집합은 n차 실수 공간 $\mathbb{R}^n$의 **부분공간(subspace)** 이고, 이 부분공간을 $\lambda$에 해당하는 $A$의 **고유공간(eigenspace)** 이라고 부릅니다. 다시 말해서, <u>고유공간은 영벡터와 λ에 해당하는 모든 고유벡터들로 구성됩니다.</u>
 이제 이와 관련하여 다음의 중요한 정리(theorem)를 하나 짚고 넘어가겠습니다!
 > 어떤 nxn 행렬 $A$가 서로 다른 r개의 고유값 $\lambda_1, \lambda_2, \cdots, \lambda_r$을 가지고 있고, $v_1,v_2, \cdots v_r$이 이들 각각에 해당하는 고유벡터일 때, 집합 $\{v_1, v_2, \cdots v_r\}$은 선형독립$(linearly\space independent)$이다.
 
@@ -37,7 +37,7 @@ $$A\boldsymbol{x}=\lambda\boldsymbol{x}\Longrightarrow (A-\lambda I)\boldsymbol{
 이 때, 고유값은 1이고 그에 해당하는 고유벡터는 $e_1=\scriptsize\begin{pmatrix}1\\\0\\\0\end{pmatrix}$이 되는 것을 쉽게 알 수 있습니다.  
 (3) $ T(e_2 )=Ae_2=e_2=1\cdot e_2$
 이 때, 고유값은 1이고 그에 해당하는 고유벡터는 $e_2=\scriptsize\begin{pmatrix}0\\\1\\\0\end{pmatrix}$이 되는 것을 쉽게 알 수 있습니다.  
-따라서, <u>고유값이 0일 때의 고유공간</u>은 $\scriptsize\begin{Bmatrix}\begin{pmatrix}0\\\ 0\\\1\end{pmatrix}\end{Bmatrix}$이 되고, <u>고유값이 1일 때의 고유공간</u>은 $\scriptsize\begin{Bmatrix}\begin{pmatrix}1\\\0\\\0\end{pmatrix},\begin{pmatrix}0\\\1\\\0\end{pmatrix}\end{Bmatrix}$ 이 되겠네요!
+따라서, __고유값이 0일 때의 고유공간__ 은 $\scriptsize\begin{Bmatrix}\begin{pmatrix}0\\\ 0\\\1\end{pmatrix}\end{Bmatrix}$이 되고, __고유값이 1일 때의 고유공간__ 은 $\scriptsize\begin{Bmatrix}\begin{pmatrix}1\\\0\\\0\end{pmatrix},\begin{pmatrix}0\\\1\\\0\end{pmatrix}\end{Bmatrix}$ 이 되겠네요!
 이 예제에서는 A의 형태가 되게 단순해서 특별한 계산과정 없이도 고유값과 고유벡터를 충분히 떠올릴 수 있었습니다. 하지만, 대부분의 경우에서 이렇게 바로 떠올리기는 쉽지 않은데요. 이 경우에는 어떻게 고유값과 고유벡터를 구할 수 있는지 알아봅시다!
 <br><br>
 
