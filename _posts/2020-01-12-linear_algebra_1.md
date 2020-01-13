@@ -1,7 +1,8 @@
 ---
 layout: post
-title: Eigenvalue, Eigenvector, Character Equation
+title: 선형대수 Eigenvalue, Eigenvector, Character Equation
 tags: [Linear Algebra]
+use_math: true
 ---
 안녕하세요 여러분! 이번 글에서는 **고유벡터(Eigenvector)** 와 **고유값(Eigenvalue)**, 그리고 **특성방정식(Characteristic Equation)** 의 개념에 대해서 정리하고자 합니다. 고유값과 고유벡터는 앞으로 포스트할 내용들의 베이스이기 때문에 간단하게 한번 짚고 넘어가겠습니다! 교재로는 $\footnotesize Linear\space Algebra\space and\space its\space Applications\space 5th\space edition\space (David C.Lay, Stephen R.Lay, Judi J.McDonald)$ 를 참고했습니다.
 
@@ -20,7 +21,7 @@ $$A\bm{x}=\lambda\bm{x}\Longrightarrow (A-\lambda I)\bm{x}=0\quad\cdots (1)$$
 > 어떤 nxn 행렬 $A$가 서로 다른 r개의 고유값 $\lambda_1, \lambda_2, \cdots, \lambda_r$을 가지고 있고, $v_1,v_2, \cdots v_r$이 이에 해당하는 고유벡터일 때, 집합 $\{v_1, v_2, \cdots v_r\}$은 선형독립$\small(linearly\space independent)$이다.
 
 고유값들이 서로 다르면 이에 해당하는 서로 다른 고유공간이 존재하겠죠? 즉, ``서로 다른 고유공간의 고유벡터들은 서로 선형독립``이라는 것입니다. 간단하게 증명해봅시다!
-<img src="/assets/그림1추가.png" width="500px">
+<img src="/assets/그림1추가.png" width="600px">
 
 이해되셨나요? 이제 예제를 하나 보면서  정리해보겠습니다!
 - $x,y,z$ 세 축이 있을 때, $T:\R^3\rightarrow \R^3$이 $x-y$ 평면으로의 정사영 함수$\small(projection function)$라고 하자. 이 때 $T$에 해당하는 $\small transformation\space matrix\space A$의 고유값과 고유벡터를 구해보자.
@@ -54,5 +55,5 @@ $$\small det(A-\lambda I)=\lambda^n+\alpha\lambda^{n-1}+\cdots+ \beta=(\lambda-\
 $$\small det(A)=\beta=(-1)^n\cdot\lambda_1\lambda_2\cdots\lambda_n$$
 
 그런데 여기서 고유값 중 하나가 0이 되면 어떻게 되나요? $\small\lambda_1,\lambda_2,\cdots,\lambda_n$중 하나라도 0인게 있다면 $\small det(A)=0$이 될 것입니다.
-<br>
+<br><br>
 이해가 좀 되셨나요? 여기까지 전반적인 고유값, 고유벡터, 특성방정식의 기초 개념에 대해서 알아보았습니다. 다음에는 대각화(Diagonalization)에 대해 포스팅하려고 합니다. 감사합니다 :)
