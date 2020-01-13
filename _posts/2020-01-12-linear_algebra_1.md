@@ -36,7 +36,7 @@ $\text{\textcircled 3} T(e_2 )=Ae_2=e_2=1\cdot e_2$
 이 때, 고유값은 1이고 그에 해당하는 고유벡터는 $e_2=\footnotesize\begin{pmatrix}0\\1\\0\end{pmatrix}$이 되는 것을 쉽게 알 수 있습니다.
 따라서, 고유값이 0일 때의 고유공간은 $\footnotesize\begin{Bmatrix}\begin{pmatrix}0\\0\\1\end{pmatrix}\end{Bmatrix}$이 되고, 고유값이 1일 때의 고유공간은 $\footnotesize\begin{Bmatrix}\begin{pmatrix}1\\0\\0\end{pmatrix},\begin{pmatrix}0\\1\\0\end{pmatrix}\end{Bmatrix}$ 이 되겠네요!
 이 예제에서는 A의 형태가 되게 단순해서 특별한 계산과정 없이도 고유값과 고유벡터를 충분히 떠올릴 수 있었습니다. 하지만, 대부분의 경우에서 이렇게 바로 떠올리기는 쉽지 않은데요. 이 경우에는 어떻게 고유값과 고유벡터를 구할 수 있는지 알아봅시다!
-<br>
+<br><br>
 
 ### 2. 특성방정식(Character Equation)
 자, 이제 특성방정식입니다. 단도직입적으로 특성방정식이란 $det(A-\lambda I)=0$ 을 의미합니다. 이 방정식이 왜 중요할까요? 다음의 중요한 사실(**Fact**)을 봅시다!

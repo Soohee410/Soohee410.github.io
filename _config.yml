@@ -40,7 +40,6 @@ custom_header: true
 custom_nav_footer: false
 reverse: false
 
-#Conversion
 markdown: kramdown
 kramdown:
   math_engine: katex
