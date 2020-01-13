@@ -24,7 +24,7 @@ $$A\boldsymbol{x}=\lambda\boldsymbol{x}\Longrightarrow (A-\lambda I)\boldsymbol{
 > 어떤 nxn 행렬 $A$가 서로 다른 r개의 고유값 $\lambda_1, \lambda_2, \cdots, \lambda_r$을 가지고 있고, $v_1,v_2, \cdots v_r$이 이들 각각에 해당하는 고유벡터일 때, 집합 $\{v_1, v_2, \cdots v_r\}$은 선형독립$(linearly\space independent)$이다.
 
 고유값들이 서로 다르면 이에 해당하는 서로 다른 고유공간이 존재하겠죠? 즉, ``서로 다른 고유공간의 고유벡터들은 서로 선형독립``이라는 것입니다. 간단하게 증명해봅시다! 독립이 아니라고 가정했을 때 이 가정이 모순이 되는 것을 보이는 논리입니다.
-<img src="/assets/그림1추가.png" width="800px">
+<img src="/assets/그림1추가.png" width="750px">
 
 이해되셨나요? 이제 예제를 하나 보면서  정리해보겠습니다!
 - $x,y,z$ 세 축이 있을 때, $T:\mathbb{R}^3\rightarrow \mathbb{R}^3$이 $x-y$ 평면으로의 정사영 함수$(projection function)$라고 하자. 이 때 $T$에 해당하는 $ transformation\space matrix\space A$의 고유값과 고유벡터를 구해보자.
