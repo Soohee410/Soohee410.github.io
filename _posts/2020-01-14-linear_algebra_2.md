@@ -8,7 +8,7 @@ use_math: true
 
 ### 1. 대각화(Diagonalization)의 정의
 먼저 대각화의 정의부터 알아볼까요?
->어떤 정방행렬 $A$가 $A=PDP^{-1}, (when\space P:invertible\space matrix,D:diagonal\space matrix)$ 로 나타낼 수 있다면, A는 대각화가 가능하다(diagonalizable).
+>어떤 정방행렬 $A$가 $A=PDP^{-1}, ( P:invertible,D:diagonal)$ 로 나타낼 수 있다면, A는 대각화가 가능하다(diagonalizable).
 
 어떤 정방행렬$(square\space matrix)$ A가 위와 같이 <u>역행렬이 존재하는 어떤 행렬</u>과 <u>대각행렬</u>의 곱으로 쪼개질 때, 다시 말해서 ``대각행렬 D와 유사(similar)할 때``, A는 **대각화가 가능하다** 고 말합니다. 왜 굳이 이렇게 쪼갤까요? 대각행렬로 표현하면 연산 과정이 간단해지고 해석이 용이하다는 등 장점이 많아지기 때문입니다! 예를 들어, A가 대각화가 가능하다고 해봅시다.
 
