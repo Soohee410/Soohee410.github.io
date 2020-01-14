@@ -4,7 +4,7 @@ title: 선형대수 Eigenvalue, Eigenvector, Character Equation
 tags: [Linear Algebra]
 use_math: true
 ---
-안녕하세요 여러분! 이번 글에서는 **고유벡터(Eigenvector)** 와 **고유값(Eigenvalue)**, 그리고 **특성방정식(Characteristic Equation)** 의 개념에 대해서 정리하고자 합니다. 고유값과 고유벡터는 앞으로 포스트할 내용들의 베이스이기 때문에 간단하게 한번 짚고 넘어가겠습니다! 교재로는 $\small Linear\space Algebra\space and\space its\space Applications\space 5th\space edition\space (David C.Lay, Stephen R.Lay, Judi J.McDonald)$ 를 참고했습니다.
+안녕하세요 여러분! 이번 글에서는 **고유벡터(Eigenvector)** 와 **고유값(Eigenvalue)**, 그리고 **특성방정식(Characteristic Equation)** 의 개념에 대해서 정리하고자 합니다. 고유값과 고유벡터는 앞으로 포스트할 내용들의 베이스이기 때문에 간단하게 한번 짚고 넘어가겠습니다!
 
 ### 1. 고유값(Eigenvalue)과 고유벡터(Eigenvector)
 먼저 고유값과 고유벡터입니다. 정의부터 알아볼까요?
@@ -66,3 +66,5 @@ $$det(A)=\beta=(-1)^n\cdot\lambda_1\lambda_2\cdots\lambda_n$$
 
 여기까지 전반적인 고유값, 고유벡터, 특성방정식의 기초 개념에 대해서 알아보았습니다. 다음에는 [대각화(Diagonalization)](https://soohee410.github.io/linear_algebra_2) 에 대해 포스팅하려고 합니다. 감사합니다 :)
 <br><br>
+
+참고:  $\small Linear\space Algebra\space and\space its\space Applications\space 5th\space edition\space (David C.Lay, Stephen R.Lay, Judi J.McDonald)$
