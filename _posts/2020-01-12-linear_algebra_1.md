@@ -23,7 +23,7 @@ $$A\boldsymbol{x}=\lambda\boldsymbol{x}\Longrightarrow (A-\lambda I)\boldsymbol{
 이제 이와 관련하여 다음의 중요한 정리(theorem)를 하나 짚고 넘어가겠습니다!
 > 어떤 nxn 행렬 $A$가 서로 다른 r개의 고유값 $\lambda_1, \lambda_2, \cdots, \lambda_r$을 가지고 있고, $v_1,v_2, \cdots v_r$이 이들 각각에 해당하는 고유벡터일 때, 집합 $\{v_1, v_2, \cdots v_r\}$은 선형독립$(linearly\space independent)$이다.
 
-고유값들이 서로 다르면 이에 해당하는 서로 다른 고유공간이 존재하겠죠? 즉, ``서로 다른 고유공간의 고유벡터들은 서로 선형독립``이라는 것입니다. 간단하게 증명해봅시다! 독립이 아니라고 가정했을 때 이 가정이 모순이 되는 것을 보이는 논리입니다.
+고유값들이 서로 다르면 이에 해당하는 서로 다른 고유공간이 존재하겠죠? 즉, ``서로 다른 고유공간을 구성하는 고유벡터들은 서로 선형독립``이라는 것입니다. 간단하게 증명해봅시다! 독립이 아니라고 가정했을 때 이 가정이 모순이 되는 것을 보이는 논리입니다.
 <img src="/assets/그림1추가.png" width="750px">
 
 이해되셨나요? 이제 예제를 하나 보면서  정리해보겠습니다!
@@ -42,7 +42,7 @@ $$A\boldsymbol{x}=\lambda\boldsymbol{x}\Longrightarrow (A-\lambda I)\boldsymbol{
 <br><br>
 
 ### 2. 특성방정식(Character Equation)
-자, 이제 특성방정식입니다. 단도직입적으로 특성방정식이란 $det(A-\lambda I)=0$ 을 의미합니다. 이 방정식이 왜 중요할까요? 다음의 중요한 사실(**Fact**)을 봅시다!
+특성방정식(Character Equation)이란, 단도직입적으로 $det(A-\lambda I)=0$ 을 의미합니다. 이 방정식이 왜 중요할까요? 다음의 중요한 사실(**Fact**)을 봅시다.
 > 어떤 $scalar\space\lambda$가 nxn 행렬 A의 고유값이기 위한 필요충분조건은 $\lambda$가 $det(A-\lambda I)=0$을 만족하는 것이다.
 
 즉, 위의 사실을 이용해서 우리는 복잡한(?) 행렬들에 대해서도 고유값과, 그리고 이에 해당하는 고유벡터를 계산할 수 있게 됩니다! 나아가, $\lambda$가 어떤 정방행렬 A의 고유값이기 위한 필요충분조건은 다양한 표현들로 나타낼 수 있는데요. 이들은  다음과 같습니다.
