@@ -8,9 +8,9 @@ use_math: true
 
 ### 1. 직교(orthogonal)의 정의
 먼저 직교의 정의는 다음과 같습니다.
-> **Def.** n차원의 실수 공간의 두 벡터 u, v에 대하여, u∙v=0이면 두 벡터는 직교(orthogonal)한다.
+> **Def.** n차원의 실수 공간의 두 벡터 u, v에 대하여, $u\cdot v=0$이면 두 벡터는 직교(orthogonal)한다.
 
-내적(inner product)에 대해서는 일단 ``실수 공간에서 두 벡터를 input으로 하고, 스칼라를 output으로 하는 함수 $u\cdot v$``로만 정의를 하고 진행하겠습니다! 후에 실수 공간을 넘어서 inner product에 대해 조금 더 구체적으로 포스팅하려고 합니다.
+내적(inner product)에 대해서는 일단 ``실수 공간에서 두 벡터를 input으로 하고, 스칼라를 output으로 하는 함수`` $u\cdot v$로만 정의를 하고 진행하겠습니다! 후에 실수 공간을 넘어서 inner product에 대해 조금 더 구체적으로 포스팅하려고 합니다.
 
 $$inner\space product: u\cdot v=u^Tv, (u,v\in \mathbb{R^n})$$
 
@@ -18,7 +18,7 @@ $$inner\space product: u\cdot v=u^Tv, (u,v\in \mathbb{R^n})$$
 
 <br>
 
-###2. 직교여공간(Orthogonal Complement)
+### 2. 직교여공간(Orthogonal Complement)
 자, 직교의 정의는 분명 두 벡터 간의 관계에 대한 정의였습니다. 그렇다면 한 벡터와 부분공간(subspace)이 직교한다는 건 무슨 뜻일까요?`` 어떤 벡터 v가 어떤 부분공간 W의 모든 벡터와 직교한다면 v는 W와 직교한다고 말합니다.`` 이 때, $W$와 직교인 모든 벡터들을 모아 놓은 집합을 바로 **W의 직교여공간(orthogonal complement)** 이라고 부르고, $W^⊥$와 같이 표기합니다.
 
 $$W^⊥=\{\boldsymbol z | \boldsymbol z⊥W\}$$
@@ -34,9 +34,9 @@ $$W^⊥=\{\boldsymbol z | \boldsymbol z⊥W\}$$
 
 혹시 행렬의 **Row space** 와 **Column space**, **Null space** 가 가물가물하신 분들은 아래 정의를 다시 한번 상기해주세요!
 - $Row(A)$: $A$의 행(row)들이 생성하는 공간 = $A$의 행들의 모든 선형결합들의 집합
-- $Col(A)$: $A$의 열(column)들이 생성하는 공간 = $A$의 image   
+- $Col(A)$: $A$의 열(column)들이 생성하는 공간 = $A$의 $image$   
 즉, $A$에 의해 선형변환된 벡터는 $A$의 열들의 선형결합이라는 것을 의미합니다. 한편, $A$의 열과 $A^T$의 행은 같겠죠? 따라서, 자명하게 $Col(A)=Row(A^T)$ 입니다!
-- $Nul(A)= \{x∈R^n  | Ax=0\}$
+- $Nul(A) = \{x\in \mathbb{R}^n  | Ax=0\}$
 
 다시 돌아와서 위 정리가 왜 그런지 살펴봅시다. 간단하게 $Row(A)^⊥=Nul(A)$가 되는 것을 증명해보겠습니다! 어떤 벡터 $\boldsymbol x$가 $A$의 $null\space space$안에 있다고 합시다. $(x\in Nul(A))$
 
@@ -48,7 +48,7 @@ $$\boldsymbol x\in Nul(A)\iff A\boldsymbol x=0\iff \boldsymbol x ⊥Row(A) \iff 
 
 <br>
 
-###3. 직교 기저(Orthogonal Basis)
+### 3. 직교 기저(Orthogonal Basis)
 이제 직교 기저의 개념에 대해서 알아보고자 합니다. 직교 기저는 앞으로 계속 나오게 될 orthogonal projection을 이해하는데 필요한 필수 개념입니다!
 > **Def.** $\mathbb{R^n}$의 부분공간인 $W$의 직교 기저(orthogonal basis)는 $W$의 기저(basis)를 이루는 벡터들이 서로 직교하는 기저를 말한다.
 
@@ -60,7 +60,7 @@ $$y=c_1 u_1+⋯+c_p u_p,\quad c_j=\frac{(𝑢_𝑗\cdot 𝑦)}{(𝑢_𝑗\cdot �
 간단하게 증명해볼까요?
 
 $$ \begin{aligned}
-(pf)\quad\mathllap{y}&=𝑐_1 𝑢_1+𝑐_2 𝑢_2+\cdots +𝑐_𝑝 𝑢_𝑝\\
+(pf)\quad y&=𝑐_1 𝑢_1+𝑐_2 𝑢_2+\cdots +𝑐_𝑝 𝑢_𝑝\\
 𝑢_𝑗\cdot 𝑦&=𝑢_𝑗\cdot (𝑐_1 𝑢_1+𝑐_2 𝑢_2+⋯+𝑐_𝑝 𝑢_𝑝) &= 𝑐_𝑗 (𝑢_𝑗\cdot 𝑢_𝑗) \\
 ∴𝑐_𝑗&=\frac{(𝑢_𝑗\cdot 𝑦)}{(𝑢_𝑗\cdot 𝑢_𝑗 )}, j=1,\cdots,p
 \end{aligned}$$
@@ -69,7 +69,7 @@ $$ \begin{aligned}
 
 $$y=\frac{y\cdot u_1}{u_1\cdot u_1}u_1+\frac{y\cdot u_2}{u_2\cdot u_2}u_2+⋯+\frac{y\cdot u_p}{u_p\cdot u_p}u_p$$
 
-이때, 특별한 제한조건을 추가해봅시다. 조금 더 간편하게 보기 위해 $u_j\cdot u_j=1,∀j$, 즉 ``모든 $u_j$ 벡터들의 길이가 1이라고 제한``해봅시다. 그러면 $y$는 다시 다음과 같이 표현됩니다.
+이때, 특별한 제한조건을 추가해봅시다. 조금 더 간편하게 보기 위해 $u_j\cdot u_j=1,∀j$, 즉모든 $u_j$ 벡터들의 ``길이가 1이라고 제한``해봅시다. 그러면 $y$는 다시 다음과 같이 표현됩니다.
 
 $$ \begin{aligned}
 y&=\frac{u_1\cdot y}{u_1\cdot u_1}u_1+\frac{u_2\cdot y}{u_2\cdot u_2}u_2+⋯+\frac{u_p\cdot y}{u_p\cdot u_p}u_p\\
