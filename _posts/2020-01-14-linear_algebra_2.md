@@ -6,6 +6,8 @@ use_math: true
 ---
 안녕하세요! 이번 글에서는 **대각화(Diagonalization)** 의 개념 및 정리(theorem)를 살펴보고자 합니다. 바로 시작하겠습니다 :)
 
+<br>
+
 ### 1. 대각화(Diagonalization)의 정의
 먼저 대각화의 정의부터 알아볼까요?
 >**Def.** 어떤 정방행렬 $A$가 $A=PDP^{-1}, ( P:invertible,D:diagonal)$ 로 나타낼 수 있다면, A는 대각화가 가능하다(diagonalizable).
@@ -64,8 +66,7 @@ $$A=P\begin{pmatrix}\lambda_1&0\\0&\lambda_2\end{pmatrix}P^{-1}\Rightarrow A^{50
 
 <br>
 
-이해가 좀 되셨나요? 여기까지는 벡터들이 서로 선형독립이라는 조건만을 가지고 내용을 다뤘는데, 이제 본격적으로 벡터들이 직교한다는 개념을 배우고 그에 관한 다양한 성질과 정리를 다루고자 합니다. 다음 글에서는 직교성(Orthogonal property)에 대해 포스팅하겠습니다. 감사합니다!
-
+이해가 좀 되셨나요? 여기까지는 벡터들이 서로 선형독립이라는 조건만을 가지고 내용을 다뤘는데, 이제 본격적으로 벡터들이 직교한다는 개념을 배우고 그에 관한 다양한 성질과 정리를 다루고자 합니다. 다음 글에서는 [직교성(Orthogonal property)](https://soohee410.github.io/linear_algebra_3)에 대해 포스팅하겠습니다. 감사합니다!
 
 <br>
 
