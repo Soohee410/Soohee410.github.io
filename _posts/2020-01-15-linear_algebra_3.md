@@ -35,7 +35,7 @@ $\mathbb{R}^n$의 부분공간 $W$에 대하여, 직교여공간 $W^⊥$은 다�
 > **Thm.** 어떠한 mxn 행렬 $A$에 대하여, $Row(A)^⊥=Nul(A)$  ,   $Col(A)^⊥=Nul(A^T )$ 이다.
 
 혹시 행렬의 **Row space** 와 **Column space**, **Null space** 가 가물가물하신 분들은 아래 정의를 다시 한번 상기해주세요!
-- $Nul(A)$ : { $ x \in \mathbb{R}^n  | Ax=0 $ }
+- $Nul(A)$ : { $ x \in \mathbb{R}^n  \vert Ax=0 $ }
 - $Row(A)$: $A$의 행(row)들이 생성하는 공간 = $A$의 행들의 모든 선형결합들의 집합
 - $Col(A)$: $A$의 열(column)들이 생성하는 공간 = $A$의 $image$   
 즉, $A$에 의해 선형변환된 벡터는 $A$의 열들의 선형결합이라는 것을 의미합니다. 한편, $A$의 열과 $A^T$의 행은 같겠죠? 따라서, 자명하게 $Col(A)=Row(A^T)$ 입니다!  
@@ -46,7 +46,6 @@ $$ \boldsymbol x\in Nul(A)\iff A\boldsymbol x=0\iff \boldsymbol x ⊥Row(A) \iff
 
 이 때, $Row(A)=Col(A^T)$이므로, $Nul(A)=Col(A^T )^⊥$ 와 같이도 나타낼 수 있습니다.
 
-여기까지 두 벡터, 벡터와 부분공간, 두 부분공간 간의 직교 개념에 대해서 알아보았습니다.
 
 <br>
 
@@ -57,7 +56,6 @@ $$ \boldsymbol x\in Nul(A)\iff A\boldsymbol x=0\iff \boldsymbol x ⊥Row(A) \iff
 결국 벡터들이 서로 선형 독립인 것을 넘어서 직교하는 성질이 추가된 기저를 말합니다! 이러한 직교성이 추가되면 다른 기저들에 비해 갖게 되는 장점이 있는데요, 바로 ``선형결합의 가중치를 매우 쉽게 구할 수 있다``는 것입니다. 다음의 정리를 봅시다.
 
 >**Thm.**  {$  u_1,u_2,⋯,u_p$}를 $\mathbb{R^n}$의 부분공간 $W$의 직교 기저라고 하자. $W$ 내의 벡터 $\boldsymbol y$는 다음과 같이 선형결합으로 나타내어 지고, 가중치는 다음과 같이 주어진다.
-
 >$$y=c_1 u_1+⋯+c_p u_p,\quad c_j=\frac{(𝑢_𝑗\cdot 𝑦)}{(𝑢_𝑗\cdot 𝑢_𝑗 )},j=1,⋯,p$$
 
 간단하게 증명해볼까요?
@@ -92,3 +90,5 @@ y&=\frac{u_1\cdot y}{u_1\cdot u_1}u_1+\frac{u_2\cdot y}{u_2\cdot u_2}u_2+⋯+\fr
 
 
 참고:  $\small Linear\space Algebra\space and\space its\space Applications\space 5th\space edition\space (David C.Lay, Stephen R.Lay, Judi J.McDonald)$
+
+<br>

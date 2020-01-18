@@ -71,3 +71,5 @@ $$A=P\begin{pmatrix}\lambda_1&0\\0&\lambda_2\end{pmatrix}P^{-1}\Rightarrow A^{50
 <br>
 
 참고:  $\small Linear\space Algebra\space and\space its\space Applications\space 5th\space edition\space (David C.Lay, Stephen R.Lay, Judi J.McDonald)$
+
+<br>

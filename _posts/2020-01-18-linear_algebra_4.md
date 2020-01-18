@@ -19,11 +19,13 @@ use_math: true
 
 $$ \hat y=\frac {y\cdot u}{u\cdot u} u=proj_{\scriptsize W} y,\quad   W=span\{ u \} $$
 
+위 그림과 같이, 정사영이라는 것은 어떤 부분공간에 존재하는 벡터를 (일반적으로) 그 부분공간보다 낮은 차원의 부분공간으로 투영시키는 것이라고 할 수 있습니다.  3차원인 제가 땅에 서 있을 때, 저의 그림자는 2차원인 땅에 제가 투영된 것이라고 할 수 있을 것입니다. 이것의 의미에 대해서는 후에 Least Squares Solution에 대해 포스팅할 때 조금 더 구체적으로 정리하고자 합니다.
+
 <br>
 
 ### 2. 기하학적 의미
 그런데 위 식에서 $u$의 가중치 $\frac {y\cdot u}{u\cdot u} $ 어디서 많이 보지 않았나요?
-저번 글에서 ``y는 특정한 가중치들을 가진 직교 기저들의 선형결합으로 표현가능하다`` 는 정리를 배웠었는데요. 예를 들어서, {$u_1,u_2 $}가 $\mathbb{R}^2$의 직교기저라고 해봅시다. 그러면 정리에 의해, $\mathbb{R}^2$의 모든 벡터 $y$는 다음과 같이 표현 가능하다는 정리였습니다.
+[저번 글]("https://soohee410.github.io/linear_algebra_3")에서 ``y는 특정한 가중치들을 가진 직교 기저들의 선형결합으로 표현가능하다`` 는 정리를 배웠었는데요. 예를 들어서, {$u_1,u_2 $}가 $\mathbb{R}^2$의 직교기저라고 해봅시다. 그러면 정리에 의해, $\mathbb{R}^2$의 모든 벡터 $y$는 다음과 같이 표현 가능하다는 정리였습니다.
 
 $$ y=\frac{y\cdot u_1}{u_1\cdot u_1} u_1+\frac {y\cdot u_2}{u_2\cdot u_2} u_2 $$
 
@@ -41,13 +43,13 @@ $$y=proj_{span\{ u_1\}}y+proj_{span\{ u_2\}} y$$
 ### 3. Orthogonal Decomposition Theorem
 다시 돌아와서, 1번에서 했던 쪼개기 과정을 다시 주목해봅시다! 이 과정을 일반화하는 정리가 있는데요. 바로 **Orthogonal Decomposition Theorem** 이라 일컫습니다.
 
-<img src="/assets/proj3추가.png" width="600px">
+<img src="/assets/proj3추가.png" width="670px">
 
 <img src="/assets/proj4.png" width="380px">
 
-즉, $\mathbb{R^n}$에 존재하는 벡터 $y$는 이를 부분공간 $W$에 정사영시킨 벡터와 $W$에 수직인 벡터의 합으로 분해됩니다! 근데 여기서 주목할 것은 어떻게 저 분해가 유일하냐는 건데요. 이를 한번 간단하게 증명해보겠습니다. Orthogonal decomposition이 유일하지 않다고 가정했을 때, 이 가정에 오류가 생기는 것을 보이는 논리입니다.
+즉, $\mathbb{R^n}$에 존재하는 벡터 $y$는 이를 **부분공간 $W$에 정사영시킨 벡터** 와 **$W$에 수직인 벡터** 의 합으로 분해됩니다! 근데 여기서 주목할 것은 어떻게 저 분해가 유일하냐는 건데요. 이를 한번 간단하게 증명해보겠습니다. Orthogonal decomposition이 유일하지 않다고 가정했을 때, 이 가정에 오류가 생기는 것을 보이는 논리입니다.
 
-<img src="/assets/proj3.png" width="370px">
+<img src="/assets/proj3.png" width="360px">
 
 <br>
 
@@ -68,7 +70,7 @@ proj_{\scriptsize W} y&=(u_1\cdot y)u_1+(u_2\cdot y)u_2+\cdots+(u_p\cdot y)u_p\\
 &=UU^Ty, \quad U=\begin{bmatrix} u_1&u_2&\cdots&u_p\end{bmatrix}
 \end{aligned}$$
 
-위 식에서, 벡터 $y$에 $UU^T$라는 nxn 행렬을 곱한 것이 벡터 y의 W로의 정사영이 되었습니다. 즉, 벡터 $y$는 $UU^T$ 행렬에 의해 선형변환된 것입니다.
+위 식에서, 벡터 $y$에 $UU^T$라는 nxn 행렬을 곱한 것이 벡터 y의 W로의 정사영이 되었습니다. 즉, 벡터 $y$는 $UU^T$ 행렬에 의해 ``선형변환``된 것입니다.
 >  $Proj_{\scriptsize W} y$ is an image of $y$ transformed by $UU^T$
 
 따라서, 이 행렬 $UU^T$을 $Transformation\space Matrix$라고 하고, 변환시키는 것 중에서도 정사영시키는 역할을 하기 때문에 $Projection\space Matrix$라고 일컫습니다.
@@ -93,7 +95,9 @@ $$z=(u_{p+1}\cdot y)u_{p+1}+\cdots+(u_n\cdot y)u_n\space \perp\space W$$
 
 <br>
 
-여기까지 Orthogonal Projection에 대한 기록이었습니다! 다음 포스트에서는 Gram-Schmidt 과정과 QR 분해에 대해서 정리하고자 합니다. 감사합니다 :)
+여기까지 **Orthogonal Projection** 에 대한 기록이었습니다! 다음 포스트에서는 Gram-Schmidt 과정과 QR 분해에 대해서 정리하고자 합니다. 감사합니다 :)
 
 
 참고:  $\small Linear\space Algebra\space and\space its\space Applications\space 5th\space edition\space (David C.Lay, Stephen R.Lay, Judi J.McDonald)$
+
+<br>
