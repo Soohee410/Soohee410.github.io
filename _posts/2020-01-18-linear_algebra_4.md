@@ -12,7 +12,8 @@ use_math: true
 
 다음 그림처럼 2차원 평면에 어떠한 벡터 $y$가 있다고 합시다. 이 $y$를 2개의 서로 다른 벡터의 합으로 쪼개려고 하는데요. 하나는 벡터 $u$ 위에 있는 벡터로, 즉 $αu$로 하고, 또 다른 벡터는 $u$와 직교인 벡터로 하고자 합니다. 이제 전자는 $\hat y$으로, 후자는 $z$로 표기할게요. 이때, $z$는 $u$와 직교하기 때문에 $z\cdot u=0$이 됩니다. 이걸 이용해서 정리하면 $αu$에서의 $α$가 무엇이어야 하는지 다음과 같이 도출됩니다!
 
-![proj1](/assets/proj1.png)
+<img src="/assets/proj1.png" width="450px">
+
 
 이 때의 $\hat y=\frac {y\cdot u}{u\cdot u} u$를 **벡터 $y$의 $u$에 대한 정사영**(orthogonal projection of $y$ onto $u$)라고 하고, $z=y-\hat y$를 **$u$에 수직인 $y$의 벡터성분**(component of $y$ orthogonal to $u$)라고 합니다! 이 때 $u$에 어떠한 스칼라 $c$를 곱해도, Orthogonal Projection of $y$ onto $\bold{cu}$와 Orthogonal Projection of $y$ onto $\bold{u}$는 같습니다! 따라서, 이를 더욱 일반화해서 <u>$u$라는 벡터에 의해 생성되는 어떠한 부분공간 $W$에 대한 벡터 $y$의 정사영</u>(orthogonal projection of $y$ onto $W$)이라고 일컫습니다.
 
@@ -40,25 +41,25 @@ $$y=proj_{span\{ u_1\}}y+proj_{span\{ u_2\}} y$$
 ### 3. Orthogonal Decomposition Theorem
 다시 돌아와서, 1번에서 했던 쪼개기 과정을 다시 주목해봅시다! 이 과정을 일반화하는 정리가 있는데요. 바로 **Orthogonal Decomposition Theorem** 이라 일컫습니다.
 
-![proj3.5](/assets/proj3.5.png)
+<img src="/assets/proj3추가.png" width="500px">
 
 <img src="/assets/proj4.png" width="400px">
 
 즉, $\mathbb{R^n}$에 존재하는 벡터 $y$는 이를 부분공간 $W$에 정사영시킨 벡터와 $W$에 수직인 벡터의 합으로 분해됩니다! 근데 여기서 주목할 것은 어떻게 저 분해가 유일하냐는 건데요. 이를 한번 간단하게 증명해보겠습니다. Orthogonal decomposition이 유일하지 않다고 가정했을 때, 이 가정에 오류가 생긴다는 것을 보이는 논리입니다.
 
-<img src="/assets/proj3.png" width="400px">
+<img src="/assets/proj3.png" width="370px">
 
 <br>
 
 ### 4. Projection Matrix
 이번에는 {$u_1,u_2,\cdots, u_p$}이 **직정기저(Orthonormal basis)** 라고 해볼까요? 그러면 3번에서 했던 **Orthogonal Decomposition Theorem** 에서 벡터 $y$의 $W$로의 정사영은 다음과 같이 표현될 것입니다.
 
-$$proj_{W} y =(u_1\cdot y)u_1+(u_2\cdot y)u_2+\cdots+(u_p\cdot y)u_p$$
+$$proj_{\tiny W} y =(u_1\cdot y)u_1+(u_2\cdot y)u_2+\cdots+(u_p\cdot y)u_p$$
 
 이 식을 내적의 성질을 이용하면 다음과 같습니다.
 
 $$ \begin{aligned}
-proj_{W} y&=(u_1\cdot y)u_1+(u_2\cdot y)u_2+\cdots+(u_p\cdot y)u_p\\
+proj_{\tiny W} y&=(u_1\cdot y)u_1+(u_2\cdot y)u_2+\cdots+(u_p\cdot y)u_p\\
 &=(u_1^T y)u_1+(u_2^T y)u_2+\cdots+(u_p^T y)u_p\\
 &=𝑢_1 (𝑢_1^T  𝑦) +𝑢_2 (𝑢_2^T  𝑦) +⋯+𝑢_𝑝 (𝑢_𝑝^T  𝑦)\\
 &=(𝑢_1 𝑢_1^T) 𝑦 +(𝑢_2 𝑢_2^T) 𝑦 +⋯+(𝑢_𝑝 𝑢_𝑝^T  )𝑦\\
@@ -68,7 +69,7 @@ proj_{W} y&=(u_1\cdot y)u_1+(u_2\cdot y)u_2+\cdots+(u_p\cdot y)u_p\\
 \end{aligned}$$
 
 위 식에서, 벡터 $y$에 $UU^T$라는 nxn 행렬을 곱한 것이 벡터 y의 W로의 정사영이 되었습니다. 즉, 벡터 $y$는 $UU^T$ 행렬에 의해 선형변환된 것입니다.
->  $proj_{W} y$ is an image of $y$ transformed by $UU^T$
+>  $Proj_{\tiny W} y$ is an image of $y$ transformed by $UU^T$
 
 따라서, 이 행렬 $UU^T$을 $Transformation\space Matrix$라고 하고, 변환시키는 것 중에서도 정사영시키는 역할을 하기 때문에 $Projection\space Matrix$라고 일컫습니다.
 
