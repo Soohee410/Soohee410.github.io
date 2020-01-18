@@ -65,7 +65,7 @@ proj_{\scriptsize W} y&=(u_1\cdot y)u_1+(u_2\cdot y)u_2+\cdots+(u_p\cdot y)u_p\\
 &=(𝑢_1 𝑢_1^T) 𝑦 +(𝑢_2 𝑢_2^T) 𝑦 +⋯+(𝑢_𝑝 𝑢_𝑝^T  )𝑦\\
 &=(u_1u_1^T+𝑢_2 𝑢_2^T+\cdots+𝑢_𝑝 𝑢_𝑝^T )y\\
 &=\begin{bmatrix} u_1&u_2&\cdots&u_p\end{bmatrix} \begin{bmatrix}u_1^T\\u_2^T\\ \vdots\\u_p^T\end{bmatrix}y\\
-&=UU^Ty, \quad U=\begin{bmatrix} u_1&u_2&\cdots&u_p\end{bmatrix}
+&=UU^Ty, \quad if\space U=\begin{bmatrix} u_1&u_2&\cdots&u_p\end{bmatrix}
 \end{aligned}$$
 
 위 식에서, 벡터 $y$에 $UU^T$라는 nxn 행렬을 곱한 것이 벡터 $y$의 $W$로의 정사영(Projection of $y$ onto $W$)이 되었습니다. 즉, 벡터 $y$는 $UU^T$ 행렬에 의해 ``선형변환``된 것입니다.
@@ -75,7 +75,7 @@ proj_{\scriptsize W} y&=(u_1\cdot y)u_1+(u_2\cdot y)u_2+\cdots+(u_p\cdot y)u_p\\
 
 <br>
 
-잘 이해되셨나요? 이제 정리해보겠습니다. $\mathbb{R^n}$의 부분공간 $W(\not=\mathbb R^n)$가 있다고 합시다.  $\mathbb{R^n}$의 직정기저(orthonormal basis)가 {$u_1,u_2, \cdots, u_n $}이라 하고, $W$의 직정기저가 {$ u_1, u_2, \cdots, u_p $},$(p<n)$라고 할 때, 먼저 $\mathbb{R^n}$의 모든 벡터 $y$는 다음과 같이 표현가능합니다.
+잘 이해되셨나요? 이제 정리해보겠습니다. $\mathbb{R^n}$의 부분공간 $W(\not=\mathbb R^n)$가 있다고 합시다.  $\mathbb{R^n}$의 직정기저(orthonormal basis)가 $\lbrace u_1,u_2, \cdots, u_n\rbrace $이라 하고, $W$의 직정기저가 $\lbrace u_1, u_2, \cdots, u_p \rbrace,\space (p<n)$라고 할 때, 먼저 $\mathbb{R^n}$의 모든 벡터 $y$는 다음과 같이 표현가능합니다.
 
 $$y=(u_1\cdot y)u_1+(u_2\cdot y)u_2+\cdots+(u_n\cdot y)u_n$$
 
