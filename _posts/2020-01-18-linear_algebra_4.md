@@ -75,7 +75,7 @@ proj_{\scriptsize W} y&=(u_1\cdot y)u_1+(u_2\cdot y)u_2+\cdots+(u_p\cdot y)u_p\\
 
 <br>
 
-잘 이해되셨나요? 이제 정리해보겠습니다. $\mathbb{R^n}$의 부분공간 $W(\not=\mathbb R^n)$가 있다고 합시다.  $\mathbb{R^n}$의 직정기저(orthonormal basis)가 { $u_1,u_2, \cdots, u_n $}이라 하고, $W$의 직정기저가 {$ u_1, u_2, \cdots, u_p $},$(p<n)$라고 할 때, 먼저 $\mathbb{R^n}$의 모든 벡터 $y$는 다음과 같이 표현가능합니다.
+잘 이해되셨나요? 이제 정리해보겠습니다. $\mathbb{R^n}$의 부분공간 $W(\not=\mathbb R^n)$가 있다고 합시다.  $\mathbb{R^n}$의 직정기저(orthonormal basis)가 {$u_1,u_2, \cdots, u_n $}이라 하고, $W$의 직정기저가 {$ u_1, u_2, \cdots, u_p $},$(p<n)$라고 할 때, 먼저 $\mathbb{R^n}$의 모든 벡터 $y$는 다음과 같이 표현가능합니다.
 
 $$y=(u_1\cdot y)u_1+(u_2\cdot y)u_2+\cdots+(u_n\cdot y)u_n$$
 
