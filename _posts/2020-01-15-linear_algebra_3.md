@@ -85,9 +85,9 @@ y&=\frac{u_1\cdot y}{u_1\cdot u_1}u_1+\frac{u_2\cdot y}{u_2\cdot u_2}u_2+⋯+\fr
 
 <br>
 
-이번 포스팅은 다음 포스팅을 위한 개념 다지기라고 할 수 있는데요! 다음 글에서 본격적으로 이 가중치들이 무엇을 의미하는지에 대해 설명하고, [Orthogonal Projection]("https://soohee410.github.io/linear_algebra_4")  에 대해 포스팅하고자 합니다. 감사합니다 :)
+이번 포스팅은 다음 포스팅을 위한 개념 다지기라고 할 수 있는데요! 다음 글에서 본격적으로 이 가중치들이 무엇을 의미하는지에 대해 설명하고, [Orthogonal Projection](https://soohee410.github.io/linear_algebra_4)  에 대해 포스팅하고자 합니다. 감사합니다 :)
 
-
+<br>
 
 참고:  $\small Linear\space Algebra\space and\space its\space Applications\space 5th\space edition\space (David C.Lay, Stephen R.Lay, Judi J.McDonald)$
 
