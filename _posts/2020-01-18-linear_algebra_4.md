@@ -90,12 +90,13 @@ $$z=(u_{p+1}\cdot y)u_{p+1}+\cdots+(u_n\cdot y)u_n\space \perp\space W$$
 
 <br>
 
-여기까지 **Orthogonal Projection** 에 대한 기록이었습니다! 다음 포스트에서는 Gram-Schmidt 과정과 QR 분해에 대해서 정리하고자 합니다. 감사합니다 :)
+여기까지 **Orthogonal Projection** 에 대한 기록이었습니다!
+다음 포스트에서는 [Gram-Schmidt Process와 QR 분해](https://soohee410.github.io/linear_algebra_5)에 대해서 정리하고자 합니다. 감사합니다 :)
 
 <br>
 
 $Reference.$  
-$\small Linear\space Algebra\space and\space its\space Applications\space 5th\space edition\space (David C.Lay, Stephen R.Lay, Judi J.McDonald)$
-
+- $\small Linear\space Algebra\space and\space its\space Applications\space 5th\space edition\space (David C.Lay, Stephen R.Lay, Judi J.McDonald)$
+- 고려대학교 김홍중 교수님의 수업
 
 <br>

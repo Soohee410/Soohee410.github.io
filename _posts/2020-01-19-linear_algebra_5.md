@@ -10,9 +10,10 @@ use_math: true
 
 ### 1. 그람슈미트 과정(Gram-Schmidt Process)
 [이전 포스트](https://soohee410.github.io/linear_algebra_4)에서 **Orthogonal Projection** 을 잘 이해하셨다면, **그람슈미트 과정(Gram-Schmidt Process)** 은 매우 쉽게 느껴지실거에요! 일단 그람슈미트의 요체는 다음과 같습니다. 어떤 실수 부분공간의 기저(basis)를 input으로 했더니, ``orthogonal 또는 orthonormal basis``가 output이 되었습니다.
-<img src="/assets/proj5.png" width="530px">
+<img src="/assets/proj5.png" width="450px">
 
 한마디로 ``어떤 부분공간을 생성하는 선형독립인 벡터들을 직교하는 벡터들로 만들어주는 과정``인 것이죠. 이걸 왜 할까요? 저번 글에서 말씀드렸지만, 직교성을 갖는 기저는 많은 연산 과정에서 편리하다는 장점이 생기기 때문입니다. 특히, 직교 기저에 의해 생성되는 공간의 벡터들은 특정한 가중치들을 가진 선형결합으로 쉽게 표현 가능합니다. 이제 과정에 대해서 알아봅시다. 아래 그림을 볼까요?
+
 <img src="/assets/proj6.png" width="600px">
 
 $\mathbb{R^3}$의 어떤 부분공간의 기저가 $\lbrace a,b,c\rbrace $라고 합시다. 직교 기저(Orthogonal basis)가 될 새로운 기저를 $B$라고 할 때, ``첫번째 단계``에는 아무 벡터나 넣습니다. 아래 그림에서와 같이 벡터 $a$를 넣었다고 합시다. ``두번째 단계``에서 벡터 $b$를 포함하고 싶은데 $b$는 $a$와 선형 독립(linearly independent)일 뿐이지 직교하지는 않습니다. 그러면 $a$와 직교인 벡터를 어떻게 구하면 될까요? 이전에 배웠던 **Orthogonal Decomposition Theorem** 을 이용해서 $b$를 $Span\lbrace a\rbrace$에 정사영시킨 벡터와  $Span\lbrace a\rbrace$와 직교인 벡터성분으로 분해하면, $a$와 직교하는 벡터를 구할 수 있게 됩니다! 따라서, **$a$와 직교하는 벡터 $z=b-\hat b$** 가 직교 기저 $B$의 두번째 멤버가 됩니다.   
@@ -25,10 +26,11 @@ $\mathbb{R^3}$의 어떤 부분공간의 기저가 $\lbrace a,b,c\rbrace $라고
 <br>
 
 ### 2. QR 분해 (QR Decomposition)
-다음은 QR 분해(QR Decomposition)입니다. 여러가지 방법으로 QR 분해를 할 수 있는데, 그 중 하나가 ``그람슈미트 과정``입니다. 일단 QR분해 정리는 다음과 같습니다.
-<img src="/assets/proj8.png" width="600px">
+다음은 QR 분해(QR Decomposition)입니다. 여러가지 방법으로 QR 분해를 할 수 있는데, 그 중 하나가 **그람슈미트 과정** 입니다. 일단 QR분해 정리는 다음과 같습니다.
 
-예를 들어, nx3 행렬 $A$의 열$(column)$들의 집합 $\lbrace x_1,x_2,x_3\rbrace$들이 서로 **선형 독립** 이고, **그람 슈미트** 를 이용하여 구한 이 열공간에 대한 직정 기저(orthonormal basis)가 $\lbrace u_1=\frac{v_1}{\lVert v_1\rVert}, u_2=\frac{v_2}{\lVert v_2\rVert}, u_3=\frac{v_3}{\lVert v_3\rVert} \rbrace$ 이라고 합시다. 그람 슈미트를 이용하여 다음과 같이 직교/직정 기저를 구했을 것입니다.
+<img src="/assets/proj8.png" width="580px">
+
+예를 들어, nx3 행렬 $A$의 열(column)들의 집합 $\lbrace x_1,x_2,x_3\rbrace$들이 서로 **선형 독립** 이고, **그람 슈미트** 를 이용하여 구한 이 열공간에 대한 직정 기저(orthonormal basis)가 $\lbrace u_1=\frac{v_1}{\lVert v_1\rVert}, u_2=\frac{v_2}{\lVert v_2\rVert}, u_3=\frac{v_3}{\lVert v_3\rVert} \rbrace$ 이라고 합시다. 그람 슈미트를 이용하여 다음과 같이 직교/직정 기저를 구했을 것입니다.
 
 $$\begin{aligned} v_1&=x_1\\v_2&=x_2-(x_2\cdot u_1)u_1\\v_3&=x_3-(x_3\cdot u_1)u_1-(x_3\cdot u_2)u_2 \end{aligned}$$
 
@@ -55,6 +57,7 @@ x_1\cdot u_1&=\lVert v_1\rVert u_1\cdot u_1=\lVert v_1\rVert \\
 \end{aligned}$$
 
 한편, $R$은 Orthogonal Matrix $Q$가 $Q^{\intercal}Q=I$인 것을 이용하여 다음과 같이 쉽게 구할 수 있습니다.
+
 $$\begin{aligned} A&=QR\\Q^{\intercal}A&=Q^{\intercal}QR=R\\
 \therefore R&=Q^{\intercal}A \end{aligned}$$
 
@@ -65,7 +68,7 @@ $$\begin{aligned} A&=QR\\Q^{\intercal}A&=Q^{\intercal}QR=R\\
 <br>
 
 $Reference.$  
-$\small Linear\space Algebra\space and\space its\space Applications\space 5th\space edition\space (David C.Lay, Stephen R.Lay, Judi J.McDonald)$
-
+- $\small Linear\space Algebra\space and\space its\space Applications\space 5th\space edition\space (David C.Lay, Stephen R.Lay, Judi J.McDonald)$
+- 고려대학교 김홍중 교수님의 수업
 
 <br>
