@@ -69,6 +69,8 @@ $$det(A)=\beta=(-1)^n\cdot\lambda_1\lambda_2\cdots\lambda_n$$
 여기까지 전반적인 고유값, 고유벡터, 특성방정식의 기초 개념에 대해서 알아보았습니다. 다음에는 [대각화(Diagonalization)](https://soohee410.github.io/linear_algebra_2) 에 대해 포스팅하려고 합니다. 감사합니다 :)
 <br><br>
 
-참고:  $\small Linear\space Algebra\space and\space its\space Applications\space 5th\space edition\space (David C.Lay, Stephen R.Lay, Judi J.McDonald)$
+$Reference.$  
+$\small Linear\space Algebra\space and\space its\space Applications\space 5th\space edition\space (David C.Lay, Stephen R.Lay, Judi J.McDonald)$
+
 
 <br>
