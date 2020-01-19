@@ -9,7 +9,7 @@ use_math: true
 <br>
 
 ### 1. 그람슈미트 과정(Gram-Schmidt Process)
-[이전 포스트](https://soohee410.github.io/linear_algebra_4)에서 **Orthogonal Projection** 을 잘 이해하셨다면, **그람슈미트 과정(Gram-Schmidt Process)** 은 매우 쉽게 느껴지실거에요! 일단 그람슈미트의 요체는 다음과 같습니다. 어떤 실수 부분공간의 기저(basis)를 input으로 했더니, ``orthogonal 또는 orthonormal basis``가 output이 되었습니다.
+[이전 포스트](https://soohee410.github.io/linear_algebra_4)에서 **Orthogonal Projection** 을 잘 이해하셨다면, **그람슈미트 과정(Gram-Schmidt Process)** 은 매우 쉽게 느껴지실거에요! 일단 그람슈미트의 요체는 다음과 같습니다. 어떤 실수 부분공간의 기저(basis)를 input으로 했더니, orthogonal 또는 orthonormal basis가 output이 되었습니다.
 
 <img src="/assets/proj5.png" width="410px">
 
@@ -22,6 +22,7 @@ $\mathbb{R^3}$의 어떤 부분공간의 기저가 $\lbrace a,b,c\rbrace $라고
 
 
 여기까지가 그람슈미트의 목적과 과정이었습니다. 이제 이것을 $\mathbb{R^n}$의 p차원 부분공간 $W$에 대하여 일반화하면 다음과 같습니다.
+
 <img src="/assets/proj7.png" width="500px">
 
 <br>
