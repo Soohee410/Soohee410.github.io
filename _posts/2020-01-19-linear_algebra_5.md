@@ -10,7 +10,8 @@ use_math: true
 
 ### 1. 그람슈미트 과정(Gram-Schmidt Process)
 [이전 포스트](https://soohee410.github.io/linear_algebra_4)에서 **Orthogonal Projection** 을 잘 이해하셨다면, **그람슈미트 과정(Gram-Schmidt Process)** 은 매우 쉽게 느껴지실거에요! 일단 그람슈미트의 요체는 다음과 같습니다. 어떤 실수 부분공간의 기저(basis)를 input으로 했더니, ``orthogonal 또는 orthonormal basis``가 output이 되었습니다.
-<img src="/assets/proj5.png" width="450px">
+
+<img src="/assets/proj5.png" width="410px">
 
 한마디로 ``어떤 부분공간을 생성하는 선형독립인 벡터들을 직교하는 벡터들로 만들어주는 과정``인 것이죠. 이걸 왜 할까요? 저번 글에서 말씀드렸지만, 직교성을 갖는 기저는 많은 연산 과정에서 편리하다는 장점이 생기기 때문입니다. 특히, 직교 기저에 의해 생성되는 공간의 벡터들은 특정한 가중치들을 가진 선형결합으로 쉽게 표현 가능합니다. 이제 과정에 대해서 알아봅시다. 아래 그림을 볼까요?
 

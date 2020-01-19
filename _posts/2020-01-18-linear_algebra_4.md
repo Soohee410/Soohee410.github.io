@@ -41,7 +41,8 @@ $$y=proj_{span\{ u_1\}}y+proj_{span\{ u_2\}} y$$
 
 ### 3. Orthogonal Decomposition Theorem
 다시 돌아와서, 1번에서 했던 쪼개기 과정을 다시 주목해봅시다! 이 과정을 일반화하는 정리가 있는데요. 바로 **Orthogonal Decomposition Theorem** 이라 일컫습니다.
-<img src="/assets/proj4_icbh1pqoe.png" width="700px">
+
+<img src="/assets/proj4추가.png" width="700px">
 
 위 정리에 의하면, $\mathbb{R^n}$에 존재하는 벡터 $y$는 이를 **부분공간 $W$에 정사영시킨 벡터** 와 **$W$에 수직인 벡터** 의 합으로 ``유일하게`` 분해됩니다! 근데 여기서 주목할 것은 어떻게 저 분해가 유일하냐는 건데요. 이를 한번 간단하게 증명해보겠습니다. Orthogonal decomposition이 유일하지 않다고 가정했을 때, 이 가정에 오류가 생기는 것을 보이는 논리입니다.
 <img src="/assets/proj3.png" width="360px">
