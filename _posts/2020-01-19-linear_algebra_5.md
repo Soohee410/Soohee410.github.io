@@ -19,7 +19,7 @@ use_math: true
 
 
 
-$\mathbb{R^3}$의 어떤 부분공간의 기저가 $\lbrace a,b,c\rbrace $라고 합시다. 직교 기저(Orthogonal basis)가 될 새로운 기저를 $B$라고 할 때, ``첫번째 단계``에는 아무 벡터나 넣습니다. 아래 그림에서와 같이 벡터 $a$를 넣었다고 합시다. ``두번째 단계``에서 벡터 $b$를 포함하고 싶은데 $b$는 $a$와 선형 독립(linearly independent)일 뿐이지 직교하지는 않습니다. 그러면 $a$와 직교인 벡터를 어떻게 구하면 될까요? 이전에 배웠던 **Orthogonal Decomposition Theorem** 을 이용해서 $b$를 $Span\lbrace a\rbrace$에 정사영시킨 벡터와  $Span\lbrace a\rbrace$와 직교인 벡터성분으로 분해하면, $a$와 직교하는 벡터를 구할 수 있게 됩니다! 따라서, **$a$와 직교하는 벡터 $z=b-\hat b$** 가 직교 기저 $B$의 두번째 멤버가 됩니다.   
+$\mathbb{R^3}$의 어떤 부분공간의 기저가 $\lbrace a,b,c\rbrace $라고 합시다. 직교 기저(Orthogonal basis)가 될 새로운 기저를 $B$라고 할 때, ``첫번째 단계``에는 아무 벡터나 넣습니다. 위 그림에서와 같이 벡터 $a$를 넣었다고 합시다. ``두번째 단계``에서 벡터 $b$를 포함하고 싶은데 $b$는 $a$와 선형 독립(linearly independent)일 뿐이지 직교하지는 않습니다. 그러면 $a$와 직교인 벡터를 어떻게 구하면 될까요? 이전에 배웠던 **Orthogonal Decomposition Theorem** 을 이용해서 $b$를 $Span\lbrace a\rbrace$에 정사영시킨 벡터와  $Span\lbrace a\rbrace$와 직교인 벡터성분으로 분해하면, $a$와 직교하는 벡터를 구할 수 있게 됩니다! 따라서, **$a$와 직교하는 벡터 $z=b-\hat b$** 가 직교 기저 $B$의 두번째 멤버가 됩니다.   
 ``세번째 단계``도 똑같이 진행합니다. $B$의 세번째 멤버는 $B$의 이미 확정된 멤버들인 벡터 $a, z$가 구성하는 평면과 직교하는 벡터라는 자격조건이 필요할 것입니다. 마찬가지로, **Orthogonal Decomposition Theorem** 을 이용하여 벡터 $c$를 $a,z$가 구성하는 평면에 정사영시킨 벡터와, 이 평면에 직교하는 벡터로 분해합니다. 따라서, **$a, z$와 직교하는 벡터 $v=c-\hat c$** 가 직교 기저 $B$의 마지막 멤버가 됩니다.
 
 

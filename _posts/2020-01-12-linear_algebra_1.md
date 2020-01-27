@@ -15,7 +15,7 @@ use_math: true
 
 결국 식 $A\boldsymbol{x}=\lambda\boldsymbol{x}$을 만족하는 $\lambda$와  $\boldsymbol{x}$가 각각 고유값, 고유벡터라는 것이 내용의 전부입니다.  물론, $\boldsymbol{x}$가 nontrivial solution일 때만 해당합니다! 당연히 $\boldsymbol{x}$가 0이면 항상 위 식은 자명하게 성립하겠죠? 따라서 $\boldsymbol{x}$가 0인 경우를 제외하고도 위 식이 풀릴 때, 그 때의 $\lambda$, $\boldsymbol{x}$ 가 우리의 관심사입니다.
 
-그렇다면 $A\boldsymbol{x}=\lambda\boldsymbol{x}$ 이 식이 의미하는 게 무엇일까요? $A$는 행렬(nxn)이고$\lambda$는 스칼라(1x1)입니다. 이 식의 좌변$(A\boldsymbol{x})$은 어떠한 벡터(nx1) $\boldsymbol{x}$가 행렬 $A$에 의해 **선형변환(linear transformation)** 된 벡터를 의미하고, 우변$(\lambda \boldsymbol{x})$은 똑같은 벡터 $\boldsymbol{x}$에 어떠한 상수$\lambda$를 곱함으로써 이것의 크기(scale)가 변화된 벡터를 의미할 것입니다. 이 둘이 같다는 것은 결국,``어떠한 벡터를 선형변환 했는데 이것의 방향은 유지된 채 크기만 변했다``는 것을 의미할 수 있겠네요!
+그렇다면 $A\boldsymbol{x}=\lambda\boldsymbol{x}$ 이 식이 의미하는 게 무엇일까요? $A$는 행렬(nxn)이고$\lambda$는 스칼라(1x1)입니다. 이 식의 좌변$(A\boldsymbol{x})$은 어떠한 벡터(nx1) $\boldsymbol{x}$가 행렬 $A$에 의해 **선형변환(linear transformation)** 된 벡터를 의미하고, 우변$(\lambda \boldsymbol{x})$은 똑같은 벡터 $\boldsymbol{x}$에 어떠한 상수$\lambda$를 곱함으로써 이것의 크기(scale)가 변화된 벡터를 의미할 것입니다. 이 둘이 같다는 것은 결국,``어떠한 벡터를 선형변환시켜도 이것의 크기만 변하고 방향은 유지된다``는 것을 의미합니다!
 
 자, 그럼 실제로 nxn행렬인 $A$에 대하여, $A\boldsymbol{x}=\lambda\boldsymbol{x}$을 푼다고 해봅시다. 우변을 넘기면 다음과 같이 되겠죠.
 
