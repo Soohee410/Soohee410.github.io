@@ -61,7 +61,7 @@ $$\begin{aligned}  &  b-\hat b \perp  Col(A)  \\
 &\implies a_j\cdot (b-A\hat x)=0 \space for\space all\space j=1, \cdots, n\\
 &\implies a_j^{\intercal}(b-A\hat x)=0 \space for\space all\space j=1, \cdots, n \\
 &\implies A^{\intercal}(b-A\hat x)=0 \\
-&\quad\quad \therefore A^{\intercal}A\hat x=A^{\intercal}b  \end{aligned}$$
+&\quad \therefore A^{\intercal}A\hat x=A^{\intercal}b  \end{aligned}$$
 
 즉, 위 식 $A^TAx=A^Tb$을 $Ax=b$의 **정규방정식(Normal Equation)** 이라고 부릅니다.
 >**Thm.** $Ax=b$의 최소제곱해들의 집합은 **정규방정식(Normal Equation)** $A^{\intercal}Ax=A^{\intercal}b$의 해들의 집합$(\not = ∅)$이다.
@@ -83,7 +83,7 @@ $$\hat x=(A^{\intercal}A)^{-1}A^{\intercal}b$$
 한편, A의 열들이 선형독립이라는 것을 이용해서 또 다른 방법을 도입하려고 합니다. 바로 [QR분해](https://soohee410.github.io/linear_algebra_5)입니다! QR분해를 곁들인(?) 최소제곱해에 관한 정리는 다음과 같습니다.
 
 > **Thm.** mxn 행렬 A의 열들이 선형 독립이고, A=QR로 분해가 가능하다고 하자. 그러면, 각 $b\in \mathbb{R^m}$에 대하여, 방정식 $Ax=b$는 다음의 유일한 최소제곱해를 가진다.   
-$$\qquad\qquad\qquad\qquad\qquad\qquad \hat x = R^{-1}Q^{\intercal}b$$
+$$\qquad\qquad\qquad\qquad\qquad\qquad\qquad \hat x = R^{-1}Q^{\intercal}b$$
 
 간단하게 증명해볼까요? 유일 최소제곱해 $\hat x$는 다음과 같이 전개됩니다.
 
@@ -101,6 +101,7 @@ $$\begin{aligned} \hat x&=(A^{\intercal}A)^{-1}A^{\intercal}b \\
 
 <br>
 
+---
 $Reference.$  
 - $\small Linear\space Algebra\space and\space its\space Applications\space 5th\space edition\space (David C.Lay, Stephen R.Lay, Judi J.McDonald)$
 - 고려대학교 김홍중 교수님의 수업
