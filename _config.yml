@@ -8,7 +8,7 @@
 #
 source:         _app
 destination:    _site
-timezone:       Asia/Seoul
+timezone:       America/Los_Angeles
 permalink:      /:title.html
 markdown:       kramdown
 highlighter:    rouge
@@ -65,8 +65,8 @@ dev:            false
 
 # Site name
 #
-# Default:
-name:           Soo.P's Data Story
+# Default:      Almace Scaffolding
+name:           Almace Scaffolding
 
 # Site short name
 #
@@ -82,14 +82,14 @@ name:           Soo.P's Data Story
 # - name_short: Sparanoid
 #
 # Default:      AMSF
-name_short:     Soo.P
+name_short:     AMSF
 
 # Site description
 #
 # Will be used in the document meta and Atom feed subtitle
 #
 # Default:      Super-fast Jekyll framework
-description:    Soo.P's Data Story
+description:    Super-fast Jekyll framework
 
 # Base URL
 #
@@ -99,7 +99,7 @@ description:    Soo.P's Data Story
 # `/my-project`, without trailing slash.
 #
 # Default:      ""
-baseurl:        ""
+baseurl:        /
 
 # Flatten base
 #
@@ -152,13 +152,13 @@ file:           https://d349cztnlupsuf.cloudfront.net
 # download files. That's it. Remove or ignore this if you don't need it.
 #
 # Default:      https://d1bmx7s6749k4k.cloudfront.net
-#download:       https://d1bmx7s6749k4k.cloudfront.net
+download:       https://d1bmx7s6749k4k.cloudfront.net
 
 # Colors
 #
 # Used by Safari mask-icon, Chrome Web App theme color
 colors:
-  theme:        "#767DC9"
+  theme:        "#ff00b4"
   background:   "#fff"
 
 # Service Worker Precache
@@ -170,13 +170,13 @@ service_worker:
     - "**/js/**.js"
 
 # Google Analytics tracking code
-#google_analytics:
-#  enabled:      false
-#  id:           UA-xxxxxxx
-#  url:          https://www.google-analytics.com/analytics.js
+google_analytics:
+  enabled:      false
+  id:           UA-xxxxxxx
+  url:          https://www.google-analytics.com/analytics.js
 
 # Site Twitter account handle
-#twitter:        sparanoid
+twitter:        sparanoid
 
 # Twitter Cards large images
 #
