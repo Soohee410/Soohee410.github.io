@@ -99,7 +99,7 @@ description:    Soo.P's Data Story
 # `/my-project`, without trailing slash.
 #
 # Default:      ""
-baseurl:        /
+baseurl:        ""
 
 # Flatten base
 #
@@ -129,7 +129,7 @@ feed:           /feed.xml
 # URLs for these fields
 #
 # Default:      https://sparanoid.com
-url:            https://soohee410.github.io/
+url:            https://soohee410.github.io
 
 # Media assets URL
 #
@@ -152,7 +152,7 @@ file:           https://d349cztnlupsuf.cloudfront.net
 # download files. That's it. Remove or ignore this if you don't need it.
 #
 # Default:      https://d1bmx7s6749k4k.cloudfront.net
-download:       https://d1bmx7s6749k4k.cloudfront.net
+#download:       https://d1bmx7s6749k4k.cloudfront.net
 
 # Colors
 #
