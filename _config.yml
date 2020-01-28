@@ -89,7 +89,7 @@ name_short:     Soo.P
 # Will be used in the document meta and Atom feed subtitle
 #
 # Default:      Super-fast Jekyll framework
-description:    Soo.P의 공부 기록
+description:    Soo.P's Data Story
 
 # Base URL
 #
@@ -99,7 +99,7 @@ description:    Soo.P의 공부 기록
 # `/my-project`, without trailing slash.
 #
 # Default:      ""
-baseurl:        ""
+baseurl:        /
 
 # Flatten base
 #
@@ -129,7 +129,7 @@ feed:           /feed.xml
 # URLs for these fields
 #
 # Default:      https://sparanoid.com
-url:            "https://soohee410.github.io"
+url:            https://soohee410.github.io
 
 # Media assets URL
 #
