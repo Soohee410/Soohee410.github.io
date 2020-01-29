@@ -1,0 +1,45 @@
+# Site settings
+locale: "ko-KR"
+title: "Soo.P's Data Story"
+description: "Soo.P's Data Story"
+url: "https://soohee410.github.io"
+author:
+  name: "Soohee Park"
+  email: "ggohee0410@gmail.com"
+  url: ""
+
+encoding: "utf-8"
+
+# Build settings
+baseurl: /
+markdown: kramdown
+highlighter: rouge
+lsi: false
+excerpt_separator: "\n\n"
+incremental: false
+source: .
+destination: ./_site
+permalink: /:title
+paginate: 8
+paginate_path: /page:num/
+
+# Default values
+defaults:
+  -
+    scope:
+      path: ""
+      type: "posts"
+    values:
+      layout: "post"
+
+# Plugins
+gems:
+  - jekyll-paginate
+
+# Custom variables
+version: "1.1.0"
+
+# Options
+custom_header: true
+custom_nav_footer: false
+reverse: false
