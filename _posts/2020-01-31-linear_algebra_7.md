@@ -8,7 +8,7 @@ use_math: true
 
 <br>
 
-### 1.  Inner Product와 Inner Product Space
+## 1.  Inner Product와 Inner Product Space
 
 지금까지는 내적을 다음과 같이 **실수공간** 에서 두 벡터 간의 내적으로 정의해왔습니다.
 
@@ -20,7 +20,7 @@ $$u, v \in V\quad \mapsto\quad <u, v> \in \mathbb R$$
 
 물론 계산했더니 스칼라 값이 나왔다고 모두 내적인 것은 아니고 추가 조건들이 필요합니다. 이와 관련하여 내적의 정의는 다음과 같습니다.
 
-<img src="/assets/inner.png" width="690px">
+<img src="/assets/inner1.png" width="690px">
 
 예를 들어, 2차식의 집합 $\mathbb P_2$ 벡터공간에 대하여, 내적을 다음과 같이 정의할 수 있습니다.
 
@@ -35,7 +35,7 @@ $$<u,v>=\int_0^1 (x)(x^2) dx = \int_0^1 x^3 dx = \frac{1}{4}  $$
 
 <br>
 
-### 2. 내적 계산 가능의 의미
+## 2. 내적 계산 가능의 의미
 내적을 계산할 수 있다는 것은 어떤 의미를 가지게 될까요? 이전 포스트에서 내적을 이용해서 무엇을 했는지를 생각해봅시다. 내적을 이용해서 각 벡터의 길이(length)를 구했고, [직교(Orthogonality)](https://soohee410.github.io/linear_algebra_3)를 정의했으며, [정사영(Orthogonal Projection)](https://soohee410.github.io/linear_algebra_4)도 구했고, [그람슈미트 과정(Gram-Schmidt Process)](https://soohee410.github.io/linear_algebra_5)도 적용했습니다. 즉, 이와 같은 것들을 이제 실수 공간이 아니더라도 다양한 내적 공간에서 모두 할 수 있게 됩니다!  
 교재에 의하면, 응용 수학(Applied Mathematics) 분야에서 흔한 문제 중 하나는 함수를 원소로 하는 벡터 공간 $V$에 관한 것이라고 합니다.  예를 들어, $V$의 특정 부분공간 $W$에서 특정 함수 $f \in V$에 가장 근사하는 함수 $g\in W$를 찾는 경우를 생각해봅시다. 앞서 [Least Squares Solution](https://soohee410.github.io/linear_algebra_6)에서 포스팅한 것과 같이,  가장 근사하다는 것의 수리적인 의미는 $\lVert f-g \rVert$를 최소화하는 것이고, 이를 최소화하는 함수 $g\in W$는 $W$에 $f$를 정사영시킨 것입니다. 이 문제는 예시를 보면서 이해해 봅시다.
 
