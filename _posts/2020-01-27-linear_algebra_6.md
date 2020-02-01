@@ -8,7 +8,7 @@ use_math: true
 
 <br>
 
-### 1.  The Best Approximation Theorem
+## 1.  The Best Approximation Theorem
 
 본격적으로 최소제곱해(Least Squares Solution)에 대해 배우기 전에 알아야 할 [정사영(Orthogonal Projection)](https://soohee410.github.io/linear_algebra_4)의 중요한 성질이 있습니다! 바로 **The Best Approximation Theorem** 이라는 것인데, 이는 다음과 같습니다.
 
@@ -18,7 +18,7 @@ use_math: true
 
 <br>
 
-### 2. Least-Squares Solution
+## 2. Least-Squares Solution
 
 이제 다음과 같은 식이 있다고 해봅시다.
 
@@ -47,7 +47,8 @@ $$A\hat x =\hat b$$
 
 <br>
 
-### 3. 정규방정식(Normal Equation)
+## 3. 정규방정식(Normal Equation)
+
 자, 위에서 정사영을 이용해서 최소제곱해를 구할 수 있다는 것을 알게 되었습니다. 그런데 행렬에 따라서 매번 정사영을 구하고 그 뒤에 최소제곱해를 구하는 과정이 비효율적일 수 있습니다. 실제로 최소제곱해를 구하는 방법은 여러가지가 있는데요. 먼저 대표적인 방법인 **정규방정식(Normal Equation)** 에 대해 설명하고자 합니다. 물론 모두 정사영의 연장선 상에서의 풀이 방법입니다.  
 먼저 $Ax=b$에서 벡터 $b$는 **Orthogonal Decomposition Theorem** 에 의해 다음과 같이 쪼개질 수 있습니다. (Orthogonal Decomposition Theorem에 대해서는 [여기]( https://soohee410.github.io/linear_algebra_4)를 참고해주세요!)
 
@@ -70,7 +71,7 @@ $$\begin{aligned}  &  b-\hat b \perp  Col(A)  \\
 
 <br>
 
-### 4. 행렬 A가 invertible하다면?
+## 4. 행렬 A가 invertible하다면?
 
 지금까지는 행렬 $A$에 어떠한 조건도 없었습니다. 이제 특정한 조건을 하나 추가해볼 건데요. 어떤 mxn행렬 $A$의 ``열들이 서로 선형독립(linearly independent)``이라고 합시다.  그러면, 행렬 $A$는 ``역행렬이 존재(invertible)``할 것입니다. 이제 $\hat x$이 $Ax=b$의 최소제곱해라고 합시다. 그러면 3번에서 위 정리에 의해 $\hat x$은 정규방정식을 만족할 것입니다.
 
