@@ -20,7 +20,7 @@ $$u, v \in V\quad \mapsto\quad <u, v> \in \mathbb R$$
 
 물론 계산했더니 스칼라 값이 나왔다고 모두 내적인 것은 아니고 추가 조건들이 필요합니다. 이와 관련하여 내적의 정의는 다음과 같습니다.
 
-<img src="/assets/inner1.png" width="700px">
+<img src="/assets/inner.png" width="690px">
 
 예를 들어, 2차식의 집합 $\mathbb P_2$ 벡터공간에 대하여, 내적을 다음과 같이 정의할 수 있습니다.
 
@@ -50,8 +50,7 @@ $$\int_{-1}^1 \vert x^3-a-bx-cx^2\vert ^2 \space dx$$
 자, 어떻게 풀어야 할 지 감이 오시나요? 식 $a+bx+cx^2$를 $g(x)\in \mathbb P_2$라 하고, $x^3$을 $f(x)\in \mathbb P_3$이라고 하겠습니다. 즉, 문제는 **$<f-g, f-g> = \lVert f-g \rVert ^2$ 을 최소화하는 $g(x)\in \mathbb P_2$를 구하는 것** 입니다!
 따라서 이 때의 $g=Proj_{\scriptsize\mathbb P_2} x^3$ 가 됩니다. 이 문제를 해결하는 간단한 절차는 다음과 같습니다.
 
-1. $\mathbb P_3$의 부분공간 $\mathbb P_2$의 기저를 $\lbrace 1,x,x^2 \rbrace$ 로 잡는다.  
-그람 슈미트를 이용해서 이 기저로부터 직교 기저를 도출한다.
+1. $\mathbb P_3$의 부분공간 $\mathbb P_2$의 기저를 $\lbrace 1,x,x^2 \rbrace$ 로 잡는다. 그람 슈미트를 이용해서 이 기저로부터 직교 기저를 도출한다.
 2. $\mathbb P_2$의 직교 기저를 이용해서  $Proj_{\scriptsize\mathbb P_2} x^3$ 을 구한다.
 
 물론 그람슈미트와 정사영 구하는 과정 모두 해당 내적공간의 내적 $<f,g>$을 이용해서 구하면 됩니다!
