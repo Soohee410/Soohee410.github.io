@@ -102,7 +102,7 @@ $$\begin{aligned} \hat x&=(A^{\intercal}A)^{-1}A^{\intercal}b \\
 
 <br>
 
-여기까지 **Least Squares Solution** 과 **Normal Equation** 에 대한 기록이었습니다! 이번 포스트에서 다룬 내용은 특히나 통계학을 공부하시는 분들에게는 매우 친숙한 내용일거라 생각합니다. 저 역시 회귀분석(Linear Regression)과 같은 과목에서, 방정식을 $X\boldsymbol\beta=\boldsymbol y$로 두고 정규방정식을 이용해서 회귀계수 $\hat{\boldsymbol\beta} =(X^{\intercal}X)^{-1}X^{\intercal}\boldsymbol y$을 구하는 것을 배웠었는데요. 선형대수 과목에서 이 챕터를 배우면서 좀 더 어떤 근거로 이렇게 구할 수 있는지에 대해서 알게 었던 것 같습니다! 다음 포스트에서는 Inner Product Space에 대해서 정리하고자 합니다. 감사합니다 :)
+여기까지 **Least Squares Solution** 과 **Normal Equation** 에 대한 기록이었습니다! 이번 포스트에서 다룬 내용은 특히나 통계학을 공부하시는 분들에게는 매우 친숙한 내용일거라 생각합니다. 저 역시 회귀분석(Linear Regression)과 같은 과목에서, 방정식을 $X\boldsymbol\beta=\boldsymbol y$로 두고 정규방정식을 이용해서 회귀계수 $\hat{\boldsymbol\beta} =(X^{\intercal}X)^{-1}X^{\intercal}\boldsymbol y$을 구하는 것을 배웠었는데요. 선형대수 과목에서 이 챕터를 배우면서 좀 더 어떤 근거로 이렇게 구할 수 있는지에 대해서 알게 었던 것 같습니다! 다음 포스트에서는 [Inner Product Space](https://soohee410.github.io/linear_algebra_7)에 대해서 정리하고자 합니다. 감사합니다 :)
 
 <br>
 
