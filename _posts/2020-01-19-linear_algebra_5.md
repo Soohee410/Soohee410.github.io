@@ -8,7 +8,9 @@ use_math: true
 
 <br>
 
-### 1. 그람슈미트 과정(Gram-Schmidt Process)
+## 1. 그람슈미트 과정(Gram-Schmidt Process)
+
+<br>
 [이전 포스트](https://soohee410.github.io/linear_algebra_4)에서 **Orthogonal Projection** 을 잘 이해하셨다면, **그람슈미트 과정(Gram-Schmidt Process)** 은 매우 쉽게 느껴지실거에요! 일단 그람슈미트의 요체는 다음과 같습니다. 어떤 실수 부분공간의 기저(basis)를 input으로 했더니, orthogonal 또는 orthonormal basis가 output이 되었습니다.
 
 <img src="/assets/proj5.png" width="410px">
@@ -29,7 +31,9 @@ $\mathbb{R^3}$의 어떤 부분공간의 기저가 $\lbrace a,b,c\rbrace $라고
 
 <br>
 
-### 2. QR 분해 (QR Decomposition)
+## 2. QR 분해 (QR Decomposition)
+
+<br>
 다음은 QR 분해(QR Decomposition)입니다. 여러가지 방법으로 QR 분해를 할 수 있는데, 그 중 하나가 **그람슈미트 과정** 입니다. 일단 QR분해 정리는 다음과 같습니다.
 
 <img src="/assets/proj8.png" width="580px">

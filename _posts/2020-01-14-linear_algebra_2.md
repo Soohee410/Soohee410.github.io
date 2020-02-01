@@ -8,7 +8,9 @@ use_math: true
 
 <br>
 
-### 1. 대각화(Diagonalization)의 정의
+## 1. 대각화(Diagonalization)의 정의
+
+<br>
 먼저 대각화의 정의부터 알아볼까요?
 >**Def.** 어떤 정방행렬 $A$가 $A=PDP^{-1}, ( P:invertible,D:diagonal)$ 로 나타낼 수 있다면, A는 대각화가 가능하다(diagonalizable).
 
@@ -22,7 +24,9 @@ $$A^2=(PDP^{-1} )(PDP^{-1} )=PD(P^{-1} P)DP^{-1}=PD^2 P$$
 
 <br>
 
-### 2. 언제 대각화가 가능할까?
+## 2. 언제 대각화가 가능할까?
+
+<br>
 주어진 정방행렬이 대각화가 가능한지 아닌지 어떻게 알고, 가능하다면 어떻게 대각화할 수 있을까요? 이와 관련하여 중요한 정리는 다음과 같습니다.
 > __Diagonalization Theorem__: nxn 행렬 A가 대각화가 가능하기 위한 필요충분조건은 A가 n개의 선형독립인 고유벡터를 가지고 있는 것이다. 다른 말로, $A=PDP^{-1}$이기 위한 필요충분조건은, $invertible\space matrix\space P$의 열들이 서로 선형독립인 A의 고유벡터이고, 대각행렬 $D$의 대각요소들은 $P$의 열들에 해당하는 A의 고유값들인 것이다.
 

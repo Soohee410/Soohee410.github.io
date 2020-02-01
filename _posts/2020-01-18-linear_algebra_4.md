@@ -8,8 +8,9 @@ use_math: true
 
 <br>
 
-### 1. 정사영(Orthogonal Projection)의 정의
+## 1. 정사영(Orthogonal Projection)의 정의
 
+<br>
 다음 그림처럼 2차원 평면에 어떠한 벡터 $y$가 있다고 합시다. 이 $y$를 2개의 서로 다른 벡터의 합으로 쪼개려고 하는데요. 하나는 벡터 $u$ 위에 있는 벡터로, 즉 $αu$로 하고, 또 다른 벡터는 $u$와 직교인 벡터로 하고자 합니다. 이제 전자는 $\hat y$으로, 후자는 $z$로 표기할게요. 이때, $z$는 $u$와 직교하기 때문에 $z\cdot u=0$이 됩니다. 이걸 이용해서 정리하면 $αu$에서의 $α$가 무엇이어야 하는지 다음과 같이 도출됩니다!
 
 <img src="/assets/proj1.png" width="530px">
@@ -23,7 +24,9 @@ $$ \hat y=\frac {y\cdot u}{u\cdot u} u=proj_{\scriptsize W} y,\quad   W=span\{ u
 
 <br>
 
-### 2. 기하학적 의미
+## 2. 기하학적 의미
+
+<br>
 그런데 위 식에서 $u$의 가중치 $\frac {y\cdot u}{u\cdot u} $ 어디서 많이 보지 않았나요?
 [저번 글](https://soohee410.github.io/linear_algebra_3)에서 ``y는 특정한 가중치들을 가진 직교 기저들의 선형결합으로 표현가능하다`` 는 정리를 배웠었는데요. 예를 들어서, {$u_1,u_2 $}가 $\mathbb{R}^2$의 직교기저라고 해봅시다. 그러면 정리에 의해, $\mathbb{R}^2$의 모든 벡터 $y$는 다음과 같이 표현 가능하다는 정리였습니다.
 
@@ -39,7 +42,9 @@ $$y=proj_{span\{ u_1\}}y+proj_{span\{ u_2\}} y$$
 
 <br>
 
-### 3. Orthogonal Decomposition Theorem
+## 3. Orthogonal Decomposition Theorem
+
+<br>
 다시 돌아와서, 1번에서 했던 쪼개기 과정을 다시 주목해봅시다! 이 과정을 일반화하는 정리가 있는데요. 바로 **Orthogonal Decomposition Theorem** 이라 일컫습니다.
 
 <img src="/assets/proj4추가.png" width="700px">
@@ -49,7 +54,9 @@ $$y=proj_{span\{ u_1\}}y+proj_{span\{ u_2\}} y$$
 
 <br>
 
-### 4. Projection Matrix
+## 4. Projection Matrix
+
+<br>
 이번에는 {$u_1,u_2,\cdots, u_p$}이 **직정기저(Orthonormal basis)** 라고 해볼까요? 그러면 3번에서 했던 **Orthogonal Decomposition Theorem** 에서 벡터 $y$의 $W$로의 정사영은 다음과 같이 표현될 것입니다.
 
 $$proj_{\scriptsize W} y =(u_1\cdot y)u_1+(u_2\cdot y)u_2+\cdots+(u_p\cdot y)u_p$$

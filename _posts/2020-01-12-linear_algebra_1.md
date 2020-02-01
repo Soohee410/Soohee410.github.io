@@ -8,7 +8,9 @@ use_math: true
 
 <br>
 
-### 1. 고유값(Eigenvalue)과 고유벡터(Eigenvector)
+## 1. 고유값(Eigenvalue)과 고유벡터(Eigenvector)
+
+<br>
 먼저 고유값과 고유벡터입니다. 정의부터 알아볼까요?
 >  - 정방행렬 $A$의 고유벡터(Eigenvector)란, 어떠한 $  scalar\space \lambda$에 대하여 식 $A\boldsymbol{x}=\lambda\boldsymbol{x}$을 만족하는 0이 아닌 벡터 ${\boldsymbol x}$을 의미한다.
 > - 정방행렬 $A$에 대하여 식 $A\boldsymbol{x}=\lambda\boldsymbol{x}$이 $ nontrivial\space solution$ 을 가질 때, 이 때의 $ scalar\space \lambda$를 고유값(Eigenvalue)이라 하고, $\boldsymbol{x}$를 $\lambda$에 해당하는 고유벡터라 한다.
@@ -43,7 +45,9 @@ $$A\boldsymbol{x}=\lambda\boldsymbol{x}\Longrightarrow (A-\lambda I)\boldsymbol{
 이 예제에서는 A의 형태가 되게 단순해서 특별한 계산과정 없이도 고유값과 고유벡터를 충분히 떠올릴 수 있었습니다. 하지만, 대부분의 경우에서 이렇게 바로 떠올리기는 쉽지 않은데요. 이 경우에는 어떻게 고유값과 고유벡터를 구할 수 있는지 알아봅시다!
 <br><br>
 
-### 2. 특성방정식(Character Equation)
+## 2. 특성방정식(Character Equation)
+
+<br>
 특성방정식(Character Equation)이란, 단도직입적으로 $det(A-\lambda I)=0$ 을 의미합니다. 이 방정식이 왜 중요할까요? 다음의 중요한 사실(**Fact**)을 봅시다.
 > 어떤 $scalar\space\lambda$가 nxn 행렬 A의 고유값이기 위한 필요충분조건은 $\lambda$가 $det(A-\lambda I)=0$을 만족하는 것이다.
 

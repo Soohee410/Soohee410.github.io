@@ -8,7 +8,9 @@ use_math: true
 
 <br>
 
-### 1. 직교(orthogonal)의 정의
+## 1. 직교(orthogonal)의 정의
+
+<br>
 먼저 직교의 정의는 다음과 같습니다.
 > **Def.** 두 벡터 u, v $(u,v \in \mathbb{R}^n)$에 대하여, $u\cdot v=0$이면 두 벡터는 직교(orthogonal)한다.
 
@@ -20,7 +22,9 @@ $$inner\space product: u\cdot v=u^Tv, (u,v\in \mathbb{R^n})$$
 
 <br>
 
-### 2. 직교여공간(Orthogonal Complement)
+## 2. 직교여공간(Orthogonal Complement)
+
+<br>
 자, 직교의 정의는 분명 두 벡터 간의 관계에 대한 정의였습니다. 그렇다면 한 벡터와 부분공간(subspace)이 직교한다는 건 무슨 뜻일까요?`` 어떤 벡터 v가 어떤 부분공간 W의 모든 벡터와 직교한다면 v는 W와 직교한다고 말합니다.`` 이 때, $W$와 직교인 모든 벡터들을 모아 놓은 집합을 바로 **W의 직교여공간(orthogonal complement)** 이라고 부르고, $W^⊥$와 같이 표기합니다.
 
 $$W^⊥=\{\boldsymbol z | \boldsymbol z⊥W\}$$
@@ -49,7 +53,9 @@ $$ \boldsymbol x\in Nul(A)\iff A\boldsymbol x=0\iff \boldsymbol x ⊥Row(A) \iff
 
 <br>
 
-### 3. 직교 기저(Orthogonal Basis)
+## 3. 직교 기저(Orthogonal Basis)
+
+<br>
 이제 직교 기저의 개념에 대해서 알아보고자 합니다. 직교 기저는 앞으로 계속 나오게 될 orthogonal projection을 이해하는데 필요한 필수 개념입니다!
 > **Def.** $\mathbb{R^n}$의 부분공간인 $W$의 직교 기저(orthogonal basis)는 $W$의 기저(basis)를 이루는 벡터들이 서로 직교하는 기저를 말한다.
 
