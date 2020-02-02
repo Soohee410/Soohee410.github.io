@@ -15,7 +15,7 @@ a {color: rgb(50,46,46);
   <div class="tags-expo-list">
     <center><h1 style="color: rgb(255,113,120); font-weight: bold">TAGS</h1></center> <br>
     {% for tag in site.tags %}
-    <a href="#{{ tag[0] | slugify }}" class="post-tag">{{ tag[0] }}</a>
+    <a href="#{{ tag[0] | slugify }}" style="font-weight: bolder" class="post-tag">{{ tag[0] }}</a>
     {% endfor %}
   </div>
 
@@ -28,7 +28,7 @@ a {color: rgb(50,46,46);
         <a class="post-title" href="{{ site.baseurl }}{{ post.url }}">
       <li>
         {{ post.title }}
-      <small class="post-date" style="color: rgb(200,200,200)">{{ post.date | date_to_string }}</small>
+      <small class="post-date" style="color: rgb(160,160,160)">{{ post.date | date_to_string }}</small>
       </li>
       </a>
       {% endfor %}
