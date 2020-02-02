@@ -21,7 +21,7 @@ $$u, v \in V\quad \mapsto\quad <u, v> \in \mathbb R$$
 
 물론 계산했더니 스칼라 값이 나왔다고 모두 내적인 것은 아니고 추가 조건들이 필요합니다. 이와 관련하여 내적의 정의는 다음과 같습니다.
 
-<img src="/assets/inner1.png" width="690px">
+<img src="/assets/inner.png" width="700px">
 
 예를 들어, 2차식의 집합 $\mathbb P_2$ 벡터공간에 대하여, 내적을 다음과 같이 정의할 수 있습니다.
 
@@ -32,7 +32,15 @@ $u(x)=x,\space v(x)=x^2$라고 한다면, 이들의 내적 값은 다음과 같�
 
 $$<u,v>=\int_0^1 (x)(x^2) dx = \int_0^1 x^3 dx = \frac{1}{4}  $$
 
-이렇게, 다항식의 집합 또한 내적 공간이 될 수 있습니다.
+이렇게, 다항식의 집합 또한 내적 공간이 될 수 있습니다. 또 다른 예를 볼까요? 다음과 같은 복소수 벡터 $u=\begin{pmatrix} 1 \\ i \end{pmatrix}$가 있다고 합시다. 이 벡터의 길이를 구하려고 하는데, 실수에서의 표준 내적을 이용하면 어떻게 되나요?
+
+$$u\cdot u=u^{\intercal}u = \begin{pmatrix}1&i \end{pmatrix}\begin{pmatrix} 1 \\ i \end{pmatrix} = 1+i^2=1+(-1)=0$$
+
+내적의 정의에 의하면 위의 결과값은 무조건 양수 값이어야 하지만 0이 나왔습니다. 즉, 복소수 공간에서는 실수 공간에서의 내적이 적절하지 않다는 것을 알 수 있습니다. 이 대신 복소수 공간에서의 사용되는 표준 내적은 다음과 같습니다.
+
+$$u\cdot u=\bar u^{\intercal}u = \begin{pmatrix}1& -i \end{pmatrix}\begin{pmatrix} 1 \\ i \end{pmatrix} = 1+(-i^2)=1+1=2$$
+
+복소수 공간에서의 내적은 **Hermitian inner product** 라고 부르기도 하고, 여기서 H자를 따서, $u^{\sf H}v=\bar u^{\intercal}v$로 표기합니다.
 
 <br>
 
