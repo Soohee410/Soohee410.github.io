@@ -36,7 +36,7 @@ $$\small\therefore  \lambda =\frac{x^{\sf H}Ax}{x^{\sf H}x}\in \mathbb{R} $$
 
 **셋째**, $\small A^{\sf H}=A$이면, 서로 다른 고유공간의 고유벡터들은 직교한다.
 
-$$\small(pf)\quad Let \space Av_1=\lambda_1 v_1,\space Av_2=\lambda_2v_2,\space \lambda_1\not =\lambda_2 $$
+$$\small(pf)\qquad\qquad Let \space Av_1=\lambda_1 v_1,\space Av_2=\lambda_2v_2,\space \lambda_1\not =\lambda_2 $$
 
 $$\small \begin{aligned}\lambda_1(v_1^{\sf H}v_2)&=(\lambda_1v_1)^{\sf H}v_2=(Av_1)^{\sf H}v_2\\ &=v_1^{\sf H}A^{\sf H}v_2=v_1^{\sf H}(A^{\sf H}v_2)\\ &=v_1^{\sf H}\lambda_2v_2=\lambda_2(v_1^{\sf H}v_2)\\
 \therefore v_1^{\sf H}v_2&=0
