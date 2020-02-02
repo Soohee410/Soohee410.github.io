@@ -3,11 +3,11 @@ layout: default
 ---
 <div class="post">
   <h1 class="post-title">{{ page.title }}</h1>
-  <h6 style="color: rgb(150,150,150); font-weight: lighter"><span class="post-date">{{ page.date | date_to_string }}</span>  &nbsp; About</h6>
-  
+  <h6 style="color: rgb(140,140,140); font-weight: lighter"><span class="post-date">{{ page.date | date_to_string }}</span>  &nbsp; </h6>
   {% if page.tags %}
   {% for tag in page.tags %}
-  <h4><a href="{{ site.baseurl }}{{ site.tag_page }}#{{ tag | slugify }}" class="post-tag">{{ tag }}</a>
+  <h4 style="font-size: small; color: rgb(120,120,120)"> About: </h4>
+  <h4 style="font-size: small"><a href="{{ site.baseurl }}{{ site.tag_page }}#{{ tag | slugify }}" class="post-tag">{{ tag }}</a>
   {% endfor %}
   {% endif %}
   </h4><br><br>
