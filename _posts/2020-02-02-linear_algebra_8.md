@@ -77,10 +77,10 @@ $$\small A^{\intercal} = (PDP^{\intercal})^{\intercal}=PDP^{\intercal}=A$$
 어떠한 행렬 $A$의 고유값들의 집합은 때로 **A의 스펙트럼(Spectrum of $A$)** 이라고 불리고, 고유값에 대한 다음의 설명을 **스펙트럴 정리(Spectral Theorem)** 이라고 일컫습니다.
 
 > **Spectral Theorem for Symmetric Matrices** : nxn 대칭행렬 $A$는 다음의 성질들을 가진다.  
-&nbsp; &nbsp; a.  $A$는 n개의 실수인 고유값을 가지고 있다.  
-&nbsp; &nbsp; b. 각 고유값 $\lambda$에 대한 고유공간의 차원은 $\lambda$의 개수(multiplicity)와 같다.  
-&nbsp; &nbsp; c. 고유공간은 상호 직교한다.  
-&nbsp; &nbsp; d. $A$는 직교 대각화가 가능하다.
+a.  $A$는 n개의 실수인 고유값을 가지고 있다.  
+b. 각 고유값 $\lambda$에 대한 고유공간의 차원은 $\lambda$의 개수(multiplicity)와 같다.  
+c. 고유공간은 상호 직교한다.  
+d. $A$는 직교 대각화가 가능하다.
 
 앞서 설명했던 내용을 정리하는 정리라고 할 수 있을 것 같습니다 :)
 

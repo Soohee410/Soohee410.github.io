@@ -8,10 +8,10 @@ layout: default
   {% if page.tags %}
   {% for tag in page.tags %}
 
-  <h4 style="font-size: medium"><a href="{{ site.baseurl }}{{ site.tag_page }}#{{ tag | slugify }}" class="post-tag" style="display: inline">{{ tag }}</a>
+  <h5><a href="{{ site.baseurl }}{{ site.tag_page }}#{{ tag | slugify }}" class="post-tag" style="display: inline">{{ tag }}</a>
   {% endfor %}
   {% endif %}
-  </h4><br><br>
+  </h5><br><br>
 
   <div class="content">
 
