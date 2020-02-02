@@ -4,6 +4,12 @@ title: Tags
 permalink: /tags/
 ---
 
+<style>
+a {color: rgb(50,46,46);
+  font-weight: lighter;
+}
+</style>
+
 <div class="tags-expo">
 
   <div class="tags-expo-list">
@@ -16,13 +22,13 @@ permalink: /tags/
   <hr/>
   <div class="tags-expo-section">
     {% for tag in site.tags %}
-    <h3 id="{{ tag[0] | slugify }}">{{ tag[0] }}</h3>
+    <h3 id="{{ tag[0] | slugify }}" style="font-weight: bold">{{ tag[0] }}</h3>
     <ul class="tags-expo-posts">
       {% for post in tag[1] %}
-        <a class="post-title" href="{{ site.baseurl }}{{ post.url }}" style="color: rgb(50,46,46)">
+        <a class="post-title" href="{{ site.baseurl }}{{ post.url }}">
       <li>
         {{ post.title }}
-      <small class="post-date" style="color: rgb(0,0,0)">{{ post.date | date_to_string }}</small>
+      <small class="post-date" style="color: rgb(200,200,200)">{{ post.date | date_to_string }}</small>
       </li>
       </a>
       {% endfor %}
