@@ -67,7 +67,7 @@ $$\small  A=PDP^{-1}, \space (D:Diagonal, P^{-1}=P^{\intercal})$$
 
 $$\small A^{\intercal} = (PDP^{\intercal})^{\intercal}=PDP^{\intercal}=A$$
 
-안타깝게도 이 놀라운 정리의 증명은 비교적 길고 까다로워서 이 포스트에서는 생략하도록 하겠습니다 ~~ㅠㅠ~~  
+정말 놀라운 정리지만 증명은 비교적 길고 까다로워서 이 포스트에서는 생략하도록 하겠습니다 ~~ㅠㅠ~~  
 
 <br>
 
