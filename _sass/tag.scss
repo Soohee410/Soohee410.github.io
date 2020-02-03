@@ -2,7 +2,7 @@
 .post-tag {
   display: inline-block;
   font-weight: lighter;
-  background: rgba(222,98,92,0.3);
+  background: rgba(118,125,201,0.3);
   padding: .1em .2em;
   margin-right: .4rem;
   border-radius: 4px;
@@ -10,7 +10,7 @@
   font-size: 90%;
   &:hover {
     text-decoration: none;
-    background: rgba(222,98,92,0.8);
+    background: rgb(118,125,201);
     color: rgb(255,255,255);
   }
 }
