@@ -11,7 +11,7 @@ use_math: true
 ## 1.  Hermitian Matrix
 
 <br>
-먼저 대칭행렬(Symmetric Matrix)이 무엇인지부터 알아봅시다. 사실 대칭행렬이 무엇인지 모르는 사람은 없을 것이라 생각합니다! 말 그대로 대각 요소(diagonal entry)를 기준으로 마주보고 있는 요소들이 같은, 즉 대칭의 형태를 가진 행렬을 대칭행렬이라고 합니다.
+먼저 대칭행렬(Symmetric Matrix)이 무엇인지부터 알아봅시다. 사실 이 글 보시는 분들 중에 대칭행렬 자체가 뭔지 모르시는 분은 안 계실 것 같아요! 말 그대로 대각 요소(diagonal entry)를 기준으로 마주보고 있는 요소들이 같은, 즉 대칭의 형태를 가진 행렬을 대칭행렬이라고 합니다.
 
 $$\small A: Symmetric \space Matrix \quad if\space A^{\intercal}=A$$
 
@@ -27,7 +27,7 @@ $$\small  A: Hermitian\space Matrix \quad if\space  A^{\sf H}=A$$
 **둘째**, $\small A^{\sf H}=A$이면, $A$의 고유값은 실수이다.
 
 $$\small \begin{aligned}(pf)\qquad \qquad Ax &=\lambda x \\
-x^{\sf H}Ax &=x^{\sf H}\lambda x=\lambda x^{\sf H}x \implies \lambda &=\frac{x^{\sf H}Ax}{x^{\sf H}x} \end{aligned} $$
+x^{\sf H}Ax &=x^{\sf H}\lambda x=\lambda x^{\sf H}x \implies \lambda =\frac{x^{\sf H}Ax}{x^{\sf H}x} \end{aligned} $$
 
 $$\small \begin{aligned}  x^{\sf H}x&=\bar x_1x_1+\cdots +\bar x_nx_n\in \mathbb{R},\\
 \space (x^{\sf H}Ax)^{\sf H} &= x^{\sf H}Ax,\quad  x^{\sf H}Ax:scalar \implies x^{\sf H}Ax\in\mathbb{R} \end{aligned}$$
@@ -77,10 +77,10 @@ $$\small A^{\intercal} = (PDP^{\intercal})^{\intercal}=PDP^{\intercal}=A$$
 어떠한 행렬 $A$의 고유값들의 집합은 때로 **A의 스펙트럼(Spectrum of $A$)** 이라고 불리고, 고유값에 대한 다음의 설명을 **스펙트럴 정리(Spectral Theorem)** 이라고 일컫습니다.
 
 > **Spectral Theorem for Symmetric Matrices** : nxn 대칭행렬 $A$는 다음의 성질들을 가진다.  
-a.  $A$는 n개의 실수인 고유값을 가지고 있다.  
-b. 각 고유값 $\lambda$에 대한 고유공간의 차원은 $\lambda$의 개수(multiplicity)와 같다.  
-c. 고유공간은 상호 직교한다.  
-d. $A$는 직교 대각화가 가능하다.
+(a)  $A$는 n개의 실수인 고유값을 가지고 있다.  
+(b) 각 고유값 $\lambda$에 대한 고유공간의 차원은 $\lambda$의 개수(multiplicity)와 같다.  
+(c) 고유공간은 상호 직교한다.  
+(d) $A$는 직교 대각화가 가능하다.
 
 앞서 설명했던 내용을 정리하는 정리라고 할 수 있을 것 같습니다 :)
 
