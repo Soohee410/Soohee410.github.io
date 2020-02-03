@@ -3,23 +3,19 @@
 
 	<img src="img/profile.jpg" alt="My Image" width="200">
 
-	<p><span style="color: rgb(255,255,255); font-size: 10px">
+	<p><span style="color: rgb(255,255,255); font-size: 12px; font-family: 'Noto Sans KR', sans-serif;">
 		이론과 실전을 모두 잡고 싶은 <span style="color: rgb(0,0,0); font-weight: bold">Soo.P</span> 의 기록 블로그
 	</span></p>
 
 
 	<div id="nav-list">
-		<style>
-			a{
-				font-size: 11px;
-			}
-		</style>
+
 		<a href="{{ site.baseurl }}">Home</a>
 
 		<!-- Nav pages -->
 	  {% for page in site.pages %}
 	    {% if page.layout == "page" %}
-	      <a href="{% if site.baseurl == "/" %}{{ page.url }}{% else %}{{ page.url | prepend: site.baseurl }}{% endif %}" title="{{ page.title }}">{{ page.title }}</a>
+	      <a href="{% if site.baseurl == "/" %}{{ page.url }}{% else %}{{ page.url | prepend: site.baseurl }}{% endif %}" title="{{ page.title }}" >{{ page.title }}</a>
 	    {% endif %}
 	  {% endfor %}
 
