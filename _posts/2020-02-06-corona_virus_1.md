@@ -1,6 +1,6 @@
 ---
 layout: post
-title: Visualization Plotly를 이용해서 신종 코로나 바이러스 국내 확진자 현황 나타내기
+title: 파이썬 패키지 Plotly를 이용한 신종 코로나 바이러스 국내 확진자 현황 시각화
 tags: [Data Visualization]
 use_math: false
 ---
