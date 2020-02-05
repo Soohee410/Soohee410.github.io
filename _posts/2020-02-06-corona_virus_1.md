@@ -10,7 +10,7 @@ use_math: false
 아래 나와 있는 것처럼 매우 간단한 플롯입니다 ㅎㅎ 제가 생각하는 plotly의 장점은 뭐니뭐니 해도 **hover기능**인 것 같습니다! 마커들에 커서를 갖다대면 정보들이 뜨도록 해주는 기능인데요. 이번 플롯에서는 이 hover 기능을 통해 정보를 띄우고, annotation 기능을 이용해서 간단하게 화살표들을 그려보았습니다. 근데 hover도 하고 각 마커 위에 확진자 번호도 띄우고 싶어서 막 추가하다 보니까 좀 허접해진거같아요 ㅜㅜ 어떻게 효율적으로, 조금 더 깔끔하게 할 수 있을지 생각해 봐야할 것 같아요!
 
 이 플롯에 대한 코드 및 데이터가 궁금하신 분은, 코드는 [이곳](https://github.com/Soohee410/Data-Visualization/blob/master/2020.02.05%20%EA%B5%AD%EB%82%B4%20%ED%99%95%EC%A7%84%EC%9E%90.ipynb),
-데이터는 [이곳](https://github.com/Soohee410/Data-Visualization/blob/master/data/2020.02.05%20%ED%99%95%EC%A7%84%EC%9E%90%20%ED%98%84%ED%99%A9.csv)에 있습니다! 감사합니다 :)
+데이터는 [이곳](https://github.com/Soohee410/Data-Visualization/blob/master/data/2020.02.05%20%ED%99%95%EC%A7%84%EC%9E%90%20%ED%98%84%ED%99%A9.csv)을 확인해 주세요! 감사합니다 :)
 
 
 
