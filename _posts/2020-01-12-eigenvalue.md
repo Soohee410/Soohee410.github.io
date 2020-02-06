@@ -1,6 +1,6 @@
 ---
 layout: post
-title: 선형대수 Eigenvalue, Eigenvector, Character Equation
+title: "[선형대수] Eigenvalue, Eigenvector, Character Equation"
 tags: [Linear Algebra]
 use_math: true
 ---

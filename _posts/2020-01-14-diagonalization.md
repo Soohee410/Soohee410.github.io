@@ -1,6 +1,6 @@
 ---
 layout: post
-title: 선형대수 Diagonalization
+title: "[선형대수] Diagonalization"
 tags: [Linear Algebra]
 use_math: true
 ---

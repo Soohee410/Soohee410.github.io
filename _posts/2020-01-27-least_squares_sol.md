@@ -1,6 +1,6 @@
 ---
 layout: post
-title: 선형대수 Least-Squares Solution, Normal Equation
+title: "[선형대수] Least-Squares Solution, Normal Equation"
 tags: [Linear Algebra]
 use_math: true
 ---

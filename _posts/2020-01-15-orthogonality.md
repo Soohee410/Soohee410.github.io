@@ -1,6 +1,6 @@
 ---
 layout: post
-title: 선형대수 Orthogonality, Orthogonal Complement, Orthogonal Basis
+title: "[선형대수] Orthogonality, Orthogonal Complement, Orthogonal Basis"
 tags: [Linear Algebra]
 use_math: true
 ---

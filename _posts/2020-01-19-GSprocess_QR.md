@@ -1,6 +1,6 @@
 ---
 layout: post
-title: 선형대수 Gram-Schmidt Process, QR Decomposition
+title: "[선형대수] Gram-Schmidt Process, QR Decomposition"
 tags: [Linear Algebra]
 use_math: true
 ---

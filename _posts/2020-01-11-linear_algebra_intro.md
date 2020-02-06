@@ -1,6 +1,6 @@
 ---
 layout: post
-title: 선형대수 Intro (선형대수 포스팅 시작 전 잡담)
+title: "[선형대수] Intro (선형대수 포스팅 시작 전 잡담)"
 tags: [Linear Algebra]
 ---
 안녕하세요 여러분! 이제 선형대수 포스팅을 시작하려고 합니다 :)

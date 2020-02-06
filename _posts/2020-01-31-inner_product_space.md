@@ -1,6 +1,6 @@
 ---
 layout: post
-title: 선형대수 Inner Product Space
+title: "[선형대수] Inner Product Space"
 tags: [Linear Algebra]
 use_math: true
 ---

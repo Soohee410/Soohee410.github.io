@@ -1,6 +1,6 @@
 ---
 layout: post
-title: 선형대수 Hermitian Matrix, Diagonalization of Symmetric Matrix, Spectral Decomposition
+title: "[선형대수] Hermitian Matrix, Diagonalization of Symmetric Matrix, Spectral Decomposition"
 tags: [Linear Algebra]
 use_math: true
 ---
