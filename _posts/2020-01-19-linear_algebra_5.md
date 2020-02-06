@@ -38,15 +38,15 @@ $\mathbb{R^3}$의 어떤 부분공간의 기저가 $\lbrace a,b,c\rbrace $라고
 
 <img src="/assets/proj8.png" width="580px">
 
-예를 들어, nx3 행렬 $A$의 열(column)들의 집합 $\lbrace x_1,x_2,x_3\rbrace$들이 서로 **선형 독립** 이고, **그람 슈미트** 를 이용하여 구한 이 열공간에 대한 직정 기저(orthonormal basis)가 $\lbrace u_1=\frac{v_1}{\lVert v_1\rVert}, u_2=\frac{v_2}{\lVert v_2\rVert}, u_3=\frac{v_3}{\lVert v_3\rVert} \rbrace$ 이라고 합시다. 그람 슈미트를 이용하여 다음과 같이 직교/직정 기저를 구했을 것입니다.
+예를 들어, nx3 행렬 $A$의 열(column)들의 집합 $\lbrace x_1,x_2,x_3\rbrace$들이 서로 **선형 독립** 이고, **그람 슈미트** 를 이용하여 구한 이 열공간에 대한 직정 기저(orthonormal basis)가 $\small\lbrace u_1=\frac{v_1}{\lVert v_1\rVert}, u_2=\frac{v_2}{\lVert v_2\rVert}, u_3=\frac{v_3}{\lVert v_3\rVert} \rbrace$ 이라고 합시다. 그람 슈미트를 이용하여 다음과 같이 직교/직정 기저를 구했을 것입니다.
 
-$$\begin{aligned} v_1&=x_1\\v_2&=x_2-(x_2\cdot u_1)u_1\\v_3&=x_3-(x_3\cdot u_1)u_1-(x_3\cdot u_2)u_2 \end{aligned}$$
+$$\small\begin{aligned} v_1&=x_1\\v_2&=x_2-(x_2\cdot u_1)u_1\\v_3&=x_3-(x_3\cdot u_1)u_1-(x_3\cdot u_2)u_2 \end{aligned}$$
 
-$$\Rightarrow u_1=\frac{v_1}{\lVert v_1\rVert}, u_2=\frac{v_2}{\lVert v_2\rVert}, u_3=\frac{v_3}{\lVert v_3\rVert}$$  
+$$\small\Rightarrow u_1=\frac{v_1}{\lVert v_1\rVert}, u_2=\frac{v_2}{\lVert v_2\rVert}, u_3=\frac{v_3}{\lVert v_3\rVert}$$  
 
 이렇게 구한 직교/직정 벡터들을 가지고 역으로 원래의 벡터를 재구성해봅시다.
 
-$$\begin{aligned} x_1&=v_1=\lVert v_1\rVert u_1 =(x_1\cdot u_1)u_1\\
+$$\small\begin{aligned} x_1&=v_1=\lVert v_1\rVert u_1 =(x_1\cdot u_1)u_1\\
 x_2&=(x_2\cdot u_1)u_1+v_2=(x_2\cdot u_1)u_1+(x_2\cdot u_2)u_2\\
 x_3&=(x_3\cdot u_1)u_1+(x_3\cdot u_2)u_2+v_3\\ &=(x_3\cdot u_1)u_1+(x_3\cdot u_2)u_2+(x_3\cdot u_3)u_3 \end{aligned}$$
 
@@ -66,7 +66,7 @@ x_1\cdot u_1&=\lVert v_1\rVert u_1\cdot u_1=\lVert v_1\rVert \\
 
 한편, $R$은 Orthogonal Matrix $Q$가 $Q^{\intercal}Q=I$인 것을 이용하여 다음과 같이 쉽게 구할 수 있습니다.
 
-$$\begin{aligned} A&=QR\\Q^{\intercal}A&=Q^{\intercal}QR=R\\
+$$\small \begin{aligned} A&=QR\\Q^{\intercal}A&=Q^{\intercal}QR=R\\
 \therefore R&=Q^{\intercal}A \end{aligned}$$
 
 <br>

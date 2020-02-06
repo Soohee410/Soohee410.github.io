@@ -1,6 +1,6 @@
 ---
 layout: post
-title: 선형대수 Orthogonal Projection
+title: "[선형대수] Orthogonal Projection"
 tags: [Linear Algebra]
 use_math: true
 ---
