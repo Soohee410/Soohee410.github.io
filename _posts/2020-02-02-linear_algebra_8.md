@@ -48,6 +48,7 @@ $$\small \begin{aligned}\lambda_1(v_1^{\sf H}v_2)&=(\lambda_1v_1)^{\sf H}v_2=(Av
 > **Thm.** A가 대칭이면, 서로 다른 고유공간의 고유벡터들은 서로 직교한다.
 
 선형대수 첫 번째 포스트, [Eigenvalue and Eigenvector](https://soohee410.github.io/linear_algebra_1)에서 원래는 ``서로 다른 고유공간의 고유벡터들은 서로 선형독립이다``라는 정리를 기록했었는데요. 만약 대칭행렬일 경우에는 서로 다른 고유공간의 고유벡터들이 선형독립인 것을 넘어서 직교한다는 성질이 추가된 것입니다! 이 성질을 고려했을 때 대각화는 그럼 어떻게 변하게 되는지 알아봅시다.
+
 <br>
 
 ## 2. Diagonalization of Symmetric Matrix

@@ -74,7 +74,7 @@ $$\int_{-1}^1 \vert x^3-a-bx-cx^2\vert ^2 \space dx$$
 
 ---
 $Reference.$  
-- $\small Linear\space Algebra\space and\space its\space Applications\space 5th\space edition\space (David C.Lay, Stephen R.Lay, Judi J.McDonald)$
+- David C.Lay · Stephen R.Lay · Judi J.McDonald, Linear Algebra and its Applications, 5th edition, Pearson
 - 고려대학교 김홍중 교수님의 수업
 
 <br>
