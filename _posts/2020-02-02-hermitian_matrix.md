@@ -15,7 +15,7 @@ use_math: true
 
 $$\small A: Symmetric \space Matrix \quad if\space A^{\intercal}=A$$
 
- 이제 본격적으로 대칭행렬의 특성들에 대해서 배울 건데, 그 전에 사고의 확장(?)이 필요합니다...! 실수 범위를 넘어서 더 큰 범위, 복소수 범위를 생각해봅시다. [저번 포스트](https://soohee410.github.io/linear_algebra_7)에서 복소수 공간의 내적에 대해서 기억하시나요? 복소수 공간에서 두 벡터 $u,v$의 내적은 $\bar u^{\intercal}v$로 계산하고, 이것은 $u^{\sf H}v$로 표기한다고 언급했었는데요. 행렬도 똑같습니다! 어떤 행렬 $A$에 대해, $\small A^{\sf H}=\bar A^{\sf T}$로 계산됩니다. 이 때, $\small A^{\sf H}=A$이면, 이 행렬을 **에르미트 행렬(Hermitian Matrix)** 라고 일컫습니다. 다시 말해서, 대각을 기준으로 서로 마주보고 있는 요소끼리 켤레복소수인 행렬을 에르미트 행렬이라고 합니다.
+ 이제 본격적으로 대칭행렬의 특성들에 대해서 배울 건데, 그 전에 사고의 확장(?)이 필요합니다...! 실수 범위를 넘어서 더 큰 범위, 복소수 범위를 생각해봅시다. [저번 포스트](https://soohee410.github.io/inner_product_space)에서 복소수 공간의 내적에 대해서 기억하시나요? 복소수 공간에서 두 벡터 $u,v$의 내적은 $\bar u^{\intercal}v$로 계산하고, 이것은 $u^{\sf H}v$로 표기한다고 언급했었는데요. 행렬도 똑같습니다! 어떤 행렬 $A$에 대해, $\small A^{\sf H}=\bar A^{\sf T}$로 계산됩니다. 이 때, $\small A^{\sf H}=A$이면, 이 행렬을 **에르미트 행렬(Hermitian Matrix)** 라고 일컫습니다. 다시 말해서, 대각을 기준으로 서로 마주보고 있는 요소끼리 켤레복소수인 행렬을 에르미트 행렬이라고 합니다.
 
 $$\small  A: Hermitian\space Matrix \quad if\space  A^{\sf H}=A$$
 
@@ -36,7 +36,7 @@ $$\small\therefore  \lambda =\frac{x^{\sf H}Ax}{x^{\sf H}x}\in \mathbb{R} $$
 
 **셋째**, $\small A^{\sf H}=A$이면, 서로 다른 고유공간의 고유벡터들은 직교한다.
 
-$$\small(pf)\qquad\qquad Let \space Av_1=\lambda_1 v_1,\space Av_2=\lambda_2v_2,\space \lambda_1\not =\lambda_2 $$
+$$\small(pf)\qquad Let \space Av_1=\lambda_1 v_1,\space Av_2=\lambda_2v_2,\space \lambda_1\not =\lambda_2 $$
 
 $$\small \begin{aligned}\lambda_1(v_1^{\sf H}v_2)&=(\lambda_1v_1)^{\sf H}v_2=(Av_1)^{\sf H}v_2\\ &=v_1^{\sf H}A^{\sf H}v_2=v_1^{\sf H}(A^{\sf H}v_2)\\ &=v_1^{\sf H}\lambda_2v_2=\lambda_2(v_1^{\sf H}v_2)\\
 \therefore v_1^{\sf H}v_2&=0
@@ -47,7 +47,7 @@ $$\small \begin{aligned}\lambda_1(v_1^{\sf H}v_2)&=(\lambda_1v_1)^{\sf H}v_2=(Av
 
 > **Thm.** A가 대칭이면, 서로 다른 고유공간의 고유벡터들은 서로 직교한다.
 
-선형대수 첫 번째 포스트, [Eigenvalue and Eigenvector](https://soohee410.github.io/linear_algebra_1)에서 원래는 ``서로 다른 고유공간의 고유벡터들은 서로 선형독립이다``라는 정리를 기록했었는데요. 만약 대칭행렬일 경우에는 서로 다른 고유공간의 고유벡터들이 선형독립인 것을 넘어서 직교한다는 성질이 추가된 것입니다! 이 성질을 고려했을 때 대각화는 그럼 어떻게 변하게 되는지 알아봅시다.
+고유값에 대한 포스트, [Eigenvalue and Eigenvector](https://soohee410.github.io/eigenvalue)에서 원래는 ``서로 다른 고유공간의 고유벡터들은 서로 선형독립이다``라는 정리를 기록했었는데요. 만약 대칭행렬일 경우에는 서로 다른 고유공간의 고유벡터들이 선형독립인 것을 넘어서 직교한다는 성질이 추가된 것입니다! 이 성질을 고려했을 때 대각화는 그럼 어떻게 변하게 되는지 알아봅시다.
 
 <br>
 
@@ -92,7 +92,7 @@ $$\small \begin{aligned} &A=PDP^{\intercal}=\begin{bmatrix} u_1&\cdots&u_n\end{b
 
 위 식에서 마지막 줄을 보면 $A$의 고유값들, 즉 스펙트럼에 의해 A가 다양하게 쪼개진 것을 확인할 수 있습니다. 위와 같이 행렬 $A$를 표현한 것을 $A$의 **스펙트럴 분해(Spectral Decomposition)** 라고 합니다. 또 한, 자주 언급되었지만 각 nxn행렬 $u_ju_j^{\intercal}$는 **투영행렬(Projection Matrix)** 입니다. 예를 들어 어떠한 벡터 $\boldsymbol x$를 행렬 $A$에 의해 선형변환 시킨다면 다음과 같이 될 것입니다.
 
-$$A\boldsymbol x=\lambda_1u_1u_1^{\intercal}\boldsymbol x+\lambda_2u_2u_2^{\intercal}\boldsymbol x +\cdots \lambda_nu_nu_n^{\intercal}\boldsymbol x $$
+$$\small A\boldsymbol x=\lambda_1u_1u_1^{\intercal}\boldsymbol x+\lambda_2u_2u_2^{\intercal}\boldsymbol x +\cdots \lambda_nu_nu_n^{\intercal}\boldsymbol x $$
 
 이 때, 각 $(u_ju_j^{\intercal})\boldsymbol x $ 는 벡터 $\boldsymbol x $를 벡터 **$u_j$에 의해 생성되는 부분공간으로의 정사영** 을 의미한다는 점에서 $u_ju_j^{\intercal}$는 투영행렬이고, 각 투영행렬 $u_ju_j^{\intercal}$의 rank는 1입니다.
 

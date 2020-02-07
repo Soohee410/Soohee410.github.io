@@ -11,7 +11,7 @@ use_math: true
 ## 1. 그람슈미트 과정(Gram-Schmidt Process)
 
 <br>
-[이전 포스트](https://soohee410.github.io/linear_algebra_4)에서 **Orthogonal Projection** 을 잘 이해하셨다면, **그람슈미트 과정(Gram-Schmidt Process)** 은 매우 쉽게 느껴지실거에요! 일단 그람슈미트의 요체는 다음과 같습니다. 어떤 실수 부분공간의 기저(basis)를 input으로 했더니, orthogonal 또는 orthonormal basis가 output이 되었습니다.
+[이전 포스트](https://soohee410.github.io/orthogonal_projection)에서 **Orthogonal Projection** 을 잘 이해하셨다면, **그람슈미트 과정(Gram-Schmidt Process)** 은 매우 쉽게 느껴지실거에요! 일단 그람슈미트의 요체는 다음과 같습니다. 어떤 실수 부분공간의 기저(basis)를 input으로 했더니, orthogonal 또는 orthonormal basis가 output이 되었습니다.
 
 <img src="/assets/proj5.png" width="410px">
 
@@ -59,7 +59,7 @@ $$\small \begin{aligned}
 
 이렇게 하여 행렬 $A$를 Orthogonal Matrix인 $Q$와 Upper Triangular Matrix인 $R$의 곱으로 분해할 수 있게 됩니다. (참고로 $Q$의 열들은 Orthonormal 벡터이지만, 이 행렬 자체는 Orthonormal Matrix가 아닌 **Orthogonal Matrix** 로 부른다고 합니다.) 한편, 상삼각 행렬인 $R$에 주목해봅시다. 위 정리에 의하면 $R$은 ``역행렬이 존재(invertible)``한다는데 왜 그런지 확인해보겠습니다! $R$이 invertible하기 위해서는 대각 요소들이 모두 0이 아니어야 할 것입니다.  위에서 Orthonormal 벡터 $u_1, u_2, u_3$으로 원래 벡터 $x_1,x_2,x_3$을 재구성한 식들을 참고했을 때, **행렬 $R$의 대각 요소** 에 해당하는 $(x_1\cdot u_1), (x_2\cdot u_2), (x_3\cdot u_3)$은 각각 **Orthogonal 벡터 $v_1,v_2,v_3$의 길이** 에 해당합니다. 벡터 $v_1$의 길이가 $x_1\cdot u_1$과 어떻게 같은지에 대해서는 아래 식을 참고해주세요! Orthonormal 벡터의 길이가 1이라는 것, 즉 $u_1\cdot u_1=1$을 이용하면 다음과 같습니다.
 
-$$\begin{aligned} x_1&=v_1=\lVert v_1\rVert u_1 \\
+$$\small\begin{aligned} x_1&=v_1=\lVert v_1\rVert u_1 \\
 x_1\cdot u_1&=\lVert v_1\rVert u_1\cdot u_1=\lVert v_1\rVert \\
 \therefore \lVert v_1\rVert&= x_1\cdot u_1
 \end{aligned}$$
@@ -71,7 +71,7 @@ $$\small \begin{aligned} A&=QR\\Q^{\intercal}A&=Q^{\intercal}QR=R\\
 
 <br>
 
-잘 이해되셨나요? 여기까지 **Gram-Schmidt Process** 와 **QR Decomposition** 에 대한 기록이었습니다! 다음 포스트에서는 Least Squares Solution에 대해서 정리하고자 합니다. 감사합니다 :)
+잘 이해되셨나요? 여기까지 **Gram-Schmidt Process** 와 **QR Decomposition** 에 대한 기록이었습니다! 다음 포스트에서는 [Least Squares Solution](https://soohee410.github.io/least_squares_sol)에 대해서 정리하고자 합니다. 감사합니다 :)
 
 <br>
 

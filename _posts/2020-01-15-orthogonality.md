@@ -12,11 +12,11 @@ use_math: true
 
 <br>
 먼저 직교의 정의는 다음과 같습니다.
-> **Def.** 두 벡터 u, v $(u,v \in \mathbb{R}^n)$에 대하여, $u\cdot v=0$이면 두 벡터는 직교(orthogonal)한다.
+> **Def.** 두 벡터 $u, v (u,v \in \mathbb{R}^n)$에 대하여, $u\cdot v=0$이면 두 벡터는 직교(orthogonal)한다.
 
 내적(inner product)에 대해서는 일단 ``실수 공간에서 두 벡터(nx1)를 input으로 하고, 스칼라(1x1)를 output으로 하는 함수`` $u\cdot v$로만 정의를 하고 진행하겠습니다! 후에 실수 공간을 넘어서 inner product에 대해 조금 더 구체적으로 포스팅하려고 합니다.
 
-$$inner\space product: u\cdot v=u^Tv, (u,v\in \mathbb{R^n})$$
+$$\small inner\space product: u\cdot v=u^Tv, (u,v\in \mathbb{R^n})$$
 
 직교의 정의에 의하면, 두 벡터의 내적 값이 0이 되면, 두 벡터는 서로 **직교** 한다고 말합니다. 사실 이 글을 보시는 분들 중에 직교의 정의를 모르시는 분들은 없을 것 같아 바로 넘어가겠습니다^^
 
@@ -27,7 +27,7 @@ $$inner\space product: u\cdot v=u^Tv, (u,v\in \mathbb{R^n})$$
 <br>
 자, 직교의 정의는 분명 두 벡터 간의 관계에 대한 정의였습니다. 그렇다면 한 벡터와 부분공간(subspace)이 직교한다는 건 무슨 뜻일까요?`` 어떤 벡터 v가 어떤 부분공간 W의 모든 벡터와 직교한다면 v는 W와 직교한다고 말합니다.`` 이 때, $W$와 직교인 모든 벡터들을 모아 놓은 집합을 바로 **W의 직교여공간(orthogonal complement)** 이라고 부르고, $W^⊥$와 같이 표기합니다.
 
-$$W^⊥=\{\boldsymbol z | \boldsymbol z⊥W\}$$
+$$\small W^⊥=\{\boldsymbol z | \boldsymbol z⊥W\}$$
 
 $\mathbb{R}^n$의 부분공간 $W$에 대하여, 직교여공간 $W^⊥$은 다음의 두가지 사실(Fact)이 있습니다.
 1. 어떤 벡터 $\boldsymbol x$가 $W^⊥$안에 존재하기 위한 필요충분조건은 $\boldsymbol x$가 $W$를 생성(span)하는 모든 벡터와 직교라는 것이다.
@@ -42,13 +42,13 @@ $\mathbb{R}^n$의 부분공간 $W$에 대하여, 직교여공간 $W^⊥$은 다�
 - $Nul(A) : \lbrace x \in \mathbb{R}^n  \vert Ax=0 \rbrace $
 - $Row(A)$: $A$의 행(row)들이 생성하는 공간 = $A$의 행들의 모든 선형결합들의 집합
 - $Col(A)$: $A$의 열(column)들이 생성하는 공간 = $A$의 $image$   
-즉, $A$에 의해 선형변환된 벡터는 $A$의 열들의 선형결합이라는 것을 의미합니다. 한편, $A$의 열과 $A^T$의 행은 같겠죠? 따라서, 자명하게 $Col(A)=Row(A^T)$ 입니다!  
+즉, $A$에 의해 선형변환된 벡터는 $A$의 열들의 선형결합이라는 것을 의미합니다. 한편, $A$의 열과 $A^T$의 행은 같겠죠? 따라서, 자명하게 $\small Col(A)=Row(A^T)$ 입니다!  
 
-다시 돌아와서 위 정리가 왜 그런지 살펴봅시다. 간단하게 $Row(A)^⊥=Nul(A)$가 되는 것을 증명해보겠습니다! 어떤 벡터 $\boldsymbol x$가 $A$의 $null\space space$안에 있다고 합시다. $(x\in Nul(A))$
+다시 돌아와서 위 정리가 왜 그런지 살펴봅시다. 간단하게 $\small Row(A)^⊥=Nul(A)$가 되는 것을 증명해보겠습니다! 어떤 벡터 $\boldsymbol x$가 $A$의 $null\space space$안에 있다고 합시다. $\small (x\in Nul(A))$
 
-$$ \boldsymbol x\in Nul(A)\iff A\boldsymbol x=0\iff \boldsymbol x ⊥Row(A) \iff \boldsymbol x \in Row(A)^⊥$$
+$$\small\begin{aligned} \boldsymbol x\in Nul(A) &\iff A\boldsymbol x=0 \\ &\iff \boldsymbol x ⊥Row(A) \iff \boldsymbol x \in Row(A)^⊥ \end{aligned}$$
 
-이 때, $Row(A)=Col(A^T)$이므로, $Nul(A)=Col(A^T )^⊥$ 와 같이도 나타낼 수 있습니다.
+이 때, $\small Row(A)=Col(A^T)$이므로, $\small Nul(A)=Col(A^T )^⊥$ 와 같이도 나타낼 수 있습니다.
 
 
 <br>
@@ -61,24 +61,24 @@ $$ \boldsymbol x\in Nul(A)\iff A\boldsymbol x=0\iff \boldsymbol x ⊥Row(A) \iff
 
 결국 벡터들이 서로 선형 독립인 것을 넘어서 직교하는 성질이 추가된 기저를 말합니다! 이러한 직교성이 추가되면 다른 기저들에 비해 갖게 되는 장점이 있는데요, 바로 ``선형결합의 가중치를 매우 쉽게 구할 수 있다``는 것입니다. 다음의 정리를 봅시다.
 
->**Thm.**  $ \lbrace u_1,u_2,⋯,u_p\rbrace$를 $\mathbb{R^n}$의 부분공간 $W$의 직교 기저라고 하자. $W$ 내의 벡터 $\boldsymbol y$는 다음과 같이 선형결합으로 나타내어 지고, 가중치는 다음과 같이 주어진다.
-$$ y=c_1 u_1+⋯+c_p u_p,\quad c_j=\frac{(𝑢_𝑗\cdot 𝑦)}{(𝑢_𝑗\cdot 𝑢_𝑗 )},j=1,⋯,p $$
+>**Thm.**  $ \lbrace u_1,u_2,⋯,u_p\rbrace$를 $\mathbb{R^n}$의 부분공간 $W$의 직교 기저라고 하자. $W$ 내의 벡터 $\boldsymbol y$는 다음과 같이 선형결합으로 나타내어 지고, 가중치는 다음과 같이 주어진다. $\small (j=1,⋯,p )$
+$$ y=c_1 u_1+⋯+c_p u_p,\quad  c_j=\frac{(𝑢_𝑗\cdot 𝑦)}{(𝑢_𝑗\cdot 𝑢_𝑗 )} $$
 
 간단하게 증명해볼까요?
 
-$$ \begin{aligned}
+$$\small \begin{aligned}
 (pf)\quad y&=𝑐_1 𝑢_1+𝑐_2 𝑢_2+\cdots +𝑐_𝑝 𝑢_𝑝\\
-𝑢_𝑗\cdot 𝑦&=𝑢_𝑗\cdot (𝑐_1 𝑢_1+𝑐_2 𝑢_2+⋯+𝑐_𝑝 𝑢_𝑝) &= 𝑐_𝑗 (𝑢_𝑗\cdot 𝑢_𝑗) \\
+𝑢_𝑗\cdot 𝑦&=𝑢_𝑗\cdot (𝑐_1 𝑢_1+𝑐_2 𝑢_2+⋯+𝑐_𝑝 𝑢_𝑝) = 𝑐_𝑗 (𝑢_𝑗\cdot 𝑢_𝑗) \\
 ∴𝑐_𝑗&=\frac{(𝑢_𝑗\cdot 𝑦)}{(𝑢_𝑗\cdot 𝑢_𝑗 )}, j=1,\cdots,p
 \end{aligned}$$
 
 따라서, 모든 가중치를 위와 같이 표현해서 다시 y를 나타내면 다음과 같습니다.
 
-$$y=\frac{y\cdot u_1}{u_1\cdot u_1}u_1+\frac{y\cdot u_2}{u_2\cdot u_2}u_2+⋯+\frac{y\cdot u_p}{u_p\cdot u_p}u_p$$
+$$\small y=\frac{y\cdot u_1}{u_1\cdot u_1}u_1+\frac{y\cdot u_2}{u_2\cdot u_2}u_2+⋯+\frac{y\cdot u_p}{u_p\cdot u_p}u_p$$
 
 이때, 특별한 제한조건을 추가해봅시다. 조금 더 간편하게 보기 위해 $u_j\cdot u_j=1,∀j$, 즉모든 $u_j$ 벡터들의 ``길이가 1이라고 제한``해봅시다. 그러면 $y$는 다시 다음과 같이 표현됩니다.
 
-$$ \begin{aligned}
+$$\small \begin{aligned}
 y&=\frac{u_1\cdot y}{u_1\cdot u_1}u_1+\frac{u_2\cdot y}{u_2\cdot u_2}u_2+⋯+\frac{u_p\cdot y}{u_p\cdot u_p}u_p\\
 &=(u_1\cdot y)u_1+(u_2\cdot y)u_2+\cdots+(u_p\cdot y)u_p\\
 &=(u_1^T y)u_1+(u_2^T y)u_2+\cdots+(u_p^T y)u_p\\
@@ -87,11 +87,11 @@ y&=\frac{u_1\cdot y}{u_1\cdot u_1}u_1+\frac{u_2\cdot y}{u_2\cdot u_2}u_2+⋯+\fr
 &=U_1 𝑦 +U_2 𝑦 +⋯+U_𝑝 𝑦
 \end{aligned}$$
 
-4번째 줄에서 $u_j u_j^T$꼴 보이시나요? $u_j$가 nx1 벡터라고 하면, $u_j u_j^T$는 **nxn 행렬** 이 되고 이를 $U_j$로 명명하였습니다. 이렇게 벡터 $y$는 행렬들의 선형 결합으로도 표현 가능한 것입니다. 이에 대해서는 [Orthogonal Projection](https://soohee410.github.io/linear_algebra_4)에 대한 글에서 조금 더 구체적으로 설명하고자 합니다. 한편, 길이가 1이라는 조건을 추가한 벡터 $u_j$를 **단위 벡터** 라고 하고, $\lbrace u_1,u_2,\cdots,u_p \rbrace$가 직교 기저인데, 각 벡터들이 단위벡터인 경우, 이를 **직정 기저(Orthonormal Basis)** 라고 부릅니다.
+4번째 줄에서 $u_j u_j^T$꼴 보이시나요? $u_j$가 nx1 벡터라고 하면, $u_j u_j^T$는 **nxn 행렬** 이 되고 이를 $U_j$로 명명하였습니다. 이렇게 벡터 $y$는 행렬들의 선형 결합으로도 표현 가능한 것입니다. 이에 대해서는 [Orthogonal Projection](https://soohee410.github.io/orthogonal_projection)에 대한 글에서 조금 더 구체적으로 설명하고자 합니다. 한편, 길이가 1이라는 조건을 추가한 벡터 $u_j$를 **단위 벡터** 라고 하고, $\lbrace u_1,u_2,\cdots,u_p \rbrace$가 직교 기저인데, 각 벡터들이 단위벡터인 경우, 이를 **직정 기저(Orthonormal Basis)** 라고 부릅니다.
 
 <br>
 
-이번 포스팅은 다음 포스팅을 위한 개념 다지기라고 할 수 있는데요! 다음 글에서 본격적으로 이 가중치들이 무엇을 의미하는지에 대해 설명하고, [Orthogonal Projection](https://soohee410.github.io/linear_algebra_4)  에 대해 포스팅하고자 합니다. 감사합니다 :)
+이번 포스팅은 다음 포스팅을 위한 개념 다지기라고 할 수 있는데요! 다음 글에서 본격적으로 이 가중치들이 무엇을 의미하는지에 대해 설명하고, [Orthogonal Projection](https://soohee410.github.io/orthogonal_projection)  에 대해 포스팅하고자 합니다. 감사합니다 :)
 
 <br>
 
