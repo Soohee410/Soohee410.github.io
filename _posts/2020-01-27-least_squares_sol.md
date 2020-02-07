@@ -78,11 +78,11 @@ $$\small \begin{aligned}  &  b-\hat b \perp  Col(A)  \\
 <br>
 지금까지는 행렬 $A$에 어떠한 조건도 없었습니다. 이제 특정한 조건을 하나 추가해볼 건데요. 어떤 mxn행렬 $A$의 ``열들이 서로 선형독립(linearly independent)``이라고 합시다.  그러면, 행렬 $A$는 ``역행렬이 존재(invertible)``할 것입니다. 이제 $\hat x$이 $Ax=b$의 최소제곱해라고 합시다. 그러면 3번에서 위 정리에 의해 $\hat x$은 정규방정식을 만족할 것입니다.
 
-$$A^{\intercal}A\hat x=A^{\intercal}b$$
+$$\small A^{\intercal}A\hat x=A^{\intercal}b$$
 
 이 때, 행렬 $A$가 역행렬이 존재(invertible)하므로, $A^{\intercal}A$ 역시 역행렬이 존재할 것이고, 위 식은 다음과 같이 유일(unique) 최소제곱해가 존재할 것입니다.
 
-$$\hat x=(A^{\intercal}A)^{-1}A^{\intercal}b$$
+$$\small \hat x=(A^{\intercal}A)^{-1}A^{\intercal}b$$
 
 한편, A의 열들이 선형독립이라는 것을 이용해서 또 다른 방법을 도입하려고 합니다. 바로 [QR분해](https://soohee410.github.io/linear_algebra_5)입니다! QR분해를 곁들인(?) 최소제곱해에 관한 정리는 다음과 같습니다.
 
