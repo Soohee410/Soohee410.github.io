@@ -31,7 +31,7 @@ $u(x)=x,\space v(x)=x^2$라고 한다면, 이들의 내적 값은 다음과 같�
 
 $$\small <u,v>=\int_0^1 (x)(x^2) dx = \int_0^1 x^3 dx = \frac{1}{4}  $$
 
-이렇게, 다항식의 집합 또한 내적 공간이 될 수 있습니다. 또 다른 예를 볼까요? 다음과 같은 복소수 벡터 $u=\begin{pmatrix} 1 \\ i \end{pmatrix}$가 있다고 합시다. 이 벡터의 길이를 구하려고 하는데, 실수에서의 표준 내적을 이용하면 어떻게 되나요?
+이렇게, 다항식의 집합 또한 내적 공간이 될 수 있습니다. 또 다른 예를 볼까요? 다음과 같은 복소수 벡터 $\small u=\begin{pmatrix} 1 \cr i \end{pmatrix}$가 있다고 합시다. 이 벡터의 길이를 구하려고 하는데, 실수에서의 표준 내적을 이용하면 어떻게 되나요?
 
 $$\small u\cdot u=u^{\intercal}u = \begin{pmatrix}1&i \end{pmatrix}\begin{pmatrix} 1 \\ i \end{pmatrix} = 1+i^2=1+(-1)=0$$
 

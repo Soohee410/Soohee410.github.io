@@ -12,7 +12,7 @@ use_math: true
 
 <br>
 먼저 직교의 정의는 다음과 같습니다.
-> **Def.** 두 벡터 $u, v (u,v \in \mathbb{R}^n)$에 대하여, $u\cdot v=0$이면 두 벡터는 직교(orthogonal)한다.
+> **Def.** 두 벡터 $u, v\space \in \mathbb{R}^n$에 대하여, $u\cdot v=0$이면 두 벡터는 직교(orthogonal)한다.
 
 내적(inner product)에 대해서는 일단 ``실수 공간에서 두 벡터(nx1)를 input으로 하고, 스칼라(1x1)를 output으로 하는 함수`` $u\cdot v$로만 정의를 하고 진행하겠습니다! 후에 실수 공간을 넘어서 inner product에 대해 조금 더 구체적으로 포스팅하려고 합니다.
 
@@ -25,18 +25,18 @@ $$\small inner\space product: u\cdot v=u^Tv, (u,v\in \mathbb{R^n})$$
 ## 2. 직교여공간(Orthogonal Complement)
 
 <br>
-자, 직교의 정의는 분명 두 벡터 간의 관계에 대한 정의였습니다. 그렇다면 한 벡터와 부분공간(subspace)이 직교한다는 건 무슨 뜻일까요?`` 어떤 벡터 v가 어떤 부분공간 W의 모든 벡터와 직교한다면 v는 W와 직교한다고 말합니다.`` 이 때, $W$와 직교인 모든 벡터들을 모아 놓은 집합을 바로 **W의 직교여공간(orthogonal complement)** 이라고 부르고, $W^⊥$와 같이 표기합니다.
+자, 직교의 정의는 분명 두 벡터 간의 관계에 대한 정의였습니다. 그렇다면 한 벡터와 부분공간(subspace)이 직교한다는 건 무슨 뜻일까요?`` 어떤 벡터 v가 어떤 부분공간 W의 모든 벡터와 직교한다면 v는 W와 직교한다고 말합니다.`` 이 때, $\small W$와 직교인 모든 벡터들을 모아 놓은 집합을 바로 **W의 직교여공간(orthogonal complement)** 이라고 부르고, $\small W^⊥$와 같이 표기합니다.
 
 $$\small W^⊥=\{\boldsymbol z | \boldsymbol z⊥W\}$$
 
-$\mathbb{R}^n$의 부분공간 $W$에 대하여, 직교여공간 $W^⊥$은 다음의 두가지 사실(Fact)이 있습니다.
-1. 어떤 벡터 $\boldsymbol x$가 $W^⊥$안에 존재하기 위한 필요충분조건은 $\boldsymbol x$가 $W$를 생성(span)하는 모든 벡터와 직교라는 것이다.
-2. $W^⊥$는  $\mathbb{R}^n$의 부분공간이다.
+$\mathbb{R}^n$의 부분공간 $W$에 대하여, 직교여공간 $\small W^⊥$은 다음의 두가지 사실(Fact)이 있습니다.
+1. 어떤 벡터 $\boldsymbol x$가 $\small W^⊥$안에 존재하기 위한 필요충분조건은 $\boldsymbol x$가 $\small W$를 생성(span)하는 모든 벡터와 직교라는 것이다.
+2. $\small W^⊥$는  $\small \mathbb{R}^n$의 부분공간이다.
 
-1의 경우는 결국 $\boldsymbol x$가 $W$의 모든 벡터와 직교한다는 것을 의미하므로 정의와 일맥상통합니다. 2의 경우 직관적으로 생각해볼까요? 어떤 벡터 $\boldsymbol z$가 $W$와 직교한다고 해봅시다. $\boldsymbol z$에 어떠한 상수를 곱하면, 벡터의 크기(scale)만 변할 뿐, 여전히 $W$와 직교할 것입니다. 또 한, $W$와 직교하는 두 벡터가 있을 때, 이 두 벡터를 더해서 생긴 평면 역시 $W$와 직교할 것입니다. 따라서 부분공간이 되기 위한 조건을 만족합니다.
+1의 경우는 결국 $\boldsymbol x$가 $\small W$의 모든 벡터와 직교한다는 것을 의미하므로 정의와 일맥상통합니다. 2의 경우 직관적으로 생각해볼까요? 어떤 벡터 $\boldsymbol z$가 $W$와 직교한다고 해봅시다. $\boldsymbol z$에 어떠한 상수를 곱하면, 벡터의 크기(scale)만 변할 뿐, 여전히 $\small W$와 직교할 것입니다. 또 한, $\small W$와 직교하는 두 벡터가 있을 때, 이 두 벡터를 더해서 생긴 평면 역시 $\small W$와 직교할 것입니다. 따라서 부분공간이 되기 위한 조건을 만족합니다.
 
 이제 이와 관련하여 중요한 정리가 있는데, 이는 다음과 같습니다.
-> **Thm.** 어떠한 mxn 행렬 $A$에 대하여, $Row(A)^⊥=Nul(A)$  ,   $Col(A)^⊥=Nul(A^T )$ 이다.
+> **Thm.** 어떠한 mxn 행렬 $A$에 대하여, $ Row(A)^⊥=Nul(A)$  ,   $ Col(A)^⊥=Nul(A^T )$ 이다.
 
 혹시 행렬의 **Row space** 와 **Column space**, **Null space** 의 개념이 가물가물하신 분들은 아래 정의를 다시 한번 상기해주세요!
 - $Nul(A) : \lbrace x \in \mathbb{R}^n  \vert Ax=0 \rbrace $
