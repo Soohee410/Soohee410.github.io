@@ -32,8 +32,10 @@ use_math: false
  - ay : 화살표 방향 (y축)
 
 ---
-<br>
 
+참고로 아래 내용에 대한 코드는 [이곳](https://github.com/Soohee410/Data-Visualization/blob/master/Plotly%20Annotation%20%ED%8A%9C%ED%86%A0%EB%A6%AC%EC%96%BC.ipynb)에 있습니다.
+
+<br>
 ## 1. 마커 위 텍스트
 
 <br>
@@ -86,6 +88,6 @@ use_math: false
 
 <br>
 
-여기까지 Plotly annotation의 기본적인 사용방법이었습니다! 더 많은 예제는 [Plotly 공식 홈페이지](https://plot.ly/python/text-and-annotations/)를 참고하시면 될 것 같습니다. 감사합니다 :)
+여기까지 Plotly annotation의 기본적인 사용방법이었습니다!  더 많은 예제는 [Plotly 공식 홈페이지](https://plot.ly/python/text-and-annotations/)를 참고하시면 될 것 같습니다. 감사합니다 :)
 
 <br>
