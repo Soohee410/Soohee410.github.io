@@ -33,9 +33,8 @@ use_math: false
 
 ---
 
-참고로 아래 내용에 대한 코드는 [이곳](https://github.com/Soohee410/Data-Visualization/blob/master/Plotly%20Annotation%20%ED%8A%9C%ED%86%A0%EB%A6%AC%EC%96%BC.ipynb)에 있습니다.
+아래 내용에 대한 코드는 [이곳](https://github.com/Soohee410/Data-Visualization/blob/master/Plotly%20Annotation%20%ED%8A%9C%ED%86%A0%EB%A6%AC%EC%96%BC.ipynb)에 있습니다.<br>
 
-<br>
 ## 1. 마커 위 텍스트
 
 <br>
