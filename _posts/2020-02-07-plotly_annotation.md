@@ -4,7 +4,7 @@ title: "[Visualization in Python] Plotly Annotation 기본 튜토리얼"
 tags: [Data Visualization]
 use_math: false
 ---
-안녕하세요! 제가 저번에 [Plotly를 이용한 신종 코로나 확진자 시각화](https://soohee410.github.io/2019ncov_1) 포스트에서 Plotly의 Annotation 기능을 많이 활용했었는데요. 오늘은 이와 관련해서 Annotation의 기본 튜토리얼을 포스팅하려고 합니다!  Annotation 기능은 내가 작성한 플롯에 대해 특정 지점 또는 마커에 코멘트를 남기고 싶을 때 매우 유용합니다. 따라서, Annotation의 모양, 크기, 위치 등을 자유자재로 설정할 수 있게 되면,  시각적으로도, 정보적으로도 데이터 플롯을 확실히 더욱 업그레이드 할 수 있는 것 같습니다!  일단 이번 포스트에서 다루게 될 파라미터들은 다음과 같습니다.
+안녕하세요! 제가 저번에 [Plotly를 이용한 신종 코로나 확진자 시각화](https://soohee410.github.io/2019ncov_1) 포스트에서 Plotly의 Annotation 기능을 많이 활용했었는데요. 오늘은 이와 관련해서 Annotation의 기본 튜토리얼을 포스팅하려고 합니다!  Annotation 기능은 내가 작성한 플롯에 대해 특정 지점 또는 마커에 코멘트를 남기고 싶을 때 매우 유용합니다.  Annotation의 모양, 크기, 위치 등을 자유자재로 설정할 수 있게 되면,  시각적으로도, 정보적으로도 데이터 플롯을 확실히 더욱 업그레이드 할 수 있는 것 같습니다!  일단 이번 포스트에서 다루게 될 파라미터들은 다음과 같습니다.
 
 #### 1. 기본(텍스트)
  - x : x좌표
@@ -49,9 +49,9 @@ use_math: false
 <br>
 보통 Annotation은 특정 마커에 대해 코멘트를 남길 때 주로 사용합니다. 때문에 기본적으로 그 포인트를 가르키는 선이 존재합니다! 물론 이 선을 없앨 수도, 화살표로 만들 수도 있습니다. 자, 먼저 x와 y에 강조할 마커의 x좌표, y좌표를 입력합니다.
 
-(1) **showarrow=False** 로 할 경우 텍스트만 남게 되고, **showarrow=True** 로 할 경우 선이 존재하게 됩니다.
-(2) **howarrow=True** 일 때, arrowhead에 1 이상의 숫자를 입력할 경우 그 크기만큼의 화살표 머리가 생깁니다!
-(3) 그 외에 **yshift** 를 이용해서 annotation의 위치를 위아래로 움직일 수 있고, **arrowsize, arrowcolor** 등을 이용해서 화살표를 꾸밀 수 있습니다.
+- **showarrow=False** 로 할 경우 텍스트만 남게 되고, **showarrow=True** 로 할 경우 선이 존재하게 됩니다.  
+- **howarrow=True** 일 때, arrowhead에 1 이상의 숫자를 입력할 경우 그 크기만큼의 화살표 머리가 생깁니다!  
+- 그 외에 **yshift** 를 이용해서 annotation의 위치를 위아래로 움직일 수 있고, **arrowsize, arrowcolor** 등을 이용해서 화살표를 꾸밀 수 있습니다.
 
 <img src="/img/anno2.PNG" width="700px">
 
