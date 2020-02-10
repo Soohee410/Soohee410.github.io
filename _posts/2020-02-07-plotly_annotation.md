@@ -50,7 +50,7 @@ use_math: false
 보통 Annotation은 특정 마커에 대해 코멘트를 남길 때 주로 사용합니다. 때문에 기본적으로 그 포인트를 가르키는 선이 존재합니다! 물론 이 선을 없앨 수도, 화살표로 만들 수도 있습니다. 자, 먼저 x와 y에 강조할 마커의 x좌표, y좌표를 입력합니다.
 
 - **showarrow=False** 로 할 경우 텍스트만 남게 되고, **showarrow=True** 로 할 경우 선이 존재하게 됩니다.  
-- **howarrow=True** 일 때, arrowhead에 1 이상의 숫자를 입력할 경우 그 크기만큼의 화살표 머리가 생깁니다!  
+- **showarrow=True** 일 때, arrowhead에 1 이상의 숫자를 입력할 경우 그 크기만큼의 화살표 머리가 생깁니다!  
 - 그 외에 **yshift** 를 이용해서 annotation의 위치를 위아래로 움직일 수 있고, **arrowsize, arrowcolor** 등을 이용해서 화살표를 꾸밀 수 있습니다.
 
 <img src="/img/anno2.PNG" width="700px">
