@@ -40,7 +40,7 @@ use_math: false
 <br>
 이제 찬찬히 위의 파라미터들을 알아보겠습니다! 먼저 간단하게 3개의 마커를 찍어보겠습니다. 마커 위에 텍스트를 표시하고 싶을 때에는 fig.add_trace에서 **mode='markers+text'** 로 변경하면 됩니다!
 
-<img src="/assets/anno1.PNG" width="700px">
+<img src="/assets/anno1.PNG" width="750px">
 
 <br>
 
@@ -53,7 +53,7 @@ use_math: false
 - **showarrow=True** 일 때, arrowhead에 1 이상의 숫자를 입력할 경우 그 크기만큼의 화살표 머리가 생깁니다!  
 - 그 외에 **yshift** 를 이용해서 annotation의 위치를 위아래로 움직일 수 있고, **arrowsize, arrowcolor** 등을 이용해서 화살표를 꾸밀 수 있습니다.
 
-<img src="/img/anno2.PNG" width="700px">
+<img src="/img/anno2.PNG" width="750px">
 
 <br>
 
@@ -64,12 +64,12 @@ use_math: false
 
 또 한, 플러스, 마이너스는 방향을 조절한다면, ``절대값은 화살표의 길이``를 조정합니다. arrowsize는 화살표의 전반적인 크기를 조절하고, ax, ay에 들어가는 숫자의 크기는 화살표가 얼마나 길어지는지 짧아지는지를 의미하는 것 같습니다! 아래 플롯에서 ax의 절대값은 50으로, 길이가 더 짧은 반면, ay의 길이는 90으로 길이가 더 긴 것을 확인할 수 있습니다.
 
-<img src="/img/anno3.PNG" width="700px">
+<img src="/img/anno3.PNG" width="750px">
 
 
 **ax, ay** 각각에 적당한 값을 넣어 화살표의 방향을 자유자재로 조절할 수 있습니다!
 
-<img src="/img/anno4.PNG" width="700px">
+<img src="/img/anno4.PNG" width="750px">
 
 <br>
 
@@ -82,7 +82,7 @@ use_math: false
 - 2번: **arrowcolor, bordercolor, borderwidth** 등을 이용해서 화살표와 테두리의 경계의 두께, 색을 변경합니다. **borderpad** 를 이용해서 텍스트와 테두리의 간격을 조정할 수 있습니다!
 - 3번: **bgcolor, opacity** 등을 이용해서 텍스트의 배경과 투명도를 조절할 수 있습니다.
 
-<img src="/img/anno5.PNG" width="700px">
+<img src="/img/anno5.PNG" width="750px">
 
 
 <br>
