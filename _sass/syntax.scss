@@ -19,8 +19,8 @@
    overflow: scroll;
  }
 
-.highlight  { background-color: rgb(240,240,240); color: rgb(100,100,100); }
-.lineno { color: darken($background-color, 40%); margin-right: 1em; }
+.highlight  { background-color: rgb(100,100,100); color: rgb(100,100,100); }
+.lineno { color: darken($background-color, 70%); margin-right: 1em; }
 .highlight .c { color:  #999988; font-style: italic } /* Comment */
 .highlight .err { color: #a61717; background-color: #e3d2d2 } /* Error */
 .highlight .k { font-weight: bold } /* Keyword */
