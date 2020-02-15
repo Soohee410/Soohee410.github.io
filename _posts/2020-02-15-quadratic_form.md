@@ -5,7 +5,6 @@ tags: [Linear Algebra]
 use_math: true
 ---
 안녕하세요! 이번 포스트에서는  **이차 형태(Quadratic Forms)** 에 대한 내용과 **양의 정부호(Positive Definite)** 의 의미를 정리하고자 합니다. 바로 시작하겠습니다 😊
-
 <br>
 
 ## 1.  Quadratic Forms
@@ -15,16 +14,16 @@ use_math: true
 
 >**Def.** 어떠한 nxn 대칭행렬 $A$에 대해, $\mathbb {R^n}$의 **이차형태** 는  $\mathbb {R^n}$에서 정의된 함수 $Q$를 의미하는 것으로, 벡터 $x\in \mathbb {R^n}$에서의 함숫값은 $Q(x)=x^\intercal Ax$으로 계산된다. 이 행렬 $A$를 **matrix of the quadratic form** 이라고 일컫는다.
 
-즉, 대칭행렬 $A$에 대해, $\small Q(x)=x^\intercal Ax$의 형태를 이차형태라고 하는데요. 예를 들어 벡터 $\small \boldsymbol x=\begin{pmatrix} x_1 \cr x_2\end{pmatrix}$에 대하여 다음과 같은 행렬들이 있을 때, 이차형태를 계산하면 다음과 같습니다.
+즉, 대칭행렬 $A$에 대해, $\small Q(x)=x^\intercal Ax$의 형태를 이차형태라고 하는데요. 예를 들어 벡터 $\small \boldsymbol x=\begin{pmatrix} x_1 \cr x_2\end{pmatrix}$에 대하여 다음과 같은 대칭행렬들이 있을 때, 이차형태를 계산하면 다음과 같습니다.
 
 - $\small A=\begin{bmatrix} 1 & 0\cr 0&2 \end{bmatrix}$일 때,  $\small x^\intercal Ax=\begin{bmatrix}x_1&x_2\end{bmatrix} \begin{bmatrix} 1 & 0\cr 0&2 \end{bmatrix} \begin{bmatrix}x_1\cr x_2 \end{bmatrix}=x_1^2+2x_2^2$
 - $\small A=\begin{bmatrix} 2 & 2\cr 2&4 \end{bmatrix}$일 때, $\small x^\intercal Ax=\begin{bmatrix}x_1&x_2\end{bmatrix} \begin{bmatrix} 2 & 2\cr 2&4 \end{bmatrix} \begin{bmatrix}x_1\cr x_2 \end{bmatrix}=2x_1^2+4x_1x_2+4x_2^2$
 
 이제 이 이차형태들을 임의의 상수 $c$에 대하여 그림으로 나타내면 아래 그림과 같을 것입니다. 첫번째 이차형태의 경우 축들을 기준으로 타원형 그래프가 **표준 위치(Standard Position)** 에 있고, 두번째 이차형태의 경우 그래프가 사선 방향의 타원형이네요. 그런데 이 이차형태들의 함숫값들 중에서 ``원점과의 거리가 가장 긴 좌표를 찾는 문제``를 생각해 봅시다. 첫번째의 경우 특별한 계산과정이 필요도 없이 $x_2=0$일 때의 좌표가 문제의 답이 된다는 것을 알 수 있습니다.  반면, 두번째의 경우 이 문제에 대한 답을 구하는 과정은 조금 더 복잡합니다. 두번째 이차형태의 경우에는 cross-product 항 $4x_1x_2$이 존재하기 때문입니다. 여러가지 행렬들을 계산해보면, 대각 행렬의 경우 cross-product 항이 존재하지 않고, 대각행렬이 아닌 대칭행렬의 경우에는 cross-product 항이 존재한다는 것을 알 수 있습니다.
-<img src= '/assets/quad1.png' width='600px'>
+<img src= '/assets/quad1.png' width='550px'>
 
 돌아와서 두번째 이차형태의 경우 이 문제에 대한 답을 어떻게 찾을 수 있을까요? 아래 그림처럼 축을 바꿔보면, 새로운 축에 대해서는 그래프가 표준 위치에 놓이게 되는 것을 볼 수 있습니다. 이 새로운 축 $y_1, y_2$에 대해서는 두번째 이차형태가 cross-product항을 가지지 않게 되어, 여러가지 최적화 문제에 대해서도 계산이 훨씬 쉬워질 것입니다. 그렇다면 이 새로운 축은 어떻게 구하면 될까요? 위에서 대각행렬의 경우 이차형태가 cross-product 항을 가지지 않는다는 것을 알게 되었는데요. 그렇다면 행렬의 대각화를 이용해서 대각행렬로 만들어주는 아이디어를 어떻게 이용하면 되지 않을까요? 이 과정은 **변수 변환(change of variable)** 을 이용합니다.
-<img src= '/img/quad2.png' width='600px'>
+<img src= '/img/quad2.png' width='550px'>
 
 <br>
 
@@ -75,16 +74,16 @@ $$y=P^{-1}x=P^{\intercal}x$$
 이차형태의 함숫값들의 부호에 따라 이차형태를 분류할 수 있는데요. 먼저 정의부터 알아봅시다.
 
 > **Def.** 이차형태 $Q$는,
-> - 모든 $\boldsymbol x \not=0$에 대하여 $\small Q(\boldsymbol x)>0$이면, **positive definite** 이다.
-> - 모든 $\boldsymbol x \not=0$에 대하여 $\small Q(\boldsymbol x)<0$이면, **negative definite** 이다.
-> - $\small Q(\boldsymbol x)$가 양의 값, 음의 값을 모두 가지면, **indefinite** 이다.
+a. 모든 $\boldsymbol x \not=0$에 대하여 $\small Q(\boldsymbol x)>0$이면, **positive definite** 이다.
+b. 모든 $\boldsymbol x \not=0$에 대하여 $\small Q(\boldsymbol x)<0$이면, **negative definite** 이다.
+c. $\small Q(\boldsymbol x)$가 양의 값, 음의 값을 모두 가지면, **indefinite** 이다.
 
 또한, 모든 $\boldsymbol x$에 대해 $\small Q(\boldsymbol x)\ge 0$이면, $Q$는 **positive semidefinite** 이라고 하고,  $\small Q(\boldsymbol x)\le 0$이면, $Q$는 **negative semidefinite** 이라고 말합니다. 이렇게 이차형태의 함숫값들의 부호에 따라 이차형태를 다양하게 분류한다는 것을 알게 되었습니다. 다만 모든 0이 아닌 벡터 $\boldsymbol x$에 대해 $\small Q(\boldsymbol x)$를 알아야 한다는 것인데, 너무 번거롭겠죠? 실제로 이차형태를 판별하는 다양한 방법이 있지만, 그 중에서도 쉬운 방법은 바로 고유값들의 부호를 확인하는 것입니다!
 
 > **Thm.** $A$가 nxn 대칭행렬이라고 하자. 그러면 이차형태 $\small x^{\intercal}Ax$가,
-> - positive definite이기 위한 필요충분조건은 $A$의 고유값들이 모두 양수인 것이다.
-> - negative definite이기 위한 필요충분조건은 $A$의 고유값들이 모두 음수인 것이다.
-> - indefinite이기 위한 필요충분조건은 $A$가 양의 고유값, 음의 고유값을 모두 가지는 것이다.
+a. positive definite이기 위한 필요충분조건은 $A$의 고유값들이 모두 양수인 것이다.
+b. negative definite이기 위한 필요충분조건은 $A$의 고유값들이 모두 음수인 것이다.
+c. indefinite이기 위한 필요충분조건은 $A$가 양의 고유값, 음의 고유값을 모두 가지는 것이다.
 
 왜 그럴까요? 위에서 **Principal Axes Theorem** 에 의하여, 다음을 만족하는 직교변환 $\boldsymbol x = P\boldsymbol y$가 존재합니다. 이 때, 모든 0이 아닌 $\boldsymbol x$와 모든 0이 아닌 $\boldsymbol y$ 사이에는 일대일 대응이 존재하기 때문에, $\small Q(x)$의 부호는 결국 $A$의 고유값들의 부호에 달려있다고 할 수 있습니다!
 
@@ -98,7 +97,7 @@ $$\small det(A)=\lambda_1\lambda_2\cdots \lambda_n>0 \implies A: invertible$$
 <br>
 
 
-여기까지 이차형태와 변수변환, 그리고 이차형태 판별에 대한 내용이었습니다! 조금 이해가 되셨나요? 통계학에서는 특히 **공분산 행렬** 이 대칭행렬이라는 것을 이용하여, 특히 positive definite 행렬이라 가정하고 다양한 연산을 하게 됩니다. 다음에는 이차형태에서의 Constrained Optimization에 대해 포스팅하겠습니다. 감사합니다 :)
+여기까지 이차형태와 변수변환, 그리고 이차형태 판별에 대한 내용이었습니다! 조금 이해가 되셨나요? 통계학에서는 특히 **공분산 행렬**이 대칭행렬이라는 것을 이용하여, 특히 positive definite 행렬이라 가정하고 다양한 연산을 하게 됩니다. 다음에는 이차형태에서의 Constrained Optimization에 대해 포스팅하겠습니다. 감사합니다 :)
 
 <br>
 
