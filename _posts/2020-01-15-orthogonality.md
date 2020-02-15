@@ -5,7 +5,6 @@ tags: [Linear Algebra]
 use_math: true
 ---
 안녕하세요! 이번 포스트에서는  **직교성(Orthogonality)**, **직교여공간(Orthogonal Complement)**, **직교기저(Orthogonal Basis)** 에 대해 제가 배웠던 내용을 정리하고자 합니다. 바로 시작하겠습니다 😊
-
 <br>
 
 ## 1. 직교(orthogonal)의 정의

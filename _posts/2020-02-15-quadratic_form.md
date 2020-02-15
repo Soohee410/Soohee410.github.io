@@ -73,16 +73,16 @@ $$y=P^{-1}x=P^{\intercal}x$$
 <br>
 이차형태의 함숫값들의 부호에 따라 이차형태를 분류할 수 있는데요. 먼저 정의부터 알아봅시다.
 
-> **Def.** 이차형태 $Q$는,
-a. 모든 $\boldsymbol x \not=0$에 대하여 $\small Q(\boldsymbol x)>0$이면, **positive definite** 이다.
-b. 모든 $\boldsymbol x \not=0$에 대하여 $\small Q(\boldsymbol x)<0$이면, **negative definite** 이다.
+> **Def.** 이차형태 $Q$는,  
+a. 모든 $\boldsymbol x \not=0$에 대하여 $\small Q(\boldsymbol x)>0$이면, **positive definite** 이다.  
+b. 모든 $\boldsymbol x \not=0$에 대하여 $\small Q(\boldsymbol x)<0$이면, **negative definite** 이다.  
 c. $\small Q(\boldsymbol x)$가 양의 값, 음의 값을 모두 가지면, **indefinite** 이다.
 
 또한, 모든 $\boldsymbol x$에 대해 $\small Q(\boldsymbol x)\ge 0$이면, $Q$는 **positive semidefinite** 이라고 하고,  $\small Q(\boldsymbol x)\le 0$이면, $Q$는 **negative semidefinite** 이라고 말합니다. 이렇게 이차형태의 함숫값들의 부호에 따라 이차형태를 다양하게 분류한다는 것을 알게 되었습니다. 다만 모든 0이 아닌 벡터 $\boldsymbol x$에 대해 $\small Q(\boldsymbol x)$를 알아야 한다는 것인데, 너무 번거롭겠죠? 실제로 이차형태를 판별하는 다양한 방법이 있지만, 그 중에서도 쉬운 방법은 바로 고유값들의 부호를 확인하는 것입니다!
 
-> **Thm.** $A$가 nxn 대칭행렬이라고 하자. 그러면 이차형태 $\small x^{\intercal}Ax$가,
-a. positive definite이기 위한 필요충분조건은 $A$의 고유값들이 모두 양수인 것이다.
-b. negative definite이기 위한 필요충분조건은 $A$의 고유값들이 모두 음수인 것이다.
+> **Thm.** $A$가 nxn 대칭행렬이라고 하자. 그러면 이차형태 $\small x^{\intercal}Ax$가,  
+a. positive definite이기 위한 필요충분조건은 $A$의 고유값들이 모두 양수인 것이다.  
+b. negative definite이기 위한 필요충분조건은 $A$의 고유값들이 모두 음수인 것이다.  
 c. indefinite이기 위한 필요충분조건은 $A$가 양의 고유값, 음의 고유값을 모두 가지는 것이다.
 
 왜 그럴까요? 위에서 **Principal Axes Theorem** 에 의하여, 다음을 만족하는 직교변환 $\boldsymbol x = P\boldsymbol y$가 존재합니다. 이 때, 모든 0이 아닌 $\boldsymbol x$와 모든 0이 아닌 $\boldsymbol y$ 사이에는 일대일 대응이 존재하기 때문에, $\small Q(x)$의 부호는 결국 $A$의 고유값들의 부호에 달려있다고 할 수 있습니다!

@@ -5,7 +5,6 @@ tags: [Linear Algebra]
 use_math: true
 ---
 안녕하세요! 이번 포스트에서는  **그람슈미트 과정(Gram-Schmidt Process)** 과 **QR 분해(QR Decomposition)** 에 대해 제가 배웠던 내용을 정리하고자 합니다. 바로 시작하겠습니다 😊
-
 <br>
 
 ## 1. 그람슈미트 과정(Gram-Schmidt Process)

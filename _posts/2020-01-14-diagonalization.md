@@ -5,7 +5,6 @@ tags: [Linear Algebra]
 use_math: true
 ---
 안녕하세요! 이번 글에서는 **대각화(Diagonalization)** 의 개념 및 정리(theorem)를 살펴보고자 합니다. 바로 시작하겠습니다 :)
-
 <br>
 
 ## 1. 대각화(Diagonalization)의 정의

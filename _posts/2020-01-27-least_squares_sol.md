@@ -5,7 +5,6 @@ tags: [Linear Algebra]
 use_math: true
 ---
 안녕하세요! 이번 포스트에서는  **최소제곱해(Least Squares Solution)** 과 **정규방정식(Normal Equation)** 에 대해 선형대수 과목에서 제가 배웠던 내용을 정리하고자 합니다. 바로 시작하겠습니다 😊
-
 <br>
 
 ## 1.  The Best Approximation Theorem

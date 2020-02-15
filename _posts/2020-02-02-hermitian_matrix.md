@@ -5,7 +5,6 @@ tags: [Linear Algebra]
 use_math: true
 ---
 안녕하세요! 이번 포스트에서는  **에르미트행렬(Hermitian Matrix)**, **대칭행렬(Symmetric Matrix)** 의 특징과 대칭행렬에서의 **대각화**, 마지막으로 **스펙트럴 분해(Spectral Decomposition)** 에 대한 내용을 정리하고자 합니다. 바로 시작하겠습니다 😊
-
 <br>
 
 ## 1.  Hermitian Matrix
