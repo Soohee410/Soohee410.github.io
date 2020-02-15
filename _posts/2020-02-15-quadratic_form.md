@@ -20,10 +20,10 @@ use_math: true
 - $\small A=\begin{bmatrix} 2 & 2\cr 2&4 \end{bmatrix}$일 때, $\small x^\intercal Ax=\begin{bmatrix}x_1&x_2\end{bmatrix} \begin{bmatrix} 2 & 2\cr 2&4 \end{bmatrix} \begin{bmatrix}x_1\cr x_2 \end{bmatrix}=2x_1^2+4x_1x_2+4x_2^2$
 
 이제 이 이차형태들을 임의의 상수 $c$에 대하여 그림으로 나타내면 아래 그림과 같을 것입니다. 첫번째 이차형태의 경우 축들을 기준으로 타원형 그래프가 **표준 위치(Standard Position)** 에 있고, 두번째 이차형태의 경우 그래프가 사선 방향의 타원형이네요. 그런데 이 이차형태들의 함숫값들 중에서 ``원점과의 거리가 가장 긴 좌표를 찾는 문제``를 생각해 봅시다. 첫번째의 경우 특별한 계산과정이 필요도 없이 $x_2=0$일 때의 좌표가 문제의 답이 된다는 것을 알 수 있습니다.  반면, 두번째의 경우 이 문제에 대한 답을 구하는 과정은 조금 더 복잡합니다. 두번째 이차형태의 경우에는 cross-product 항 $4x_1x_2$이 존재하기 때문입니다. 여러가지 행렬들을 계산해보면, 대각 행렬의 경우 cross-product 항이 존재하지 않고, 대각행렬이 아닌 대칭행렬의 경우에는 cross-product 항이 존재한다는 것을 알 수 있습니다.
-<img src= '/assets/quad1.png' width='550px'>
+<img src= '/assets/quad1.png' width='520px'>
 
 돌아와서 두번째 이차형태의 경우 이 문제에 대한 답을 어떻게 찾을 수 있을까요? 아래 그림처럼 축을 바꿔보면, 새로운 축에 대해서는 그래프가 표준 위치에 놓이게 되는 것을 볼 수 있습니다. 이 새로운 축 $y_1, y_2$에 대해서는 두번째 이차형태가 cross-product항을 가지지 않게 되어, 여러가지 최적화 문제에 대해서도 계산이 훨씬 쉬워질 것입니다. 그렇다면 이 새로운 축은 어떻게 구하면 될까요? 위에서 대각행렬의 경우 이차형태가 cross-product 항을 가지지 않는다는 것을 알게 되었는데요. 그렇다면 행렬의 대각화를 이용해서 대각행렬로 만들어주는 아이디어를 어떻게 이용하면 되지 않을까요? 이 과정은 **변수 변환(change of variable)** 을 이용합니다.
-<img src= '/img/quad2.png' width='550px'>
+<img src= '/img/quad2.png' width='520px'>
 
 <br>
 
@@ -37,7 +37,7 @@ $$\small \boldsymbol x=P\boldsymbol y \quad or\quad \boldsymbol y=P^{-1}\boldsym
 
 위와 같은 식을 **변수 변환** 했다고 합니다! $P$의 열들을 $u_1,u_2,\cdots,u_n$이라 하고, 이 열들로 결정되는 기저를 $\small B=\lbrace u_1,u_2,\cdots,u_n\rbrace$라 할 때, $\boldsymbol y$는 $\boldsymbol x$가 기저 $B$에 의해 표현될 때 $\boldsymbol x$의 좌표벡터(coordinate vector)인 것입니다. ($\small i.e.\space \boldsymbol y=\begin{bmatrix}\boldsymbol x\end{bmatrix}_B$)
 
-$$\small x=Py=\begin{bmatrix} \boldsymbol{u_1}& \boldsymbol{u_2}& \cdots &\boldsymbol{ u_n}\end{bmatrix} \begin{pmatrix}y_1\cr\vdots\cr y_n\end{pmatrix}=y_1\boldsymbol{u_1}+y_2\boldsymbol{u_2}+\cdots +y_n\boldsymbol{u_n}$$
+$$\small x=Py=\begin{bmatrix} \boldsymbol{u_1}& \cdots &\boldsymbol{ u_n}\end{bmatrix} \begin{pmatrix}y_1\cr\vdots\cr y_n\end{pmatrix}=y_1\boldsymbol{u_1}+\cdots +y_n\boldsymbol{u_n}$$
 
 이제 이것을 이차형태 $\small x^{\intercal}Ax$에 대입하면 다음과 같이 될 것입니다.
 
@@ -45,7 +45,7 @@ $$\small x^{\intercal}Ax=(Py)^{\intercal}A(Py)=y^{\intercal}P^{\intercal}APy=y^{
 
 그러면 새로운 이차형태의 행렬이 $\small P^{\intercal}AP$이 되는 것을 확인할 수 있습니다. 이 때, $A$는 대칭행렬이기 때문에, [이전 포스트](https://soohee410.github.io/hermitian_matrix)에서 했던 정리에 의하여 $A$는 ``직교대각화가 가능``합니다. 따라서, $\small P^{\intercal}AP$가 대각행렬 $D$가 되게 하는 orthogonal matrix $P$가 존재합니다. [대각화 포스트](https://soohee410.github.io/diagonalization)에서 했듯이, 이 때의 $P$는 각 열들이 $A$의 고유벡터인 행렬이고, $D$는 대각요소가 각 고유벡터에 해당하는 $A$의 고유값들인 대각행렬입니다.
 
-$$\small \begin{aligned} x^{\intercal}Ax&=y^{\intercal}Dy=\begin{pmatrix} y_1& y_2& \cdots & y_n\end{pmatrix} \begin{pmatrix} \lambda_1 & &0\cr & \ddots & \cr 0 & & \lambda_n \end{pmatrix}\begin{pmatrix} y_1 \cr \vdots \cr y_n\end{pmatrix}\\ &= \lambda_1 y_1^2+\lambda_2 y_2^2+\cdots +
+$$\small \begin{aligned} x^{\intercal}Ax=y^{\intercal}Dy&=\begin{pmatrix} y_1& y_2& \cdots & y_n\end{pmatrix} \begin{pmatrix} \lambda_1 & &0\cr & \ddots & \cr 0 & & \lambda_n \end{pmatrix}\begin{pmatrix} y_1 \cr \vdots \cr y_n\end{pmatrix}\\ &= \lambda_1 y_1^2+\lambda_2 y_2^2+\cdots +
 \lambda_n y_n^2 \end{aligned}$$
 
 예를 들어, nxn 대칭행렬 $A$의 고유벡터들이 $u_1, u_2, \cdots, u_n$이고, 고유값들이 $\lambda_1, \lambda_2,\cdots,\lambda_n$일 때, 이차형태 $\small Q(x)=x^{\intercal}Ax=y^{\intercal}Dy$에 대하여, $y=\boldsymbol e_1$이면 어떻게 될까요? 벡터 $x$는 다음과 같이 고유벡터 $u_1$을 의미하고,
@@ -54,7 +54,7 @@ $$\small x=Py=\begin{bmatrix} \boldsymbol u_1 & \cdots & \boldsymbol u_n \end{bm
 
 이차형태 $\small Q(x)$는 $\boldsymbol x=\boldsymbol u_1$일 때 $u_1$에 해당하는 고유값 $\lambda_1$을 출력할 것입니다.
 
-$$\small \begin{aligned} Q(\boldsymbol x)&=x^{\intercal}Ax=y^{\intercal}Dy=\lambda_1 y_1^2+\lambda_2 y_2^2+\cdots +\lambda_n y_n^2\\ &=\lambda_1\cdot 1 +0+\cdots+0=\lambda_1 \end{aligned}$$
+$$\small \begin{aligned} Q(\boldsymbol x)=x^{\intercal}Ax=y^{\intercal}Dy&=\lambda_1 y_1^2+\lambda_2 y_2^2+\cdots +\lambda_n y_n^2\\ &=\lambda_1+0+\cdots+0=\lambda_1 \end{aligned}$$
 
 혹은 반대로 $\boldsymbol x$을 알고 있을 때 $\boldsymbol y$는 다음과 같이 구할 수 있습니다.
 
