@@ -54,7 +54,7 @@ $$\small \begin{aligned}\lambda_1(v_1^{\sf H}v_2)&=(\lambda_1v_1)^{\sf H}v_2=(Av
 ## 2. Diagonalization of Symmetric Matrix
 <br>
 
-대각화가 가능하기 위한 조건이 뭐였는지 기억하시나요? [대각화 포스트](https://soohee410.github.io/linear_algebra_2)에서 nxn행렬이 대각화가 가능하기 위해서는 ``n개의 선형독립인 고유벡터가 필요하다``고 언급했었는데요. 이번엔 어떤 행렬 $A$가 대칭행렬이고 n개의 서로 직교하는 고유벡터가 존재한다고 해봅시다. 이 고유벡터들을 각각 길이가 1이라는 조건을 추가하겠습니다. 서로 직교하면 독립하기 때문에 당연히 대각화가 가능할 것입니다.  이 때, 각 열이 고유벡터인 행렬 $P$는 **Orthogonal Matrix** 가 될 것입니다.
+대각화가 가능하기 위한 조건이 뭐였는지 기억하시나요? [대각화 포스트](https://soohee410.github.io/diagonalization)에서 nxn행렬이 대각화가 가능하기 위해서는 ``n개의 선형독립인 고유벡터가 필요하다``고 언급했었는데요. 이번엔 어떤 행렬 $A$가 대칭행렬이고 n개의 서로 직교하는 고유벡터가 존재한다고 해봅시다. 이 고유벡터들을 각각 길이가 1이라는 조건을 추가하겠습니다. 서로 직교하면 독립하기 때문에 당연히 대각화가 가능할 것입니다.  이 때, 각 열이 고유벡터인 행렬 $P$는 **Orthogonal Matrix** 가 될 것입니다.
 
 $$\small  A=PDP^{-1}, \space (D:Diagonal, P^{-1}=P^{\intercal})$$
 
