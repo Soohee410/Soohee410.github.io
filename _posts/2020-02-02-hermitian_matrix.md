@@ -25,20 +25,20 @@ $$\small  A: Hermitian\space Matrix \quad if\space  A^{\sf H}=A$$
 
 **둘째**, $\small A^{\sf H}=A$이면, $A$의 고유값은 실수이다.
 
-$$\small \begin{aligned}(pf)\qquad \qquad Ax &=\lambda x \\
-x^{\sf H}Ax &=x^{\sf H}\lambda x=\lambda x^{\sf H}x \implies \lambda =\frac{x^{\sf H}Ax}{x^{\sf H}x} \end{aligned} $$
+$$\small \begin{aligned}(pf)\qquad \qquad A\boldsymbol x &=\lambda \boldsymbol x \\\boldsymbol
+x^{\sf H}A\boldsymbol x &=\boldsymbol x^{\sf H}\lambda \boldsymbol x=\lambda \boldsymbol x^{\sf H}\boldsymbol x \implies \lambda =\frac{\boldsymbol x^{\sf H}A\boldsymbol x}{\boldsymbol x^{\sf H}\boldsymbol x} \end{aligned} $$
 
-$$\small \begin{aligned}  x^{\sf H}x&=\bar x_1x_1+\cdots +\bar x_nx_n\in \mathbb{R},\\
-\space (x^{\sf H}Ax)^{\sf H} &= x^{\sf H}Ax,\quad  x^{\sf H}Ax:scalar \implies x^{\sf H}Ax\in\mathbb{R} \end{aligned}$$
+$$\small \begin{aligned}  \boldsymbol x^{\sf H}\boldsymbol x&=\bar x_1x_1+\cdots +\bar x_nx_n\in \mathbb{R},\\
+\space (\boldsymbol x^{\sf H}A\boldsymbol x)^{\sf H} &= \boldsymbol x^{\sf H}A\boldsymbol x,\quad  \boldsymbol x^{\sf H}A\boldsymbol x:scalar \implies \boldsymbol x^{\sf H}A\boldsymbol x\in\mathbb{R} \end{aligned}$$
 
-$$\small\therefore  \lambda =\frac{x^{\sf H}Ax}{x^{\sf H}x}\in \mathbb{R} $$
+$$\small\therefore  \lambda =\frac{\boldsymbol x^{\sf H}A\boldsymbol x}{\boldsymbol x^{\sf H}\boldsymbol x}\in \mathbb{R} $$
 
 **셋째**, $\small A^{\sf H}=A$이면, 서로 다른 고유공간의 고유벡터들은 직교한다.
 
-$$\small(pf)\qquad Let \space Av_1=\lambda_1 v_1,\space Av_2=\lambda_2v_2,\space \lambda_1\not =\lambda_2 $$
+$$\small(pf)\qquad Let \space A\boldsymbol v_1=\lambda_1 \boldsymbol v_1,\space A\boldsymbol v_2=\lambda_2\boldsymbol v_2,\space \lambda_1\not =\lambda_2 $$
 
-$$\small \begin{aligned}\lambda_1(v_1^{\sf H}v_2)&=(\lambda_1v_1)^{\sf H}v_2=(Av_1)^{\sf H}v_2\\ &=v_1^{\sf H}A^{\sf H}v_2=v_1^{\sf H}(A^{\sf H}v_2)\\ &=v_1^{\sf H}\lambda_2v_2=\lambda_2(v_1^{\sf H}v_2)\\
-\therefore v_1^{\sf H}v_2&=0
+$$\small \begin{aligned}\lambda_1(\boldsymbol v_1^{\sf H}\boldsymbol v_2)&=(\lambda_1\boldsymbol v_1)^{\sf H}\boldsymbol v_2=(A\boldsymbol v_1)^{\sf H}\boldsymbol v_2\\ &=\boldsymbol v_1^{\sf H}A^{\sf H}\boldsymbol v_2=\boldsymbol v_1^{\sf H}(A^{\sf H}\boldsymbol v_2)\\ &=\boldsymbol v_1^{\sf H}\lambda_2\boldsymbol v_2=\lambda_2(\boldsymbol v_1^{\sf H}\boldsymbol v_2)\\
+\therefore \boldsymbol v_1^{\sf H}\boldsymbol v_2&=0
 \end{aligned} $$
 
 <br>
@@ -86,14 +86,14 @@ $$\small A^{\intercal} = (PDP^{\intercal})^{\intercal}=PDP^{\intercal}=A$$
 
 한편, 어떤 대칭행렬 $A$를 직교 대각화했다고 합시다. 그러면 다음과 같이 표현할 수 있습니다.
 
-$$\small \begin{aligned} &A=PDP^{\intercal}=\begin{bmatrix} u_1&\cdots&u_n\end{bmatrix} \begin{bmatrix}\lambda_1 & &0\\ & \ddots& \\ 0& &\lambda_n \end{bmatrix} \begin{bmatrix}u_1^{\intercal}\\ \vdots\\u_n^{\intercal}\end{bmatrix} \\
-&=\begin{bmatrix}\lambda_1u_1 &\cdots &\lambda_n u_n \end{bmatrix} \begin{bmatrix}u_1^{\intercal}\\ \vdots\\u_n^{\intercal}\end{bmatrix} \\ &=\lambda_1u_1u_1^{\intercal}+\lambda_2u_2u_2^{\intercal} +\cdots \lambda_nu_nu_n^{\intercal}  \end{aligned}$$
+$$\small \begin{aligned} &A=PDP^{\intercal}=\begin{bmatrix} \boldsymbol u_1&\cdots&\boldsymbol u_n\end{bmatrix} \begin{bmatrix}\lambda_1 & &0\\ & \ddots& \\ 0& &\lambda_n \end{bmatrix} \begin{bmatrix}\boldsymbol u_1^{\intercal}\\ \vdots\\\boldsymbol u_n^{\intercal}\end{bmatrix} \\
+&=\begin{bmatrix}\lambda_1\boldsymbol u_1 &\cdots &\lambda_n \boldsymbol u_n \end{bmatrix} \begin{bmatrix}\boldsymbol u_1^{\intercal}\\ \vdots\\\boldsymbol u_n^{\intercal}\end{bmatrix} \\ &=\lambda_1\boldsymbol{u_1u_1^{\intercal}}+\lambda_2\boldsymbol {u_2u_2^{\intercal}} +\cdots \lambda_n\boldsymbol{u_nu_n^{\intercal}}  \end{aligned}$$
 
-위 식에서 마지막 줄을 보면 $A$의 고유값들, 즉 스펙트럼에 의해 A가 다양하게 쪼개진 것을 확인할 수 있습니다. 위와 같이 행렬 $A$를 표현한 것을 $A$의 **스펙트럴 분해(Spectral Decomposition)** 라고 합니다. 또 한, 자주 언급되었지만 각 nxn행렬 $u_ju_j^{\intercal}$는 **투영행렬(Projection Matrix)** 입니다. 예를 들어 어떠한 벡터 $\boldsymbol x$를 행렬 $A$에 의해 선형변환 시킨다면 다음과 같이 될 것입니다.
+위 식에서 마지막 줄을 보면 $A$의 고유값들, 즉 스펙트럼에 의해 A가 다양하게 쪼개진 것을 확인할 수 있습니다. 위와 같이 행렬 $A$를 표현한 것을 $A$의 **스펙트럴 분해(Spectral Decomposition)** 라고 합니다. 또 한, 자주 언급되었지만 각 nxn행렬 $\boldsymbol{u_ju_j^{\intercal}}$는 **투영행렬(Projection Matrix)** 입니다. 예를 들어 어떠한 벡터 $\boldsymbol x$를 행렬 $A$에 의해 선형변환 시킨다면 다음과 같이 될 것입니다.
 
-$$\small A\boldsymbol x=\lambda_1u_1u_1^{\intercal}\boldsymbol x+\lambda_2u_2u_2^{\intercal}\boldsymbol x +\cdots \lambda_nu_nu_n^{\intercal}\boldsymbol x $$
+$$\small A\boldsymbol x=\lambda_1\boldsymbol{u_1u_1^{\intercal}}\boldsymbol x+\lambda_2\boldsymbol{u_2u_2^{\intercal}}\boldsymbol x +\cdots \lambda_n\boldsymbol{u_nu_n^{\intercal}}\boldsymbol x $$
 
-이 때, 각 $(u_ju_j^{\intercal})\boldsymbol x $ 는 벡터 $\boldsymbol x $를 벡터 **$u_j$에 의해 생성되는 부분공간으로의 정사영** 을 의미한다는 점에서 $u_ju_j^{\intercal}$는 투영행렬이고, 각 투영행렬 $u_ju_j^{\intercal}$의 rank는 1입니다.
+이 때, 각 $(\boldsymbol{u_ju_j^{\intercal}})\boldsymbol x $ 는 벡터 $\boldsymbol x $를 벡터 **$u_j$에 의해 생성되는 부분공간으로의 정사영** 을 의미한다는 점에서 $\boldsymbol{u_ju_j^{\intercal}}$는 투영행렬이고, 각 투영행렬 $\boldsymbol{u_ju_j^{\intercal}}$의 rank는 1입니다.
 
 <br>
 

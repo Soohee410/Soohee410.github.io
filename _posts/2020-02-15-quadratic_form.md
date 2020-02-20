@@ -20,10 +20,10 @@ use_math: true
 - $\small A=\begin{bmatrix} 2 & 2\cr 2&4 \end{bmatrix}$일 때, $\small x^\intercal Ax=\begin{bmatrix}x_1&x_2\end{bmatrix} \begin{bmatrix} 2 & 2\cr 2&4 \end{bmatrix} \begin{bmatrix}x_1\cr x_2 \end{bmatrix}=2x_1^2+4x_1x_2+4x_2^2$
 
 이제 이 이차형태들을 임의의 상수 $c$에 대하여 그림으로 나타내면 아래 그림과 같을 것입니다. 첫번째 이차형태의 경우 축들을 기준으로 타원형 그래프가 **표준 위치(Standard Position)** 에 있고, 두번째 이차형태의 경우 그래프가 사선 방향의 타원형이네요. 그런데 이 이차형태들의 함숫값들 중에서 ``원점과의 거리가 가장 긴 좌표를 찾는 문제``를 생각해 봅시다. 첫번째의 경우 특별한 계산과정이 필요도 없이 $x_2=0$일 때의 좌표가 문제의 답이 된다는 것을 알 수 있습니다.  반면, 두번째의 경우 이 문제에 대한 답을 구하는 과정은 조금 더 복잡합니다. 두번째 이차형태의 경우에는 cross-product 항 $4x_1x_2$이 존재하기 때문입니다. 여러가지 행렬들을 계산해보면, 대각 행렬의 경우 cross-product 항이 존재하지 않고, 대각행렬이 아닌 대칭행렬의 경우에는 cross-product 항이 존재한다는 것을 알 수 있습니다.
-<img src= '/assets/quad1.png' width='520px'>
+<img src= '/assets/quad1.png' width='500px'>
 
 돌아와서 두번째 이차형태의 경우 이 문제에 대한 답을 어떻게 찾을 수 있을까요? 아래 그림처럼 축을 바꿔보면, 새로운 축에 대해서는 그래프가 표준 위치에 놓이게 되는 것을 볼 수 있습니다. 이 새로운 축 $y_1, y_2$에 대해서는 두번째 이차형태가 cross-product항을 가지지 않게 되어, 여러가지 최적화 문제에 대해서도 계산이 훨씬 쉬워질 것입니다. 그렇다면 이 새로운 축은 어떻게 구하면 될까요? 위에서 대각행렬의 경우 이차형태가 cross-product 항을 가지지 않는다는 것을 알게 되었는데요. 그렇다면 행렬의 대각화를 이용해서 대각행렬로 만들어주는 아이디어를 어떻게 이용하면 되지 않을까요? 이 과정은 **변수 변환(change of variable)** 을 이용합니다.
-<img src= '/img/quad2.png' width='520px'>
+<img src= '/img/quad2.png' width='500px'>
 
 <br>
 
@@ -45,14 +45,14 @@ $$\small x^{\intercal}Ax=(Py)^{\intercal}A(Py)=y^{\intercal}P^{\intercal}APy=y^{
 
 그러면 새로운 이차형태의 행렬이 $\small P^{\intercal}AP$이 되는 것을 확인할 수 있습니다. 이 때, $A$는 대칭행렬이기 때문에, [이전 포스트](https://soohee410.github.io/hermitian_matrix)에서 했던 정리에 의하여 $A$는 ``직교대각화가 가능``합니다. 따라서, $\small P^{\intercal}AP$가 대각행렬 $D$가 되게 하는 orthogonal matrix $P$가 존재합니다. [대각화 포스트](https://soohee410.github.io/diagonalization)에서 했듯이, 이 때의 $P$는 각 열들이 $A$의 고유벡터인 행렬이고, $D$는 대각요소가 각 고유벡터에 해당하는 $A$의 고유값들인 대각행렬입니다.
 
-$$\small \begin{aligned} x^{\intercal}Ax=y^{\intercal}Dy&=\begin{pmatrix} y_1& y_2& \cdots & y_n\end{pmatrix} \begin{pmatrix} \lambda_1 & &0\cr & \ddots & \cr 0 & & \lambda_n \end{pmatrix}\begin{pmatrix} y_1 \cr \vdots \cr y_n\end{pmatrix}\\ &= \lambda_1 y_1^2+\lambda_2 y_2^2+\cdots +
+$$\small \begin{aligned} x^{\intercal}Ax=y^{\intercal}Dy&=\begin{pmatrix} y_1,& \cdots, & y_n\end{pmatrix} \begin{pmatrix} \lambda_1 & &0\cr & \ddots & \cr 0 & & \lambda_n \end{pmatrix}\begin{pmatrix} y_1 \cr \vdots \cr y_n\end{pmatrix}\\ &= \lambda_1 y_1^2+\lambda_2 y_2^2+\cdots +
 \lambda_n y_n^2 \end{aligned}$$
 
 예를 들어, nxn 대칭행렬 $A$의 고유벡터들이 $u_1, u_2, \cdots, u_n$이고, 고유값들이 $\lambda_1, \lambda_2,\cdots,\lambda_n$일 때, 이차형태 $\small Q(x)=x^{\intercal}Ax=y^{\intercal}Dy$에 대하여, $y=\boldsymbol e_1$이면 어떻게 될까요? 벡터 $x$는 다음과 같이 고유벡터 $u_1$을 의미하고,
 
 $$\small x=Py=\begin{bmatrix} \boldsymbol u_1 & \cdots & \boldsymbol u_n \end{bmatrix}\begin{pmatrix}1\cr 0\cr \vdots \cr 0\end{pmatrix} = \boldsymbol u_1$$
 
-이차형태 $\small Q(x)$는 $\boldsymbol x=\boldsymbol u_1$일 때 $u_1$에 해당하는 고유값 $\lambda_1$을 출력할 것입니다.
+$\small Q$는 $\boldsymbol x=\boldsymbol u_1$일 때 $u_1$에 해당하는 고유값 $\lambda_1$을 출력할 것입니다.
 
 $$\small \begin{aligned} Q(\boldsymbol x)=x^{\intercal}Ax=y^{\intercal}Dy&=\lambda_1 y_1^2+\lambda_2 y_2^2+\cdots +\lambda_n y_n^2\\ &=\lambda_1+0+\cdots+0=\lambda_1 \end{aligned}$$
 
@@ -64,7 +64,7 @@ $$y=P^{-1}x=P^{\intercal}x$$
 
 > **The Principal Axes Theorem.** $A$가 nxn 대칭행렬이라고 하자. 그러면 이차형태 $\small x^{\intercal}Ax$를 cross-product 항이 존재하지 않는 이차형태 $\small y^{\intercal}Dy$로 변환시키는 직교 변수변환 $\small \boldsymbol x=P \boldsymbol y$이 존재한다.
 
-이 정리에서 $P$의 열들이 바로 이차형태 $\small x^{\intercal}Ax$의 **Principal Axes** 입니다. 그리고 새로운 벡터 y는 principal axes로 이루어진 orthonormal basis로 표현된 좌표계에서의 좌표벡터를 의미합니다. 어떠한 행렬이 대각행렬이면, 이차형태 그래프는 표준 위치에 놓이게 된다는 것을 기억하실 것입니다. 따라서, principal axes를 찾는다는 것은 ``그래프를 표준 위치에 놓이게 하는 새로운 좌표계를 찾는다``는 것을 의미합니다.
+이 정리에서 $P$의 열들이 바로 이차형태 $\small x^{\intercal}Ax$의 **Principal Axes** 입니다. 그리고 새로운 벡터 y는 principal axes로 이루어진 orthonormal basis로 표현된 좌표계에서 $x$의 좌표벡터를 의미합니다. 어떠한 행렬이 대각행렬이면, 이차형태 그래프는 표준 위치에 놓이게 된다는 것을 기억하실 것입니다. 따라서, principal axes를 찾는다는 것은 ``그래프를 표준 위치에 놓이게 하는 새로운 좌표계를 찾는다``는 것을 의미합니다.
 
 <br>
 
