@@ -87,7 +87,8 @@ $$\small maximize\quad Q(\boldsymbol x)=x_1x_2
 
 일단 저희가 배운 내용은 ``단위벡터 하에서`` 이차형태를 최대화하는 것 뿐입니다. 따라서, 저 제한조건을 1로 만들어주기 위해 양변을 4로 나누고 다음과 같이 치환합니다.
 
-$$\begin{aligned}\small\frac{x_1^2}{4}+x_2^2=1\implies y_1= \frac{x_1}{2},\space y_2=x_2 \small\cr\therefore x_1=2y_1, \space x_2=y_2 \end{aligned}$$
+$$\small\begin{gathered}\frac{x_1^2}{4}+x_2^2=1\cr
+y_1:= \frac{x_1}{2},\space y_2:=x_2 \implies x_1=2y_1, \space x_2=y_2 \end{gathered}$$
 
 따라서 문제는 다음과 같이 새로운 벡터로 표현할 수 있게 됩니다.
 
@@ -137,7 +138,7 @@ $$\small\boldsymbol x=P\boldsymbol e_2=\begin{bmatrix}\boldsymbol u_1 & \boldsym
 $$\small \begin{aligned} Q(\boldsymbol x) &= 5x_1^2+6x_2^2+7x_3^2+4x_1x_2
 -4x_2x_3\cr &\implies A=\begin{bmatrix}5&2&0\cr 2&6&-2\cr 0&-2&7 \end{bmatrix}\end{aligned}$$
 
-$$\therefore \max_{\lVert \boldsymbol x\rVert=1}\boldsymbol{x^{\intercal}}A\boldsymbol x=\lambda_2\quad when\space \boldsymbol x\perp \boldsymbol{u_1}
+$$\small\therefore \max_{\lVert \boldsymbol x\rVert=1}\boldsymbol{x^{\intercal}}A\boldsymbol x=\lambda_2\quad when\space \boldsymbol x\perp \boldsymbol{u_1}
 $$
 
 <br>
