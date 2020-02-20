@@ -97,7 +97,7 @@ $$\small det(A)=\lambda_1\lambda_2\cdots \lambda_n>0 \implies A: invertible$$
 <br>
 
 
-여기까지 이차형태와 변수변환, 그리고 이차형태 판별에 대한 내용이었습니다! 조금 이해가 되셨나요? 통계학에서는 특히 **공분산 행렬**이 대칭행렬이라는 것을 이용하여, 특히 positive definite 행렬이라 가정하고 다양한 연산을 하게 됩니다. 다음에는 이차형태에서의 Constrained Optimization에 대해 포스팅하겠습니다. 감사합니다 :)
+여기까지 이차형태와 변수변환, 그리고 이차형태 판별에 대한 내용이었습니다! 조금 이해가 되셨나요? 통계학에서는 특히 **공분산 행렬**이 대칭행렬이라는 것을 이용하여, 특히 positive definite 행렬이라 가정하고 다양한 연산을 하게 됩니다. 다음에는 이차형태에서의 [Constrained Optimization](https://soohee410.github.io/constrained_optimization)에 대해 포스팅하겠습니다. 감사합니다 :)
 
 <br>
 

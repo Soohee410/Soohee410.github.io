@@ -16,7 +16,8 @@ $$\small \min_{ ||\boldsymbol x||=1} \boldsymbol x^{\intercal}A\boldsymbol x =\s
 
  그렇다면 이 최적화 문제는 어떻게 구하면 될까요? 일단 이와 관련하여 정리 하나를 짚고 가겠습니다!
 
->**Thm.** nxn 행렬 $A$가 대칭행렬이고, n개의 고유값 $\small\lambda_1\ge\lambda_2\ge \cdots \ge\lambda_n$과, 이들 각각에 해당하는 단위 고유벡터 $\small \boldsymbol u_1, \cdots, \boldsymbol u_n$이 있다고 하자. 이 때, $\small \boldsymbol x^{\intercal}A\boldsymbol x$의 최댓값은 행렬 $A$의 고유값 중 가장 큰 것($\lambda_1$)이고, 이를 최대화하는 $\boldsymbol x$는 $\lambda_1$에 해당하는 단위 고유벡터 $\boldsymbol u_1$이다. 한편, $\small \boldsymbol x^{\intercal}A\boldsymbol x$의 최솟값은 $A$의 고유값 중 가장 작은 것($\lambda_n$)이고, 이를 최소화하는 $\boldsymbol x$는 $\lambda_n$에 해당하는 단위 고유벡터 $\boldsymbol u_n$이다.
+>**Thm.** nxn 행렬 $A$가 대칭행렬이고, n개의 고유값 $\small\lambda_1\ge\lambda_2\ge \cdots \ge\lambda_n$과, 이들 각각에 해당하는 단위 고유벡터 $\small \boldsymbol u_1, \cdots, \boldsymbol u_n$이 있다고 하자.   
+이 때, $\small \boldsymbol x^{\intercal}A\boldsymbol x$의 최댓값은 행렬 $A$의 고유값 중 가장 큰 것($\lambda_1$)이고, 이를 최대화하는 $\boldsymbol x$는 $\lambda_1$에 해당하는 단위 고유벡터 $\boldsymbol u_1$이다. 한편, $\small \boldsymbol x^{\intercal}A\boldsymbol x$의 최솟값은 $A$의 고유값 중 가장 작은 것($\lambda_n$)이고, 이를 최소화하는 $\boldsymbol x$는 $\lambda_n$에 해당하는 단위 고유벡터 $\boldsymbol u_n$이다.
 
  위 정리에 의하면, 벡터 $\boldsymbol x$가 단위벡터라는 제한조건이 있는 상황에서 이차형태 $\boldsymbol x^{\intercal}A\boldsymbol x$의 최대값이 $A$의 가장 큰 고유값이고, $\boldsymbol x$는 그 고유값에 해당하는 고유벡터라는 것입니다! 이제 왜 그런지 살펴보겠습니다. 저번 포스트에서 **변수 변환** 을 이용해서 다음과 같이 이차형태의 행렬 $A$를 대각행렬 $D$로 바꾸었습니다. 또, 이것의 의미는 연산의 편리함을 위해, ``이차형태에서 cross-product 항이 없도록``, 그래프가 **표준 형태(standard position)** 가 되게 하는 새로운 좌표계를 찾은 것이라고도 했습니다.
 
@@ -133,9 +134,11 @@ $$\small\boldsymbol x=P\boldsymbol e_2=\begin{bmatrix}\boldsymbol u_1 & \boldsym
 
 이제 3번에서 처음 던졌던 위 문제로 돌아가면, $\small Q(\boldsymbol x)=5x_1^2+6x_2^2+7x_3^2+4x_1x_2-4x_2x_3$를 통해 행렬 $A$를 구하고, 이 행렬 $A$에서 두번째로 큰 고유값 $\lambda_2$가 바로 그 답이 되는 것입니다!
 
-$$\small \begin{gathered} Q(\boldsymbol x) = 5x_1^2+6x_2^2+7x_3^2+4x_1x_2
--4x_2x_3\cr \implies A=\begin{bmatrix}5&2&0\cr 2&6&-2\cr 0&-2&7 \end{bmatrix} \cr\therefore \max_{\lVert \boldsymbol x\rVert=1}\boldsymbol{x^{\intercal}}A\boldsymbol x=\lambda_2\quad when\space \boldsymbol x\perp \boldsymbol{u_1}
-\end{gathered}$$
+$$\small \begin{aligned} Q(\boldsymbol x) &= 5x_1^2+6x_2^2+7x_3^2+4x_1x_2
+-4x_2x_3\cr &\implies A=\begin{bmatrix}5&2&0\cr 2&6&-2\cr 0&-2&7 \end{bmatrix}\end{aligned}$$
+
+$$\therefore \max_{\lVert \boldsymbol x\rVert=1}\boldsymbol{x^{\intercal}}A\boldsymbol x=\lambda_2\quad when\space \boldsymbol x\perp \boldsymbol{u_1}
+$$
 
 <br>
 
