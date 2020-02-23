@@ -12,7 +12,7 @@ use_math: true
 
 이번 포스트에서 다룰 이차형태의 최적화 문제에 대한 내용은 저번 포스트 주제였던 [이차 형태]((https://soohee410.github.io/quadratic_form))의 바로 연장선이기 때문에, 저번 포스트 내용을 잘 알고 계시는 분들께서는 비교적 자명하게 느껴지실 거라 생각합니다! 이번 포스트의 주제는 **대칭행렬** $A$가 주어졌을 때, 벡터 $\boldsymbol x$가 **단위벡터(unit vector)** 라는 제한조건 하에서, 이차형태 $\small \boldsymbol x^{\intercal}A\boldsymbol x$의 최댓값(최솟값)과 이를 최대화(최소화)하는 $\boldsymbol x$를 찾는 것입니다.
 
-$$\small \min_{ ||\boldsymbol x||=1} \boldsymbol x^{\intercal}A\boldsymbol x =\space ? \quad or\quad \max_{ ||\boldsymbol x||=1} \boldsymbol x^{\intercal}A\boldsymbol x =\space ? $$
+$$\small \min_{ \lVert\boldsymbol x\rVert=1} \boldsymbol x^{\intercal}A\boldsymbol x =\space ? \quad or\quad \max_{ \lVert\boldsymbol x\rVert=1} \boldsymbol x^{\intercal}A\boldsymbol x =\space ? $$
 
  그렇다면 이 최적화 문제는 어떻게 구하면 될까요? 일단 이와 관련하여 정리 하나를 짚고 가겠습니다!
 
@@ -33,7 +33,7 @@ $$\small \lVert \boldsymbol x\rVert=\small \lVert \boldsymbol y\rVert=1$$
 
 따라서, 우리가 구하고자 하는 최적화 문제는 다음과 같이 표현할 수 있습니다. $\small \boldsymbol y^{\intercal}D\boldsymbol y$의 경우 cross-product 항이 없기 때문에 최적화 문제에 대한 해결이 더욱 간편합니다. 따라서, $\small \boldsymbol y^{\intercal}D\boldsymbol y$의 최대값, 최소값을 찾아서 문제를 해결하면 될 것입니다.
 
-$$\small \max_{ ||\boldsymbol x||=1} \boldsymbol x^{\intercal}A\boldsymbol x =\max_{ ||\boldsymbol y||=1} \boldsymbol y^{\intercal}D\boldsymbol y, \quad \min_{ ||\boldsymbol x||=1} \boldsymbol x^{\intercal}A\boldsymbol x =\min_{ ||\boldsymbol y||=1} \boldsymbol y^{\intercal}D\boldsymbol y$$
+$$\small \max_{ \lVert\boldsymbol x\rVert=1} \boldsymbol x^{\intercal}A\boldsymbol x =\max_{ \lVert\boldsymbol y\rVert=1} \boldsymbol y^{\intercal}D\boldsymbol y, \quad \min_{\lVert\boldsymbol x\rVert=1} \boldsymbol x^{\intercal}A\boldsymbol x =\min_{ \lVert\boldsymbol y\rVert=1} \boldsymbol y^{\intercal}D\boldsymbol y$$
 
 이 때, $\small\boldsymbol y^{\intercal}D\boldsymbol y$의 하한선은 다음과 같이 $\lambda_n$이 될 것입니다.
 
@@ -57,8 +57,8 @@ $$\small\boldsymbol x=P\boldsymbol e_1=\begin{bmatrix}\boldsymbol u_1 & \boldsym
 
 따라서 정리하면 다음과 같은 결론이 도출됩니다.
 
-$$\small\begin{aligned} \max_{ ||\boldsymbol x||=1} \boldsymbol x^{\intercal}A\boldsymbol x=\max_{ ||\boldsymbol y||=1} \boldsymbol y^{\intercal}D\boldsymbol y=\lambda_1, \space when \space \boldsymbol x=\boldsymbol{u_1}, \boldsymbol y=\boldsymbol{e_1}
-\cr \min_{ ||\boldsymbol x||=1} \boldsymbol x^{\intercal}A\boldsymbol x=\min_{ ||\boldsymbol y||=1} \boldsymbol y^{\intercal}D\boldsymbol y=\lambda_n, \space when \space \boldsymbol x=\boldsymbol{u_n}, \boldsymbol y=\boldsymbol{e_1}\end{aligned}$$
+$$\small\begin{aligned} \max_{ \lVert\boldsymbol x\rVert=1} \boldsymbol x^{\intercal}A\boldsymbol x=\max_{ \lVert\boldsymbol y\rVert=1} \boldsymbol y^{\intercal}D\boldsymbol y=\lambda_1, \space when \space \boldsymbol x=\boldsymbol{u_1}, \boldsymbol y=\boldsymbol{e_1}
+\cr \min_{\lVert\boldsymbol x\rVert=1} \boldsymbol x^{\intercal}A\boldsymbol x=\min_{ \lVert\boldsymbol y\rVert=1} \boldsymbol y^{\intercal}D\boldsymbol y=\lambda_n, \space when \space \boldsymbol x=\boldsymbol{u_n}, \boldsymbol y=\boldsymbol{e_1}\end{aligned}$$
 
 <br>
 
