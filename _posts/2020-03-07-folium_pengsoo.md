@@ -26,4 +26,4 @@ use_math: false
 
 - 코드
 
-<img src='/img/fo_icon4.PNG' width='700px'>
+<img src='/img/fo_icon4.png' width='700px'>
