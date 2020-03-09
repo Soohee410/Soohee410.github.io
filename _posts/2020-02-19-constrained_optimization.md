@@ -143,7 +143,7 @@ $$
 
 <br>
 
-여기까지 이차형태의 제약조건이 있는 최적화 문제에 대한 내용이었습니다! 조금 이해가 되셨나요? 다음에는 Singular Value Decomposition에 대해 포스팅하겠습니다. 감사합니다 :)
+여기까지 이차형태의 제약조건이 있는 최적화 문제에 대한 내용이었습니다! 조금 이해가 되셨나요? 다음에는 [Singular Value Decomposition](https://soohee410.github.io/svd)에 대해 포스팅하겠습니다. 감사합니다 :)
 
 <br>
 
