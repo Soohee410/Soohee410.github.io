@@ -1,6 +1,6 @@
 ---
 layout: post
-title: "[Visualization Storytelling] 2019 뉴욕 맨하탄 에어비앤비 데이터 탐색"
+title: "[Data Storytelling] 2019 뉴욕 맨하탄 에어비앤비 데이터 탐색"
 tags: [Data Visualization]
 use_math: false
 ---
