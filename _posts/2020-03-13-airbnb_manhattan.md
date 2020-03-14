@@ -9,7 +9,7 @@ use_math: false
 
 마침 캐글에서 [2019 뉴욕 에어비앤비 데이터](https://www.kaggle.com/dgomonov/new-york-city-airbnb-open-data)를 발견했고, 저는 이 데이터에서 맨하탄 지역만 분석해보았습니다~! 궁금하지 않나요? 맨하탄 에어비앤비 가격 분포는 어느정도 되는지, 맨하탄에서 가장 잘나가는 집은 어떤 집일지, 맨하탄 내에서 인기 많은 지역은 또 어느 곳인지 등등..!!! 그 중에서도 저는 다음의 세가지 궁금증이 있었는데요. **(1)맨하탄에서 위치별로 가격이 어떻게 다를까?  (2)맨하탄에서 에어비앤비를 가장 많이 보유한 호스트는 누구일까?  (3)맨하탄에서 가장 인기가 많은 에어비앤비는 어떤 곳일까?** 입니다! 이 데이터가 변수가 많은 편은 아니었어서, 추가로 더 있었으면 하는 변수들도 있었지만, 그래도 저의 궁금증들을 얼추 해소할 수 있었습니다. 이제 시작하겠습니다!
 
-(아래 내용에 대한 코드가 궁금하신 분들은 [이곳](https://github.com/Soohee410/Data-Visualization/blob/master/tutorial/%5BData%20Storytelling%5D%202019%20%EB%89%B4%EC%9A%95%20%EB%A7%A8%ED%95%98%ED%83%84%20%EC%97%90%EC%96%B4%EB%B9%84%EC%95%A4%EB%B9%84%20%EB%8D%B0%EC%9D%B4%ED%84%B0.ipynb)을 참고해주세요.)
+(아래 내용에 대한 코드가 궁금하신 분들은 [이곳](https://github.com/Soohee410/Data-Visualization/blob/master/tutorial/%5BData%20Storytelling%5D%202019%20%EB%89%B4%EC%9A%95%20%EB%A7%A8%ED%95%98%ED%83%84%20%EC%97%90%EC%96%B4%EB%B9%84%EC%95%A4%EB%B9%84%20%EB%8D%B0%EC%9D%B4%ED%84%B0%20%ED%83%90%EC%83%89.ipynb)을 참고해주세요.)
 
 <br>
 
