@@ -45,13 +45,13 @@ $$\small \begin{aligned} I(C_j)&=1\cdot G(C_j) – \frac{200}{400}\cdot G(C_{j_l
 
 ``노드 중요도``라는 게 사실 우리한테 더 잘 알려진 **Information Gain**을 결국 말합니다. 실제로 의사결정나무에서는 그 때 Information Gain을 최대화하는 feature를 기준으로 노드를 째게 됩니다. <u>어떤 노드의 노드 중요도 값이 클수록, 그 노드에서 특히 불순도가 크게 감소한다</u>는 것을 의미하기 때문에, 이러한 면에서 그 노드가 중요하다고 말하는 것은 합리적으로 보입니다! 이제 각 feature의 중요도를 계산해보겠습니다. $i$번째 feature, $f_i$의 중요도 $I(f_i)$는 다음과 같이 계산됩니다.
 
-$$I(f_i)=\frac{\sum_{\scriptsize j: f_i에\space 의해\space split된\space 모든 노드\space C_j} I(C_j)}{\sum_{\scriptsize k\in all\space node\space C_k}{I(C_k)}}$$
+$$I(f_i)=\frac{\sum_{\footnotesize j: f_i에\space 의해\space split된\space 모든 노드\space C_j} I(C_j)}{\sum_{\footnotesize k\in all\space node\space C_k}{I(C_k)}}$$
 
 즉, 전체 노드의 중요도를 합한 것 대비 $i$번째 feature에 의해 째진 노드들의 중요도를 합한 것이 바로 $i$번째 feature의 중요도 $I(f_i)$가 됩니다! 이 값이 클수록, 해당 feature가 트리를 생성하고 샘플을 분류하는데 큰 역할을 했다고 볼 수 있을 것입니다. 이 $I(f_i)$를 다시 모든 feature들의 중요도의 합으로 나눠서 정규화한 것으로 이용한다고 합니다.
 
-$$I(f_i)^{norm}=\frac{I(f_i)}{\sum_{\scriptsize i \in all\space feature\space f_i}} I(f_i)$$
+$$I(f_i)^{norm}=\frac{I(f_i)}{\sum_{\footnotesize i \in all\space feature\space f_i} I(f_i)} $$
 
-여기까지 의사결정나무의 feature importance였습니다. 그렇다면, 랜덤 포레스트에서 feature importance는 어떻게 될까요? 랜덤 포레스트는 의사결정나무들을 병렬적으로 합한 것이므로, 랜덤 포레스트에서 $I(f_i)$는 결국 각 트리에서의 $I(f_i)$를 모두 평균 낸 것에 해당합니다!  
+여기까지 의사결정나무의 변수 중요도였습니다. 그렇다면, 랜덤 포레스트에서 변수 중요도는 어떻게 될까요? 랜덤 포레스트는 의사결정나무들을 병렬적으로 합한 것이므로, 랜덤 포레스트에서 $I(f_i)$는 결국 각 트리에서의 $I(f_i)$를 모두 평균 낸 것에 해당합니다!  
 
 <br>
 
@@ -60,15 +60,15 @@ $$I(f_i)^{norm}=\frac{I(f_i)}{\sum_{\scriptsize i \in all\space feature\space f_
 
 지금까지 트리가 어떻게 지니 불순도를 이용해서 각 변수의 중요도를 계산하는지 알아보았습니다. Scikit-learn으로 의사결정나무, 랜덤 포레스트 모델을 이용할 때 참고했던 Feature Importance가 바로 이렇게 해서 얻어진 것입니다! 저는 이러한 이론을 배우고 ‘그럼 랜덤 포레스트가 출력하는 변수 중요도는 꽤 신뢰할 만 한 거 아닌가?’라고 생각을 했었는데요. 왜냐하면 각 트리들을 샘플도, 변수들도 랜덤으로 뽑아서 생성한 것을 몇백개 이상 합쳐서 얻은 변수 중요도는 충분히 신뢰할 만한 것으로 느껴졌습니다.
 
-<img src='/assets/iml2_2.PNG' width='450px'>
+<img src='/assets/iml2_2.png' width='450px'>
 
-그런데 찾아보니 ‘Scikit-learn의 디폴트 랜덤 포레스트 Feature Importance는 다소 **biased**하다’고 합니다! 특히, <u>랜덤 포레스트는 연속형 변수 또는 카테고리 개수가 매우 많은 변수, 즉 **‘high cardinality’** 변수들의 중요도를 더욱 부풀릴 가능성이 높다</u>고 합니다. 왜 이런 결과가 나오는지는 정확히 알 수 없으나, cardinality가 큰 변수일 수록, 노드를 쨀 게 훨씬 더 많아서 node importance 값이 높게 나오는 게 아닐까 싶습니다. 때문에, 무조건 디폴트 Feature Importance 결과를 믿는 것 보다는, Permutation Feature Importance와 같은 다른 방법을 혼합해서 사용하는 것이 더욱 추천된다고 합니다.
+그런데 찾아보니 ‘Scikit-learn의 디폴트 랜덤 포레스트 Feature Importance는 다소 **biased**하다’고 합니다! 특히, 랜덤 포레스트는 <u>연속형 변수 또는 카테고리 개수가 매우 많은 변수</u>, 즉 **‘high cardinality’** 변수들의 중요도를 더욱 부풀릴 가능성이 높다고 합니다. 왜 이런 결과가 나오는지는 정확히 알 수 없으나, cardinality가 큰 변수일 수록, 노드를 쨀 게 훨씬 더 많아서 노드 중요도 값이 높게 나오는 게 아닐까 싶습니다. 때문에, 무조건 디폴트 Feature Importance 결과를 믿는 것 보다는, Permutation Feature Importance와 같은 다른 방법을 혼합해서 사용하는 것이 더욱 추천된다고 합니다.
 
-또 한, 이 불순도를 기반으로 한 Feature Importance는 데이터를 학습하는 과정에서 얻은 결과입니다. 다시 말해서, train 데이셋으로부터 얻은 통계량으로 계산된 중요도이기 때문에, test 데이터셋에서는 이 변수 중요도가 어떻게 변하는 지 알 수 없습니다. 실제로 test 데이터셋에서는 안 중요한 변수가 학습 과정에서는 가장 중요한 변수로 계산될 수 있는 것입니다.
+또 한, 이 불순도를 기반으로 한 변수 중요도는 데이터를 학습하는 과정에서 얻은 결과입니다. 다시 말해서, train 데이터셋으로부터 얻은 통계량으로 계산된 중요도이기 때문에, test 데이터셋에서는 이 변수 중요도가 어떻게 변하는 지 알 수 없습니다. 실제로 test 데이터셋에서는 안 중요한 변수가 학습 과정에서는 가장 중요한 변수로 계산될 수 있는 것입니다.
 
 <br>
 
-비록 위와 같은 한계점은 존재하지만, 트리에 특화된 이 불순도 기반 변수 중요도는, 다른 방법을 따로 적용할 필요가 없고 빠르다는 점에서, 다른 방법을 통해 얻은 변수 중요도와 비교할 수 있는 좋은 대조군이라 생각합니다. 다음 포스트에서부터는 주요 **Model-agnostic** 방법들에 대해 알아보고 실제로 적용해보는 것까지 포스팅하려고 합니다. 감사합니다.
+비록 위와 같은 한계점은 존재하지만, 트리에 특화된 이 불순도 기반 변수 중요도는, 다른 방법을 따로 적용할 필요가 없고 빠르다는 점에서, 다른 방법을 통해 얻은 변수 중요도와 비교할 수 있는 좋은 대조군이라 생각합니다. 다음 포스트에서부터는 주요 **Model-agnostic** 방법들에 대해 알아보고 실제로 적용해보는 것까지 포스팅하려고 합니다. 감사합니다!
 
 <br>
 
