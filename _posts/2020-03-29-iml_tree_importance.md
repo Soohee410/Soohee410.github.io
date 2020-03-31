@@ -68,7 +68,7 @@ $$I(f_i)^{norm}=\frac{I(f_i)}{\sum_{ i \in \space all\space feature\space f_i} I
 
 <br>
 
-2-(2)편에서 계속...
+[2-(2)편](https://soohee410.github.io/iml_tree_importance2)에서 계속...
 <br>
 
 ---
