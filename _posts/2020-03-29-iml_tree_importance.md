@@ -1,6 +1,6 @@
 ---
 layout: post
-title: "[머신러닝의 해석] 2편. 트리 기반 모델의 Feature Importance 속성"
+title: "[머신러닝의 해석] 2편-(1). 트리 기반 모델의 Feature Importance 속성"
 tags: [Interpretable Machine Learning]
 use_math: true
 ---
@@ -27,7 +27,7 @@ $$G(N_j)=\sum^{K}_{i=1} p_i(1-p_i) = 1-\sum^{K}_{i=1} p_i^2$$
 
 해당 노드에서 샘플들이 ``이질적으로 구성되어 있을수록``, 다시 말해서 모든 Class에 골고루 분포되어 있을수록 <u>지니 불순도(impurity)는 높아지게 됩니다.</u> 의사결정나무는 이렇게 불순도를 감소시키는 방향으로 노드를 생성하고 분류를 진행합니다. 이제 아래 간단한 예시를 한번 보겠습니다!
 
-총 샘플이 400개이고, Class가 두 종류, 즉 이항 분류하는 경우입니다.  이 때, 아래 세가지 노드 $C_1, C_{1\_ left}, C_{1\_right}$의 지니 불순도 $G$를 계산하면 다음과 같습니다.
+총 샘플이 400개이고, Class가 두 종류, 즉 이항 분류하는 경우입니다.  이 때, 아래 세가지 노드 $C_1, C_{1\_ left}, C_{1\_ right}$의 지니 불순도 $G$를 계산하면 다음과 같습니다.
 
 <img src='/assets/iml2_1.PNG' width='500px'>
 
@@ -37,11 +37,11 @@ $C_1$ 노드보다 그 아래에 있는 노드들의 불순도가 더 적은 것
 
  $I(C_j)$는 노드 $C_j$의 중요도(Importance)를 의미하고, $w_j$는 전체 샘플 수에 대한 노드 $C_j$에 해당하는 샘플 수의 비율, 즉 **가중치**를 의미합니다.
 
-$$\small I(C_j)=w_j\cdot G(C_j) – w_{j\_left}\cdot G(C_{j_left}) – w_{j\_right}\cdot G(C_{j_right})$$
+$$\small I(C_j)=w_j\cdot G(C_j) – w_{j\_left}\cdot G(C_{j\_ left}) – w_{j\_right}\cdot G(C_{j\_right})$$
 
 즉, 부모 노드의 가중치 불순도에서 자식 노드들의 가중치 불순도 합을 뺀 것입니다. 위 예시에서 $I(C_j)$를 계산해보면 다음과 같습니다.
 
-$$\small \begin{aligned} I(C_j)&=1\cdot G(C_j) – \frac{200}{400}\cdot G(C_{j_left}) - \frac{200}{400}\cdot G(C_{j_right})\cr &=0.5-0.5\cdot 0.25 – 0.5\cdot 0.25 \cr &= 0.25 \end{aligned}$$
+$$\small \begin{aligned} I(C_j)&=1\cdot G(C_j) – \frac{200}{400}\cdot G(C_{j\_ left}) - \frac{200}{400}\cdot G(C_{j\_ right})\cr &=0.5-0.5\cdot 0.25 – 0.5\cdot 0.25 \cr &= 0.25 \end{aligned}$$
 
 ``노드 중요도``라는 게 사실 우리한테 더 잘 알려진 **Information Gain**을 결국 말합니다. 실제로 의사결정나무에서는 그 때 Information Gain을 최대화하는 feature를 기준으로 노드를 째게 됩니다. <u>어떤 노드의 노드 중요도 값이 클수록, 그 노드에서 특히 불순도가 크게 감소한다</u>는 것을 의미하기 때문에, 이러한 면에서 그 노드가 중요하다고 말하는 것은 합리적으로 보입니다! 이제 각 feature의 중요도를 계산해보겠습니다. $i$번째 feature, $f_i$의 중요도 $I(f_i)$는 다음과 같이 계산됩니다.
 
