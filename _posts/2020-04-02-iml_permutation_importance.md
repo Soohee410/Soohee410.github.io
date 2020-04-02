@@ -6,14 +6,16 @@ use_math: true
 ---
 
 이번 포스트에서는 특정 모델에 특화된(**Model-specific**)이 아닌, 어느 모델이든(**Model-agnostic**) 학습시킨 후(**Post-hoc**)에 적용하여 변수 중요도를 확인할 수 있는 대표적인 방법인 ``Permutation Feature Importance``에 대해 설명하고자 합니다. **Permutation Feature Importance**는 Black-box 모델에 대하여, 특정 feature를 안 썼을 때, 이것이 성능 손실에 얼마만큼의 영향을 주는지를 통해 그 feature의 중요도를 파악하는 방법입니다. 이 방법의 이론은 상당히 직관적이어서 그 어떤 방법보다 이해하기 쉬운 것 같습니다. 그럼 시작하겠습니다!
+
 <br>
 
 ## 1. Permutation Feature Importance의 특징
 <br>
 
-**Permutation Feature Importance**의 중요한 특징이자 장점으로는 ``재학습시킬 필요가 없다``는 것입니다. 특정 Feature를 제거하고 모델을 재학습해서 중요도를 파악하는 방법도 있지만, 그렇게 하면 당연히 시간적, 자원적 소모가 매우 클 것입니다. 그렇다면 특정 feature를 어떻게 안 쓰고 예측 에러를 계산할 수 있을까요? 만약 실제로 그 feature를 제거하고 예측하기 위해서는, X의 차원이 변경되어 새로 학습을 시켜야 할 것입니다. 변수를 아예 포함하지 않는 것 대신, 그 feature의 값들을 무작위로 섞어서(permutation) 그 feature를 노이즈로 만드는 것입니다! 무작위로 섞게 되면, 목표 변수와 어떠한 연결고리를 끊게 되는 것이므로, 그 feature를 안 쓴다고 할 수 있을 것입니다. 이렇게 섞었을 때 예측값이 실제 값보다 얼마나 차이가 더 생겼는지를 통해 해당 feature의 영향력을 파악합니다. 모델이 이 변수에 크게 의존하고 있을 경우에는 예측 정확도가 크게 감소할 것입니다. 이렇게 학습한 모델과 데이터만 있으면 변수 중요도를 뽑아주는 방법이기 때문에, 모델의 학습 과정, 내부 구조에 대한 정보가 필요 없어서 어느 모델이든 적용할 수 있게 됩니다.
+**Permutation Feature Importance**의 중요한 특징이자 장점으로는 ``재학습시킬 필요가 없다``는 것입니다. 특정 Feature를 제거하고 모델을 재학습해서 중요도를 파악하는 방법도 있지만, 그렇게 하면 당연히 시간적, 자원적 소모가 매우 클 것입니다.  그 feature를 제거하고 예측하기 위해서는, X의 차원이 변경되어 새로 학습시켜야 하기 때문입니다. 그렇다면 특정 feature를 어떻게 안 쓰고 예측 에러를 계산할 수 있을까요? 변수를 아예 포함하지 않는 것 대신, 그 feature의 값들을 무작위로 섞어서(permutation) 그 feature를 노이즈로 만드는 것입니다! 무작위로 섞게 되면, 목표 변수와 어떠한 연결고리를 끊게 되는 것이므로, 그 feature를 안 쓴다고 할 수 있을 것입니다. 이렇게 섞었을 때 예측값이 실제 값보다 얼마나 차이가 더 생겼는지를 통해 해당 feature의 영향력을 파악합니다. 모델이 이 변수에 크게 의존하고 있을 경우에는 예측 정확도가 크게 감소할 것입니다. 이렇게 학습한 모델과 데이터만 있으면 변수 중요도를 뽑아주는 방법이기 때문에, 모델의 학습 과정, 내부 구조에 대한 정보가 필요 없어서 어느 모델이든 적용할 수 있게 됩니다.
 
 이 방법의 또 다른 특징으로는, 각 feature의 중요도는 ‘partial importance’가 아니라는 점입니다. <u>각 feature의 중요도 안에는 다른 feature들과의 교호작용도 포함됩니다.</u> 특정 feature의 값들을 랜덤으로 섞으면, 다른 feature들과의 연결고리도 끊어지게 되어, 해당 feature와 관련이 있는 모든 교호작용의 영향이 사라질 것입니다. 따라서, 두 feature 간 교호작용의 영향은 그 두 개의 feature importance 각각에 중복 포함됩니다.
+
 <br>
 
 ## 2. 주의할 점
@@ -36,7 +38,7 @@ use_math: true
 
 
 - **CatBoost**  
-다음은 CatBoost입니다. XGBoost와 test accuracy가 매우 비슷하고, 변수 중요도 역시 매우 비슷하지만, CatBoost에서는 가장 중요한 변수가 **marital.status**로 나타났습니다. 애초에, XGBoost에서도 CatBoost에서도 변수 marital.status와 capital.gain의 중요도가 큰 차이가 나지 않았다는 것을 확인할 수 있습니다. 이 점에서 두 모델 모두 상당히 비슷한 변수 중요도를 보이고 있습다.
+다음은 CatBoost입니다. XGBoost와 test accuracy가 매우 비슷하고, 변수 중요도 역시 매우 비슷하지만, CatBoost에서는 가장 중요한 변수가 **marital.status**로 나타났습니다. 애초에, XGBoost에서도 CatBoost에서도 변수 marital.status와 capital.gain의 중요도가 큰 차이가 나지 않았다는 것을 확인할 수 있습니다. 이 점에서 두 모델 모두 상당히 비슷한 변수 중요도를 보이고 있습니다.
 <img src='/assets/iml3_3.PNG' width='750px'>
 
 
