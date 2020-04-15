@@ -15,23 +15,23 @@
 div.highlighter-rouge,
 figure.highlight {
   position: relative;
-  font-size: 80%;
+  font-size: 60%;
   margin-bottom: 1em;
-  background: rgb(180,180,180);
+  background: rgb(200,200,200);
   font-family: 'Noto Sans KR', sans-serif;
-  line-height: 1.15;
+  line-height: 0.9;
 
   > pre,
  pre.hightlight{
    padding: .45em;
-   border: 1px solid #f1f3f5;
-   border-radius: 2px;
+   /*border: 1px solid #f1f3f5;
+   border-radius: 2px; */
    margin: 1em 0;
    overflow: scroll;
  }
 }
 
-.highlight  { background-color: rgb(100,100,100); color: rgb(100,100,100); }
+.highlight  { background-color: rgb(200,200,200); color: rgb(100,100,100); }
 .lineno { color: darken($background-color, 70%); margin-right: 1em; }
 .highlight .c { color:  #999988; font-style: italic } /* Comment */
 .highlight .err { color: #a61717; background-color: #e3d2d2 } /* Error */
