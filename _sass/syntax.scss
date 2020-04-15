@@ -69,7 +69,8 @@
      /* code */
      &.code {
        padding-left: 1em;
-
+       overflow-x: auto  !important;
+       white-space: nowrap !important;
      }
    }
 
