@@ -18,7 +18,7 @@
  $base0d: #268bd2 !default;
  $base0e: #6c71c4 !default;
  $base0f: #d33682 !default;
- 
+
  code.highlighter-rouge {
    font-family: 'Noto Sans KR', sans-serif;
    font-size: 100%;
@@ -32,10 +32,10 @@
  figure.highlight {
    position: relative;
    margin-bottom: 1em;
-   background: $base00;
-   color: $base05;
+   /*background: $base00;*/
    font-family: 'Noto Sans KR', sans-serif;
-   line-height: 1.15;
+   font-size: 80%;
+   line-height: 1;
 
    > pre,
    pre.highlight {
@@ -345,3 +345,10 @@
      border-bottom: 0;
    }
  }
+
+ @-moz-document domain("github.com") {
+  .highlight > pre, pre > code {
+    max-height: 200px !important;
+    overflow-y: auto !important;
+  }
+}
