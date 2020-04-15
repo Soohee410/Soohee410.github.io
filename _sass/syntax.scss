@@ -12,7 +12,7 @@
  $base07: #fdf6e3 !default;
  $base08: #dc322f !default;
  $base09: #cb4b16 !default;
- $base0a: #cb4b16 !default;
+ $base0a: #f0b913 !default;
  $base0b: #690099 !default;
  $base0c: #182da3 !default;
  $base0d: #268bd2 !default;
@@ -21,7 +21,7 @@
 
 
  code.highlighter-rouge {
-   font-family: 'Noto Sans KR', sans-serif;
+   font-family: 'NanumBarunGothic', sans-serif;
    font-size: 100%;
    color: rgb(30,30,30);
    background-color: rgba(255,223,80,0.6);
@@ -35,7 +35,6 @@
    margin-bottom: 1em;
    /*background: $base00;*/
    color: rgb(100,100,100);
-   font-weight: bolder;
    font-family: 'NanumBarunGothic', sans-serif;    font-size: 80%;
    line-height: 1;
 
