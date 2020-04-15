@@ -69,8 +69,7 @@
      /* code */
      &.code {
        padding-left: 1em;
-       max-height: 200px !important;
-       overflow-y: auto !important;
+       overflow-x: auto !important;
      }
    }
 
@@ -351,10 +350,10 @@
    }
  }
 
-
+/*
  @-moz-document domain("github.com") {
   .highlight > pre, pre > code {
-    max-height: 200px !important;
-    overflow-y: auto !important;
+    max-width: 0px !important;
+    overflow-x: auto !important;
   }
-}
+}*/
