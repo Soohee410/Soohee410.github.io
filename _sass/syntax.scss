@@ -69,7 +69,7 @@
      /* code */
      &.code {
        padding-left: 1em;
-       overflow-x: auto !important;
+
      }
    }
 
@@ -350,10 +350,10 @@
    }
  }
 
-/*
+
  @-moz-document domain("github.com") {
   .highlight > pre, pre > code {
-    max-width: 0px !important;
-    overflow-x: auto !important;
+    overflow-x: scroll !important;
+    white-space: nowrap !important;
   }
-}*/
+}
