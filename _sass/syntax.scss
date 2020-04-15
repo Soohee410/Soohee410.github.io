@@ -33,11 +33,12 @@
  figure.highlight {
    position: relative;
    margin-bottom: 0.9em;
-   background: $base00;
+   /*background: $base00;*/
    color: $base05;
    font-family: 'NanumBarunGothic', sans-serif;
-  font-size: 80%;
+   font-size: 80%;
    line-height: 1;
+   font-weight: bolder;
 
    > pre,
    pre.highlight {
@@ -68,6 +69,8 @@
      /* code */
      &.code {
        padding-left: 1em;
+       max-height: 200px !important;
+       overflow-y: auto !important;
      }
    }
 
@@ -348,15 +351,10 @@
    }
  }
 
-/*
+
  @-moz-document domain("github.com") {
   .highlight > pre, pre > code {
     max-height: 200px !important;
     overflow-y: auto !important;
   }
-}*/
-
-html{
-  overflow-y: scroll;
-  height: 101%
 }
