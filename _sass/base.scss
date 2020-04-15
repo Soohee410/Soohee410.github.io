@@ -40,7 +40,7 @@ a {
 	color: $main-color;
 	text-decoration: none;
 	font-weight: 700;
-  display: inline;
+  word-break: break-all;
 	&:hover,
 	&:focus {
 		color: darken($main-color, 20%);
