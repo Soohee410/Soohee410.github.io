@@ -1,7 +1,7 @@
 ---
 layout: post
-title: "[이산형 분포] 베르누이 분포, 이항 분포 "
-tags: [수리통계학]
+title: "[이산형 분포] 베르누이(Bernoulli) 분포, 이항(Binomial) 분포 "
+tags: [Mathematical Statistics]
 use_math: true
 ---
 

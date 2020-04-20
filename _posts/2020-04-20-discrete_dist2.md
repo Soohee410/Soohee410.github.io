@@ -1,11 +1,11 @@
 ---
 layout: post
-title: "[이산형 분포] 베르누이 분포, 이항 분포 "
-tags: [수리통계학]
+title: "[이산형 분포] 초기하 분포(Hypergeometric Distribution) "
+tags: [Mathematical Statistics]
 use_math: true
 ---
 
-이제부터 통계학에서 기본이 되는 다양한 분포들에 대해 정리하고자 합니다! 이번 포스트에서는 **베르누이 분포(Bernoulli Distribution)**와 **이항 분포(Binomial Distribution)** 에 대해 알아보고, 기대값, 분산, 그리고 적률생성함수도 구해보고자 합니다.
+이번 포스트에서는 **초기하분포(Hypergeometric Distribution)** 에 대해 알아보고, 평균과 분산을 구하며, 이항분포와의 관계에 대해서 정리하고자 합니다.
 
 <br>
 ###  초기하 분포(Hypergeometric Distribution)
