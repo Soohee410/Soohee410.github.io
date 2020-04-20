@@ -80,7 +80,7 @@ $$\small maximize\quad \frac{x_1^2-8x_1x_2+x_2^2}{x_1^2+x_2^2}
 
 어떻게 풀어야 할지 감이 오시나요? 저 식이 결국 우리가 내내 했었던, $\small\max\lbrace\boldsymbol x^{\intercal}A\boldsymbol x:\lVert\boldsymbol x\rVert=1 \rbrace$을 구하라는 말과 똑같습니다! 분자에 해당하는 이차형태로부터 대칭행렬 $A$를 구하면, $\small A=\begin{pmatrix}1&-4\cr -4&1\end{pmatrix}$이 되고, 이 행렬의 가장 큰 고유값을 구하면 될 것입니다.
 
-<br>그렇다면, 이번엔 다음의 예제를 봅시다. 드디어 포스트 제목답게 제약조건이 조금 변경되었습니다.
+<br>이제 다음의 예제를 봅시다. 이번에는 제약조건이 조금 변경되었습니다.
 
 $$\small maximize\quad Q(\boldsymbol x)=x_1x_2
 \quad when\space x_1^2+4x_2^2=4 $$
