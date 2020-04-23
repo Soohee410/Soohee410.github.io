@@ -1,6 +1,6 @@
 ---
 layout: post
-title: "[이산형 분포] 베르누이 분포(Bernoulli dist.), 이항 분포(Binomial dist.) "
+title: "[이산형 분포] 베르누이 분포(Bernoulli distribution), 이항 분포(Binomial distribution) "
 tags: [Mathematical Statistics]
 use_math: true
 ---
@@ -28,17 +28,17 @@ $$\begin{aligned} E(X)&=1\cdot p + 0\cdot (1-p) = p \cr Var(X) &= E(X-p)^2 \cr &
 
 $$\begin{gathered} X \sim Binomial(n, p) \cr f_X(x)=\binom{n}{x} p^x(1-p)^{n-x}, \space x=0,1,\cdots , n \end{gathered}$$
 
-이제 이항분포의 기대값과 분산, 그리고 적률생성함수까지 구해봅시다. 이항분포는 앞서 서로 독립이고 동일한 베르누이 분포를 따르는 확률변수들을 n개 합한 것이기 때문에, 기대값과 분산은 다음과 같이 매우 간단하게 구해집니다. 적률 역시 이항정리를 이용해서 쉽게 구할 수 있습니다.
+이제 이항분포의 **기대값**과 **분산**, 그리고 **적률생성함수**까지 구해봅시다. 이항분포는 앞서 서로 독립이고 동일한 베르누이 분포를 따르는 확률변수들을 n개 합한 것이기 때문에, 기대값과 분산은 다음과 같이 매우 간단하게 구해집니다. 적률 역시 이항정리를 이용해서 쉽게 구할 수 있습니다.
 
 $$\begin{aligned} E(X) &= E(\sum_{x=0}^{n} X_i) = \sum_{x=0}^{n} E(X_i) =np \cr
 Var(X) &= Var(\sum_{x=0}^{n} X_i) = \sum_{x=0}^{n} Var(X_i) = np(1-p) \cr
 M_X(t) &= E(e^{tX}) = \sum_{x=0}^{n} \binom{n}{x} e^{tX} p^x(1-p)^{n-x} \cr
 &= \sum_{x=0}^{n} \binom{n}{x} (pe^t)^x (1-p)^{n-x} \cr &= [1-p+pe^t]^n \end{aligned}$$
 
+아래 각 성공확률에 따른 이항 분포를 확인해보면, 성공확률이 클수록 성공 횟수(X)가 많을 확률이 높은 것을 확인할 수 있습니다. 또 한, 성공확률이 중간, 즉 0.5에 가까울 수록 미세하지만 봉우리가 낮고 분산이 가장 큰 것을 확인할 수 있습니다.
+<img src='/assets/binom.PNG' width='680px'>
+
 앞으로 이항분포는 다른 분포들에 대한 포스트에서도 자주 등장할 예정입니다!
-
-
-
 
 <br>
 
