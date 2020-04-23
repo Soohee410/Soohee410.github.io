@@ -14,7 +14,7 @@ use_math: true
 
 $$\small f_X(x) = \binom{x-1}{r-1}p^r (1-p)^{x-r},\space x=r, r+1, \cdots$$
 
-따라서 기대값과 분산도 기하분포를 이용하면 매우 쉽게 구할 수 있게 됩니다. 기하분포의 기대값과 분산은 저번 포스트를 참고해주세요!
+따라서 기대값과 분산도 기하분포를 이용하면 매우 쉽게 구할 수 있게 됩니다. 기하분포의 기대값과 분산은 [저번 포스트](https://soohee410.github.io/discrete_dist4)를 참고해주세요!
 
 $$\small X_1, \cdots, X_r \overset{iid}{\sim} GEO(p) \implies X=X_1+\cdots+X_r \sim NB(r,p) $$
 
@@ -59,7 +59,7 @@ $$\begin{aligned} E(Y) &= E(X)-r = \frac{r}{p}-r = r\frac{1-p}{p} \cr
 
 ### 음이항분포의 포아송분포로의 근사
 
-한편, 음이항분포는 포아송 분포로 수렴된다는 특징이 있습니다. 포아송 분포 포스트에서 ``이항 분포는 포아송 분포로 수렴된다``는 것을 보였었는데요. 역시나 음이항 분포는 이항분포랑 짝꿍이라고 음이항 분포 역시 포아송 분포로 수렴합니다! 구체적으로 확률변수 $\small X\sim NB(r,p)$이고, $\small r\rightarrow \infty,\space p\rightarrow 1,\space r(1-p)\rightarrow \lambda$일 때, $\small Poisson(\lambda)$에 수렴하게 됩니다. 이걸 이제 증명해봅시다. 증명하는 방식은 음이항분포의 적률생성함수가 포아송 분포의 적률생성함수에 수렴하는 것을 보이는 것입니다. 따라서 먼저 음이항 분포의 적률생성함수를 구해봅시다.  
+한편, 음이항분포는 포아송 분포로 수렴된다는 특징이 있습니다. [포아송 분포](https://soohee410.github.io/discrete_dist3) 포스트에서 ``이항 분포는 포아송 분포로 수렴된다``는 것을 보였었는데요. 역시나 음이항 분포는 이항분포랑 짝꿍이라고 음이항 분포 역시 포아송 분포로 수렴합니다! 구체적으로 확률변수 $\small X\sim NB(r,p)$이고, $\small r\rightarrow \infty,\space p\rightarrow 1,\space r(1-p)\rightarrow \lambda$일 때, $\small Poisson(\lambda)$에 수렴하게 됩니다. 이걸 이제 증명해봅시다. 증명하는 방식은 음이항분포의 적률생성함수가 포아송 분포의 적률생성함수에 수렴하는 것을 보이는 것입니다. 따라서 먼저 음이항 분포의 적률생성함수를 구해봅시다.  
 
 원래 적률생성함수를 구하기 위해서는 $E(e^{tY})$를 구해야 하지만, $E(t^Y)$를 먼저 구하겠습니다. 계산이 훨씬 편리해집니다! 그 후에 $t$ 자리에 $e^t$를 넣어주면 됩니다.
 
