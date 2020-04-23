@@ -14,7 +14,7 @@ use_math: true
 
 $$ \begin{gathered} X\sim Hypergeometric(N, M, K) \cr  f_X(x) =\frac{\binom{M}{x} \binom{N-M}{K-x}}{\binom{N}{K}}, \cr ( x=max\lbrace 0, M-N+K\rbrace, \cdots , min\lbrace K,M\rbrace )\end{gathered}$$
 
-다시 강조하면 초기하분포에서는 샘플을 **비복원추출**하는 것입니다. 그런데 위와 똑같은 상황에서 샘플을 복원추출하면 뭐가 되나요? 바로 [저번 포스트](https://soohee410.github.io/discrete_dist1)에서 정리했던 **이항분포** 에 해당합니다! 똑같은 상황에서 샘플을 복원추출하는 개념은 이항분포, 비복원추출하는 개념은 초기하분포라고 정리할 수 있을 것입니다. 이 때, 초기하분포는 비복원추출을 하기 때문에 모집단이 유한집단이 된다는 특징이 있습니다.
+다시 강조하면 초기하분포에서는 샘플을 **비복원추출**하는 것입니다. 그런데 위와 똑같은 상황에서 샘플을 복원추출하면 뭐가 되나요? 바로 [저번 포스트](https://soohee410.github.io/discrete_dist1)에서 정리했던 **이항분포** 에 해당합니다! 똑같은 상황에서 샘플을 복원추출하는 개념은 이항분포, 비복원추출하는 개념은 초기하분포라고 정리할 수 있을 것입니다.
 <br>
 
 ### 평균과 분산, 그리고 이항분포와의 비교

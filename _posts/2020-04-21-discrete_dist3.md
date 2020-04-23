@@ -54,7 +54,7 @@ as \space n\rightarrow \infty ,\space p\rightarrow 0,\space np\rightarrow \lambd
 
 이걸 수리적으로 증명해보겠습니다. $p=\frac{\lambda}{n} + o(\frac{1}{n})$에서 $n$은 무한대로 커지므로, $p=\frac{\lambda}{n}$으로 두고 풀겠습니다!
 
-$$\begin{aligned} \binom{n}{x}p^x(1-p)^{n-x} &= \frac{n!}{x!(n-x)!} \bigg (\frac{\lambda}{n}\bigg )^x \bigg ( 1-\frac{\lambda}{n} \bigg )^{n-x} \cr
+$$\small\begin{aligned} \binom{n}{x}p^x(1-p)^{n-x} &= \frac{n!}{x!(n-x)!} \bigg (\frac{\lambda}{n}\bigg )^x \bigg ( 1-\frac{\lambda}{n} \bigg )^{n-x} \cr
 &= \frac{\lambda^x}{x!}\cdot \bigg (1-\frac{\lambda}{n} \bigg )^n\cdot \frac{n!}{(n-x)!(n-\lambda)^x} \cr
 &= \frac{\lambda^x}{x!}\cdot \bigg (1-\frac{\lambda}{n} \bigg )^n\cdot \frac{n(n-1)\cdots (n-x+1)}{(n-\lambda)^x}  \cr
 &\longrightarrow \frac{\lambda^x}{x!}\cdot e^{-\lambda} \cdot 1  \end{aligned}$$
