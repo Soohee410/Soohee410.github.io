@@ -19,6 +19,7 @@ $$ \Gamma(\alpha) = \int_0 ^\infty t^{\alpha-1} e^{-t}\space dt , \quad (\alpha>
 - $\Gamma(\alpha) = (\alpha-1)\Gamma(\alpha-1), \space (\alpha>1)$
 - $ \Gamma(\alpha) = (\alpha-1)!$
 - $\Gamma(\frac{1}{2}) = \sqrt\pi$
+
 <br>
 
 ### 감마 분포(Gamma Distribution)
@@ -29,7 +30,7 @@ $$\begin{gathered}  X\sim Gamma(\alpha, \beta) \cr
 f_X(x) = \frac{1}{\beta^{\alpha} \Gamma(\alpha)}x^{\alpha-1}e^{-\frac{x}{\beta}}, \quad (x,\alpha ,\beta >0) \cr
 (\alpha: shape\space parameter, \beta: scale\space parameter) \end{gathered}$$
 
-감마 분포는 $\alpha$개의 사건이 일어날 때까지 걸리는 대기 시간에 대한 분포라고 합니다. 그런데 이거 어디서 많이 보지 않았나요? 저번 포스트에서 했던 이항 분포는 사건이 1번 일어날 때까지 걸리는 시간에 대한 것이었습니다. 바로 감마 분포는 이항 분포를 한 번의 사건이 아닌 여러 개의 사건으로 확장한 것이라고 할 수 있습니다. 저번 포스트에서도 언급했듯이, 지수 분포는 $\alpha =1$인 감마 분포인 것입니다. 다시 말해서, 모수가 $\beta$인 **지수 분포**를 따르는 **서로 독립이고 동일한(iid)**  확률 변수 $\alpha$개를 합한 확률변수는, 모수가 $\alpha$와 $\beta$인 **감마 분포** 를 따릅니다!
+감마 분포는 $\alpha$개의 사건이 일어날 때까지 걸리는 대기 시간에 대한 분포라고 합니다. 그런데 이거 어디서 많이 보지 않았나요? [저번 포스트](https://soohee410.github.io/exponential_dist)에서 했던 지수 분포는 사건이 1번 일어날 때까지 걸리는 시간에 대한 것이었습니다. 바로 감마 분포는 지수 분포를 한 번의 사건이 아닌 여러 개의 사건으로 확장한 것이라고 할 수 있습니다. 저번 포스트에서도 언급했듯이, 지수 분포는 $\alpha =1$인 감마 분포인 것입니다. 다시 말해서, 모수가 $\beta$인 **지수 분포**를 따르는 **서로 독립이고 동일한(iid)**  확률 변수 $\alpha$개를 합한 확률변수는, 모수가 $\alpha$와 $\beta$인 **감마 분포** 를 따릅니다!
 
 그럼 이제 감마 분포의 **기대값**과 **분산** 을 구해보겠습니다.
 
