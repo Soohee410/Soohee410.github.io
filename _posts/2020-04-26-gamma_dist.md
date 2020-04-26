@@ -19,7 +19,6 @@ $$ \Gamma(\alpha) = \int_0 ^\infty t^{\alpha-1} e^{-t}\space dt , \quad (\alpha>
 - $\Gamma(\alpha) = (\alpha-1)\Gamma(\alpha-1), \space (\alpha>1)$
 - $ \Gamma(\alpha) = (\alpha-1)!$
 - $\Gamma(\frac{1}{2}) = \sqrt\pi$
-
 <br>
 
 ### 감마 분포(Gamma Distribution)

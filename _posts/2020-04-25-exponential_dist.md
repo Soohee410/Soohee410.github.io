@@ -32,7 +32,7 @@ $$\begin{aligned} f_W(w) &=\frac{w}{dw} F_W(w)\cr
 
 ### 기대값과 분산
 
-한편, 지수 분포는 **감마 분포(Gamma Distribution)**의 특수한 경우입니다. 감마 분포는 다음 포스트에서 다룰 예정이지만, 지수 분포는 $\alpha=1, \space \beta=\frac{1}{\lambda}$인 감마 분포라는 것을 이용하면 기대값 및 분산을 매우 쉽게 구할 수 있습니다.
+한편, 지수 분포는 **감마 분포(Gamma Distribution)**의 특수한 경우입니다. 감마 분포는 [다음 포스트](https://soohee410.github.io/gamma_dist)에서 다룰 예정이지만, 지수 분포는 $\alpha=1, \space \beta=\frac{1}{\lambda}$인 감마 분포라는 것을 이용하면 기대값 및 분산을 매우 쉽게 구할 수 있습니다.
 
 $$EXP(\lambda) = Gamma(\alpha = 1, \beta = \frac{1}{\lambda})$$  
 
