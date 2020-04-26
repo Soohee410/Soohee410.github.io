@@ -1,6 +1,6 @@
 ---
 layout: post
-title: "[이산형 분포] 음이항분포(Negative Binomial distribution)"
+title: "[이산형 분포] 음이항 분포(Negative Binomial distribution)"
 tags: [Mathematical Statistics]
 use_math: true
 ---
@@ -8,7 +8,7 @@ use_math: true
 이번 포스트에서는 기하분포(Geometric Distribution)를 확장한 **음이항분포(Negative Binomial Distribution)** 에 대해 알아보겠습니다. 기대값과 분산, 적률생성함수를 구하고, 음이항분포와 이항분포와의 관계, 음이항분포와 포아송분포와의 관계에 대해서도 정리하고자 합니다.
 <br>
 
-### 음이항분포(Negative Binomial Distribution)
+### 음이항 분포(Negative Binomial Distribution)
 
 기하분포와 똑같은 조건에서 어떤 확률 변수 $X$를 $r$번째 성공을 얻을 때까지 걸리는 시행횟수라고 해봅시다. 이때의 $X$를 음이항 확률변수라고 하고, 분포를 음이항분포라고 합니다. $(i.e. \space X\sim Negative\space Binomial(r,p))$ 즉, $r=1$인 경우가 바로 기하분포인거죠? 따라서 음이항분포는 기하분포를 일반화한 것이라고 할 수 있습니다.
 
@@ -85,16 +85,16 @@ $$\begin{aligned} M_Y(t) &= \big\lbrack\frac{p}{1-e^t(1-p)} \big\rbrack ^{r}\cr 
 &=  \bigg\lbrack 1+ \frac{1}{r}\bigg ( \frac{ (e^t-1)\lambda+o(1) }{ 1-\frac{e^t\lambda}{r}+o(\frac{1}{r})} \bigg ) \bigg\rbrack ^r \cr
 &\longrightarrow e^{\lambda(e^t-1)}\end{aligned}$$
 
-위와 같이 음이항 분포의 적률생성함수가 포아송 분포의 적률생성함수에 수렴하게 되는 것을 확인했습니다. 성공 횟수가 무한대로 커지고, 실패 확률은 매우 작아지며 이들의 곱은 람다에 수렴하게 될 경우, 음이항 분포는 포아송 분포에 수렴하게 됩니다.
+위와 같이 음이항 분포의 적률생성함수가 포아송 분포의 적률생성함수에 수렴하게 되는 것을 확인했습니다. <u>성공 횟수가 무한대로 커지고, 실패 확률은 매우 작아지며 이들의 곱은 람다에 수렴하게 될 경우</u>, 음이항 분포는 포아송 분포에 수렴하게 됩니다. [이항분포의 포아송 분포로의 근사](https://soohee410.github.io/discrete_dist3)에서는, 이항분포는 전체 시행 횟수가 무한히 커지고 성공 확률이 매우 작아서 이들의 곱이 람다에 수렴할 경우에  포아송 분포에 근사했다는 점에서 음이항분포랑 반대라는 것을 알 수 있습니다. 음이항분포에서는 전체 성공 횟수가 무한히 커질수록 필요한 실패 횟수라는 확률변수의 확률값을 계산하는 과정이 복잡해질 것입니다. 이 때, 전체 성공 횟수가 무한히 커지고, 실패할 확률이 매우 작다면, 이들의 곱을 평균 실패 횟수로 하는 포아송 분포를 통해 확률값을 보다 쉽게 구할 수 있게 됩니다.
 
-<img src='/assets/poi%20vs%20nbinom.PNG' width='650px'>
+<img src='/assets/poi%20vs%20nbinom_2.PNG' width='650px'>
 
 <br>
 
 
 ---
 
-Reference
+$Reference$
 
 -  송성주, 전명식. (2015). 수리통계학
 - 고려대학교 송성주 교수님의 수업

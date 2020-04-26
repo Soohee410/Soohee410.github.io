@@ -41,17 +41,17 @@ $$\begin{aligned}Var(X) &= E(X(X-1)) + E(X) - [E(X)]^2\cr
 
 $$\lim_{N\rightarrow \infty}\frac{\binom{M}{x} \binom{N-M}{n-x}}{\binom{N}{n}} = \binom{n}{x}p^x(1-p)^{n-x}$$
 
-<img src='/assets/hyp%20vs%20bi%20_1.PNG' width='650px'>
+<img src='/assets/hyp%20vs%20bi_2.PNG' width='650px'>
 
 마지막으로 초기하분포가 이항분포에 근사하는 것을 증명하고 마치겠습니다!
 
-$$\small\begin{aligned} (pf)\space \frac{\binom{M}{x} \binom{N-M}{n-x}}{\binom{N}{n}} &= \frac{M!}{x! (M-x)!}\cdot \frac{(N-M)!}{(n-x)!(N-M-(n-x))!}\cdot \frac{n!(N-n)!}{N!}\cr &= \binom{n}{x}\cdot \frac{M! / (M-x)!}{N!/(N-x)!}\cdot \frac{(N-m)!(N-n)!}{(N-x)!(N-m-(n-x))!} \cr &=  \binom{n}{x}\cdot \frac{M! / (M-x)!}{N!/(N-x)!}\cdot \frac{(N-M)!/(N-M-(n-x))!}{(N-n+(n-x))!/(N-n)!}\cr &=\binom{n}{x}\prod_{i=1}^x{\frac{M-x+i}{N-x+i}}\cdot \prod_{k=1}^{n-x}{\frac{N-M-(n-x)+k}{N-n+k}} \cr &\rightarrow \binom{n}{x}p^x(1-p)^{n-x} \space as \space N,M\rightarrow \infty, \frac{M}{N}\rightarrow p\end{aligned}$$
+$$\small\begin{aligned} \frac{\binom{M}{x} \binom{N-M}{n-x}}{\binom{N}{n}} &= \frac{M!}{x! (M-x)!}\cdot \frac{(N-M)!}{(n-x)!(N-M-(n-x))!}\cdot \frac{n!(N-n)!}{N!}\cr &= \binom{n}{x}\cdot \frac{M! / (M-x)!}{N!/(N-x)!}\cdot \frac{(N-m)!(N-n)!}{(N-x)!(N-m-(n-x))!} \cr &=  \binom{n}{x}\cdot \frac{M! / (M-x)!}{N!/(N-x)!}\cdot \frac{(N-M)!/(N-M-(n-x))!}{(N-n+(n-x))!/(N-n)!}\cr &=\binom{n}{x}\prod_{i=1}^x{\frac{M-x+i}{N-x+i}}\cdot \prod_{k=1}^{n-x}{\frac{N-M-(n-x)+k}{N-n+k}} \cr &\rightarrow \binom{n}{x}p^x(1-p)^{n-x} \space as \space N,M\rightarrow \infty, \frac{M}{N}\rightarrow p\end{aligned}$$
 
 <br>
 
 ---
 
-Reference
+$Reference$
 
 -  송성주, 전명식. (2015). 수리통계학
 - [https://math.stackexchange.com/questions/330553/proof-that-the-hypergeometric-distribution-with-large-n-approaches-the-binomia](https://math.stackexchange.com/questions/330553/proof-that-the-hypergeometric-distribution-with-large-n-approaches-the-binomia)

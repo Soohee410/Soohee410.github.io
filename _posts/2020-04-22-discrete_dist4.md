@@ -1,6 +1,6 @@
 ---
 layout: post
-title: "[이산형 분포] 기하분포(Geometric distribution)"
+title: "[이산형 분포] 기하 분포(Geometric distribution)"
 tags: [Mathematical Statistics]
 use_math: true
 ---
@@ -18,7 +18,8 @@ $$\begin{gathered} X \sim Geometric(p) \cr f_X(x) = (1-p)^{x-1}p,\space x=1,2,\c
 
 아래 그림은 각 성공 확률에 따른 기하 분포입니다. 성공 확률이 클 수록 초반에 '성공'이 나타날 확률이 크고, 성공 확률이 작을수록 초반에 '성공'이 나타날 확률이 작은 것을 확인할 수 있습니다.
 
-<img src='/assets/geom.PNG' width='680px'>
+<img src='/assets/geom_2.PNG' width='680px'>
+
 <br>
 
 ### 기하분포의 기대값, 분산, 적률생성함수
@@ -44,7 +45,8 @@ $$\small E(X)= \sum_{x=1}^\infty x(1-p)^{x-1}p=\frac{1}{p^2}\cdot p = \frac{1}{p
 
 <br>이번엔 **분산**을 구해보겠습니다. 분산을 구하기 전에 먼저 위에서 미분을 통해 구했던 것을 한번 더 미분하겠습니다.
 
-$$\small\begin{aligned} \frac{d}{dp}\sum_{x=1}^\infty x(1-p)^{x-1}&= \sum_{x=1}^\infty \frac{d}{dp}x(1-p)^{x-1}=\sum_{x=1}^\infty x(x-1)(1-p)^{x-2}\cdot (-1) \cr
+$$\small\begin{aligned} \frac{d}{dp}\sum_{x=1}^\infty x(1-p)^{x-1}&= \sum_{x=1}^\infty \frac{d}{dp}x(1-p)^{x-1}\cr
+&=\sum_{x=1}^\infty x(x-1)(1-p)^{x-2}\cdot (-1) \cr
 &=-\frac{2}{p^3} =\frac{d}{dp}\frac{1}{p^2} \cr
 &\therefore \sum_{x=1}^\infty x(x-1)(1-p)^{x-2}=\frac{2}{p^3} \end{aligned}$$
 
@@ -59,7 +61,9 @@ $$\small \begin{aligned} Var(X)&=E(X(X-1))+E(X) - (E(X))^2\cr
 
 <br> 마지막으로 **적률생성함수**를 구해보겠습니다.
 
-$$\small \begin{aligned} M_X(t) &= E(e^{tX})=\sum_{x=1}^\infty e^{tx}(1-p)^{x-1}p=\frac{p}{1-p}\sum_{x=1}^\infty [(1-p)e^t]^x \cr &=\frac{p}{1-p}\frac{(1-p)e^t}{1-(1-p)e^t} , \space t<-log(1-p)\end{aligned}$$
+$$\small \begin{aligned} M_X(t) &= E(e^{tX})=\sum_{x=1}^\infty e^{tx}(1-p)^{x-1}p\cr
+&=\frac{p}{1-p}\sum_{x=1}^\infty [(1-p)e^t]^x \cr
+&=\frac{p}{1-p}\frac{(1-p)e^t}{1-(1-p)e^t} , \space t<-log(1-p)\end{aligned}$$
 
 <br>
 
@@ -70,7 +74,7 @@ $$\small \begin{aligned} M_X(t) &= E(e^{tX})=\sum_{x=1}^\infty e^{tx}(1-p)^{x-1}
 
 ---
 
-Reference
+$Reference$
 
 -  송성주, 전명식. (2015). 수리통계학
 - 고려대학교 송성주 교수님의 수업

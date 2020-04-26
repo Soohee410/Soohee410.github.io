@@ -44,6 +44,6 @@ M_X(t) &= E(e^{tX}) = \sum_{x=0}^{n} \binom{n}{x} e^{tX} p^x(1-p)^{n-x} \cr
 
 ---
 
-Reference
+$Reference$
 
 -  송성주, 전명식. (2015). 수리통계학
