@@ -11,41 +11,47 @@ use_math: true
 ### 구글 코랩과 Kaggle 연동
 
 먼저 캐글 사이트에 들어가서 자신의 account에 들어갑니다! API 카테고리에서 **Create New API Token** 을 클릭하면 kaggle.json 파일이 자동으로 저장됩니다.
-<img src='/assets/colabkaggle6.PNG' width='650px'>
+
+<img src='/assets/colabkaggle6.PNG' width='720px'>
 
 이제 구글 코랩으로 돌아와서 kaggle을 설치하고, kaggle.json 파일을 업로드합니다.
-<img src='/assets/colabkaggle1.PNG' width='650px'>
+
+<img src='/assets/colabkaggle1.PNG' width='720px'>
 
 다음과 같이 코드를 입력합니다. 이로써 Kaggle 연동 및 데이터셋을 다운로드하기 위한 세팅을 모두 마무리한 것입니다.
-<img src='/assets/colabkaggle2.PNG' width='600px'>
+
+<img src='/assets/colabkaggle2.PNG' width='720px'>
 
 
 ### Kaggle Dataset 검색 및 다운로드
 
 코랩에서 **-s** 태그를 이용해서 캐글 데이터를 검색할 수 있습니다. 예를 들면, 저는  캐글의 **english to french** 데이터를 코랩에서 다운로드 하고자 했는데요. 다음과 같이 코랩에서 검색하면, 데이터셋 제목에 english french가 들어간 데이터의 리스트가 출력됩니다. 저는 이 리스트에서 위에서 다섯번째 ``percevalw/englishfrench-translations`` 데이터를 다운받을 것입니다!
-<img src='/assets/colabkaggle3.PNG' width='650px'>
+
+<img src='/assets/colabkaggle3.PNG' width='720px'>
 
 이제 제가  원하는 데이터를 다운받기 위해, 해당 데이터셋 페이지로 들어가서 오른쪽 위에 있는 동그라미 3개를 클릭합니다. 그 곳에서 **Copy API command** 를 클릭하면 이 데이터셋의 다운로드 주소를 얻을 수 있습니다.
-<img src='/assets/colabkaggle4.PNG' width='650px'>
+
+<img src='/assets/colabkaggle4.PNG' width='720px'>
 
 이제 돌아와서 다음과 같이 데이터셋을 다운받고 압축도 해제합니다. **!ls** 명령어를 이용해서 데이터가 잘 다운되고 압축해제도 되었는지 확인합니다. 굳이 캐글 사이트에 들어가서 API 주소를 복사하지 않아도, **!kaggle datasets download -d** 명령어에 위 리스트에서 확인한 데이터셋의 ref를 입력해주면 되는 것 같습니다.
-<img src='/assets/colabkaggle5.PNG' width='650px'>
+
+<img src='/assets/colabkaggle5.PNG' width='720px'>
 
 <br>
 따라서 전체 코드만 나열하면 다음과 같습니다!
 
 
->###캐글 연동 및 세팅###
-!pip install kaggle
-from google.colab import files
-files.upload()
-!mkdir -p ~/.kaggle
-!cp kaggle.json ~/.kaggle/  
-!chmod 600 ~/.kaggle/kaggle.json
->###데이터셋 검색 및 다운로드###
-!kaggle datasets list -s english-french
-!kaggle datasets download -d percevalw/englishfrench-translations
-!unzip englishfrench-translations.zip
+>###캐글 연동 및 세팅###  
+!pip install kaggle  
+from google.colab import files  
+files.upload()  
+!mkdir -p ~/.kaggle  
+!cp kaggle.json ~/.kaggle/    
+!chmod 600 ~/.kaggle/kaggle.json  
+>###데이터셋 검색 및 다운로드###  
+!kaggle datasets list -s english-french   
+!kaggle datasets download -d percevalw/englishfrench-translations  
+!unzip englishfrench-translations.zip  
 !ls
 
 
