@@ -30,7 +30,6 @@ use_math: true
 <img src='/assets/colabkaggle3.PNG' width='720px'>
 
 이제 제가  원하는 데이터를 다운받기 위해, 해당 데이터셋 페이지로 들어가서 오른쪽 위에 있는 동그라미 3개를 클릭합니다. 그 곳에서 **Copy API command** 를 클릭하면 이 데이터셋의 다운로드 주소를 얻을 수 있습니다.
-
 <img src='/assets/colabkaggle4.PNG' width='720px'>
 
 이제 돌아와서 다음과 같이 데이터셋을 다운받고 압축도 해제합니다. **!ls** 명령어를 이용해서 데이터가 잘 다운되고 압축해제도 되었는지 확인합니다. 굳이 캐글 사이트에 들어가서 API 주소를 복사하지 않아도, **!kaggle datasets download -d** 명령어에 위 리스트에서 확인한 데이터셋의 ref를 입력해주면 되는 것 같습니다.
@@ -41,14 +40,12 @@ use_math: true
 따라서 전체 코드만 나열하면 다음과 같습니다!
 
 
->###캐글 연동 및 세팅###  
-!pip install kaggle  
+>!pip install kaggle  
 from google.colab import files  
 files.upload()  
 !mkdir -p ~/.kaggle  
 !cp kaggle.json ~/.kaggle/    
 !chmod 600 ~/.kaggle/kaggle.json  
->###데이터셋 검색 및 다운로드###  
 !kaggle datasets list -s english-french   
 !kaggle datasets download -d percevalw/englishfrench-translations  
 !unzip englishfrench-translations.zip  
