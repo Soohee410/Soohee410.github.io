@@ -41,20 +41,20 @@ use_math: true
 
 그런데 여기까지 하고 이제 끝인 줄 알았더니!! 다음날 들어가니까 다시 또 **kaggle.json** 파일을 업로드 하고 데이터 또 다운받고 그래야 하는 것 같더라구요..? 데이터가 커지면 여간 번거롭고 시간 낭비가 아닐 수 없습니다,, 그래서 저는 아예 캐글 데이터를 구글 드라이브에 저장해서 이 과정을 반복할 필요가 없도록 하기로 했습니다. 이를 위해 먼저 ``.kaggle`` 폴더를 구글 드라이브에 생성합니다. 그리고 그 폴더 안에 **kaggle.json** 파일을 업로드합니다. 저는 구글 드라이브에 data라는 폴더 안에 ``.kaggle`` 폴더를 생성했습니다!
 
-<img src='/assets/colabkaggle7.PNG' width='720px'>
+<img src='/img/colabkaggle7.PNG' width='720px'>
 
 그 후에 저는 제가 참고한 [캐글 포럼](https://www.kaggle.com/general/51898)에서 이렇게 하라고 해서 하기는 했는데 이게 먹힌건지 아닌지는 잘 모르겠습니다.
 
-<img src='/assets/colabkaggle8.PNG' width='720px'>
+<img src='/img/colabkaggle8.PNG' width='720px'>
 
 저는 일단 이 뒤로는 구글 드라이브 이용할 때 하는 것과 똑같이 했습니다! 먼저 구글 드라이브에 mount시키구요. 그 다음에 구글 드라이브 내에 ``.kaggle`` 폴더로 이동합니다.
 
-<img src='/assets/colabkaggle9.PNG' width='720px'>
+<img src='/img/colabkaggle9.PNG' width='720px'>
 
 
 그 후에 위에서 했던 ``!kaggle~`` 명령어를 통해 캐글 데이터를 다운로드하고 압축해제하는 과정을 하면 됩니다! 그러면 구글 드라이브에 데이터가 다운로드 되고 매번 새로 kaggle을 연동할 필요 없이 저장한 데이터를 이용할 수 있습니다 :)
 
-<img src='/assets/colabkaggle10.PNG' width='720px'>
+<img src='/img/colabkaggle10.PNG' width='720px'>
 
 
 <br>
