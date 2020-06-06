@@ -50,11 +50,11 @@ use_math: true
 저는 일단 이 뒤로는 구글 드라이브 이용할 때 하는 것과 똑같이 했습니다! 먼저 구글 드라이브에 mount시키구요. 그 다음에 구글 드라이브 내에 ``.kaggle`` 폴더로 이동합니다.
 
 <img src='/img/colabkaggle9.PNG' width='750px'>
+<img src='/img/colabkaggle10.PNG' width='750px'>
 
 
 그 후에 위에서 했던 ``!kaggle~`` 명령어를 통해 캐글 데이터를 다운로드하고 압축해제하는 과정을 하면 됩니다! 그러면 구글 드라이브에 데이터가 다운로드 되고 매번 새로 kaggle을 연동할 필요 없이 저장한 데이터를 이용할 수 있습니다 :)
 
-<img src='/img/colabkaggle10.PNG' width='750px'>
 
 
 <br>
