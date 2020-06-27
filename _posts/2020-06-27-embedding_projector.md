@@ -8,7 +8,7 @@ use_math: false
 오늘은 ``Embedding Projector``를 이용해서 임베딩 벡터를 시각화해보겠습니다! 준비물은 임베딩하고 난 후의 metadata.tsv와 tensor.tsv 두 데이터가 필요한데요. 이 데이터들은 다음과 같이 얻을 수 있습니다! 먼저 저는 [네이버 영화 리뷰](https://github.com/e9t/nsmc)를 형태소 분석한 후에, 이 데이터를 다음과 같이 Word2Vec을 훈련시키고 이 모델을 'naver_w2v'라는 이름으로 저장했습니다.
 
 > **from** gensim.models **import** Word2Vec  
-model = Word2Vec(data, size=100, window=5, min_count=5, workers=4, sg=0)
+model = Word2Vec(data, size=100, window=5, min_count=5, workers=4, sg=0)  
 >**from** gensim.models **import** KeyedVectors  
 model.wv.save_word2vec_format('naver_w2v')
 
