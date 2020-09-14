@@ -5,7 +5,7 @@ tags: [Interpretable Machine Learning]
 use_math: true
 ---
 
-이번 포스트에서는 특정 모델에 특화된(**Model-specific**)이 아닌, 어느 모델이든(**Model-agnostic**) 학습시킨 후(**Post-hoc**)에 적용하여 변수 중요도를 확인할 수 있는 대표적인 방법인 ``Permutation Feature Importance``에 대해 설명하고자 합니다. **Permutation Feature Importance**는 Black-box 모델에 대하여, 특정 feature를 안 썼을 때, 이것이 성능 손실에 얼마만큼의 영향을 주는지를 통해 그 feature의 중요도를 파악하는 방법입니다. 이 방법의 이론은 상당히 직관적이어서 그 어떤 방법보다 이해하기 쉬운 것 같습니다. 그럼 시작하겠습니다!
+이제부터는 특정 모델에 특화된(**Model-specific**)이 아닌, 어느 모델이든(**Model-agnostic**) 학습시킨 후(**Post-hoc**)에 적용하는 방법들에 대해 다루고자 합니다. 이번 포스트에서는 그 중에서도 변수 중요도를 확인할 수 있는 대표적인 방법 중 하나인 ``Permutation Feature Importance``에 대해 설명하고자 합니다. **Permutation Feature Importance**는 Black-box 모델에 대하여, 특정 feature를 안 썼을 때, 이것이 성능 손실에 얼마만큼의 영향을 주는지를 통해 그 feature의 중요도를 파악하는 방법입니다. 이 방법의 이론은 상당히 직관적이어서 그 어떤 방법보다 이해하기 쉬운 것 같습니다. 그럼 시작하겠습니다!
 
 <br>
 
