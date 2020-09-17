@@ -1,6 +1,6 @@
 ---
 layout: post
-title: "[머신러닝의 해석] 3편. Permutation Feature Importance"
+title: "[머신러닝의 해석] 3편. Permutation Feature Importance의 이해와 적용"
 tags: [Interpretable Machine Learning]
 use_math: true
 ---
@@ -9,7 +9,7 @@ use_math: true
 
 <br>
 
-## 1. Permutation Feature Importance의 특징
+##  Permutation Feature Importance의 특징
 <br>
 
 **Permutation Feature Importance**의 중요한 특징이자 장점으로는 ``재학습시킬 필요가 없다``는 것입니다. 특정 Feature를 제거하고 모델을 재학습해서 중요도를 파악하는 방법도 있지만, 그렇게 하면 당연히 시간적, 자원적 소모가 매우 클 것입니다.  그 feature를 제거하고 예측하기 위해서는, X의 차원이 변경되어 새로 학습시켜야 하기 때문입니다. 그렇다면 특정 feature를 어떻게 안 쓰고 예측 에러를 계산할 수 있을까요? 변수를 아예 포함하지 않는 것 대신, 그 feature의 값들을 무작위로 섞어서(permutation) 그 feature를 노이즈로 만드는 것입니다! 무작위로 섞게 되면, 목표 변수와 어떠한 연결고리를 끊게 되는 것이므로, 그 feature를 안 쓴다고 할 수 있을 것입니다. 이렇게 섞었을 때 예측값이 실제 값보다 얼마나 차이가 더 생겼는지를 통해 해당 feature의 영향력을 파악합니다. 모델이 이 변수에 크게 의존하고 있을 경우에는 예측 정확도가 크게 감소할 것입니다. 이렇게 학습한 모델과 데이터만 있으면 변수 중요도를 뽑아주는 방법이기 때문에, 모델의 학습 과정, 내부 구조에 대한 정보가 필요 없어서 어느 모델이든 적용할 수 있게 됩니다.
@@ -18,7 +18,7 @@ use_math: true
 
 <br>
 
-## 2. 주의할 점
+##  주의할 점
 <br>
 
 한편, Permutation Feature Importance를 적용하기 앞서 주의해야 할 점이 있습니다. 이 방법은 값을 `무작위`로 섞는 것이 특징입니다. 그렇기 때문에, <u>할 때마다 결과가 매우 달라질 수 있습니다.</u> 물론 이 점은 섞는 횟수를 늘림으로써 예측 에러의 분산을 감소시킬 수 있지만, feature의 개수가 매우 많을 경우에는 연산량이 증가할 것입니다. 따라서, Permutation의 적절한 횟수를 선택해야 할 것입니다.   
@@ -27,7 +27,7 @@ use_math: true
 
 <br>
 
-## 3. eli5 라이브러리로 적용하기
+##  eli5 라이브러리로 적용하기
 <br>
 
 저는 파이썬 **eli5** 라이브러리를 이용해서 Permutation Feature Importance를 간단하게 적용해보았는데요. [[머신러닝의 해석] 2편-(2). 불순도 기반 Feature Importance는 진짜 연속형 변수를 선호할까?](https://soohee410.github.io/iml_tree_importance2) 포스트에서 했던 데이터 ``Adult Census Income`` 에 그대로 적용했습니다. 당시에는 랜덤 포레스트만을 이용해서, 과적합 정도에 따른 랜덤 포레스트의 변수 중요도를 비교했었는데요. 이번에는 XGBoost, CatBoost, RandomForest, 총 세가지의 모델을 이용했고, 그 결과에 대한 변수 중요도를 비교해 보았습니다.  또 한, 똑같이 랜덤 포레스트 과적합 정도에 따라 Permutation Feature Importance 방법도 변수 중요도의 차이가 있는지 확인해보았습니다! 참고로, 저는 test 데이터셋에서의 변수 중요도를 확인했습니다.
