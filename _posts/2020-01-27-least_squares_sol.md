@@ -72,14 +72,14 @@ $$\small \begin{aligned}  &  b-\hat b \perp  Col(A)  \\
 
 <br>
 
-## 4. 행렬 A가 invertible하다면?
+## 4. 행렬 A가 선형독립이라면?
 
 <br>
-지금까지는 행렬 $A$에 어떠한 조건도 없었습니다. 이제 특정한 조건을 하나 추가해볼 건데요. 어떤 mxn행렬 $A$의 ``열들이 서로 선형독립(linearly independent)``이라고 합시다.  그러면, 행렬 $A$는 ``역행렬이 존재(invertible)``할 것입니다. 이제 $\hat x$이 $Ax=b$의 최소제곱해라고 합시다. 그러면 3번에서 위 정리에 의해 $\hat x$은 정규방정식을 만족할 것입니다.
+지금까지는 행렬 $A$에 어떠한 조건도 없었습니다. 이제 특정한 조건을 하나 추가해볼 건데요. 어떤 mxn행렬 $A$의 ``열들이 서로 선형독립(linearly independent)``이라고 합시다.  그러면, $A^{\intercal}A$는 선형독립인 정사각행렬(nxn)이 될 것입니다. 이제 $\hat x$이 $Ax=b$의 최소제곱해라고 합시다. 그러면 3번에서 위 정리에 의해 $\hat x$은 정규방정식을 만족할 것입니다.
 
 $$\small A^{\intercal}A\hat x=A^{\intercal}b$$
 
-이 때, 행렬 $A$가 역행렬이 존재(invertible)하므로, $A^{\intercal}A$ 역시 역행렬이 존재할 것이고, 위 식은 다음과 같이 유일(unique) 최소제곱해가 존재할 것입니다.
+이 때, 행렬 $A^{\intercal}A$은 선형독립인 정사각행렬이므로 역행렬이 존재할 것이고, 위 식은 다음과 같이 유일(unique) 최소제곱해가 존재하게 됩니다.
 
 $$\small \hat x=(A^{\intercal}A)^{-1}A^{\intercal}b$$
 
