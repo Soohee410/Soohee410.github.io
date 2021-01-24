@@ -7,7 +7,7 @@ permalink: /tags/
 a {color: rgb(50,46,46);
   font-weight: normal;
   &:hover {
-    font-weight: 700;
+    font-weight: 800;
   }
 }
 </style>
@@ -29,9 +29,10 @@ a {color: rgb(50,46,46);
   <h2 id="{{ this_word | cgi_escape }}">{{ this_word }}</h2>
   <ul class="posts">
     {% for post in site.tags[this_word] %}{% if post.title != null %}
-    <li itemscope>{% if post.category == "speaking" %}<i class="fa fa-microphone"></i> {% endif %}<a href="{{ post.url }}">{{ post.title }}</a></li>
+    <li itemscope>{% if post.category == "speaking" %}<i class="fa fa-microphone"></i> {% endif %}<a href="{{ post.url }}">{{ post.title }}</a>
     {% endif %}
-    <small class="entry-date"><time datetime="{{ post.date | date_to_xmlschema }}" itemprop="datePublished">{{ post.date | date: "%B %d, %Y" }}</time></small>  {% endfor %}
+    <small class="entry-date" style="color: rgb(160,160,160)"><time datetime="{{ post.date | date_to_xmlschema }}" itemprop="datePublished">{{ post.date | date: "%B %d, %Y" }}</time></small>  {% endfor %}
+    </li>
   </ul>
   {% endunless %}{% endfor %}
 </div>
