@@ -18,7 +18,7 @@ use_math: true
 
 결국 식 $A\boldsymbol{x}=\lambda\boldsymbol{x}$을 만족하는 $\lambda$와  $\boldsymbol{x}$가 각각 고유값, 고유벡터라는 것이 내용의 전부입니다.  물론, $\boldsymbol{x}$가 nontrivial solution일 때만 해당합니다! 당연히 $\boldsymbol{x}$가 0이면 항상 위 식은 자명하게 성립하겠죠? 따라서 $\boldsymbol{x}$가 0인 경우를 제외하고도 위 식이 풀릴 때, 그 때의 $\lambda$, $\boldsymbol{x}$ 가 우리의 관심사입니다.
 
-그렇다면 $A\boldsymbol{x}=\lambda\boldsymbol{x}$ 이 식이 의미하는 게 무엇일까요? $A$는 행렬(nxn)이고$\lambda$는 스칼라(1x1)입니다. 이 식의 좌변$(A\boldsymbol{x})$은 어떠한 벡터(nx1) $\boldsymbol{x}$가 행렬 $A$에 의해 **선형변환(linear transformation)** 된 벡터를 의미하고, 우변$(\lambda \boldsymbol{x})$은 똑같은 벡터 $\boldsymbol{x}$에 어떠한 상수$\lambda$를 곱함으로써 이것의 크기(scale)가 변화된 벡터를 의미할 것입니다. 이 둘이 같다는 것은 결국,``어떠한 벡터를 선형변환시켜도 이것의 크기만 변하고 방향은 유지된다``는 것을 의미합니다!
+그렇다면 $A\boldsymbol{x}=\lambda\boldsymbol{x}$ 이 식이 의미하는 게 무엇일까요? $A$는 행렬(nxn)이고$\lambda$는 스칼라(1x1)입니다. 이 식의 좌변$(A\boldsymbol{x})$은 어떠한 벡터(nx1) $\boldsymbol{x}$가 행렬 $A$에 의해 **선형변환(linear transformation)** 된 벡터를 의미하고, 우변$(\lambda \boldsymbol{x})$은 똑같은 벡터 $\boldsymbol{x}$에 어떠한 상수$\lambda$를 곱함으로써 이것의 크기(scale)가 변화된 벡터를 의미할 것입니다. 이 둘이 같다는 것은 결국,```어떠한 벡터를 선형변환시켜도 이것의 크기만 변하고 방향은 유지된다```는 것을 의미합니다!
 
 자, 그럼 실제로 nxn행렬인 $A$에 대하여, $A\boldsymbol{x}=\lambda\boldsymbol{x}$을 푼다고 해봅시다. 우변을 넘기면 다음과 같이 되겠죠.
 
@@ -32,7 +32,7 @@ $$\small A \boldsymbol{x}= \lambda \boldsymbol{x}\Longrightarrow (A-\lambda I)\b
 <img src="/assets/img/그림1추가.png" width="750px">
 
 이해되셨나요? 이제 예제를 하나 보면서  정리해보겠습니다!
-- $x,y,z$ 세 축이 있을 때, $T:\mathbb{R}^3\rightarrow \mathbb{R}^3$이 $x-y$ 평면으로의 정사영 함수$(projection function)$라고 하자. 이 때 $T$에 해당하는 $ transformation\space matrix\space A$의 고유값과 고유벡터를 구해보자.
+* $x,y,z$ 세 축이 있을 때, $T:\mathbb{R}^3\rightarrow \mathbb{R}^3$이 $x-y$ 평면으로의 정사영 함수$(projection function)$라고 하자. 이 때 $T$에 해당하는 $ transformation\space matrix\space A$의 고유값과 고유벡터를 구해보자.
 <img src="/assets/img/그림1.png" width="450px">
 
 아직 포스트 순서 상 projection에 대해 접하지 않았지만, 혹시 모르시는 분들은 함수 $T$가 하는 일이 위 그림처럼 아래 바닥에다 벡터 $\boldsymbol{v}$를 그림자처럼 투영시키는 거라고 생각해주세요! 그러면 위 식과 같이 선형함수 $T$에 임의의 벡터 $(x,y,z)$를 대입한 값은 $\small T(x,y,z)=(x,y,0)$와 같이 나올 것입니다. 이제 함수 $T$를 행렬로 나타내 봅시다.  $(x,y,z)$에 어떤 행렬을 곱했을 때 $(x,y,0)$이 나오는지 찾으면 됩니다. 이 예제의 경우 특별한 연산과정 없이도 간단하게 그 행렬을 찾을 수 있습니다! 위 식에서 나와있듯이, 행렬은 $\scriptsize\begin{pmatrix}1&0&0\cr 0&1&0\cr 0&0&0\end{pmatrix}$이 되고, 이를 $A$라 하겠습니다.
@@ -56,7 +56,7 @@ $$\small A \boldsymbol{x}= \lambda \boldsymbol{x}\Longrightarrow (A-\lambda I)\b
 > 어떤 $scalar\space\lambda$가 nxn 행렬 A의 고유값이기 위한 필요충분조건은 $\lambda$가 $det(A-\lambda I)=0$을 만족하는 것이다.
 
 즉, 위의 사실을 이용해서 우리는 복잡한(?) 행렬들에 대해서도 고유값과, 그리고 이에 해당하는 고유벡터를 계산할 수 있게 됩니다! 나아가, $\lambda$가 어떤 정방행렬 A의 고유값이기 위한 필요충분조건은 다양한 표현들로 나타낼 수 있는데요. 이들은  다음과 같습니다.
-- $\lambda$는 행렬 A의 고유값이다.\\
+* $\lambda$는 행렬 A의 고유값이다.\\
 $\iff A\boldsymbol{x}=\lambda \boldsymbol{x}$를 만족하는 0이 아닌 벡터 $\boldsymbol{x}$가 존재한다.  
 $\iff Nul(A-\lambda I)\not=\{0\} $  
 $\iff det(A-\lambda I)=0 $  
@@ -79,7 +79,7 @@ $$\small det(A)=\beta=(-1)^n\cdot\lambda_1\lambda_2\cdots\lambda_n$$
 
 ---
 $Reference.$  
-- David C.Lay · Stephen R.Lay · Judi J.McDonald, Linear Algebra and its Applications, 5th edition, Pearson
-- 고려대학교 김홍중 교수님의 수업
+* David C.Lay · Stephen R.Lay · Judi J.McDonald, Linear Algebra and its Applications, 5th edition, Pearson
+* 고려대학교 김홍중 교수님의 수업
 
 <br>
