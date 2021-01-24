@@ -19,10 +19,6 @@
   font-family: 'IBM Plex Mono', monospace;
   line-height: 25px;
   color: $gray-dark;
-  a {
-    font-family: 'Lora', serif;
-    color: $dark;
-  }
 }
 
 .contact__item {
@@ -36,4 +32,15 @@
 .contact__link {
   font-size: 16px;
   color: $dark;
+}
+
+.contact__title, .contact__link{
+  a {
+    font-family: 'Lora', serif;
+    color: $dark;
+    text-decoration: none;
+    &:hover{
+      font-weight:bold;
+    }
+  }
 }
