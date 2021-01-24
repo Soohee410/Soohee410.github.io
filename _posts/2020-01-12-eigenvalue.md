@@ -44,10 +44,8 @@ $$ A \boldsymbol{x}= \lambda \boldsymbol{x}\Longrightarrow (A-\lambda I)\boldsym
 
 **(1)** $ T(\boldsymbol w)=A\boldsymbol w=\boldsymbol 0=\boldsymbol 0\cdot \boldsymbol w$  
 이 때, 고유값은 0이고 그에 해당하는 고유벡터는 $\boldsymbol w=\scriptsize\begin{pmatrix}0\\\0\\\1\end{pmatrix}$이 되는 것을 쉽게 알 수 있습니다.  
-
 **(2)** $ T(e_1 )=Ae_1=e_1=1\cdot e_1$
 이 때, 고유값은 1이고 그에 해당하는 고유벡터는 $e_1=\scriptsize\begin{pmatrix}1\\\0\\\0\end{pmatrix}$이 되는 것을 쉽게 알 수 있습니다.  
-
 **(3)** $ T(e_2 )=Ae_2=e_2=1\cdot e_2$
 이 때, 고유값은 1이고 그에 해당하는 고유벡터는 $e_2=\scriptsize\begin{pmatrix}0\\\1\\\0\end{pmatrix}$이 되는 것을 쉽게 알 수 있습니다.  
 

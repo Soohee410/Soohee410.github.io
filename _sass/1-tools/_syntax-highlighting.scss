@@ -16,7 +16,7 @@ code.highlighter-rouge {
   .highlighter-rouge & {
     background-color: #282828;
     font-family: 'NanumBarunGothic', sans-serif, 'Noto Sans KR', sans-serif;
-    color: $dark;
+    color: $code4;
   }
 
   .c     { color: $code1; font-style: italic } // Comment
@@ -30,7 +30,7 @@ code.highlighter-rouge {
   .gd    { color: $code2;} // Generic.Deleted
   .gd .x { color: $code2;} // Generic.Deleted.Specific
   .ge    { font-style: italic } // Generic.Emph
-  .gr    { color: #a00 } // Generic.Error
+  .gr    { color: $code3; } // Generic.Error
   .gh    { color: #999 } // Generic.Heading
   .gi    { color: $code5; } // Generic.Inserted
   .gi .x { color: $code5; } // Generic.Inserted.Specific
