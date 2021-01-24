@@ -114,8 +114,10 @@ img {
 }
 
 a {
+  font-family: 'NanumBarunGothic', sans-serif, 'Noto Sans KR', sans-serif;
     text-decoration: none;
     color: $primary-color;
+    font-weight: 500;
     transition: color 200ms;
 
     &:hover {
