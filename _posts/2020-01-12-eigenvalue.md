@@ -29,11 +29,11 @@ $$\small A \boldsymbol{x}= \lambda \boldsymbol{x}\Longrightarrow (A-\lambda I)\b
 > **Thm.** 어떤 nxn 행렬 $A$가 서로 다른 r개의 고유값 $\lambda_1, \lambda_2, \cdots, \lambda_r$을 가지고 있고, $v_1,v_2, \cdots v_r$이 이들 각각에 해당하는 고유벡터일 때, 집합 $ \{v_1, v_2, \cdots v_r \} $은 선형독립$(linearly\space independent)$이다.
 
 고유값들이 서로 다르면 이에 해당하는 서로 다른 고유공간이 존재하겠죠? 즉, ``서로 다른 고유공간을 구성하는 고유벡터들은 서로 선형독립``이라는 것입니다. 간단하게 증명해봅시다! 독립이 아니라고 가정했을 때 이 가정이 모순이 되는 것을 보이는 논리입니다.
-<img src="/assets/그림1추가.png" width="750px">
+<img src="/assets/img/그림1추가.png" width="750px">
 
 이해되셨나요? 이제 예제를 하나 보면서  정리해보겠습니다!
 - $x,y,z$ 세 축이 있을 때, $T:\mathbb{R}^3\rightarrow \mathbb{R}^3$이 $x-y$ 평면으로의 정사영 함수$(projection function)$라고 하자. 이 때 $T$에 해당하는 $ transformation\space matrix\space A$의 고유값과 고유벡터를 구해보자.
-<img src="/img/그림1.png" width="450px">
+<img src="/assets/img/그림1.png" width="450px">
 
 아직 포스트 순서 상 projection에 대해 접하지 않았지만, 혹시 모르시는 분들은 함수 $T$가 하는 일이 위 그림처럼 아래 바닥에다 벡터 $\boldsymbol{v}$를 그림자처럼 투영시키는 거라고 생각해주세요! 그러면 위 식과 같이 선형함수 $T$에 임의의 벡터 $(x,y,z)$를 대입한 값은 $\small T(x,y,z)=(x,y,0)$와 같이 나올 것입니다. 이제 함수 $T$를 행렬로 나타내 봅시다.  $(x,y,z)$에 어떤 행렬을 곱했을 때 $(x,y,0)$이 나오는지 찾으면 됩니다. 이 예제의 경우 특별한 연산과정 없이도 간단하게 그 행렬을 찾을 수 있습니다! 위 식에서 나와있듯이, 행렬은 $\scriptsize\begin{pmatrix}1&0&0\cr 0&1&0\cr 0&0&0\end{pmatrix}$이 되고, 이를 $A$라 하겠습니다.
 이렇게 어떠한 벡터를 선형함수 $T$에 대입한 값은 행렬 A와 그 벡터의 곱$\small(T(\boldsymbol{x})=A\boldsymbol{x})$으로 나타낼 수 있게 됩니다. 이제 고유값과 고유벡터를 구할 건데, 이 경우도 특별한 연산 과정이 필요 없습니다! 고유값과 고유벡터의 정의 기억하시죠? $A\boldsymbol{x}=\lambda\boldsymbol{x}$을 만족하는 $\lambda$와 $\boldsymbol{x}$를 찾아봅시다.  
