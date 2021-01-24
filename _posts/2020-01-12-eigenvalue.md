@@ -1,6 +1,8 @@
 ---
 layout: post
 title: "[선형대수] Eigenvalue, Eigenvector, Character Equation"
+date:   2020-01-12
+image: '/assets/img/linear_algebra1.png'
 tags: [Linear Algebra]
 use_math: true
 ---
