@@ -12,10 +12,10 @@ code.highlighter-rouge {
 }
 */
 .highlight {
-  background: $gray-white;
+  background: rgba(255,223,80,0.6);
 
   .highlighter-rouge & {
-    background: rgba(255,223,80,0.6);
+    background: $gray-dark;
     font-family: 'NanumBarunGothic', sans-serif, 'Noto Sans KR', sans-serif;
     color: $dark;
   }
