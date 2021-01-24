@@ -39,6 +39,9 @@ Phosfluorescently engage worldwide methodologies with web-enabled technology. In
 
 ![]({{site.baseurl}}/assets/img/05.jpg)
 
-Dynamically target high-payoff intellectual capital for customized technologies. Objectively integrate emerging core competencies before process-centric communities. Dramatically evisculate holistic innovation rather than client-centric data.
-
-Progressively maintain extensive infomediaries via extensible niches. Dramatically disseminate standardized metrics after resource-leveling processes. Objectively pursue diverse catalysts for change for interoperable meta-services.
+```
+def print_hi(name)
+  puts "Hi, #{name}"
+end
+print_hi('Tom')
+```
