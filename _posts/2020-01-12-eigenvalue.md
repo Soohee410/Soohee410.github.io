@@ -22,7 +22,7 @@ use_math: true
 
 자, 그럼 실제로 nxn행렬인 $A$에 대하여, $A\boldsymbol{x}=\lambda\boldsymbol{x}$을 푼다고 해봅시다. 우변을 넘기면 다음과 같이 되겠죠.
 
-$$\small A \boldsymbol{x}= \lambda \boldsymbol{x}\Longrightarrow (A-\lambda I)\boldsymbol{x}=0\quad\cdots (1)$$
+$$ A \boldsymbol{x}= \lambda \boldsymbol{x}\Longrightarrow (A-\lambda I)\boldsymbol{x}=0\quad\cdots (1)$$
 
 이 때, 식 (1)을 만족하는 모든 해  $\boldsymbol{x}$들의 집합이 $\small A-\lambda I$의 **영공간(null space)** 이 될 것입니다! 따라서 이 집합은 n차 실수 공간 $\mathbb{R}^n$의 **부분공간(subspace)** 이고, 이 부분공간을 $\lambda$에 해당하는 $A$의 **고유공간(eigenspace)** 이라고 부릅니다. 다시 말해서, <u>고유공간은 영벡터와 λ에 해당하는 모든 고유벡터들로 구성됩니다.</u>
 이제 이와 관련하여 다음의 중요한 정리(theorem)를 하나 짚고 넘어가겠습니다!

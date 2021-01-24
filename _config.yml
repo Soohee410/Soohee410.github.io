@@ -34,6 +34,7 @@ google-analytics: 'UA-164687013-1' # add your identifier. For example UA-9963180
 
 # Build settings
 markdown: kramdown
+highlighter: rouge
 permalink: pretty
 plugins:
   - jekyll-sitemap
