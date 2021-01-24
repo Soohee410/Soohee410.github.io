@@ -39,7 +39,7 @@ Phosfluorescently engage worldwide methodologies with web-enabled technology. In
 
 ![]({{site.baseurl}}/assets/img/05.jpg)
 
-```
+```python
 def print_hi(name)
   puts "Hi, #{name}"
 end
