@@ -5,11 +5,18 @@ permalink: /tags/
 ---
 <style>
 a {color: rgb(50,50,50);
-  font-weight: bold;
+  font-weight: normal;
   font-size: 18px;
   border-bottom: solid 3px rgb(50,50,50);
-  transform: scaleX(0);
-  transition: transform 250ms ease-in-out;
+
+  &:after{
+    content: '';
+    transform: scaleX(0);
+    transition: transform 250ms ease-in-out;
+  }
+  &:hover:after{
+    transform: scaleX(1);
+  }
   &:fromLeft:after{
     transform-origin:  0% 50%;
   }
