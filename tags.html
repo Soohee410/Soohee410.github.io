@@ -27,7 +27,7 @@ permalink: /tags/
   <ul class="posts">
     {% for post in site.tags[this_word] %}{% if post.title != null %}
     <li itemscope>{% if post.category == "speaking" %}<i class="fa fa-microphone"></i> {% endif %}
-      <a href="{{ post.url }}" class="tag-content">{{ post.title }}</a> {% endif %}
+      <span class="tag-content"> <a href="{{ post.url }}">{{ post.title }}</a> {% endif %} </span>
       <small class="entry-date" style="color: rgb(160,160,160)"><time datetime="{{ post.date | date_to_xmlschema }}" itemprop="datePublished">{{ post.date | date: "%B %d, %Y" }}</time></small>  {% endfor %}
     </li>
   </ul>
