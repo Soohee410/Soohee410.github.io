@@ -1,6 +1,6 @@
 /*
   Syntax Highlighting
-
+*/
 
 code.highlighter-rouge {
   font-family: 'NanumBarunGothic', sans-serif;
@@ -10,9 +10,9 @@ code.highlighter-rouge {
   padding: .1em .2em;
   border-radius: 2px;
 }
-*/
+
 .highlight {
-  background: rgba(255,223,80,0.6);
+  background: $gray-white;
 
   .highlighter-rouge & {
     background: $gray-dark;
