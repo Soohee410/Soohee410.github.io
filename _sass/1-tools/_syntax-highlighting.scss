@@ -12,15 +12,15 @@ code.highlighter-rouge {
 }
 
 .highlight {
-  background: rgba(#ffad01, 0.42);
+  background: rgba(255,223,80,0.6);
 
   .highlighter-rouge & {
-    background: #eef;
+    background: rgba(255,223,80,0.6);
     font-family: 'NanumBarunGothic', sans-serif, 'Noto Sans KR', sans-serif;
     color: $dark;
   }
 
-  .c     { color: #998; font-style: italic } // Comment
+  .c     { color: $dark; font-style: italic } // Comment
   .err   { color: #a61717; background-color: #e3d2d2 } // Error
   .k     { font-weight: bold } // Keyword
   .o     { font-weight: bold } // Operator
