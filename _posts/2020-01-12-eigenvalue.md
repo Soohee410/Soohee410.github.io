@@ -13,12 +13,12 @@ use_math: true
 
 <br>
 먼저 고유값과 고유벡터입니다. 정의부터 알아볼까요?
->  - 정방행렬 $A$의 고유벡터(Eigenvector)란, 어떠한 $  scalar\space \lambda$에 대하여 식 $A\boldsymbol{x}=\lambda\boldsymbol{x}$을 만족하는 0이 아닌 벡터 ${\boldsymbol x}$을 의미한다.
-> - 정방행렬 $A$에 대하여 식 $A\boldsymbol{x}=\lambda\boldsymbol{x}$이 $ nontrivial\space solution$ 을 가질 때, 이 때의 $ scalar\space \lambda$를 고유값(Eigenvalue)이라 하고, $\boldsymbol{x}$를 $\lambda$에 해당하는 고유벡터라 한다.
+>  * 정방행렬 $A$의 고유벡터(Eigenvector)란, 어떠한 $  scalar\space \lambda$에 대하여 식 $A\boldsymbol{x}=\lambda\boldsymbol{x}$을 만족하는 0이 아닌 벡터 ${\boldsymbol x}$을 의미한다.
+> * 정방행렬 $A$에 대하여 식 $A\boldsymbol{x}=\lambda\boldsymbol{x}$이 $ nontrivial\space solution$ 을 가질 때, 이 때의 $ scalar\space \lambda$를 고유값(Eigenvalue)이라 하고, $\boldsymbol{x}$를 $\lambda$에 해당하는 고유벡터라 한다.
 
 결국 식 $A\boldsymbol{x}=\lambda\boldsymbol{x}$을 만족하는 $\lambda$와  $\boldsymbol{x}$가 각각 고유값, 고유벡터라는 것이 내용의 전부입니다.  물론, $\boldsymbol{x}$가 nontrivial solution일 때만 해당합니다! 당연히 $\boldsymbol{x}$가 0이면 항상 위 식은 자명하게 성립하겠죠? 따라서 $\boldsymbol{x}$가 0인 경우를 제외하고도 위 식이 풀릴 때, 그 때의 $\lambda$, $\boldsymbol{x}$ 가 우리의 관심사입니다.
 
-그렇다면 $A\boldsymbol{x}=\lambda\boldsymbol{x}$ 이 식이 의미하는 게 무엇일까요? $A$는 행렬(nxn)이고$\lambda$는 스칼라(1x1)입니다. 이 식의 좌변$(A\boldsymbol{x})$은 어떠한 벡터(nx1) $\boldsymbol{x}$가 행렬 $A$에 의해 **선형변환(linear transformation)** 된 벡터를 의미하고, 우변$(\lambda \boldsymbol{x})$은 똑같은 벡터 $\boldsymbol{x}$에 어떠한 상수$\lambda$를 곱함으로써 이것의 크기(scale)가 변화된 벡터를 의미할 것입니다. 이 둘이 같다는 것은 결국,```어떠한 벡터를 선형변환시켜도 이것의 크기만 변하고 방향은 유지된다```는 것을 의미합니다!
+그렇다면 $A\boldsymbol{x}=\lambda\boldsymbol{x}$ 이 식이 의미하는 게 무엇일까요? $A$는 행렬(nxn)이고$\lambda$는 스칼라(1x1)입니다. 이 식의 좌변$(A\boldsymbol{x})$은 어떠한 벡터(nx1) $\boldsymbol{x}$가 행렬 $A$에 의해 **선형변환(linear transformation)** 된 벡터를 의미하고, 우변$(\lambda \boldsymbol{x})$은 똑같은 벡터 $\boldsymbol{x}$에 어떠한 상수$\lambda$를 곱함으로써 이것의 크기(scale)가 변화된 벡터를 의미할 것입니다. 이 둘이 같다는 것은 결국,`어떠한 벡터를 선형변환시켜도 이것의 크기만 변하고 방향은 유지된다`는 것을 의미합니다!
 
 자, 그럼 실제로 nxn행렬인 $A$에 대하여, $A\boldsymbol{x}=\lambda\boldsymbol{x}$을 푼다고 해봅시다. 우변을 넘기면 다음과 같이 되겠죠.
 
@@ -28,7 +28,8 @@ $$\small A \boldsymbol{x}= \lambda \boldsymbol{x}\Longrightarrow (A-\lambda I)\b
 이제 이와 관련하여 다음의 중요한 정리(theorem)를 하나 짚고 넘어가겠습니다!
 > **Thm.** 어떤 nxn 행렬 $A$가 서로 다른 r개의 고유값 $\lambda_1, \lambda_2, \cdots, \lambda_r$을 가지고 있고, $v_1,v_2, \cdots v_r$이 이들 각각에 해당하는 고유벡터일 때, 집합 $ \{v_1, v_2, \cdots v_r \} $은 선형독립$(linearly\space independent)$이다.
 
-고유값들이 서로 다르면 이에 해당하는 서로 다른 고유공간이 존재하겠죠? 즉, ``서로 다른 고유공간을 구성하는 고유벡터들은 서로 선형독립``이라는 것입니다. 간단하게 증명해봅시다! 독립이 아니라고 가정했을 때 이 가정이 모순이 되는 것을 보이는 논리입니다.
+고유값들이 서로 다르면 이에 해당하는 서로 다른 고유공간이 존재하겠죠? 즉, `서로 다른 고유공간을 구성하는 고유벡터들은 서로 선형독립`이라는 것입니다. 간단하게 증명해봅시다! 독립이 아니라고 가정했을 때 이 가정이 모순이 되는 것을 보이는 논리입니다.
+
 <img src="/assets/img/그림1추가.png" width="750px">
 
 이해되셨나요? 이제 예제를 하나 보면서  정리해보겠습니다!
@@ -65,11 +66,11 @@ $\iff A-\lambda I$는 역행렬이 존재하지 않는다.
 위 필요충분조건의 여러가지 표현들 잘 이해가 가시나요? 앞서 배웠던 고유값과 고유벡터의 개념, 그리고 이 포스트에서는 다루지 않았지만 determinant의 성질을 생각해본다면 충분히 이해가 되실 거라 생각합니다! (참고로 $A$가 역행렬이 존재하기 위한 필요충분조건은 $det(A)\not=0$입니다.) 마지막으로, 여기서 고려해볼 점이 하나 있습니다. 만약 고유값이 0이라면 이건 어떤 의미일까요? 위 필요충분조건들에서 마지막 줄을 보면, ``0이 A의 고유값이기 위한 필요충분조건은  A의 역행렬이 존재하지 않는다``는 것이 될 것입니다! 이걸 조금 더 이해해봅시다.
  $A$가 nxn행렬이라고 할 때, $\small det(A-\lambda I)=0$을 풀어서 $\lambda$에 대한 방정식으로 나타내봅시다.
 
-$$\small \begin{aligned} det(A-\lambda I)&=\lambda^n+\alpha\lambda^{n-1}+\cdots+ \beta\\ &=(\lambda-\lambda_1)(\lambda-\lambda_2)\cdots(\lambda-\lambda_n)=0 \end{aligned}$$
+$$ \begin{aligned} det(A-\lambda I)&=\lambda^n+\alpha\lambda^{n-1}+\cdots+ \beta\\ &=(\lambda-\lambda_1)(\lambda-\lambda_2)\cdots(\lambda-\lambda_n)=0 \end{aligned}$$
 
 이렇게 구한 $\lambda_1,\lambda_2,\cdots,\lambda_n$이 A의 고유값이 됩니다. 그런데 저기서 $\beta$에 주목해봅시다. 만약 $\lambda$ 자리에 모두 0을 넣으면 $\beta$는 다음과 같이 표현이 될 것입니다.
 
-$$\small det(A)=\beta=(-1)^n\cdot\lambda_1\lambda_2\cdots\lambda_n$$
+$$ det(A)=\beta=(-1)^n\cdot\lambda_1\lambda_2\cdots\lambda_n$$
 
 그런데 여기서 고유값 중 하나가 0이 되면 어떻게 되나요? $\lambda_1,\lambda_2,\cdots,\lambda_n$중 하나라도 0인게 있다면 $\small det(A)=0$이 될 것입니다. 우리는 선형대수를 배우면서 어떤 행렬의 역행렬이 존재하는지(invertible) 아닌지의 여부를 정말 다양한 표현들로 배우게 됩니다. ``고유값이 0이다``도 그중 하나가 되는 것입니다!
 <br>

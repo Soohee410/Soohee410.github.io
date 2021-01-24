@@ -77,10 +77,13 @@ blockquote {
   color: $dark;
 /*  font-style: italic; */
   font-size: 16px;
-  border-left: 1px solid $secondary-color;
+  border-left: 2px solid $secondary-color;
 }
 
-p, ul, ol {
+ul li,
+ol li{
+  font-family: 'NanumBarunGothic', sans-serif, 'Noto Sans KR', sans-serif;
+  color: $dark;
 	font-size: 0.97em;
 }
 
