@@ -45,7 +45,6 @@
 
 .post__content {
   margin-bottom: 45px;
-  text-align: center;
   p {
     font-size: 17px;
     line-height: 27px;
@@ -55,10 +54,12 @@
       display: block;
       margin-left: auto;
       margin-right: auto;
+      text-align: center;
     }
   }
   ul, ol {
     font-family: 'NanumBarunGothic', sans-serif, 'Noto Sans KR', sans-serif;
+    font-weight: normal;
     margin-bottom: 15px;
     font-size: 16px;
     line-height: 24px;
