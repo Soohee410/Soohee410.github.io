@@ -2,7 +2,7 @@
 layout: post
 title: "[머신러닝의 해석] 2편-(2). 불순도 기반 Feature Importance는 진짜 연속형 변수를 선호할까?"
 date: 2020-03-31
-image: "/assets/img/iml2_2_2.PNG"
+image: "/assets/img/iml2_2_3.PNG"
 tags: [Interpretable Machine Learning]
 use_math: false
 ---
