@@ -84,7 +84,6 @@ ul li,
 ol li{
   font-family: 'NanumBarunGothic', sans-serif, 'Noto Sans KR', sans-serif;
   color: $dark;
-  font-weight: 400;
 	font-size: 0.97em;
 }
 
@@ -116,11 +115,9 @@ img {
 a {
   font-family: 'NanumBarunGothic', sans-serif, 'Noto Sans KR', sans-serif;
   font-size: 16px;
-    text-decoration: none;
-    color: $primary-color;
-    font-weight: 500;
-    transition: color 200ms;
-
+  text-decoration: none;
+  color: $primary-color;
+  transition: color 200ms;
     &:hover {
         color: $dark;
     }
