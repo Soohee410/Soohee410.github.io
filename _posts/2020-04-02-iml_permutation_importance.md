@@ -46,7 +46,7 @@ use_math: true
 
 한편, [저번 포스트](https://soohee410.github.io/iml_tree_importance2)에서는 불순도 기반 변수 중요도는 모델을 과적합하게 될수록 연속형 변수의 중요도를 부풀린다는 것을 확인했는데요. 특히, 랜덤 포레스트 변수 중요도는 파라미터 **max-depth**정도에 따라 큰 차이를 보였습니다. Permutation Feature Imortance 역시 과적합의 정도에 따라 변수 중요도가 차이가 있는지 그대로 확인해보았습니다.
 
-- **RandomForest**  
+* **RandomForest**  
 똑같이 랜덤 포레스트 모델에 대해 <u>(1)과적합 시킨 경우, (2)max-depth=15, (3)max-depth=10, (4)max_depth=6</u> 일 때 변수 중요도는 다음과 같습니다.  
 <img src='/assets/img/iml3_2.png' width='400px'>
 
