@@ -20,7 +20,7 @@ layout: default
 
 <div class="container">
   {% if site.posts.size > 0 %}
-    {% for post in site.posts %}
+    {% for post in paginator.posts %}
     <div class="article" data-aos="fade-up" data-aos-easing="ease-out-quad" data-aos-duration="800">
       {% if post.image %}
       <div class="article__image-box">

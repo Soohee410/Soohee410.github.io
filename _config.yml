@@ -39,6 +39,8 @@ permalink: /:title
 plugins:
   - jekyll-sitemap
   - jekyll/tagging
+paginate: 5
+paginate_path: /page:num/
 
 # Pages Path
 defaults:

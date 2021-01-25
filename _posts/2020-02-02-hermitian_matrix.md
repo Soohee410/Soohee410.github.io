@@ -1,6 +1,8 @@
 ---
 layout: post
 title: "[선형대수] Hermitian Matrix, Diagonalization of Symmetric Matrix, Spectral Decomposition"
+date:   2020-02-02
+image: '/assets/img/linear_main8.png'
 tags: [Linear Algebra]
 use_math: true
 ---

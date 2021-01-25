@@ -30,6 +30,7 @@
   margin-bottom: 45px;
   background-size: cover;
   background-position: center;
+  text-align: center;
   background-repeat: no-repeat;
   background-color: $gray-white;
   &:after {
@@ -47,6 +48,7 @@
     color: $dark;
     img {
       margin: 30px 0;
+      text-align: center;
     }
   }
   ul li,
