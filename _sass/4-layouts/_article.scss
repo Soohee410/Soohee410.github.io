@@ -17,7 +17,7 @@
   width: 100px;
   height: 100px;
   border-radius: 50%;
-  border: 0.8px solid $primary-color;
+  border: 0.7px solid $primary-color;
   background-position: center;
   background-size: cover;
   background-repeat: no-repeat;
@@ -35,6 +35,8 @@
       color: $primary-color;
     }
   }
+  @media(max-width: 600px){
+    font-size: 2rem;
 }
 
 .article__meta {
@@ -54,8 +56,8 @@
 }
 
 .read-more {
-  font-weight: 700;
-  font-size: 16px;
+  font-weight: 650;
+  font-size: 14px;
   line-height: 27px;
   text-decoration: underline;
   color: rgb(99, 99, 99);
