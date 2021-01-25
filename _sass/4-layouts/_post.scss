@@ -69,11 +69,15 @@
     font-size: 17px;
     line-height: 27px;
     font-weight: 480px;
+    color: $dark;
     text-decoration: underline;
     text-decoration-color: $primary-color;
     &:hover {
       color: $primary-color;
     }
+  }
+  h3{
+    font-weight: 600px;
   }
 }
 
@@ -316,7 +320,7 @@
   font-weight: 700;
   border: none;
   outline: none;
-  color: $primary-color;
+  color: $dark;
   background-color: transparent;
   cursor: pointer;
 }
