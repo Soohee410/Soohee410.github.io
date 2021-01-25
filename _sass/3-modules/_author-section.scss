@@ -2,7 +2,7 @@
 .author {
   margin: 80px 0;
   padding-bottom: 70px;
-  border-bottom: 1px solid $gray-lighten;
+  border-bottom: 1px solid $primary-color;
   @media (max-width: $mobile) {
     margin: 50px 0;
     padding-bottom: 50px;
@@ -11,6 +11,7 @@
 
 .author__img {
   display: block;
+  border: 1px solid $primary-color;
   max-width: 130px;
   max-height: 130px;
   margin: 0 auto 30px;
@@ -26,9 +27,9 @@
 
 .author__job {
   margin-bottom: 15px;
-  font-size: 37px;
+  font-size: 45px;
   text-align: center;
-  color: $gray;
+  color: #rgb(87, 87, 87);
 }
 
 .author__bio {
@@ -37,7 +38,7 @@
   font-size: 16px;
   line-height: 27px;
   text-align: center;
-  color: $gray-blue;
+  color: $gray-dark;
 }
 
 .author__more {
