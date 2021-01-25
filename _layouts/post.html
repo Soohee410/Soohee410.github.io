@@ -13,7 +13,7 @@ layout: default
       {% if page.tags.size >= 1 %}
       <div class="post-tags"> About
         {% for tag in page.tags %}
-        <span class="post-tags__tag"> <a href="{{ site.baseurl }}/tags/#{{ tag | cgi_escape }}">{{ tag }}</a> </span>
+        <span class="post-tags__tag"> <a href="{{ site.baseurl }}/tags/#{{ tag | cgi_escape }}"> {{ tag }} </a> </span>
         {% endfor %}
       </div>
       {% endif %}
