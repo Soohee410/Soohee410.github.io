@@ -9,7 +9,7 @@ use_math: false
 
 저는 요즘 부쩍 **Interpretable Machine Learning** 분야에 관심이 많아졌는데요. 관심을 가지게 된 계기는 프로젝트나 공모전을 하다가 모델이 왜 이런 예측 결과를 냈는지 정말로 궁금했기 때문입니다. 그 때마다 모델의 예측 결과를 해석하기 위해, SHAP 라이브러리를 적용하거나, Logistic Regression 등의 간단한(simple) 모델로 다시 돌려보고 비교하곤 했습니다. 그러다가 문득 이 해석도 믿을 수 있는 것인가에 대해서 고민을 하게 되었고, 그렇다면 이 참에 모델을 해석하는 방법에 대해서 조금 더 깊이 알아보기로 했습니다! 여러가지 소스를 찾던 중 너무 정리를 잘해 놓으신 외국 블로그를 발견하게 되어 주로 이 분의 E-book 내용을 요약하고, 그 외에도 다른 소스들도 찾아서 함께 정리하였습니다. 일단 이번 포스트에서 작성할 내용의 원 출처는 바로 아래와 같습니다.
 
--	Molnar, Christoph. "Interpretable machine learning. A Guide for Making Black Box Models Explainable", 2019. https://christophm.github.io/interpretable-ml-book/
+*	Molnar, Christoph. "Interpretable machine learning. A Guide for Making Black Box Models Explainable", 2019. https://christophm.github.io/interpretable-ml-book/
 
 이번 포스트에서는 모델을 해석해야 하는 이유와 머신러닝 모델을 해석하는 방법의 큰 개요에 대한 내용을 다루고자 합니다. 그럼 시작하겠습니다!
 
