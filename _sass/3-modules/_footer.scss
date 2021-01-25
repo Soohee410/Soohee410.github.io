@@ -1,6 +1,6 @@
 /* Footer */
 .footer {
-  margin-top: 80px;
+  margin-top: 60px;
   padding: 60px 0;
   border-top: 1px solid $gray-lighten;
   @media (max-width: $mobile) {
@@ -33,6 +33,7 @@
 .contact__item {
   display: inline-block;
   margin-right: 15px;
+  margin-bottom: 40px;
   &:last-child {
     margin-right: 0;
   }
