@@ -16,6 +16,7 @@ model = Word2Vec(data, size=100, window=5, min_count=5, workers=4, sg=0)
 from gensim.models import KeyedVectors  
 model.wv.save_word2vec_format('naver_w2v')
 ```
+
 이후, 다음과 같이 입력하면, **naver_w2v_metadata.tsv**와 **naver_w2v_tensor.tsv**라는 파일이 해당 폴더 내에 저장될 것입니다. 정말 간단하죠?
 
 ```python

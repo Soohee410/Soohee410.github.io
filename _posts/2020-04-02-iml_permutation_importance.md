@@ -46,8 +46,8 @@ use_math: true
 
 한편, [저번 포스트](https://soohee410.github.io/iml_tree_importance2)에서는 불순도 기반 변수 중요도는 모델을 과적합하게 될수록 연속형 변수의 중요도를 부풀린다는 것을 확인했는데요. 특히, 랜덤 포레스트 변수 중요도는 파라미터 **max-depth**정도에 따라 큰 차이를 보였습니다. Permutation Feature Imortance 역시 과적합의 정도에 따라 변수 중요도가 차이가 있는지 그대로 확인해보았습니다.
 
-* **RandomForest**  
-똑같이 랜덤 포레스트 모델에 대해 (1)과적합 시킨 경우, (2)max-depth=15, (3)max-depth=10, max_depth=6</u> 일 때 변수 중요도는 다음과 같습니다.  
+- **RandomForest**  
+똑같이 랜덤 포레스트 모델에 대해 (1)과적합 시킨 경우, (2)max-depth=15, (3)max-depth=10, max_depth=6일 때 변수 중요도는 다음과 같습니다.  
 <img src='/assets/img/iml3_2.png' width='400px'>
 
 네 경우 모두 변수 중요도가 가장 높은 상위 세 개의 변수가 같은 것을 확인할 수 있습니다. 변수 중요도가 덜 중요하게 나타날수록 순위 변동이 크게 나타나고 있습니다. 랜덤 포레스트 파라미터의 차이뿐만 아니라, 앞서 XGBoost, CatBoost 모델과도 변수 중요도가 매우 비슷하다고 볼 수 있을 것 같습니다.
