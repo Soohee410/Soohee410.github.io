@@ -51,7 +51,7 @@ $$ y=proj_{span\{ u_1\}}y+proj_{span\{ u_2\}} y$$
 <img src="/assets/img/proj4추가.png" width="700px">
 
 위 정리에 의하면, $\mathbb{R^n}$에 존재하는 벡터 $y$는 이를 **부분공간 $W$에 정사영시킨 벡터** 와 **$W$에 수직인 벡터** 의 합으로 ``유일하게`` 분해됩니다! 근데 여기서 주목할 것은 어떻게 저 분해가 유일하냐는 건데요. 이를 한번 간단하게 증명해보겠습니다. Orthogonal decomposition이 유일하지 않다고 가정했을 때, 이 가정에 오류가 생기는 것을 보이는 논리입니다.
-<img src="/assets/proj3.png" width="360px">
+<img src="/assets/img/proj3.png" width="400px">
 
 <br>
 

@@ -16,7 +16,7 @@ use_math: false
 <img src='/assets/img/fo_icon2.PNG' width='600px'>
 
 
-<br>그래서 저도 한번 해봤습니다! 원래는 각 나라 대통령들 캐릭터 이미지로 각 나라에 찍어보고 싶었지만, 대통령 캐릭터 png 파일 찾기가 어렵더라구요. 그래서 고민하다가 바로 아래와 같이 펭수로 한번 귀엽게 마커를 찍어보자 해서 찍어보았습니다. 아니 너무 귀엽지 않나요??ㅋㅋㅋㅋ popup 문구도 해놨기 때문에, 저 펭수를 꼭 클릭하셔야 합니다!! 위치는 경기도 일산 EBS 건물에 펭수 숙소가 지어졌다 길래 그곳 위치로 찍어보았습니다ㅎㅎ 이렇게 꼭 펭수 말고도, 자기가 좋아하는 어떠한 png 파일로 나만의 마커를 찍을 수 있습니다.
+<br>그래서 저도 한번 해봤습니다! 바로 아래와 같이 펭수로 한번 귀엽게 마커를 찍어보았습니다. 아니 너무 귀엽지 않나요??ㅋㅋㅋㅋ popup 문구도 해놨기 때문에, 저 펭수를 꼭 클릭하셔야 합니다!! 위치는 경기도 일산 EBS 건물에 펭수 숙소가 지어졌다 길래 그곳 위치로 찍어보았습니다ㅎㅎ 이렇게 꼭 펭수 말고도, 자기가 좋아하는 어떠한 png 파일로 나만의 마커를 찍을 수 있습니다.
 
 
 
@@ -26,6 +26,57 @@ use_math: false
 
 <br>
 
-- 코드
+**코드**
 
-<img src='/img/fo_icon4.png' width='700px'>
+```python
+import folium
+from folium.features import CustomIcon
+
+m = folium.Map(location=[37.661863, 126.735475], zoom_start=12)
+
+
+################ 첫번째 펭수
+icon_image1 = 'data/펭수1.png'
+shadow_image1 = 'data/펭수그림자1.png'
+
+icon1 = CustomIcon(
+    icon_image1,
+    icon_size=(75, 95),
+    icon_anchor=(10, 30),
+    shadow_image=shadow_image1,
+    shadow_size=(70, 65),
+    shadow_anchor=(-10, -2),
+    popup_anchor=(30, -30)
+)
+
+marker1 = folium.Marker(
+    location=[37.661863, 126.755475],
+    icon=icon1,
+    popup=folium.Popup("여긴 펭수 숙소", max_width='100')
+)
+m.add_child(marker1)
+
+
+############## 두번째 펭수
+icon_image2 = 'data/펭수2.png'
+shadow_image2 = 'data/펭수그림자2.png'
+
+icon2 = CustomIcon(
+    icon_image2,
+    icon_size=(50, 95),
+    icon_anchor=(0, 85),
+    shadow_image=shadow_image2,
+    shadow_size=(150, 60),
+    shadow_anchor=(30, 50),
+    popup_anchor=(30, -85)
+)
+
+marker2 = folium.Marker(
+    location=[37.671053, 126.713676],
+    icon=icon2,
+    popup=folium.Popup("펭-하!", max_width='100')
+)
+
+m.add_child(marker2)
+m
+```

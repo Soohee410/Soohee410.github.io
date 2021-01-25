@@ -79,10 +79,10 @@ blockquote {
   color: $dark;
 /*  font-style: italic; */
   font-size: 16px;
-  border-left: 2px solid $secondary-color;
+  border-left: 3px solid $secondary-color;
 }
 
-ul, ol{
+ul, ol, li{
   font-family: 'NanumBarunGothic', sans-serif, 'Noto Sans KR', sans-serif;
   color: $dark;
   font-weight: 400;
