@@ -233,11 +233,16 @@
   margin-bottom: 30px;
 }
 
-.post-tags__tag {
-  font-family: 'IBM Plex Mono', monospace;
-  font-size: 14px;
+.post-tags__tag a{
+  font-size: 15px;
   line-height: 24px;
-  color: $gray-lighten;
+  color: $gray;
+  border: 1px solid $gray;
+  background-color: rgb(255,255,255);
+  -webkit-border-radius: 10px;
+  -moz-border-radius: 10px;
+  border-radius: 10px;
+  text-decoration: none;
   &:after {
     content: ',';
     display: inline-block;
@@ -247,6 +252,11 @@
       content: '';
       display: inline-block;
     }
+  }
+  &:hover {
+    text-decoration: none;
+    background: $gray;
+    color: rgb(255,255,255);
   }
 }
 

@@ -10,22 +10,21 @@ layout: default
       <div class="post__date">
         <time datetime="{{ page.date | date_to_xmlschema }}">Published {{page.date | date: '%b %d, %Y'}}</time>
       </div>
+      {% if page.tags.size >= 1 %}
+      <div class="post-tags">
+        {% for tag in page.tags %}
+        <a href="{{ site.baseurl }}/tag/{{ tag }}" class="post-tags__tag">{{ tag }}</a>
+        {% endfor %}
+      </div>
+      {% endif %}
+
       {% if page.image %}
       <div class="post-image img-blur" style="background-image: url({{site.baseurl}}{{page.image}})"></div>
       {% endif %}
     </div>
-
     <div class="post__content" data-aos="fade-up" data-aos-easing="ease-out-quad" data-aos-delay="100" data-aos-duration="700">
       {{ content }}
     </div>
-
-    {% if page.tags.size >= 1 %}
-    <div class="post-tags">
-      {% for tag in page.tags %}
-      <a href="{{ site.baseurl }}/tag/{{ tag }}" class="post-tags__tag">{{ tag }}</a>
-      {% endfor %}
-    </div>
-    {% endif %}
 
     <div class="post__share">
       <ul class="share__list list-reset">
