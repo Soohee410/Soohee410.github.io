@@ -81,10 +81,11 @@ blockquote {
   border-left: 2px solid $secondary-color;
 }
 
-ul li,
-ol li{
+ul, ol{
   font-family: 'NanumBarunGothic', sans-serif, 'Noto Sans KR', sans-serif;
   color: $dark;
+  font-weight: 400;
+  font-size: 16px;
 }
 
 pre {
