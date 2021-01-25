@@ -11,7 +11,7 @@ layout: default
         <time datetime="{{ page.date | date_to_xmlschema }}">Published {{page.date | date: '%b %d, %Y'}}</time>
       </div>
       {% if page.tags.size >= 1 %}
-      <div class="post-tags">
+      <div class="post-tags"> About 
         {% for tag in page.tags %}
         <span class="post-tags__tag"> <a href="{{ site.baseurl }}/tag/{{ tag }}">{{ tag }}</a> </span>
         {% endfor %}
