@@ -56,6 +56,14 @@
     line-height: 24px;
     color: $dark;
   }
+  a{
+    font-size: 17px;
+    line-height: 27px;
+    color: $primary-color;
+    &:hover {
+      color: $dark;
+    }
+  }
 }
 
 /* Post Navigation */
