@@ -68,9 +68,10 @@
     font-size: 17px;
     line-height: 27px;
     font-weight: 480px;
-    color: $primary-color;
+    text-decoration: underline;
+    text-decoration-color: $primary-color;
     &:hover {
-      color: $dark;
+      color: $primary-color;
     }
   }
 }
