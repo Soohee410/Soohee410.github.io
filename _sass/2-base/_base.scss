@@ -143,3 +143,10 @@ hr {
   border: 0;
   background: $secondary-color;
 }
+
+figcaption {
+  font-size: 8px;
+  font-family: 'NanumBarunGothic', sans-serif, 'Noto Sans KR', sans-serif;
+  display: block;
+  color: $gray;
+}
