@@ -5,9 +5,23 @@ permalink: /about/
 image:
 ---
 
-<img src="/assets/img/wc_new.png" width="600px">
+<img src="/assets/img/wc_new.png" width="600px" align="center">
 
-
+<html>
+<style>
+a{
+  font-size: 18px;
+  font-weight: normal;
+  line-height: 32px;
+  color: $dark;
+  text-decoration: underline;
+  text-decoration-style: wavy;
+  text-decoration-color: $primary-color;
+  &:hover {
+    color: $primary-color;
+  }
+ } </style>
+</html>
 
 ***
 

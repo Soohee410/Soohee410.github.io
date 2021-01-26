@@ -53,16 +53,4 @@
     font-size: 18px;
     font-weight: normal;
   }
-  a{
-    font-size: 17px;
-    line-height: 27px;
-    font-weight: 480px;
-    color: $dark;
-    text-decoration: underline;
-    text-decoration-style: wavy;
-    text-decoration-color: $primary-color;
-    &:hover {
-      color: $primary-color;
-    }
-  }
 }
