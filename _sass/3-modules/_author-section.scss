@@ -32,6 +32,9 @@
   font-size: 60px;
   text-align: center;
   color: rgb(100, 100, 100);
+  @media (max-width: $mobile) {
+    font-size: 2rem;
+  }
 }
 
 .author__bio {
