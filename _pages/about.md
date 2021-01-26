@@ -5,7 +5,7 @@ permalink: /about/
 image:
 ---
 
-<img src="/assets/img/wc_new.png" width="700px" align="center">
+<img src="/assets/img/wc.png" width="700px" align="center">
 
 ***
 
