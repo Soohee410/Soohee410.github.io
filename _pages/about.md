@@ -5,7 +5,7 @@ permalink: /about/
 image:
 ---
 
-<img src="/assets/img/wc_new.png">
+<img src="/assets/img/wc_new.png", width="600px">
 
 
 
@@ -85,7 +85,6 @@ image:
 ## GOALS for 2021
 
 * 아무리 바빠도 일주일에 1회 이상 포스팅하기ㅠㅠ  
-
 * 2보 전진을 위한 좋은 습관 만들기!
    - 독서: 한달에 4권씩 독서, 1년에 50권 읽기.  
    - 아침형 인간: 아침 6시 기상이 쉬워질 때까지!  
