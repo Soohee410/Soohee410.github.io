@@ -26,6 +26,9 @@
 
 .article__title {
   margin: 0;
+  @media(max-width: 600px){
+    font-size: 2rem;
+  }
   a {
     font-size: 30px;
     font-weight: 600;
@@ -34,9 +37,6 @@
     &:hover {
       color: $primary-color;
     }
-  }
-  @media(max-width: 600px){
-    font-size: 2rem;
   }
 }
 
