@@ -5,7 +5,7 @@ permalink: /about/
 image:
 ---
 
-<img src="/assets/img/wc_new.png", width="600px">
+<img src="/assets/img/wc_new.png" width="600px">
 
 
 
@@ -15,14 +15,13 @@ image:
 
 안녕하세요, 반갑습니다! ``Soo.P``입니다!
 
-***
+
 
 ## INTERESTS
 
 - 데이터 분석을 통한 현상 파악 및 가치있는 의사결정  
 - 경제, 금융, 사업, 커머스, 마케팅, SNS 등의 분야
 
-***
 
 ## DEGREE
 
@@ -34,7 +33,6 @@ image:
 
 * 2020.03 ~
 
-***
 
 ## COMPETITION
 
@@ -56,7 +54,6 @@ image:
 * KT 주최, [Dacon](https://dacon.io/competitions/official/235618/overview/)/코리아스타트업포럼(AI-iCON) 주관, 한국정보화진흥원(NIA) 후원   
 * 2020.08   
 
-***
 
 ## PROJECT
 
@@ -66,7 +63,6 @@ image:
 * 2020.09 ~ 2020.10
 
 
-***
 
 ## TEACHING
 
@@ -80,7 +76,6 @@ image:
 * 2020.09 ~ 2020.12
 
 
----
 
 ## GOALS for 2021
 
@@ -90,7 +85,6 @@ image:
    - 아침형 인간: 아침 6시 기상이 쉬워질 때까지!  
    - 운동: 일주일에 7시간 이상. (몰아서 X)
 
----
 
 ## CONTACT
 
