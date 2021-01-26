@@ -114,11 +114,11 @@ img {
   &+em {
     text-align: center;
     display: block;
-    margin-bottom: 10px;
-    font-style: italic;
+    margin-bottom: 3px;
+    font-style: normal;
     font-weight: 400;
-    font-size: 14px;
-    color: $gray-dark;
+    font-size: 0.9rem;
+    color: $gray;
   }
 }
 
@@ -142,11 +142,4 @@ hr {
   border-radius: 50%;
   border: 0;
   background: $secondary-color;
-}
-
-figcaption {
-  font-size: 8px;
-  font-family: 'NanumBarunGothic', sans-serif, 'Noto Sans KR', sans-serif;
-  display: block;
-  color: $gray;
 }

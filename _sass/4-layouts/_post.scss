@@ -56,11 +56,12 @@
       margin-right: auto;
       text-align: center;
     }
-    img + em {
+  /*  img + em {
     text-align: center;
-    font-size: .7rem;
+    font-style:normal;
+    font-size: .8rem;
     color: $gray;
-  }
+  }*/
   }
   ul, ol {
     font-family: 'NanumBarunGothic', sans-serif, 'Noto Sans KR', sans-serif;
