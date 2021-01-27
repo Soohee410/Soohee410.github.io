@@ -34,12 +34,14 @@ use_math: true
 
 저는 파이썬 **eli5** 라이브러리를 이용해서 Permutation Feature Importance를 간단하게 적용해보았는데요. [[머신러닝의 해석] 2편-(2). 불순도 기반 Feature Importance는 진짜 연속형 변수를 선호할까?](https://soohee410.github.io/iml_tree_importance2) 포스트에서 했던 데이터 ``Adult Census Income`` 에 그대로 적용했습니다. 당시에는 랜덤 포레스트만을 이용해서, 과적합 정도에 따른 랜덤 포레스트의 변수 중요도를 비교했었는데요. 이번에는 XGBoost, CatBoost, RandomForest, 총 세가지의 모델을 이용했고, 그 결과에 대한 변수 중요도를 비교해 보았습니다.  또 한, 똑같이 랜덤 포레스트 과적합 정도에 따라 Permutation Feature Importance 방법도 변수 중요도의 차이가 있는지 확인해보았습니다! 참고로, 저는 test 데이터셋에서의 변수 중요도를 확인했습니다.
 
-* **XGBoost**  
+#### (1) XGBoost  
+
 먼저 XGBoost 모델링을 이용했을 때의 accuracy와 Permutation Feature Importance는 다음과 같습니다. **(1)capital.gain, (2)marital.status, (3)education.num** 세가지 변수가 상위권을 차지했습니다!
 <img src='/assets/img/iml3_1.PNG' width='750px'>
 
 
-* **CatBoost**  
+#### (2) CatBoost  
+
 다음은 CatBoost입니다. XGBoost와 test accuracy가 매우 비슷하고, 변수 중요도 역시 매우 비슷하지만, CatBoost에서는 가장 중요한 변수가 **marital.status**로 나타났습니다. 애초에, XGBoost에서도 CatBoost에서도 변수 marital.status와 capital.gain의 중요도가 큰 차이가 나지 않았다는 것을 확인할 수 있습니다. 이 점에서 두 모델 모두 상당히 비슷한 변수 중요도를 보이고 있습니다.
 <img src='/assets/img/iml3_3.PNG' width='750px'>
 
@@ -47,9 +49,11 @@ use_math: true
 한편, [저번 포스트](https://soohee410.github.io/iml_tree_importance2)에서는 불순도 기반 변수 중요도는 모델을 과적합하게 될수록 연속형 변수의 중요도를 부풀린다는 것을 확인했는데요. 특히, 랜덤 포레스트 변수 중요도는 파라미터 **max-depth**정도에 따라 큰 차이를 보였습니다. Permutation Feature Imortance 역시 과적합의 정도에 따라 변수 중요도가 차이가 있는지 그대로 확인해보았습니다.
 
 
-* **RandomForest**      
-똑같이 랜덤 포레스트 모델에 대해 (1)과적합 시킨 경우, (2)max-depth=15, (3)max-depth=10, max_depth=6일 때 변수 중요도는 다음과 같습니다.  
+#### (3) RandomForest     
+
+똑같이 랜덤 포레스트 모델에 대해 (1)과적합 시킨 경우, (2)max-depth=15, (3)max-depth=10, max_depth=6일 때 변수 중요도는 다음과 같습니다.
 <img src='/assets/img/iml3_2.png' width='400px'>  
+
 네 경우 모두 변수 중요도가 가장 높은 상위 세 개의 변수가 같은 것을 확인할 수 있습니다. 변수 중요도가 덜 중요하게 나타날수록 순위 변동이 크게 나타나고 있습니다. 랜덤 포레스트 파라미터의 차이뿐만 아니라, 앞서 XGBoost, CatBoost 모델과도 변수 중요도가 매우 비슷하다고 볼 수 있을 것 같습니다.
 
 <br>

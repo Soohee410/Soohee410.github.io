@@ -14,7 +14,7 @@ use_math: false
 ## 1. 엉터리 난수 변수가 제일 중요한 변수?
 <br>
 
-저는 처음에 Scikit-learn 공식 홈페이지에 있는 [Permutation Importance vs Random Forest Feature Importance(MDI)]( https://scikit-learn.org/stable/auto_examples/inspection/plot_permutation_importance.html) 글에서 타이타닉 데이터에 난수로 연속형 변수를 생성하고 랜덤 포레스트를 돌렸더니, 그 엉터리 난수 변수가 랜덤 포레스트 변수 중요도가 가장 높게 나왔다는 사실을 보고 정말 놀랐었습니다. 이 장면을 목격했을 때 ‘그럼 랜덤 포레스트 변수 중요도는 믿을만하지 못한거 아냐?’ 라는 생각이 처음에 들었는데요. 조금 더 관찰해보니 ``모델을 너무 과적합시켰기 때문``이라는 것을 깨달았습니다. 랜덤 포레스트에 어떠한 과적합 방지를 위한 파라미터 설정도 없었고, Early Stopping 조건도 없었고, 성능도 train accuracy는 1인 반면, test accuracy는 0.817로 어느정도 차이가 존재하고 있기 때문입니다.
+저는 처음에 Scikit-learn 공식 홈페이지에 있는 [Permutation Importance vs Random Forest Feature Importance(MDI)]( https://scikit-learn.org/stable/auto_examples/inspection/plot_permutation_importance.html) 글에서 타이타닉 데이터에 난수로 연속형 변수를 생성하고 랜덤 포레스트를 돌렸더니, 그 엉터리 난수 변수가 랜덤 포레스트 변수 중요도가 가장 높게 나왔다는 사실을 보고 정말 놀랐었습니다. 이 장면을 목격했을 때 ‘그럼 랜덤 포레스트 변수 중요도는 믿을만하지 못한거 아냐?’ 라는 생각이 처음에 들었는데요. 조금 더 관찰해보니 ``모델을 과적합시켰기 때문``이라는 것을 깨달았습니다. 랜덤 포레스트에 어떠한 과적합 방지를 위한 파라미터 설정도 없었고, Early Stopping 조건도 없었고, 성능도 train accuracy는 1인 반면, test accuracy는 0.817로 어느정도 차이가 존재하고 있기 때문입니다.
 
 <img src='/assets/img/iml2_2_1.png' width='750px'>
 
@@ -29,9 +29,11 @@ use_math: false
 
 저는 UCI Machine Learning의 [Adult Census Income](https://www.kaggle.com/uciml/adult-census-income) 데이터를 이용했습니다. (데이터는 캐글에서 얻었습니다.) 이 데이터의 Target 변수와 Feature들은 다음과 같습니다.
 
-* **Target**: income (평균 연봉이 $50,000 초과면 ‘>50K’, 이하이면 ‘<=50K’)
-* **범주형** 변수: Sex(2개 범주), **Marital.status**(3), Relationship(6), Native.country, Race(5), Workclass(8), Occupation(14), Education.num(7)
-* **연속형** 변수: Hours.per.week, **Capital.gain**, Capital.loss, age
+- **Target** : income(평균 연봉이 $50,000 초과면 ‘>50K’, 이하이면 ‘<=50K’)  
+
+- **범주형 변수** : Sex(2개 범주), Marital.status(3), Relationship(6), Native.country, Race(5), Workclass(8), Occupation(14), Education.num(7)  
+
+- **연속형 변수** : Hours.per.week, Capital.gain, Capital.loss, age  
 
 목적은 각 개체의 연봉이 $50,000 초과인지 이하인지 분류하는 것입니다. 이 데이터에 랜덤 포레스트 모델을 바로 적용하기 전에, 모델의 결과를 크게 변동시키지 않을 선에서 아주 약간의 전처리를 진행했습니다. 결측치를 처리하고 주요 범주형 변수들의 각 범주의 비율 차이가 심한 경우 일부 범주를 묶었습니다. 이제 본격적으로 랜덤 포레스트 모델을 적용해보고 max-depth 설정에 따라 변수 중요도가 어떻게 다른지 확인해보겠습니다! 전처리 과정과 아래 비교 실험에 대한 코드가 궁금하신 분들은 [이곳](https://github.com/Soohee410/Interpretable-Machine-Learning/blob/master/%5B%EB%A8%B8%EC%8B%A0%EB%9F%AC%EB%8B%9D%EC%9D%98%20%ED%95%B4%EC%84%9D%5D%20Adult%20Census%20income%20%EB%8D%B0%EC%9D%B4%ED%84%B0%20%EC%A0%84%EC%B2%98%EB%A6%AC%20%EB%B0%8F%20%EB%9E%9C%EB%8D%A4%20%ED%8F%AC%EB%A0%88%EC%8A%A4%ED%8A%B8%20feature%20importance.ipynb)을 참고해주세요!  
 <br>
@@ -67,6 +69,6 @@ max_depth를 10으로 더 낮춘 결과, 여전히 1등은 **capital.gain**이�
 
 트리의 과적합 방지 정도에 따라 불순도를 기반으로 하는 변수 중요도는 큰 차이를 보이는 것을 확인할 수 있었습니다. ``트리가 노드를 째는 것을 중간에 멈추지 않을 경우에는`` **연속형 변수**일수록, **cardinality가 클수록**  노드 중요도가 매우 커진다는 것을 알 수 있습니다. 그래서, 불순도 기반 변수 중요도는 <u>모델을 과적합 시키지 않는 선에서는</u> 좋은 참고 자료가 될 수 있을 것이라 생각합니다. '이렇게 parameter 하나하나에 따라 변수 중요도가 차이가 나면 신뢰할만 하지 못한거 아닌가?'라고 볼 수도 있지만,  각 parameter에 따라 변수 중요도가 어떻게 차이나는지까지 확인하게 되면, 이 나름의 정보를 얻게 되는 것 같습니다. 예를 들면, parameter 변경에도 불구하고 항상 상위권을 유지하는 변수들은 어느정도 변수 중요도가 높은 변수라고 볼 수 있을 것입니다. 아무래도 이러한 큰 변동성, 그리고 [저번 포스트](https://soohee410.github.io/iml_tree_importance)에서 언급했던 것과 같은 한계점들이  존재하긴 하지만, 트리에 특화된 이 불순도 기반 변수 중요도는 다른 방법을 따로 적용할 필요가 없고 빠르다는 점에서, 다른 방법을 통해 얻은 변수 중요도와 비교할 수 있는 좋은 대조군이라 생각합니다.
 
-한편, 위 비교 실험에서 test accuracy가 가장 높았을 때는 **max_depth=15** 로 설정한 경우였습니다. 아무래도 성능이 가장 높으니, 이 때의 변수 중요도를 가장 신뢰해야 하는 것이 아닌가 싶기도 합니다. 이 때의 변수 중요도를 우선적으로 믿을지 여부를 판단하기 위해서는 다른 방법으로 모델을 해석하고 변수 중요도를 뽑아서 이것과 비교해보면 될 것입니다. 다음 포스트에서는 **Model-specific** 방법이 아니라, **Model-agnostic** 방법 중 하나인 ``Permutation Feature Importance``에 대해 알아보고, 똑같은 데이터에 대해 변수 중요도 결과를 비교해보고자 합니다. 이번 포스트에서 확인한 대로, 범주형 변수 **marital.status**와 연속형 변수 **capital.gain**이 중요한 변수로 계속 뽑히는지 확인해봅시다!
+한편, 위 비교 실험에서 test accuracy가 가장 높았을 때는 **max_depth=15** 로 설정한 경우였습니다. 아무래도 성능이 가장 높으니, 이 때의 변수 중요도를 가장 신뢰해야 하는 것이 아닌가 싶기도 합니다. 이 때의 변수 중요도를 우선적으로 믿을지 여부를 판단하기 위해서는 다른 방법으로 모델을 해석하고 변수 중요도를 뽑아서 이것과 비교해보면 될 것입니다. 다음 포스트에서는 **Model-specific** 방법이 아니라, **Model-agnostic** 방법 중 하나인 [Permutation Feature Importance](https://soohee410.github.io/iml_permutation_importance)에 대해 알아보고, 똑같은 데이터에 대해 변수 중요도 결과를 비교해보고자 합니다. 이번 포스트에서 확인한 대로, 범주형 변수 **marital.status**와 연속형 변수 **capital.gain**이 중요한 변수로 계속 뽑히는지 확인해봅시다!
 
 <br>
