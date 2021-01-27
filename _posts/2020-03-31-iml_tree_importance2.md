@@ -14,7 +14,7 @@ use_math: false
 ## 1. 엉터리 난수 변수가 제일 중요한 변수?
 <br>
 
-저는 처음에 Scikit-learn 공식 홈페이지에 있는 [Permutation Importance vs Random Forest Feature Importance(MDI)]( https://scikit-learn.org/stable/auto_examples/inspection/plot_permutation_importance.html) 글에서 타이타닉 데이터에 난수로 연속형 변수를 생성하고 랜덤 포레스트를 돌렸더니, 그 엉터리 난수 변수가 랜덤 포레스트 변수 중요도가 가장 높게 나왔다는 사실을 보고 정말 놀랐었습니다. 이 장면을 목격했을 때 처음 들었던 생각은 ‘그럼 랜덤 포레스트 변수 중요도는 쓰레기 아냐?’ 라고 생각했었는데요. 조금 더 관찰해보니 ``모델을 너무 과적합시켰기 때문``이라는 것을 깨달았습니다. 랜덤 포레스트에 어떠한 <u>과적합 방지를 위한 파라미터 설정도 없었고, Early Stopping 조건도 없었고, 무엇보다 train accuracy는 1인 반면, test accuracy는 0.817이기 때문입니다.</u>
+저는 처음에 Scikit-learn 공식 홈페이지에 있는 [Permutation Importance vs Random Forest Feature Importance(MDI)]( https://scikit-learn.org/stable/auto_examples/inspection/plot_permutation_importance.html) 글에서 타이타닉 데이터에 난수로 연속형 변수를 생성하고 랜덤 포레스트를 돌렸더니, 그 엉터리 난수 변수가 랜덤 포레스트 변수 중요도가 가장 높게 나왔다는 사실을 보고 정말 놀랐었습니다. 이 장면을 목격했을 때 ‘그럼 랜덤 포레스트 변수 중요도는 믿을만하지 못한거 아냐?’ 라는 생각이 처음에 들었는데요. 조금 더 관찰해보니 ``모델을 너무 과적합시켰기 때문``이라는 것을 깨달았습니다. 랜덤 포레스트에 어떠한 과적합 방지를 위한 파라미터 설정도 없었고, Early Stopping 조건도 없었고, 성능도 train accuracy는 1인 반면, test accuracy는 0.817로 어느정도 차이가 존재하고 있기 때문입니다.
 
 <img src='/assets/img/iml2_2_1.png' width='750px'>
 
@@ -28,9 +28,10 @@ use_math: false
 <br>
 
 저는 UCI Machine Learning의 [Adult Census Income](https://www.kaggle.com/uciml/adult-census-income) 데이터를 이용했습니다. (데이터는 캐글에서 얻었습니다.) 이 데이터의 Target 변수와 Feature들은 다음과 같습니다.
-- **Target**: income (평균 연봉이 $50,000 초과면 ‘>50K’, 이하이면 ‘<=50K’)
-- **범주형** 변수: Sex(2개 범주), **Marital.status**(3), Relationship(6), Native.country, Race(5), Workclass(8), Occupation(14), Education.num(7)
-- **연속형** 변수: Hours.per.week, **Capital.gain**, Capital.loss, age
+
+* **Target**: income (평균 연봉이 $50,000 초과면 ‘>50K’, 이하이면 ‘<=50K’)
+* **범주형** 변수: Sex(2개 범주), **Marital.status**(3), Relationship(6), Native.country, Race(5), Workclass(8), Occupation(14), Education.num(7)
+* **연속형** 변수: Hours.per.week, **Capital.gain**, Capital.loss, age
 
 목적은 각 개체의 연봉이 $50,000 초과인지 이하인지 분류하는 것입니다. 이 데이터에 랜덤 포레스트 모델을 바로 적용하기 전에, 모델의 결과를 크게 변동시키지 않을 선에서 아주 약간의 전처리를 진행했습니다. 결측치를 처리하고 주요 범주형 변수들의 각 범주의 비율 차이가 심한 경우 일부 범주를 묶었습니다. 이제 본격적으로 랜덤 포레스트 모델을 적용해보고 max-depth 설정에 따라 변수 중요도가 어떻게 다른지 확인해보겠습니다! 전처리 과정과 아래 비교 실험에 대한 코드가 궁금하신 분들은 [이곳](https://github.com/Soohee410/Interpretable-Machine-Learning/blob/master/%5B%EB%A8%B8%EC%8B%A0%EB%9F%AC%EB%8B%9D%EC%9D%98%20%ED%95%B4%EC%84%9D%5D%20Adult%20Census%20income%20%EB%8D%B0%EC%9D%B4%ED%84%B0%20%EC%A0%84%EC%B2%98%EB%A6%AC%20%EB%B0%8F%20%EB%9E%9C%EB%8D%A4%20%ED%8F%AC%EB%A0%88%EC%8A%A4%ED%8A%B8%20feature%20importance.ipynb)을 참고해주세요!  
 <br>

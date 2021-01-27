@@ -64,20 +64,21 @@ $$I(f_i)^{norm}=\frac{I(f_i)}{\sum_{ i \in \space all\space feature\space f_i} I
 
 <img src='/assets/img/iml2_2.png' width='500px'>
 
-그런데 찾아보니 ‘Scikit-learn의 디폴트 랜덤 포레스트 Feature Importance는 다소 **biased**하다’고 합니다! 특히, 랜덤 포레스트는 <u>연속형 변수 또는 카테고리 개수가 매우 많은 변수</u>, 즉 ``‘high cardinality’ 변수들의 중요도를 더욱 부풀릴 가능성이 높다``고 합니다. 왜 이런 결과가 나오는지는 정확히 알 수 없으나, cardinality가 큰 변수일 수록, 노드를 쨀 게 훨씬 더 많아서 노드 중요도 값이 높게 나오는 게 아닐까 싶습니다. 때문에, 무조건 디폴트 Feature Importance 결과를 믿는 것 보다는, Permutation Feature Importance와 같은 다른 방법을 혼합해서 사용하는 것이 더욱 추천된다고 합니다.
+그런데 찾아보니 ‘Scikit-learn의 디폴트 랜덤 포레스트 Feature Importance는 다소 **biased**하다’고 합니다! 특히, 랜덤 포레스트는 <u>연속형 변수 또는 카테고리 개수가 매우 많은 변수</u>, 즉 ``‘high cardinality’ 변수들의 중요도를 더욱 부풀릴 가능성이 높다``고 합니다. 왜 이런 결과가 나오는지는 정확히 알 수 없으나, cardinality가 큰 변수일 수록, 노드를 쨀 게 훨씬 더 많아서 노드 중요도 값이 높게 나오는 게 아닐까 싶습니다. [2-(2)편](https://soohee410.github.io/iml_tree_importance2)에서 이에 대해 더욱 알아보겠습니다. 아무튼, 이 때문에 무조건 디폴트 Feature Importance 결과를 믿는 것 보다는, Permutation Feature Importance와 같은 다른 방법을 혼합해서 사용하는 것이 더욱 추천된다고 합니다.  
 
 또 한, 이 불순도를 기반으로 한 변수 중요도는 데이터를 학습하는 과정에서 얻은 결과입니다. 다시 말해서, train 데이터셋으로부터 얻은 통계량으로 계산된 중요도이기 때문에, test 데이터셋에서는 이 변수 중요도가 어떻게 변하는 지 알 수 없습니다. 실제로 test 데이터셋에서는 안 중요한 변수가 학습 과정에서는 가장 중요한 변수로 계산될 수 있는 것입니다.
 
 <br>
 
-[2-(2)편](https://soohee410.github.io/iml_tree_importance2)에서 계속...
-<br>
+
 
 ---
 $Reference$
 
-- [The Mathematics of Decision Trees, Random Forest and Feature Importance in Scikit-learn and Spark](https://towardsdatascience.com/the-mathematics-of-decision-trees-random-forest-and-feature-importance-in-scikit-learn-and-spark-f2861df67e3) (가장 큰 도움 받은 링크)
-- [Permutation Importance vs Random Forest Feature Importance (MDI)](https://scikit-learn.org/stable/auto_examples/inspection/plot_permutation_importance.html)
-- [Beware Default Random Forest Importances]( https://explained.ai/rf-importance/)
+* [The Mathematics of Decision Trees, Random Forest and Feature Importance in Scikit-learn and Spark](https://towardsdatascience.com/the-mathematics-of-decision-trees-random-forest-and-feature-importance-in-scikit-learn-and-spark-f2861df67e3) (가장 큰 도움 받은 링크)
+
+* [Permutation Importance vs Random Forest Feature Importance (MDI)](https://scikit-learn.org/stable/auto_examples/inspection/plot_permutation_importance.html)
+
+* [Beware Default Random Forest Importances]( https://explained.ai/rf-importance/)
 
 <br>
