@@ -1,6 +1,6 @@
 ---
 layout: post
-title: "한국어 형태소 분석기 체험 및 비교 (Okt, Mecab, Komoran, Kkma)"
+title: "[Python] 한국어 형태소 분석기 체험 및 비교(Okt, Mecab, Komoran, Kkma)"
 date:   2020-06-07
 image: '/assets/img/compare_time.PNG'
 tags: [Text Analysis]
@@ -8,6 +8,27 @@ use_math: false
 ---
 
 한국어는 영어처럼 띄어쓰기만으로 단어를 분리하면 제대로 되질 않습니다. 한국어는 어미와 조사 등이 발달되어 있기 때문이죠! 이 대신, 한국어는 형태소에 따라 단어 분리를 하게 되는데요. 자주 쓰이는 파이썬 한국어 형태소 분석 패키지로는 바로 [KoNLPy](https://konlpy.org/en/latest/)가 있습니다.  이 안에는 여러 종류의 한국어 형태소 분석기가 있는데, 저는 그 중 **Okt, Komoran, Kkma, Mecab**을 체험 및 비교해보았습니다!
+
+일단 저는 구글 코랩을 이용했습니다. Okt, Komoran, Kkma는 konlpy를 설치하기만 하면 문제가 없고, mecab은 감사하게도 [이곳](https://somjang.tistory.com/entry/Google-Colab%EC%97%90%EC%84%9C-Mecab-koMecab-ko-dic-%EC%89%BD%EA%B2%8C-%EC%82%AC%EC%9A%A9%ED%95%98%EA%B8%B0)의 도움을 받아 설치했습니다!
+
+```python
+#install okt, komoran kkma
+!pip install konlpy
+
+#install mecab
+! git clone https://github.com/SOMJANG/Mecab-ko-for-Google-Colab.git
+cd Mecab-ko-for-Google-Colab #move to Mecab-ko~ folder
+!bash install_mecab-ko_on_colab190912.sh
+```
+
+```python
+from konlpy.tag import Kkma, Komoran, Okt, Mecab
+
+mec = Mecab()
+okt = Okt()
+kkm = Kkma()
+kom = Komoran()
+```
 
 <br>
 
@@ -22,7 +43,17 @@ use_math: false
 
 > 사랑하고싶게하는가슴속온감정을헤집어놓는영화예요정말최고
 
-이 문장에 대해 각 형태소 분석기는 다음과 같이 분석했습니다. 형태소 맞춤법이 잘 지켜져있다면, 띄어쓰기가 안 되어 있어도 대체로 잘 지켜지는 모습을 보입니다. 띄어쓰기가 안 되어 있어도 오타가 없다면 형태소 분석 결과를 걱정할 필요는 없는 것 같습니다!
+
+이 문장에 대해 각 형태소 분석기는 아래와 같이 분석했습니다. 형태소 맞춤법이 잘 지켜져있다면, 띄어쓰기가 안 되어 있어도 대체로 잘 지켜지는 모습을 보입니다. 띄어쓰기가 안 되어 있어도 오타가 없다면 형태소 분석 결과를 걱정할 필요는 없는 것 같습니다!
+
+```python
+txt = '사랑하고싶게하는가슴속온감정을헤집어놓는영화예요정말최고'
+
+mec.pos(txt, flatten=False, join=True) #mecab
+kom.pos(txt,flatten=False, join=True) #komoran
+kkm.pos(txt,flatten=False, join=True) #kkma
+okt.pos(txt,norm=True, stem=True, join=True) #okt
+```
 
 - **Mecab**: [['사랑/NNG',
   '하/XSV',
@@ -178,11 +209,55 @@ use_math: false
 
 ## 소요 시간의 비교
 
-형태소 분석기를 고를 때 알아야 할 또 다른 자질(?)은 아마 **속도**일 것입니다! 아무리 분석 결과가 안정적이라 해도, 형태소 분석을 하는데 미친듯이 느리다면 자주 사용하기 어려울 것입니다. 특히 형태소 분석할 문장이 정말 많을 경우에는 거의 이용할 수 없게 됩니다! 그래서 저는 네이버 영화 리뷰 데이터의 10000개 문장에 대해 각 분석기의 소요 시간을 구해보았습니다. 그 결과, **Kkma는 약 438초, Komoran은 약 12초, Okt는 약 46초, Mecab은 약 1초** 가량의 시간이 소요되었습니다. 속도 면에서는 Kkma가 독보적으로 느리고, Mecab이 독보적으로 빠른 것을 확인할 수 있습니다.
+형태소 분석기를 고를 때 알아야 할 또 다른 자질(?)은 아마 **속도**일 것입니다! 아무리 분석 결과가 안정적이라 해도, 형태소 분석을 하는데 미친듯이 느리다면 자주 사용하기 어려울 것입니다. 특히 형태소 분석할 문장이 정말 많을 경우에는 거의 이용할 수 없게 됩니다! 그래서 저는 네이버 영화 리뷰 데이터의 10000개 문장에 대해 각 분석기의 소요 시간을 구해보았습니다.
+
+```python
+import time
+from tqdm import tqdm
+
+def tagger_time(tagger, texts):
+  time_sum = 0
+
+  for sentence in tqdm(texts):
+    t1 = time.time()
+    try:
+      tagger.morphs(sentence)
+    except:
+      pass
+    t2 = time.time()
+
+    time_sum += (t2 - t1)
+
+  return time_sum
+```
+
+```python
+texts = train['document'][:10000]
+time_list = []
+
+for tagger in [kkm, kom, okt, mec]:
+  time_list.append(tagger_time(tagger, texts))
+```
+
+```python
+import matplotlib.pyplot as plt
+import seaborn as sns
+sns.set_style('whitegrid')
+
+tagger = ['Kkma', 'Komoran', 'Okt', 'Mecab']
+
+plt.figure(figsize=(10,8))
+plt.bar(tagger, time_list, color=(0.4,0.7,0.5))
+plt.title('Learning Time for 10000 reviews', fontsize=17)
+plt.xticks(fontsize=14)
+plt.ylabel('total seconds')
+```
 
 <img src='/assets/img/compare_time.PNG' width='600px'>
 
-<br>
+그 결과, **Kkma는 약 438초, Komoran은 약 12초, Okt는 약 46초, Mecab은 약 1초** 가량의 시간이 소요되었습니다. 속도 면에서는 Kkma가 독보적으로 느리고, Mecab이 독보적으로 빠른 것을 확인할 수 있습니다.
+
+---
 
 이렇게 각 형태소 분석기를 비교해보고 난 후 개인적인 느낌으로는,  각 형태소 분석기 모두 장단점이 있고, 그 장단점이 서로 다르다는 것입니다. 따라서, 하나만 쓰기보다 서로의 한계를 보완할 수 있도록 몇개를 어떻게 짬뽕해서 쓰는 방안이 없을까 고민하게 되었습니다. 아무튼 대체적으로는, 속도가 중요한 경우에는 Mecab을 쓰는 것이 유리하고, 정규화 기능을 선호한다면 Okt를 이용하는 것이 좋을 것으로 판단됩니다!
 
