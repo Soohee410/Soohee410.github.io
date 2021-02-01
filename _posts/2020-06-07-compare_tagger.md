@@ -55,6 +55,8 @@ kkm.pos(txt,flatten=False, join=True) #kkma
 okt.pos(txt,norm=True, stem=True, join=True) #okt
 ```
 
+<br>
+
 - **Mecab**: [['사랑/NNG',
   '하/XSV',
   '고/EC',
