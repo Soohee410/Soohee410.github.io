@@ -3,7 +3,7 @@ layout: post
 title: "Embedding Projector로 임베딩 벡터 시각화하기"
 date:   2020-06-27
 image: '/assets/img/embed_img5.gif'
-tags: [Text Analysis]
+tags: [Text Analysis, Data Visualization]
 use_math: false
 ---
 
