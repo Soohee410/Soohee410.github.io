@@ -35,7 +35,7 @@ use_math: false
 
 - **연속형 변수** : Hours.per.week, Capital.gain, Capital.loss, age  
 
-목적은 각 개체의 연봉이 $50,000 초과인지 이하인지 분류하는 것입니다. 이 데이터에 랜덤 포레스트 모델을 바로 적용하기 전에, 모델의 결과를 크게 변동시키지 않을 선에서 아주 약간의 전처리를 진행했습니다. 결측치를 처리하고 주요 범주형 변수들의 각 범주의 비율 차이가 심한 경우 일부 범주를 묶었습니다. 이제 본격적으로 랜덤 포레스트 모델을 적용해보고 max-depth 설정에 따라 변수 중요도가 어떻게 다른지 확인해보겠습니다! 전처리 과정과 아래 비교 실험에 대한 코드가 궁금하신 분들은 [이곳](https://github.com/Soohee410/Interpretable-Machine-Learning/blob/master/%5B%EB%A8%B8%EC%8B%A0%EB%9F%AC%EB%8B%9D%EC%9D%98%20%ED%95%B4%EC%84%9D%5D%20Adult%20Census%20income%20%EB%8D%B0%EC%9D%B4%ED%84%B0%20%EC%A0%84%EC%B2%98%EB%A6%AC%20%EB%B0%8F%20%EB%9E%9C%EB%8D%A4%20%ED%8F%AC%EB%A0%88%EC%8A%A4%ED%8A%B8%20feature%20importance.ipynb)을 참고해주세요!  
+목적은 각 개체의 연봉이 $50,000 초과인지 이하인지 분류하는 것입니다. 이 데이터에 랜덤 포레스트 모델을 바로 적용하기 전에, 모델의 결과를 크게 변동시키지 않을 선에서 아주 약간의 전처리를 진행했습니다. 결측치를 처리하고 주요 범주형 변수들의 각 범주의 비율 차이가 심한 경우 일부 범주를 묶었습니다. 이제 본격적으로 랜덤 포레스트 모델을 적용해보고 max-depth 설정에 따라 변수 중요도가 어떻게 다른지 확인해보겠습니다! 전처리 과정과 아래 비교 실험에 대한 코드가 궁금하신 분들은 [이곳](https://github.com/Soohee410/Interpretable-Machine-Learning/blob/master/%5B%EB%A8%B8%EC%8B%A0%EB%9F%AC%EB%8B%9D%EC%9D%98%20%ED%95%B4%EC%84%9D%5D%202%ED%8E%B8-(2).%20%EB%B6%88%EC%88%9C%EB%8F%84%20%EA%B8%B0%EB%B0%98%20Feature%20Importance.ipynb)을 참고해주세요!  
 <br>
 
 

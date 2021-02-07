@@ -32,7 +32,7 @@ use_math: true
 ##  eli5 라이브러리로 적용하기
 <br>
 
-저는 파이썬 **eli5** 라이브러리를 이용해서 Permutation Feature Importance를 간단하게 적용해보았는데요. [[머신러닝의 해석] 2편-(2). 불순도 기반 Feature Importance는 진짜 연속형 변수를 선호할까?](https://soohee410.github.io/iml_tree_importance2) 포스트에서 했던 데이터 ``Adult Census Income`` 에 그대로 적용했습니다. 당시에는 랜덤 포레스트만을 이용해서, 과적합 정도에 따른 랜덤 포레스트의 변수 중요도를 비교했었는데요. 이번에는 XGBoost, CatBoost, RandomForest, 총 세가지의 모델을 이용했고, 그 결과에 대한 변수 중요도를 비교해 보았습니다.  또 한, 똑같이 랜덤 포레스트 과적합 정도에 따라 Permutation Feature Importance 방법도 변수 중요도의 차이가 있는지 확인해보았습니다! 참고로, 저는 test 데이터셋에서의 변수 중요도를 확인했습니다.
+저는 파이썬 **eli5** 라이브러리를 이용해서 Permutation Feature Importance를 간단하게 적용해보았는데요. [[머신러닝의 해석] 2편-(2). 불순도 기반 Feature Importance는 진짜 연속형 변수를 선호할까?](https://soohee410.github.io/iml_tree_importance2) 포스트에서 했던 데이터 ``Adult Census Income`` 에 그대로 적용했습니다. 당시에는 랜덤 포레스트만을 이용해서, 과적합 정도에 따른 랜덤 포레스트의 변수 중요도를 비교했었는데요. 이번에는 XGBoost, CatBoost, RandomForest, 총 세가지의 모델을 이용했고, 그 결과에 대한 변수 중요도를 비교해 보았습니다.  또 한, 똑같이 랜덤 포레스트 과적합 정도에 따라 Permutation Feature Importance 방법도 변수 중요도의 차이가 있는지 확인해보았습니다! 참고로, 저는 test 데이터셋에서의 변수 중요도를 확인했습니다. 아래 내용에 대한 코드는 [이곳](https://github.com/Soohee410/Interpretable-Machine-Learning/blob/master/%5B%EB%A8%B8%EC%8B%A0%EB%9F%AC%EB%8B%9D%EC%9D%98%20%ED%95%B4%EC%84%9D%5D%203%ED%8E%B8.%20Permutation%20Feature%20Importance.ipynb)에 있습니다.
 
 #### (1) XGBoost  
 
