@@ -111,7 +111,7 @@ img {
   max-width: 100%;
   height: 100%;
   vertical-align: middle;
-  margin-bottom: 1px;
+  margin-bottom: 0.5em;
   &+em {
     text-align: center;
     display: block;
@@ -119,6 +119,7 @@ img {
     font-weight: 400;
     font-size: 0.9rem;
     color: $gray-dark;
+    margin-bottom: 0.5em;
   }
 }
 
