@@ -1,6 +1,6 @@
 ---
 layout: post
-title: "[머신러닝의 해석] 3편. Permutation Feature Importance의 이해와 적용"
+title: "[머신러닝의 해석] 3편. 모델 상관없이 변수 중요도의 파악: Permutation Feature Importance | Python"
 date: 2020-04-02
 image: "/assets/img/iml3_2.png"
 tags: [Interpretable Machine Learning]
