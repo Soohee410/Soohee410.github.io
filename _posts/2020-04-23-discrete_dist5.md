@@ -74,7 +74,7 @@ $$\begin{aligned} G_Y(t) &=  \sum_{y=0}^\infty t^y\cdot \binom{y+r-1}{y} p^r (1-
 &= p^r \cdot [1-t(1-p)]^{-r}\cr &= \big\lbrack\frac{p}{1-t(1-p)} \big\rbrack ^{r},\space \vert t\vert < \frac{1}{1-p}\cr
 \therefore M_Y(t) &= G_Y(e^t)= \big\lbrack\frac{p}{1-e^t(1-p)} \big\rbrack ^{r}, \space e^t < \frac{1}{1-p}\end{aligned}$$
 
-이렇게 적률생성함수를 구했습니다. 이제 원래 음이항분포의 적률생성함수가 포아송분포의 적률생성함수로 수렴하는 것을 증명해봅시다. $r(1-p)$이 $\lambda$에 수렴한다는 조건은 다음과 같이 정리될 수 있을 것입니다.
+이렇게 적률생성함수를 구했습니다. 이제 음이항분포의 적률생성함수가 포아송분포의 적률생성함수로 수렴하는 것을 증명해봅시다. $r(1-p)$이 $\lambda$에 수렴한다는 조건은 다음과 같이 정리될 수 있을 것입니다.
 
 $$\begin{aligned} r(1-p) &\rightarrow \lambda \cr
 r(1-p) &= \lambda +o(1) \cr
