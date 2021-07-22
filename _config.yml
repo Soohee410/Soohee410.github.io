@@ -1,8 +1,8 @@
 title: Soo.P's Data Journal
 logo: logo2.png # you can add own logo.
 description: Data-Driven AMAZING Decision Maker가 되고 싶은, 숲이입니다!
-baseurl: "/" # the subpath of your site, e.g. /blog
-url: "https://soohee410.github.io" # the base hostname & protocol for your site, e.g. http://example.com
+baseurl: "" # the subpath of your site, e.g. /blog
+url: "https://rimiiii.github.io" # the base hostname & protocol for your site, e.g. http://example.com
 
 
 # Author Settings
@@ -39,6 +39,7 @@ permalink: /:title
 plugins:
   - jekyll-sitemap
   - jekyll/tagging
+  - jekyll-paginate
 paginate: 5
 paginate_path: /page:num/
 

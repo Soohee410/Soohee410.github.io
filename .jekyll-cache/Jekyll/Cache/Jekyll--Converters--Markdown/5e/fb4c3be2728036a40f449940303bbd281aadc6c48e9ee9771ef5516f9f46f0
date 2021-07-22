@@ -1,0 +1,80 @@
+I"�!<h1 id="문제">문제</h1>
+
+<ul>
+  <li><a href="https://www.acmicpc.net/problem/18111">https://www.acmicpc.net/problem/18111</a></li>
+</ul>
+
+<p>팀 레드시프트는 대회 준비를 하다가 지루해져서 샌드박스 게임인 ‘마인크래프트’를 켰다. 마인크래프트는 1 × 1 × 1(세로, 가로, 높이) 크기의 블록들로 이루어진 3차원 세계에서 자유롭게 땅을 파거나 집을 지을 수 있는 게임이다.</p>
+
+<p>목재를 충분히 모은 lvalue는 집을 짓기로 하였다. 하지만 고르지 않은 땅에는 집을 지을 수 없기 때문에 땅의 높이를 모두 동일하게 만드는 ‘땅 고르기’ 작업을 해야 한다.</p>
+
+<p>lvalue는 세로 N, 가로 M 크기의 집터를 골랐다. 집터 맨 왼쪽 위의 좌표는 (0, 0)이다. 우리의 목적은 이 집터 내의 땅의 높이를 일정하게 바꾸는 것이다. 우리는 다음과 같은 두 종류의 작업을 할 수 있다.</p>
+
+<ol>
+  <li>좌표 (i, j)의 가장 위에 있는 블록을 제거하여 인벤토리에 넣는다.</li>
+  <li>인벤토리에서 블록 하나를 꺼내어 좌표 (i, j)의 가장 위에 있는 블록 위에 놓는다.</li>
+</ol>
+
+<p>1번 작업은 2초가 걸리며, 2번 작업은 1초가 걸린다. 밤에는 무서운 몬스터들이 나오기 때문에 최대한 빨리 땅 고르기 작업을 마쳐야 한다. ‘땅 고르기’ 작업에 걸리는 최소 시간과 그 경우 땅의 높이를 출력하시오.</p>
+
+<p>단, 집터 아래에 동굴 등 빈 공간은 존재하지 않으며, 집터 바깥에서 블록을 가져올 수 없다. 또한, 작업을 시작할 때 인벤토리에는 B개의 블록이 들어 있다. 땅의 높이는 256블록을 초과할 수 없으며, 음수가 될 수 없다.</p>
+
+<h2 id="입력">입력</h2>
+
+<p>첫째 줄에 N, M, B가 주어진다. (1 ≤ M, N ≤ 500, 0 ≤ B ≤ 6.4 × 107)</p>
+
+<p>둘째 줄부터 N개의 줄에 각각 M개의 정수로 땅의 높이가 주어진다. (i + 2)번째 줄의 (j + 1)번째 수는 좌표 (i, j)에서의 땅의 높이를 나타낸다. 땅의 높이는 256보다 작거나 같은 자연수 또는 0이다.</p>
+
+<h2 id="출력">출력</h2>
+
+<p>첫째 줄에 땅을 고르는 데 걸리는 시간과 땅의 높이를 출력하시오. 답이 여러 개 있다면 그중에서 땅의 높이가 가장 높은 것을 출력하시오.</p>
+
+<hr />
+
+<h1 id="풀이">풀이</h1>
+
+<p>데이터를 리스트로 받고 Counter() 이용해서, 그 값이 나온만큼 곱하는 식으로 했는데, 생각해보니 데이터가 1부터 500까지의 숫자로 한정되어 있어서, 크기 500인 배열을 할당해서 받은 입력 개수만큼 1 추가 하도록 데이터를 저장해도 됐었다.</p>
+
+<ul>
+  <li>33840KB / 160ms</li>
+</ul>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">def</span> <span class="nf">Minecraft</span><span class="p">(</span><span class="n">data</span><span class="p">,</span><span class="n">B</span><span class="p">):</span>
+  <span class="n">sec</span><span class="p">,</span> <span class="n">H</span> <span class="o">=</span> <span class="nb">float</span><span class="p">(</span><span class="s">'Inf'</span><span class="p">),</span> <span class="mi">0</span>
+  <span class="n">minimum</span><span class="p">,</span> <span class="n">maximum</span> <span class="o">=</span> <span class="nb">min</span><span class="p">(</span><span class="n">data</span><span class="p">),</span> <span class="nb">max</span><span class="p">(</span><span class="n">data</span><span class="p">)</span>
+
+  <span class="k">for</span> <span class="n">h</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">minimum</span><span class="p">,</span> <span class="nb">min</span><span class="p">(</span><span class="n">maximum</span><span class="o">+</span><span class="mi">1</span><span class="p">,</span><span class="mi">257</span><span class="p">)):</span>
+    <span class="n">fill</span><span class="p">,</span> <span class="n">tmp</span> <span class="o">=</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span>
+    <span class="n">B_fill</span> <span class="o">=</span> <span class="n">B</span>
+
+    <span class="k">for</span> <span class="n">x</span><span class="p">,</span><span class="n">num</span> <span class="ow">in</span> <span class="n">data</span><span class="p">.</span><span class="n">items</span><span class="p">():</span>
+      <span class="k">if</span> <span class="n">x</span><span class="o">&lt;</span><span class="n">h</span><span class="p">:</span>                    <span class="c1"># 높이보다 작으면,
+</span>        <span class="n">fill</span> <span class="o">+=</span> <span class="p">(</span><span class="n">h</span><span class="o">-</span><span class="n">x</span><span class="p">)</span><span class="o">*</span><span class="n">num</span>        <span class="c1"># B에서 가져와야 할 개수 추가.
+</span>        <span class="n">tmp</span> <span class="o">+=</span> <span class="p">(</span><span class="n">h</span><span class="o">-</span><span class="n">x</span><span class="p">)</span><span class="o">*</span><span class="n">num</span>         <span class="c1"># 시간 계산 (1초)
+</span>      <span class="k">else</span><span class="p">:</span>                      <span class="c1"># 높이보다 크면,
+</span>        <span class="n">tmp</span> <span class="o">+=</span> <span class="mi">2</span><span class="o">*</span><span class="p">(</span><span class="n">x</span><span class="o">-</span><span class="n">h</span><span class="p">)</span><span class="o">*</span><span class="n">num</span>       <span class="c1"># 시간 계산 (2초)
+</span>        <span class="n">B_fill</span> <span class="o">+=</span> <span class="p">(</span><span class="n">x</span><span class="o">-</span><span class="n">h</span><span class="p">)</span><span class="o">*</span><span class="n">num</span>      <span class="c1"># B에 남는 부분 추가해줄 수 있음.
+</span>
+    <span class="k">if</span> <span class="n">fill</span> <span class="o">&gt;</span> <span class="n">B_fill</span><span class="p">:</span> <span class="k">continue</span>
+
+    <span class="k">if</span> <span class="n">tmp</span> <span class="o">&lt;=</span> <span class="n">sec</span><span class="p">:</span>              <span class="c1"># 시간이 짧을수록, 높이는 클수록 저장.
+</span>      <span class="n">sec</span> <span class="o">=</span> <span class="n">tmp</span>
+      <span class="n">H</span> <span class="o">=</span> <span class="n">h</span>
+
+  <span class="k">return</span> <span class="n">sec</span><span class="p">,</span><span class="n">H</span>
+
+
+
+<span class="kn">from</span> <span class="nn">sys</span> <span class="kn">import</span> <span class="n">stdin</span>
+<span class="kn">from</span> <span class="nn">collections</span> <span class="kn">import</span> <span class="n">Counter</span>
+
+<span class="n">N</span><span class="p">,</span> <span class="n">_</span><span class="p">,</span> <span class="n">B</span> <span class="o">=</span> <span class="nb">map</span><span class="p">(</span><span class="nb">int</span><span class="p">,</span> <span class="n">stdin</span><span class="p">.</span><span class="n">readline</span><span class="p">().</span><span class="n">split</span><span class="p">())</span>
+<span class="n">data</span> <span class="o">=</span> <span class="p">[]</span>
+<span class="k">for</span> <span class="n">_</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">N</span><span class="p">):</span>
+  <span class="n">data</span> <span class="o">+=</span> <span class="nb">list</span><span class="p">(</span><span class="nb">map</span><span class="p">(</span><span class="nb">int</span><span class="p">,</span> <span class="n">stdin</span><span class="p">.</span><span class="n">readline</span><span class="p">().</span><span class="n">split</span><span class="p">()))</span>
+<span class="n">data</span> <span class="o">=</span> <span class="n">Counter</span><span class="p">(</span><span class="n">data</span><span class="p">)</span>
+
+<span class="n">sec</span><span class="p">,</span> <span class="n">H</span> <span class="o">=</span> <span class="n">Minecraft</span><span class="p">(</span><span class="n">data</span><span class="p">,</span><span class="n">B</span><span class="p">)</span>
+<span class="k">print</span><span class="p">(</span><span class="n">sec</span><span class="p">,</span><span class="n">H</span><span class="p">)</span>
+</code></pre></div></div>
+:ET

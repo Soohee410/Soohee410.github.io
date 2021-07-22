@@ -1,0 +1,91 @@
+I"�'<h1 id="문제">문제</h1>
+
+<ul>
+  <li><a href="https://www.acmicpc.net/problem/10026">https://www.acmicpc.net/problem/10026</a></li>
+</ul>
+
+<p>적록색약은 빨간색과 초록색의 차이를 거의 느끼지 못한다. 따라서, 적록색약인 사람이 보는 그림은 아닌 사람이 보는 그림과는 좀 다를 수 있다.</p>
+
+<p>크기가 N×N인 그리드의 각 칸에 R(빨강), G(초록), B(파랑) 중 하나를 색칠한 그림이 있다. 그림은 몇 개의 구역으로 나뉘어져 있는데, 구역은 같은 색으로 이루어져 있다. 또, 같은 색상이 상하좌우로 인접해 있는 경우에 두 글자는 같은 구역에 속한다. (색상의 차이를 거의 느끼지 못하는 경우도 같은 색상이라 한다)</p>
+
+<p>예를 들어, 그림이 아래와 같은 경우에</p>
+
+<p>RRRBB
+GGBBB
+BBBRR
+BBRRR
+RRRRR</p>
+
+<p>적록색약이 아닌 사람이 봤을 때 구역의 수는 총 4개이다. (빨강 2, 파랑 1, 초록 1) 하지만, 적록색약인 사람은 구역을 3개 볼 수 있다. (빨강-초록 2, 파랑 1)</p>
+
+<p>그림이 입력으로 주어졌을 때, 적록색약인 사람이 봤을 때와 아닌 사람이 봤을 때 구역의 수를 구하는 프로그램을 작성하시오.</p>
+
+<h1 id="입력">입력</h1>
+
+<p>첫째 줄에 N이 주어진다. (1 ≤ N ≤ 100)</p>
+
+<p>둘째 줄부터 N개 줄에는 그림이 주어진다.</p>
+
+<h1 id="출력">출력</h1>
+
+<p>적록색약이 아닌 사람이 봤을 때의 구역의 개수와 적록색약인 사람이 봤을 때의 구역의 수를 공백으로 구분해 출력한다.</p>
+
+<hr />
+
+<h1 id="풀이">풀이</h1>
+
+<p>DFS를 이용해서 그룹 개수를 세는 문제이다. 다만, 적록색약과 적록색약이 아닌 사람의 경우 각각 그룹 개수를 어떻게 조금이라도 효율적으로 계산할 지가 고민되는 지점이었다. 나는, 먼저 비적록색약의 경우, <strong>R</strong>, <strong>G</strong>를 각각 방문하며 그룹 개수를 셀 때, 둘다 방문의 표시로 <strong>O</strong>로 바꾸고, 그 뒤에 적록색약의 그룹 개수를 셀 때 <strong>O</strong>를 방문하며 <strong>R/G</strong>의 그룹 개수를 셌다. <strong>B</strong>의 개수는 두 경우가 같으므로, 한번만 세서 각각에 더해주면 된다.</p>
+
+<h3 id="solution-by-dfs">Solution by DFS</h3>
+
+<ul>
+  <li>100ms</li>
+</ul>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kn">import</span> <span class="nn">sys</span>
+<span class="n">sys</span><span class="p">.</span><span class="n">setrecursionlimit</span><span class="p">(</span><span class="mi">1000000</span><span class="p">)</span>
+<span class="nb">input</span> <span class="o">=</span> <span class="n">sys</span><span class="p">.</span><span class="n">stdin</span><span class="p">.</span><span class="n">readline</span>
+
+<span class="k">def</span> <span class="nf">dfs</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">,</span> <span class="n">graph</span><span class="p">,</span> <span class="n">n</span><span class="p">,</span> <span class="n">col</span><span class="p">,</span> <span class="n">col2</span><span class="p">):</span>
+    <span class="k">if</span> <span class="n">x</span><span class="o">&lt;</span><span class="mi">0</span> <span class="ow">or</span> <span class="n">x</span><span class="o">&gt;</span><span class="n">n</span><span class="o">-</span><span class="mi">1</span> <span class="ow">or</span> <span class="n">y</span><span class="o">&lt;</span><span class="mi">0</span> <span class="ow">or</span> <span class="n">y</span><span class="o">&gt;</span><span class="n">n</span><span class="o">-</span><span class="mi">1</span><span class="p">:</span>
+        <span class="k">return</span> <span class="bp">False</span>
+    <span class="k">if</span> <span class="n">graph</span><span class="p">[</span><span class="n">x</span><span class="p">][</span><span class="n">y</span><span class="p">]</span> <span class="o">==</span> <span class="n">col</span><span class="p">:</span>
+        <span class="n">graph</span><span class="p">[</span><span class="n">x</span><span class="p">][</span><span class="n">y</span><span class="p">]</span> <span class="o">=</span> <span class="n">col2</span>   <span class="c1">#방문한 곳은 O로 표기.
+</span>        <span class="n">dfs</span><span class="p">(</span><span class="n">x</span><span class="o">-</span><span class="mi">1</span><span class="p">,</span> <span class="n">y</span><span class="p">,</span> <span class="n">graph</span><span class="p">,</span> <span class="n">n</span><span class="p">,</span> <span class="n">col</span><span class="p">,</span> <span class="n">col2</span><span class="p">)</span>
+        <span class="n">dfs</span><span class="p">(</span><span class="n">x</span><span class="o">+</span><span class="mi">1</span><span class="p">,</span> <span class="n">y</span><span class="p">,</span> <span class="n">graph</span><span class="p">,</span> <span class="n">n</span><span class="p">,</span> <span class="n">col</span><span class="p">,</span> <span class="n">col2</span><span class="p">)</span>
+        <span class="n">dfs</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="o">-</span><span class="mi">1</span><span class="p">,</span> <span class="n">graph</span><span class="p">,</span> <span class="n">n</span><span class="p">,</span> <span class="n">col</span><span class="p">,</span> <span class="n">col2</span><span class="p">)</span>
+        <span class="n">dfs</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="o">+</span><span class="mi">1</span><span class="p">,</span> <span class="n">graph</span><span class="p">,</span> <span class="n">n</span><span class="p">,</span> <span class="n">col</span><span class="p">,</span> <span class="n">col2</span><span class="p">)</span>
+        <span class="k">return</span> <span class="bp">True</span>
+    <span class="k">return</span> <span class="bp">False</span>
+
+
+<span class="k">def</span> <span class="nf">count_dfs</span><span class="p">(</span><span class="n">graph</span><span class="p">,</span> <span class="n">n</span><span class="p">,</span> <span class="n">col</span><span class="p">,</span> <span class="n">col2</span><span class="p">):</span>
+    <span class="n">result</span> <span class="o">=</span> <span class="mi">0</span>
+    <span class="k">for</span> <span class="n">x</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">n</span><span class="p">):</span>
+        <span class="k">for</span> <span class="n">y</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">n</span><span class="p">):</span>
+            <span class="k">if</span> <span class="n">dfs</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">,</span> <span class="n">graph</span><span class="p">,</span> <span class="n">n</span><span class="p">,</span> <span class="n">col</span><span class="p">,</span> <span class="n">col2</span><span class="p">):</span>
+                <span class="n">result</span> <span class="o">+=</span> <span class="mi">1</span>
+    <span class="k">return</span> <span class="n">result</span>
+
+
+<span class="k">def</span> <span class="nf">Solution</span><span class="p">():</span>
+    <span class="n">n</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="nb">input</span><span class="p">())</span>
+    <span class="n">graph</span> <span class="o">=</span> <span class="p">[</span><span class="nb">list</span><span class="p">(</span><span class="nb">input</span><span class="p">().</span><span class="n">rstrip</span><span class="p">())</span> <span class="k">for</span> <span class="n">_</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">n</span><span class="p">)]</span>
+
+    <span class="c1">#비적록색약
+</span>    <span class="n">ans1</span> <span class="o">=</span> <span class="n">count_dfs</span><span class="p">(</span><span class="n">graph</span><span class="p">,</span> <span class="n">n</span><span class="p">,</span> <span class="s">'R'</span><span class="p">,</span> <span class="s">'O'</span><span class="p">)</span>   <span class="c1">#방문한 R --&gt; O
+</span>    <span class="n">ans1</span> <span class="o">+=</span> <span class="n">count_dfs</span><span class="p">(</span><span class="n">graph</span><span class="p">,</span> <span class="n">n</span><span class="p">,</span> <span class="s">'G'</span><span class="p">,</span> <span class="s">'O'</span><span class="p">)</span>  <span class="c1">#방문한 G --&gt; O
+</span>    <span class="n">cnt_B</span> <span class="o">=</span> <span class="n">count_dfs</span><span class="p">(</span><span class="n">graph</span><span class="p">,</span> <span class="n">n</span><span class="p">,</span> <span class="s">'B'</span><span class="p">,</span> <span class="s">'K'</span><span class="p">)</span>  <span class="c1">#방문한 B --&gt; K
+</span>    <span class="n">ans1</span> <span class="o">+=</span> <span class="n">cnt_B</span>
+
+    <span class="c1">#적록색약
+</span>    <span class="n">ans2</span> <span class="o">=</span> <span class="n">cnt_B</span>
+    <span class="n">ans2</span> <span class="o">+=</span> <span class="n">count_dfs</span><span class="p">(</span><span class="n">graph</span><span class="p">,</span> <span class="n">n</span><span class="p">,</span> <span class="s">'O'</span><span class="p">,</span> <span class="s">'K'</span><span class="p">)</span>  <span class="c1">#방문한 O --&gt; K
+</span>
+    <span class="k">print</span><span class="p">(</span><span class="n">ans1</span><span class="p">,</span> <span class="n">ans2</span><span class="p">)</span>
+
+<span class="n">Solution</span><span class="p">()</span>
+</code></pre></div></div>
+
+<p><br /></p>
+:ET
