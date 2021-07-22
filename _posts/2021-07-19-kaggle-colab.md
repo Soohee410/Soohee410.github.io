@@ -36,7 +36,7 @@ use_math: True
 <img src="/assets/img/post-img/kaggle-colab/kaggle-colab6.png" width="700px">
 
 다운받은 파일 리스트 확인해보면 이렇게 zip파일로 되어있다.
-<img src="/assets/img/post-img/kaggle-colab/kaggle-colab7.png" width="600px">
+<img src="/assets/img/post-img/kaggle-colab/kaggle-colab7.png" width="700px">
 
 ---
 
