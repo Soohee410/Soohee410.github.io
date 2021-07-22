@@ -1,0 +1,30 @@
+I">
+<p>다음과 같은 OX퀴즈의 결과가 주어졌을 때, 점수를 구하는 프로그램을 작성하시오.</p>
+
+<!--more-->
+
+<p>“OOXXOXXOOO”와 같은 OX퀴즈의 결과가 있다. O는 문제를 맞은 것이고, X는 문제를 틀린 것이다. 문제를 맞은 경우 그 문제의 점수는 그 문제까지 연속된 O의 개수가 된다. 예를 들어, 10번 문제의 점수는 3이 된다. “OOXXOXXOOO”의 점수는 1+2+0+0+1+0+0+1+2+3 = 10점이다.</p>
+
+<h1 id="입력">입력</h1>
+<p>첫째 줄에 테스트 케이스의 개수가 주어진다. 각 테스트 케이스는 한 줄로 이루어져 있고, 길이가 0보다 크고 80보다 작은 문자열이 주어진다. 문자열은 O와 X만으로 이루어져 있다.</p>
+
+<h1 id="출력">출력</h1>
+<p>각 테스트 케이스마다 점수를 출력한다.</p>
+
+<h1 id="풀이">풀이</h1>
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">case_num</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="nb">input</span><span class="p">())</span>
+<span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">case_num</span><span class="p">):</span>
+  <span class="n">test_case</span> <span class="o">=</span> <span class="nb">input</span><span class="p">()</span>
+  <span class="n">score</span> <span class="o">=</span> <span class="mi">0</span>
+  <span class="n">count</span> <span class="o">=</span> <span class="mi">0</span>
+  <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="n">test_case</span><span class="p">:</span>
+    <span class="k">if</span> <span class="n">i</span> <span class="o">==</span> <span class="s">"O"</span><span class="p">:</span>
+      <span class="n">count</span> <span class="o">+=</span> <span class="mi">1</span>
+    <span class="k">elif</span> <span class="n">i</span> <span class="o">==</span> <span class="s">"X"</span><span class="p">:</span>
+      <span class="n">count</span> <span class="o">=</span> <span class="mi">0</span>
+    <span class="n">score</span> <span class="o">+=</span> <span class="n">count</span>  
+  <span class="k">print</span><span class="p">(</span><span class="n">score</span><span class="p">)</span>
+</code></pre></div></div>
+
+<p>O가 연속으로 나올때마다 점수가 올라가야되므로 for문을 이용해서 count를 세는 법을 택했다. 그러다가 X가 나오면 다시 count를 리셋하기 위해서 0으로 돌려준다.</p>
+:ET

@@ -1,0 +1,421 @@
+I"Ɔ<p>MIMIC-IV 프로젝트를 하기 전에 MIMIC-IV 데이터의 <code class="language-plaintext highlighter-rouge">구조와 내용</code>을 이해하려한다. <!--more-->MIMIC-IV는 미국 메사추세츠 주 보스턴에 있는 제 3의 academic medical center에 실제 입원한 환자들이 머문 정보가 포함된 데이터베이스이다. MIMIC-IV에는 병원에 머무르는 동안 각 환자에 대한 포괄적인 정보(laboratory measurements, medications, administered, vital signs documented 등)가 포함된다. MIMIC-IV는 데이터 출처를 반영하기 위해 모듈로 분리되어 있으며 현재는 <code class="language-plaintext highlighter-rouge">5개의 모듈</code>로 되어있다.(note 모듈도 있으나 현재는 사용이 불가능하다.)</p>
+
+<ul>
+  <li><code class="language-plaintext highlighter-rouge">core</code>: 환자가 병원에 머문 정보(i.e. admissions, transfers)</li>
+  <li><code class="language-plaintext highlighter-rouge">hosp</code>: 환자의 병원 레벨의 데이터(labs, micro, eletronic medication administration)</li>
+  <li><code class="language-plaintext highlighter-rouge">icu</code>: ICU 레벨의 데이터(chartevents 등)</li>
+  <li><code class="language-plaintext highlighter-rouge">ed</code>: 응급부서에서 온 데이터</li>
+  <li><code class="language-plaintext highlighter-rouge">cxr</code>: MIMIC-CXR의 lookup tables와 meta-data를 통해 MIMIC-IV에 연결 가능</li>
+</ul>
+
+<h1 id="core">Core</h1>
+<p>core module은 환자를 <code class="language-plaintext highlighter-rouge">추적</code>하기 위한 데이터이다. 인구통계학적 정보, 입원정보, 병원 내 병동 이동 정보가 포함되어 있다. anchor_year은 환자의 익명성을 위해 식별되지 않는 연도이고 anchor_year_group은 연구자들이 치료 받은 연도를 대략적으로 파악하기 위해 실제 연도를 그룹으로 나누어서 제공한다. anchor_year에 89세 이상의 환자는 모두 91세로 그룹화되어있다.</p>
+
+<h2 id="admissions-table">Admissions table</h2>
+<ul>
+  <li><code class="language-plaintext highlighter-rouge">hadm_id</code>: 입원에 대한 고유 식별자</li>
+  <li><code class="language-plaintext highlighter-rouge">subject_id</code>: 환자에 대한 고유 식별자, patients table과 연결됨</li>
+  <li><code class="language-plaintext highlighter-rouge">admittime</code>: 환자 입원 날짜 및 시간</li>
+  <li><code class="language-plaintext highlighter-rouge">dischtime</code>: 환자 퇴원 날짜 및 시간</li>
+  <li><code class="language-plaintext highlighter-rouge">deathtime</code>: 환자 사망 날짜 및 시간(환자가 병원 내에서 사망했다면 dischtime과 동일, 만일 다르다면 기록상의 오류)</li>
+  <li><code class="language-plaintext highlighter-rouge">admission type</code>: 입원 종류</li>
+  <li><code class="language-plaintext highlighter-rouge">admission_location</code>: 병원 도착 전 환자의 위치</li>
+  <li><code class="language-plaintext highlighter-rouge">discharge_location</code>: 퇴원 후 환자의 위치</li>
+  <li><code class="language-plaintext highlighter-rouge">insurance</code>: 보험 청구</li>
+  <li><code class="language-plaintext highlighter-rouge">language</code>: 사용 언어(영어외에는 ?로 표기)</li>
+  <li><code class="language-plaintext highlighter-rouge">marital_status</code>: 기혼 여부</li>
+  <li><code class="language-plaintext highlighter-rouge">ethnicity</code>: 인종</li>
+  <li><code class="language-plaintext highlighter-rouge">edregtime</code>: 응급실 등록 날짜 및 시간</li>
+  <li><code class="language-plaintext highlighter-rouge">edouttime</code>: 응급실 퇴원 날짜 및 시간</li>
+  <li><code class="language-plaintext highlighter-rouge">hospital_expire_flag</code>: 병원 내에서 사망했을 경우 1, 생존했을 경우 0</li>
+</ul>
+
+<h2 id="patients-table">Patients table</h2>
+<ul>
+  <li><code class="language-plaintext highlighter-rouge">subject_id</code>: 환자에 대한 고유 식별자</li>
+  <li><code class="language-plaintext highlighter-rouge">gender</code>: 성별</li>
+  <li><code class="language-plaintext highlighter-rouge">anchor_age</code>: 입원 당시 환자의 나이</li>
+  <li><code class="language-plaintext highlighter-rouge">anchor_year</code>: 변환된 연도</li>
+  <li><code class="language-plaintext highlighter-rouge">anchor_year_group</code>: 실제 연도의 범위(core 설명 참고)</li>
+  <li><code class="language-plaintext highlighter-rouge">dod</code>: 환자의 사망 날짜</li>
+</ul>
+
+<h2 id="transfers-table">Transfers table</h2>
+<ul>
+  <li><code class="language-plaintext highlighter-rouge">subject_id</code>: 환자에 대한 고유 식별자</li>
+  <li><code class="language-plaintext highlighter-rouge">hadm_id</code>: 입원에 대한 고유 식별자</li>
+  <li><code class="language-plaintext highlighter-rouge">transfer_id</code>: 물리적 위치에 대한 고유 식별자(환자가 다른 bed로 이동하면 id가 달라짐)</li>
+  <li><code class="language-plaintext highlighter-rouge">eventtype</code>: transfer 발생 이벤트 종류(입원, 퇴원, 응급, transfer)</li>
+  <li><code class="language-plaintext highlighter-rouge">careunit</code>: 물리적으로 위치한 병동 또는 병동 유형</li>
+  <li><code class="language-plaintext highlighter-rouge">intime</code>: 환자가 이전 care unit에서 현재 care unit으로 옮겨진 날짜 및 시간</li>
+  <li><code class="language-plaintext highlighter-rouge">outtime</code>: 물리적 위치에서 transfer된 날짜 및 시간</li>
+</ul>
+
+<h1 id="hosp">Hosp</h1>
+<p>hosp module은 병원 전체의 EHR(Electronic Health Record)에서 수집한 모든 데이터를 제공한다. laboratory measurements, microbiology, medication administration, billed diagnoses가 포함된다.</p>
+
+<h2 id="d_hcpcs">d_hcpcs</h2>
+<p>hcpcsevents 테이블에 사용된 코드 설명</p>
+<ul>
+  <li><code class="language-plaintext highlighter-rouge">code</code>: 5글자로 되어있는 code</li>
+  <li><code class="language-plaintext highlighter-rouge">category</code>: 코드의 광범위한 분류(nan, 1, 2, 3)</li>
+  <li><code class="language-plaintext highlighter-rouge">long_description</code>: code의 긴 설명</li>
+  <li><code class="language-plaintext highlighter-rouge">short_description</code>: code의 짧은 설명</li>
+</ul>
+
+<h2 id="d_icd_diagnoses">d_icd_diagnoses</h2>
+<p>diagnoses에 대한 icd code</p>
+<ul>
+  <li><code class="language-plaintext highlighter-rouge">icd_code</code>: International Coding Definitions (ICD) code</li>
+  <li><code class="language-plaintext highlighter-rouge">icd_version</code>: ICD-9, ICD-10(ICD-10이 더 상세하게 표기)</li>
+  <li><code class="language-plaintext highlighter-rouge">long_title</code>: ICD code명의 의미</li>
+</ul>
+
+<h2 id="d_icd_procedures">d_icd_procedures</h2>
+<ul>
+  <li><code class="language-plaintext highlighter-rouge">icd_code</code>: International Coding Definitions (ICD) code</li>
+  <li><code class="language-plaintext highlighter-rouge">icd_version</code>: ICD-9, ICD-10(ICD-10이 더 상세하게 표기)</li>
+  <li><code class="language-plaintext highlighter-rouge">long_title</code>: ICD code명의 의미</li>
+</ul>
+
+<h2 id="d_labitems">d_labitems</h2>
+<p>lab measurements와 관련된 모든 itemid의 정의를 포함한다. LABEVENTS 안에 있는 모든 데이터는 d_labitems와 연결된다. 병원 실험실(laboratory)에서 기록되고 모아진 모든 정보를 포함한다. 병원 내의 병동과 병원 내부의 치료에서 이루어진 measurements도 포함된다. 대부분의 concept은 LOINC 코드에 매핑되었다. LOINC 코드는 lab measurements의 ontology를 표준화하기 위해 할당되었다. 결과적으로 코드는 사후 할당되어 완벽하지 않을 수 있다.</p>
+<ul>
+  <li><code class="language-plaintext highlighter-rouge">itemid</code>: laboratory에 대한 고유 식별자</li>
+  <li><code class="language-plaintext highlighter-rouge">label</code>: itemid로 표기되는 concept 설명</li>
+  <li><code class="language-plaintext highlighter-rouge">fluid</code>: 측정이 이루어진 물질(Blood, Ascites, Urine 등)</li>
+  <li><code class="language-plaintext highlighter-rouge">category</code>: measurements 유형에 상위 단계의 정보</li>
+  <li><code class="language-plaintext highlighter-rouge">loinc_code</code>: itemid의 LOINC 코드</li>
+</ul>
+
+<h2 id="diagnoses_icd">diagnoses_icd</h2>
+<ul>
+  <li><code class="language-plaintext highlighter-rouge">subject_id</code>: 환자에 대한 고유 식별자</li>
+  <li><code class="language-plaintext highlighter-rouge">hadm_id</code>: 입원에 대한 고유 식별자</li>
+  <li><code class="language-plaintext highlighter-rouge">seq_num</code>: 진단의 우선순위(중요도로 정렬됨, 낮은 순위의 경우 중요도가 정확하지 않을 수 있음)</li>
+  <li><code class="language-plaintext highlighter-rouge">icd_code</code>: icd code</li>
+  <li><code class="language-plaintext highlighter-rouge">icd_version</code>: icd code 버전(ICD-9, ICD-10)</li>
+</ul>
+
+<h2 id="drgcodes">drgcodes</h2>
+<ul>
+  <li><code class="language-plaintext highlighter-rouge">subject_id</code>: 환자에 대한 고유 식별자</li>
+  <li><code class="language-plaintext highlighter-rouge">hadm_id</code>: 입원에 대한 고유 식별자</li>
+  <li><code class="language-plaintext highlighter-rouge">drg_type</code>: drug 유형(HCFA, APR)</li>
+  <li><code class="language-plaintext highlighter-rouge">drg_code</code>: drug code</li>
+  <li><code class="language-plaintext highlighter-rouge">description</code>: drug code에 대한 설명</li>
+  <li><code class="language-plaintext highlighter-rouge">drg_severity</code>: 환자의 질병 중증도</li>
+  <li><code class="language-plaintext highlighter-rouge">drg_mortality</code>: 사망 가능성</li>
+</ul>
+
+<h2 id="emar">emar</h2>
+<ul>
+  <li><code class="language-plaintext highlighter-rouge">subject_id</code>: 환자에 대한 고유 식별자</li>
+  <li><code class="language-plaintext highlighter-rouge">hadm_id</code>: 입원에 대한 고유 식별자</li>
+  <li><code class="language-plaintext highlighter-rouge">emar_id</code>: eMAR(Electronic Medicine Administration Record)에 대한 고유 식별자</li>
+  <li><code class="language-plaintext highlighter-rouge">emar_seq</code>: eMAR을 시간순으로 매긴 번호</li>
+  <li><code class="language-plaintext highlighter-rouge">poe_id</code>: poe에 대한 고유 식별자(poe는 의료 제공자가 주문을 입력하는 것)</li>
+  <li><code class="language-plaintext highlighter-rouge">pharmacy_id</code>: 약국 항목에 대한 고유 식별자</li>
+  <li><code class="language-plaintext highlighter-rouge">charttime</code>: 약물이 투여된 시간</li>
+  <li><code class="language-plaintext highlighter-rouge">medication</code>: 투여된 약물의 이름</li>
+  <li><code class="language-plaintext highlighter-rouge">event_txt</code>: 투여과정에 대한 정보(대부분 administered, 또는 Applied, Confirmed, Delayed, Not Given 등)</li>
+  <li><code class="language-plaintext highlighter-rouge">scheduletime</code>: 투여가 계획된 시간</li>
+  <li><code class="language-plaintext highlighter-rouge">storetime</code>: eMAR table에 기록된 시간</li>
+</ul>
+
+<h2 id="emar_detail">emar_detail</h2>
+<ul>
+  <li><code class="language-plaintext highlighter-rouge">subject_id</code>: 환자에 대한 고유 식별자</li>
+  <li><code class="language-plaintext highlighter-rouge">emar_id</code>: eMAR에 대한 고유 식별자</li>
+  <li><code class="language-plaintext highlighter-rouge">emar_seq</code>: eMAR을 시간순으로 매긴 번호</li>
+  <li><code class="language-plaintext highlighter-rouge">parent_field_ordinal</code>: 전체 복용량에 대한 여러 처방집의 복용량(총 복용량읠 한번에 복용하지 않고 나누어서 복용하는 경우를 얘기하는 것?)
+    <ul>
+      <li>NULL: 투여에 필요한 용량</li>
+      <li>이후 N개의 처방집이 있을 경우 1.1, 1.2, …, 1.N으로 갖는다.</li>
+    </ul>
+  </li>
+  <li><code class="language-plaintext highlighter-rouge">administration_type</code>: 투여 유형</li>
+  <li><code class="language-plaintext highlighter-rouge">pharmacy_id</code>: 약국 정보에 대한 고유 식별자</li>
+  <li><code class="language-plaintext highlighter-rouge">나머지 열</code>: 투여된 약물의 처방집 용량 전달에 대한 정보 제공</li>
+</ul>
+
+<h2 id="hcpcsevents">hcpcsevents</h2>
+<p>입원 중 발생하는 청구된 이벤트이며, CPT 코드를 포함한다.</p>
+<ul>
+  <li><code class="language-plaintext highlighter-rouge">subject_id</code>: 환자에 대한 고유 식별자</li>
+  <li><code class="language-plaintext highlighter-rouge">hadm_id</code>: 입원에 대한 고유 식별자</li>
+  <li><code class="language-plaintext highlighter-rouge">chartdate</code>: 이벤트와 관련된 날짜</li>
+  <li><code class="language-plaintext highlighter-rouge">hcpcs_cd</code>: 5글자의 고유한 코드(코드에 대한 자세한 설명은 d_hcpcs의 코드에 연결할 것)</li>
+  <li><code class="language-plaintext highlighter-rouge">seq_num</code>: cpt code의 우선순위(모든 코드가 그렇지는 않음)</li>
+  <li><code class="language-plaintext highlighter-rouge">short_description</code>: 간략한 설명</li>
+</ul>
+
+<h2 id="labevents">labevents</h2>
+<ul>
+  <li><code class="language-plaintext highlighter-rouge">labevent_id</code>: 실험실 측정값에 대한 고유 식별자</li>
+  <li><code class="language-plaintext highlighter-rouge">subject_id</code>: 환자에 대한 고유 식별자</li>
+  <li><code class="language-plaintext highlighter-rouge">hadm_id</code>: 입원에 대한 고유 식별자</li>
+  <li><code class="language-plaintext highlighter-rouge">specimen_id</code>: 표본에 대한 고유 식별자(실험실 측정이 이루어진 표본을 고유하게 표시함)</li>
+  <li><code class="language-plaintext highlighter-rouge">itemid</code>: 실험실 concept에 대한 고유 식별자</li>
+  <li><code class="language-plaintext highlighter-rouge">charttime</code>: 실험실 측정값이 기록된 시간</li>
+  <li><code class="language-plaintext highlighter-rouge">storetime</code>: 실험실 시스템에서 이용 가능한 시간</li>
+  <li><code class="language-plaintext highlighter-rouge">value</code>: 실험실 측정 결과값</li>
+  <li><code class="language-plaintext highlighter-rouge">valuenum</code>: value가 numeric일 경우, 여기에 작성됨</li>
+  <li><code class="language-plaintext highlighter-rouge">valueuom</code>: 실험실 concept의 측정 단위</li>
+  <li><code class="language-plaintext highlighter-rouge">ref_range_lower</code>: 실험실 측정값의 정상 하한 범위</li>
+  <li><code class="language-plaintext highlighter-rouge">ref_range_upper</code>: 실험실 측정값의 정상 상한 범위</li>
+  <li><code class="language-plaintext highlighter-rouge">flag</code>: 비정상 여부</li>
+  <li><code class="language-plaintext highlighter-rouge">priority</code>: 실험실 측정의 우선 순위(routine 또는 urgent)</li>
+  <li><code class="language-plaintext highlighter-rouge">comments</code>: 익명화된 코멘트(정보, 결과에 대해 의료 제공자에게 통지 여부, 해석에 대한 고려 사항, 실험실 자체의 결과를 포함하는 의견 등)</li>
+</ul>
+
+<h2 id="microbiologyevents">microbiologyevents</h2>
+<p>미생물학 검사는 infectious growth를 확인하고 어떤 항생제 치료가 가장 효과적인지 형가하기 위한 절차이다.</p>
+<ul>
+  <li><code class="language-plaintext highlighter-rouge">microevent_id</code>: 미생물학 검사에 대한 고유 식별자</li>
+  <li><code class="language-plaintext highlighter-rouge">subject_id</code>: 환자에 대한 고유 식별자</li>
+  <li><code class="language-plaintext highlighter-rouge">hadm_id</code>: 입원에 대한 고유 식별자</li>
+  <li><code class="language-plaintext highlighter-rouge">chartdate</code>: 차트가 기록된 날짜</li>
+  <li><code class="language-plaintext highlighter-rouge">charttime</code>: 차트가 기록된 시간(항상 존재하지는 않음)</li>
+  <li><code class="language-plaintext highlighter-rouge">spec_itemid</code>: 표본에 대한 고유 식별자</li>
+  <li><code class="language-plaintext highlighter-rouge">spec_type_desc</code>: 표본 타입(blood culture, urine 등)</li>
+  <li><code class="language-plaintext highlighter-rouge">test_seq</code>: 동일한 표본에 여러 샘플에 생겼을 경우 샘플들의 고유한 값</li>
+  <li><code class="language-plaintext highlighter-rouge">storedate</code>: 미생물학 결과가 이용가능한 날짜</li>
+  <li><code class="language-plaintext highlighter-rouge">storetime</code>: 미생물학 결과가 이용가능한 시간</li>
+  <li><code class="language-plaintext highlighter-rouge">test_itemid</code>: 표본 실험에 대한 고유 식별자</li>
+  <li><code class="language-plaintext highlighter-rouge">test_name</code>: 표본 실험 이름</li>
+  <li><code class="language-plaintext highlighter-rouge">org_itemid</code>: 유기체에 대한 고유 식별자(성장한 유기체가 있는 경우)</li>
+  <li><code class="language-plaintext highlighter-rouge">org_name</code>: 유기체 이름</li>
+  <li><code class="language-plaintext highlighter-rouge">isolate_num</code>: 항생제 테스트를 위해 분리된 colony 수</li>
+  <li><code class="language-plaintext highlighter-rouge">ab_itemid</code>: 항생제에 대한 고유 식별자(항생제가 주어진 유기체애 대해 sensitivity를 테스트한 경우)</li>
+  <li><code class="language-plaintext highlighter-rouge">ab_name</code>: 항생제 이름</li>
+  <li><code class="language-plaintext highlighter-rouge">dilution_text</code>: 항생제 sensitivity를 테스트할 때의 희석 값의 텍스트</li>
+  <li><code class="language-plaintext highlighter-rouge">dilution_comparison</code>: <b>dilution_text</b>의 비교 연산자</li>
+  <li><code class="language-plaintext highlighter-rouge">dilution_value</code>: <b>dilution_text</b>의 값</li>
+  <li><code class="language-plaintext highlighter-rouge">interpretation</code>: 해석 및 검사 결과(S: sensitive, R: resistant, I: intermediate, P: pending)</li>
+  <li><code class="language-plaintext highlighter-rouge">comments</code>: 익명화된 코멘트(보, 결과에 대해 의료 제공자에게 통지 여부, 해석에 대한 고려 사항 등)</li>
+</ul>
+
+<h2 id="pharmacy">pharmacy</h2>
+<p>환자에게 처방된 약에 대한 자세한 정보를 제공한다. 약의 복용량, 처방집의 복용량, 복용 빈도, 복용 경로 및 처방 기간이 포함된다.</p>
+<ul>
+  <li><code class="language-plaintext highlighter-rouge">subject_id</code>: 환자에 대한 고유 식별자</li>
+  <li><code class="language-plaintext highlighter-rouge">hadm_id</code>: 입원에 대한 고유 식별자</li>
+  <li><code class="language-plaintext highlighter-rouge">pharmacy_id</code>: 약국 정보애 대한 고유 식별자</li>
+  <li><code class="language-plaintext highlighter-rouge">poe_id</code>: poe에 대한 고유 식별자</li>
+  <li><code class="language-plaintext highlighter-rouge">starttime</code>, <code class="language-plaintext highlighter-rouge">stoptime</code>: 주어진 처방약의 시작 및 중단 시간</li>
+  <li><code class="language-plaintext highlighter-rouge">medication</code>: 제공된 약의 이름</li>
+  <li><code class="language-plaintext highlighter-rouge">proc_type</code>: 주입 유형(IV Piggyback, Non-formulary, Unit Dose)</li>
+  <li><code class="language-plaintext highlighter-rouge">status</code>: 처방전이 활성, 비활성, 중단 여부</li>
+  <li><code class="language-plaintext highlighter-rouge">entertime</code>: 처방전이 약국시스템에 입력된 날짜 및 시간</li>
+  <li><code class="language-plaintext highlighter-rouge">verifiedtime</code>: 의사가 처방전을 확인한 날짜 및 시간</li>
+  <li><code class="language-plaintext highlighter-rouge">route</code>: 약물 투여 경로</li>
+  <li><code class="language-plaintext highlighter-rouge">frequency</code>: 약물 투여 빈도(Q#: 시간 -&gt; Q6 또는 Q6H는 6시간마다)</li>
+  <li><code class="language-plaintext highlighter-rouge">disp_sched</code>: 약물을 투여해야 하는 시간(08, 20 -&gt; 오전8시, 오후8시)</li>
+  <li><code class="language-plaintext highlighter-rouge">infusion_type</code>: 주입 유형을 설명하는 암호 문자(B, C, N, N1, O, R)</li>
+  <li><code class="language-plaintext highlighter-rouge">sliding_scale</code>: 슬라이딩 스케일 투여 여부</li>
+  <li><code class="language-plaintext highlighter-rouge">lockout_interval</code>: 기다릴 주입한 약과 주입할 약과의 간격</li>
+  <li><code class="language-plaintext highlighter-rouge">basal_rate</code>: 24시간동안 약물을 투여하는 비율</li>
+  <li><code class="language-plaintext highlighter-rouge">one_hr_max</code>: 한시간 안에 최대 복용량</li>
+  <li><code class="language-plaintext highlighter-rouge">doses_per_24_hrs</code>: 24시간당 예상 복용량수</li>
+  <li><code class="language-plaintext highlighter-rouge">duration</code>: 주어진 용량의 숫자 지속 시간 또는 기간</li>
+  <li><code class="language-plaintext highlighter-rouge">duration_interval</code>: 주어진 지속 시간에 대한 측정 단위</li>
+  <li><code class="language-plaintext highlighter-rouge">expiration_value</code>: 약품 만료기한 값(30, 72 등)</li>
+  <li><code class="language-plaintext highlighter-rouge">expiration_unit</code>: 약품 만료기한 단위</li>
+  <li><code class="language-plaintext highlighter-rouge">expirationdate</code>: 약품 만료기한 날짜</li>
+  <li><code class="language-plaintext highlighter-rouge">dispensation</code>: 약물 분배의 출처</li>
+  <li><code class="language-plaintext highlighter-rouge">fill_quantity</code>: 채워진 처방집 비율??</li>
+</ul>
+
+<h2 id="poe">poe</h2>
+<p>의료제공자가 주문을 입력하는 일반적인 인터페이스이다. 대부분 치료 및 절차는 poe를 통해 주문해야한다.</p>
+<ul>
+  <li><code class="language-plaintext highlighter-rouge">poe_id</code>: poe에 대한 고유 식별자</li>
+  <li><code class="language-plaintext highlighter-rouge">poe_seq</code>: 주문 시간 순위</li>
+  <li><code class="language-plaintext highlighter-rouge">subject_id</code>: 환자에 대한 고유 식별자</li>
+  <li><code class="language-plaintext highlighter-rouge">hadm_id</code>: 입원에 대한 고유 식별자</li>
+  <li><code class="language-plaintext highlighter-rouge">ordertime</code>: 의료제공자가 주문한 날짜와 시간</li>
+  <li><code class="language-plaintext highlighter-rouge">order_type</code>: 주문 유형(ADT orders, Blood Bank, Cardiology 등)</li>
+  <li><code class="language-plaintext highlighter-rouge">order_subtype</code>: 주문 유형 상세</li>
+  <li><code class="language-plaintext highlighter-rouge">transaction_type</code>: 주문시 의료제공자가 수행한 작업 종류</li>
+  <li><code class="language-plaintext highlighter-rouge">discontinue_of_poe_id</code>: 이 주문으로 인해 이전 주문이 중단된 경우의 고유 식별자</li>
+  <li><code class="language-plaintext highlighter-rouge">discontinued_by_poe_id</code>: 이 주문이 별개의 주문에 의해 중단된 경우의 교유 식별자</li>
+  <li><code class="language-plaintext highlighter-rouge">order_status</code>: 활성 상태 또는 비활성 상태</li>
+</ul>
+
+<h2 id="poe_detail">poe_detail</h2>
+<ul>
+  <li><code class="language-plaintext highlighter-rouge">poe_id</code>: poe에 대한 고유 식별자</li>
+  <li><code class="language-plaintext highlighter-rouge">poe_seq</code>: 주문 시간 순위</li>
+  <li><code class="language-plaintext highlighter-rouge">subject_id</code>: 환자에 대한 고유 식별자</li>
+  <li><code class="language-plaintext highlighter-rouge">field_name</code>: 주문의 특정 측면에 대한 세부 정보(admit category, admit to, code status 등)</li>
+  <li><code class="language-plaintext highlighter-rouge">field_value</code>: field_name과 관련된 값(filed name이 admit to일 경우 Psychiatry, GYN 등의 값을 가짐)</li>
+</ul>
+
+<h2 id="prescriptions">prescriptions</h2>
+<p>처방된 약에 대한 정보를 제공한다.</p>
+<ul>
+  <li><code class="language-plaintext highlighter-rouge">subject_id</code>: 환자에 대한 고유 식별자</li>
+  <li><code class="language-plaintext highlighter-rouge">hadm_id</code>: 입원에 대한 고유 식별자</li>
+  <li><code class="language-plaintext highlighter-rouge">pharmacy_id</code>: 약국 정보에 대한 고유 식별자</li>
+  <li><code class="language-plaintext highlighter-rouge">starttime, stoptime</code>: 약물 처방 시작 및 중단 시간</li>
+  <li><code class="language-plaintext highlighter-rouge">drug_type</code>: 처방의 구성 요소(main, base, additive)</li>
+  <li><code class="language-plaintext highlighter-rouge">drug</code>: 투여된 약물에 대한 설명</li>
+  <li><code class="language-plaintext highlighter-rouge">gsn</code>: Generic Sequence Number(GSN) 코드</li>
+  <li><code class="language-plaintext highlighter-rouge">ndc</code>: National Drug Code(NDC) 코드</li>
+  <li><code class="language-plaintext highlighter-rouge">prod_strength</code>: 처방된 약의 구성에 대한 설명</li>
+  <li><code class="language-plaintext highlighter-rouge">form_rx</code>: 처방집 용량이 전달되는 용기(tablet, vial 등)</li>
+  <li><code class="language-plaintext highlighter-rouge">dose_val_rx</code>: 주어진 기간동안 투여하고자하는 환자에게 처방된 용량</li>
+  <li><code class="language-plaintext highlighter-rouge">dose_unit_rx</code>: dose_val_rx의 측정 단위</li>
+  <li><code class="language-plaintext highlighter-rouge">form_val_disp</code>: 단일 처방집 용량에 포함된 약물의 양</li>
+  <li><code class="language-plaintext highlighter-rouge">form_unit_disp</code>: form_val_disp의 측정 단위</li>
+  <li><code class="language-plaintext highlighter-rouge">doses_per_24_hrs</code>: 24시간을 기준으로 투여할 횟수(매일 투여할 경우: 1, 격일일 경우: 2)</li>
+  <li><code class="language-plaintext highlighter-rouge">route</code>: 약물 투여 경로</li>
+</ul>
+
+<h2 id="procedures_icd">procedures_icd</h2>
+<p>병원 치료 중 환자는 병원에서 받는 procedure에 대해 비용을 청구한다. 이 테이블에는 ICD-9, ICD-10 ontology를 사용하여 환자가 입원하는 동안 청구된 모든 procedure에 대한 기록이 포함되어 있다.</p>
+<ul>
+  <li><code class="language-plaintext highlighter-rouge">subject_id</code>: 환자에 대한 고유 식별자</li>
+  <li><code class="language-plaintext highlighter-rouge">hadm_id</code>: 입원에 대한 고유 식별자</li>
+  <li><code class="language-plaintext highlighter-rouge">seq_num</code>: 입원 내에서 procedure 발생 순서</li>
+  <li><code class="language-plaintext highlighter-rouge">chartdate</code>: procedure 날짜</li>
+  <li><code class="language-plaintext highlighter-rouge">icd_code</code>: International Coding Definitions (ICD) code</li>
+  <li><code class="language-plaintext highlighter-rouge">icd_version</code>: ICD-9 또는 ICD-10</li>
+</ul>
+
+<h2 id="services">services</h2>
+<p>환자가 입원해서 받은 서비스. 침대 부족 등의 이유로 환자가 지정된 ICU에서 반드시 환자를 치료하는 것은 아니다. 환자가 병원에서 받고 있는 서비스 유형을 식별할때의 정보가 포함되어있다. service의 종류는 아래에 적혀있다.</p>
+
+<ul>
+  <li><code class="language-plaintext highlighter-rouge">subject_id</code>: 환자에 대한 고유 식별자</li>
+  <li><code class="language-plaintext highlighter-rouge">hadm_id</code>: 입원에 대한 고유 식별자</li>
+  <li><code class="language-plaintext highlighter-rouge">transfertime</code>: prev_service에서 curr_service로 이동한 시간</li>
+  <li><code class="language-plaintext highlighter-rouge">prev_service, curr_service</code>: 환자가 속한 이전 및 현재 서비스</li>
+</ul>
+
+<table>
+  <thead>
+    <tr>
+      <th style="text-align: left">Service</th>
+      <th style="text-align: left">Description</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td style="text-align: left">CMED</td>
+      <td style="text-align: left">Cardiac Medical - for non-surgical cardiac related admissions</td>
+    </tr>
+    <tr>
+      <td style="text-align: left">CSURG</td>
+      <td style="text-align: left">Cardiac Surgery - for surgical cardiac admissions</td>
+    </tr>
+    <tr>
+      <td style="text-align: left">DENT</td>
+      <td style="text-align: left">Dental - for dental/jaw related admissions</td>
+    </tr>
+    <tr>
+      <td style="text-align: left">ENT</td>
+      <td style="text-align: left">Ear, nose, and throat - conditions primarily affecting these areas</td>
+    </tr>
+    <tr>
+      <td style="text-align: left">EYE</td>
+      <td style="text-align: left">Eye diseases - including subspecialty services in glaucoma, cataract surgery, cornea and external diseases, and neuro-ophthalmology</td>
+    </tr>
+    <tr>
+      <td style="text-align: left">GU</td>
+      <td style="text-align: left">Genitourinary - reproductive organs/urinary system</td>
+    </tr>
+    <tr>
+      <td style="text-align: left">GYN</td>
+      <td style="text-align: left">Gynecological - female reproductive systems and breasts</td>
+    </tr>
+    <tr>
+      <td style="text-align: left">MED</td>
+      <td style="text-align: left">Medical - general service for internal medicine</td>
+    </tr>
+    <tr>
+      <td style="text-align: left">NB</td>
+      <td style="text-align: left">Newborn - infants born at the hospital</td>
+    </tr>
+    <tr>
+      <td style="text-align: left">NBB</td>
+      <td style="text-align: left">Newborn baby - infants born at the hospital</td>
+    </tr>
+    <tr>
+      <td style="text-align: left">NMED</td>
+      <td style="text-align: left">Neurologic Medical - non-surgical, relating to the brain</td>
+    </tr>
+    <tr>
+      <td style="text-align: left">NSURG</td>
+      <td style="text-align: left">Neurologic Surgical - surgical, relating to the brain</td>
+    </tr>
+    <tr>
+      <td style="text-align: left">OBS</td>
+      <td style="text-align: left">Obstetrics - conerned with childbirth and the care of women giving birth</td>
+    </tr>
+    <tr>
+      <td style="text-align: left">ORTHO</td>
+      <td style="text-align: left">Orthopaedic - surgical, relating to the musculoskeletal system</td>
+    </tr>
+    <tr>
+      <td style="text-align: left">OMED</td>
+      <td style="text-align: left">Orthopaedic medicine - non-surgical, relating to musculoskeletal system</td>
+    </tr>
+    <tr>
+      <td style="text-align: left">PSURG</td>
+      <td style="text-align: left">Plastic - restortation/reconstruction of the human body (including cosmetic or aesthetic)</td>
+    </tr>
+    <tr>
+      <td style="text-align: left">PSYCH</td>
+      <td style="text-align: left">Psychiatric - mental disorders relating to mood, behaviour, cognition, or perceptions</td>
+    </tr>
+    <tr>
+      <td style="text-align: left">SURG</td>
+      <td style="text-align: left">Surgical - general surgical service not classified elsewhere</td>
+    </tr>
+    <tr>
+      <td style="text-align: left">TRAUM</td>
+      <td style="text-align: left">Trauma - injury or damage caused by physical harm from an external source</td>
+    </tr>
+    <tr>
+      <td style="text-align: left">TSURG</td>
+      <td style="text-align: left">Thoracic Surgical - surgery on the thorax, located between the neck and the abdomen</td>
+    </tr>
+    <tr>
+      <td style="text-align: left">VSURG</td>
+      <td style="text-align: left">Vascular Surgical - surgery relating to the circulatory system</td>
+    </tr>
+  </tbody>
+</table>
+
+<h1 id="icu">ICU</h1>
+<p>ICU 모듈은 ICU 내에서 사용되는 임상 정보 시스템에서 수집된 정보를 포함한다. 문서화된 데이터에는 intravenous administrations(정맥 투여), ventilator settings(인공호흡기 설정) 및 기타 차트 항목이 포함된다.</p>
+
+<h2 id="d_items">d_items</h2>
+<p>ICU 모듈의 이벤트 테이블에 기록된 개념을 정의한 테이블</p>
+<ul>
+  <li><code class="language-plaintext highlighter-rouge">itemid</code>: 테이블에 대한 기본 고유 key</li>
+  <li><code class="language-plaintext highlighter-rouge">label</code>: itemid의 concept 설명</li>
+  <li><code class="language-plaintext highlighter-rouge">abbreviation</code>: lable의 약어. metavision에서만 사용 가능함</li>
+  <li><code class="language-plaintext highlighter-rouge">linksto</code>: 데이터가 연결되는 테이블 이름</li>
+  <li><code class="language-plaintext highlighter-rouge">category</code>: itemid가 해당하는 데이터 유형의 일부 정보</li>
+  <li><code class="language-plaintext highlighter-rouge">unitname</code>: itemid에 사용되는 측정 단위(없는 경우도 존재)</li>
+  <li><code class="language-plaintext highlighter-rouge">param_type</code>: 데이터 타입(numeric, text, date and time 등)</li>
+  <li><code class="language-plaintext highlighter-rouge">lownormalvalue</code>: 측정에 대한 참조 하한 범위</li>
+  <li><code class="language-plaintext highlighter-rouge">highnormalvalue</code>: 측정에 대한 참조 상한 범위</li>
+</ul>
+
+<h2 id="chartevents">chartevents</h2>
+<p>ICU에서 발생하는 차트 항목</p>
+<ul>
+  <li><code class="language-plaintext highlighter-rouge">subject_id</code>: 환자에 대한 고유 식별자</li>
+  <li><code class="language-plaintext highlighter-rouge">hadm_id</code>: 입원에 대한 고유 식별자</li>
+  <li><code class="language-plaintext highlighter-rouge">stay_id</code>: I</li>
+  <li><code class="language-plaintext highlighter-rouge">charttime, storetime</code></li>
+  <li><code class="language-plaintext highlighter-rouge">itemid</code></li>
+  <li><code class="language-plaintext highlighter-rouge">value, valuenum</code></li>
+  <li><code class="language-plaintext highlighter-rouge">valueuom</code></li>
+  <li><code class="language-plaintext highlighter-rouge">warning</code></li>
+</ul>
+:ET

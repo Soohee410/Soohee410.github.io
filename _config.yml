@@ -1,35 +1,35 @@
-title: Soo.P's Data Journal
-logo: logo2.png # you can add own logo.
-description: Data-Driven AMAZING Decision Maker가 되고 싶은, 숲이입니다!
+title: Rimiiii's Data Log
+logo: logo.png # you can add own logo.
+description: 이것저것 끄적이는 블로그입니다✨ 알고리즘, 딥러닝, 책 리뷰 등등등 다양한 것들을 다뤄보려고 합니다🌼
 baseurl: "" # the subpath of your site, e.g. /blog
 url: "https://rimiiii.github.io" # the base hostname & protocol for your site, e.g. http://example.com
 
 
 # Author Settings
 author:
-  name: Soo.P
-  image: '/assets/img/small_profile2.jpg'
-  job: Soo.P's Data Journal
-  bio: Data-Driven AMAZING Decision Maker가 되고 싶은, 숲이입니다! (요즘은 코딩 공부중👊)
-  email: ggohee0410@gmail.com
+  name: Rimiiii
+  image: '/assets/img/small_profile.jpg'
+  job: Rimiiii's Data Log 
+  bio: 이것저것 끄적이는 블로그입니다✨ 알고리즘, 딥러닝, 책 리뷰 등등등 다양한 것들을 다뤄보려고 합니다🌼
+  email: rimiiii.u@gmail.com
 
 
 # Contact links
 contact:
   - name: Github
-    link: https://github.com/Soohee410
+    link: https://github.com/rimiiii
   - name: Instagram
-    link: https://instagram.com/soop0410
-  - name: Linkedin
-    link: https://www.linkedin.com/in/soohee-park-265901202
+    link: https://instagram.com/rimiiii_u
+  - name: Gmail
+    link: rimiiii.u@gmail.com
 
 
 # Comment Section (Disqus)
-disqus-identifier: soo-ps-data-story # add your shortname for Disqus Comment. For example mr-brown
+#disqus-identifier: soo-ps-data-story # add your shortname for Disqus Comment. For example mr-brown
 
 
 # Google Analytics
-google-analytics: 'UA-164687013-1' # add your identifier. For example UA-99631805-1.
+#google-analytics: 'UA-164687013-1' # add your identifier. For example UA-99631805-1.
 
 
 # Build settings

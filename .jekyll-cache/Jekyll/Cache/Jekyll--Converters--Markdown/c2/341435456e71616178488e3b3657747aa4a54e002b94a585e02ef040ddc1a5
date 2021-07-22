@@ -1,0 +1,24 @@
+I"�<p>대학생 새내기들의 90%는 자신이 반에서 평균은 넘는다고 생각한다. 당신은 그들에게 슬픈 진실을 알려줘야 한다.</p>
+
+<!--more-->
+
+<h1 id="입력">입력</h1>
+<p>첫째 줄에는 테스트 케이스의 개수 C가 주어진다. 둘째 줄부터 각 테스트 케이스마다 학생의 수 N(1 ≤ N ≤ 1000, N은 정수)이 첫 수로 주어지고, 이어서 N명의 점수가 주어진다. 점수는 0보다 크거나 같고, 100보다 작거나 같은 정수이다.</p>
+
+<h1 id="출력">출력</h1>
+<p>각 케이스마다 한 줄씩 평균을 넘는 학생들의 비율을 반올림하여 소수점 셋째 자리까지 출력한다.</p>
+
+<h1 id="문제풀이">문제풀이</h1>
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">C</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="nb">input</span><span class="p">())</span>
+<span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">C</span><span class="p">):</span>
+  <span class="n">N_scores</span> <span class="o">=</span> <span class="nb">list</span><span class="p">(</span><span class="nb">map</span><span class="p">(</span><span class="nb">int</span><span class="p">,</span> <span class="nb">input</span><span class="p">().</span><span class="n">split</span><span class="p">()))</span>
+  <span class="n">N</span> <span class="o">=</span> <span class="n">N_scores</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>
+  <span class="n">scores</span> <span class="o">=</span> <span class="n">N_scores</span><span class="p">[</span><span class="mi">1</span><span class="p">:]</span>
+  <span class="n">average</span> <span class="o">=</span> <span class="nb">sum</span><span class="p">(</span><span class="n">scores</span><span class="p">)</span><span class="o">/</span><span class="n">N</span>
+  <span class="n">larger</span> <span class="o">=</span> <span class="nb">len</span><span class="p">(</span><span class="nb">list</span><span class="p">(</span><span class="nb">filter</span><span class="p">(</span><span class="k">lambda</span> <span class="n">x</span><span class="p">:</span> <span class="n">x</span><span class="o">&gt;</span><span class="n">average</span><span class="p">,</span> <span class="n">scores</span><span class="p">)))</span>
+  <span class="n">number</span> <span class="o">=</span> <span class="nb">round</span><span class="p">(</span><span class="n">larger</span><span class="o">/</span><span class="n">N</span><span class="o">*</span><span class="mi">100</span><span class="p">,</span> <span class="mi">3</span><span class="p">)</span>
+  <span class="k">print</span><span class="p">(</span><span class="s">"{:.3f}%"</span><span class="p">.</span><span class="nb">format</span><span class="p">(</span><span class="n">number</span><span class="p">))</span>
+</code></pre></div></div>
+
+<p>list 안의 값들 중 평균값보다 큰 값들만 구하기 위해서는 filter를 사용하면 되고 소숫점 셋째자리까지 나타내었을때 0을 추가로 넣고 싶다면 {:.3f}로 표기하면 되는데 소숫점 뒤에 3자리까지 0으로 채운다는 의미이다.</p>
+:ET

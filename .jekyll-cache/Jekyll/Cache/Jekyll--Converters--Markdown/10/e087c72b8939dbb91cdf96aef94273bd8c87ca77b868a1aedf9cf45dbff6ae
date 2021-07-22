@@ -1,0 +1,71 @@
+I"�<p>리눅스에서 하나의 창이 아닌 여러 창을 함께 사용할 때 유용한 <code class="language-plaintext highlighter-rouge">tmux 사용법</code>이다. 리눅스 원격 연결이 꺼져도 서버가 꺼지지 않는 이상 tmux로 돌려놓은 코드는 다운되지 않는다.</p>
+
+<!--more-->
+
+<h1 id="tmux-구성-요소">tmux 구성 요소</h1>
+
+<ul>
+  <li>session: 여러 윈도우로 구성</li>
+  <li>window: 터미널 화면, 세션 내에서 탭처럼 사용 가능</li>
+  <li>pane: 하나의 윈도우 내에서의 화면 분할</li>
+</ul>
+
+<h1 id="session-관련-명령어">session 관련 명령어</h1>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code># 새로운 세션 생성
+tmux new -s (session_name)
+
+# 세션 만들면서 윈도우랑 같이 생성
+tmux new -s (session_name) -n (window_name)
+
+# 세션 종료
+exit
+
+# 세션 목록
+tmux ls
+
+# 세션 다시 시작하기(다시 불러오기)
+tmux attach -t session_number
+
+# 세션 중단하기
+(ctrl + b) d
+
+# 스크롤하기
+ctrl + b + [
+
+# 특정 세션 강제 종료
+tmux kill-session -t session_number
+</code></pre></div></div>
+
+<h1 id="윈도우-관련-명령어">윈도우 관련 명령어</h1>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code># 새 윈도우 생성
+(ctrl + b) c
+
+# 새 윈도우 이동
+(ctrl + b) b (숫자)
+</code></pre></div></div>
+
+<h1 id="틀-관련-명령어">틀 관련 명령어</h1>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code># 틀 나누기
+(ctrl + b) % #좌우로 나누기
+(ctrl + b) " #위아래로 나누기
+
+# 틀끼리 이동하기
+(ctrl + b) 방향키
+(ctrl + b) q
+(ctrl + b) o #순서대로 이동
+
+# 틀 삭제
+(ctrl + d)
+
+# 틀 사이즈 조정
+(ctrl + b) : resize_pane -L 10 #L,R,U,D 입력하면 상하좌우로 조절됨
+(ctrl + b) (alt) 방향키
+
+# 단축키 목록
+(ctrl + b) ?
+</code></pre></div></div>
+
+:ET

@@ -1,0 +1,45 @@
+I"F<p>wav file을 split한 파일을 받아 google speech recognition을 돌리는 중에 에러가 발생했다. 이 파일은 <code class="language-plaintext highlighter-rouge">librosa</code>로는 읽혀지지만 <code class="language-plaintext highlighter-rouge">wave</code>로는 읽혀지지 않아서 의아했다. speech_recognition module에서 에러가 난거지만 그 안의 함수들도 함께 에러가 난거여서 원인을 찾는 것이 생각보다 어려웠다..일주일 걸렸다..ㅠ</p>
+
+<!--more-->
+
+<h1 id="에러-화면">에러 화면</h1>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">Error</span><span class="p">:</span> <span class="n">unknown</span> <span class="nb">format</span><span class="p">:</span> <span class="mi">65534</span>
+<span class="n">Error</span><span class="p">:</span> <span class="nb">file</span> <span class="n">does</span> <span class="ow">not</span> <span class="n">start</span> <span class="k">with</span> <span class="n">FORM</span> <span class="nb">id</span>
+<span class="nb">ValueError</span><span class="p">:</span> <span class="n">Audio</span> <span class="nb">file</span> <span class="n">could</span> <span class="ow">not</span> <span class="n">be</span> <span class="n">read</span> <span class="k">as</span> <span class="n">PCM</span> <span class="n">WAV</span><span class="p">,</span> <span class="n">AIFF</span><span class="o">/</span><span class="n">AIFF</span><span class="o">-</span><span class="n">C</span><span class="p">,</span> <span class="ow">or</span> <span class="n">Native</span> <span class="n">FLAC</span><span class="p">;</span> <span class="n">check</span> <span class="k">if</span> <span class="nb">file</span> <span class="ow">is</span> <span class="n">corrupted</span> <span class="ow">or</span> <span class="ow">in</span> <span class="n">another</span> <span class="nb">format</span>
+</code></pre></div></div>
+
+<p>원인은 자른 파일의 포맷 문제였다. wav 파일 안에도 pcm 포맷을 포함하고 있는데 wav 파일을 잘라내는 과정에서 포맷이 wav 인코딩 중 하나인 pcm으로 변경된 것이다(다만, 확장자명은 wav..😭). 그래서 pcm을 wav 파일로 변환하면 문제가 해결된다!!</p>
+
+<h1 id="변환-파일코드">변환 파일코드</h1>
+
+<p>어떤 자상한 분이 코드를 직접 짜주셔서 그대로 가져왔다. 출처는 아래에</p>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kn">import</span> <span class="nn">wave</span>
+
+<span class="c1"># The parameters are prerequisite information. More specifically,
+# channels, bit_depth, sampling_rate must be known to use this function.
+</span><span class="k">def</span> <span class="nf">pcm2wav</span><span class="p">(</span> <span class="n">pcm_file</span><span class="p">,</span> <span class="n">wav_file</span><span class="p">,</span> <span class="n">channels</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span> <span class="n">bit_depth</span><span class="o">=</span><span class="mi">16</span><span class="p">,</span> <span class="n">sampling_rate</span><span class="o">=</span><span class="mi">16000</span> <span class="p">):</span>
+
+    <span class="c1"># Check if the options are valid.
+</span>    <span class="k">if</span> <span class="n">bit_depth</span> <span class="o">%</span> <span class="mi">8</span> <span class="o">!=</span> <span class="mi">0</span><span class="p">:</span>
+        <span class="k">raise</span> <span class="nb">ValueError</span><span class="p">(</span><span class="s">"bit_depth "</span><span class="o">+</span><span class="nb">str</span><span class="p">(</span><span class="n">bit_depth</span><span class="p">)</span><span class="o">+</span><span class="s">" must be a multiple of 8."</span><span class="p">)</span>
+        
+    <span class="c1"># Read the .pcm file as a binary file and store the data to pcm_data
+</span>    <span class="k">with</span> <span class="nb">open</span><span class="p">(</span> <span class="n">pcm_file</span><span class="p">,</span> <span class="s">'rb'</span><span class="p">)</span> <span class="k">as</span> <span class="n">opened_pcm_file</span><span class="p">:</span>
+        <span class="n">pcm_data</span> <span class="o">=</span> <span class="n">opened_pcm_file</span><span class="p">.</span><span class="n">read</span><span class="p">();</span>
+        
+        <span class="n">obj2write</span> <span class="o">=</span> <span class="n">wave</span><span class="p">.</span><span class="nb">open</span><span class="p">(</span> <span class="n">wav_file</span><span class="p">,</span> <span class="s">'wb'</span><span class="p">)</span>
+        <span class="n">obj2write</span><span class="p">.</span><span class="n">setnchannels</span><span class="p">(</span> <span class="n">channels</span> <span class="p">)</span>
+        <span class="n">obj2write</span><span class="p">.</span><span class="n">setsampwidth</span><span class="p">(</span> <span class="n">bit_depth</span> <span class="o">//</span> <span class="mi">8</span> <span class="p">)</span>
+        <span class="n">obj2write</span><span class="p">.</span><span class="n">setframerate</span><span class="p">(</span> <span class="n">sampling_rate</span> <span class="p">)</span>
+        <span class="n">obj2write</span><span class="p">.</span><span class="n">writeframes</span><span class="p">(</span> <span class="n">pcm_data</span> <span class="p">)</span>
+        <span class="n">obj2write</span><span class="p">.</span><span class="n">close</span><span class="p">()</span>
+
+<span class="n">pcm2wav</span><span class="p">(</span> <span class="s">'sample_001.pcm'</span><span class="p">,</span> <span class="s">'sample_001.wav'</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">16</span><span class="p">,</span> <span class="mi">16000</span> <span class="p">)</span>
+</code></pre></div></div>
+
+<h1 id="출처">출처</h1>
+
+<p><a href="https://m.blog.naver.com/PostView.nhn?blogId=aimldl&amp;logNo=221559323232&amp;proxyReferer=https:%2F%2Fwww.google.com%2F">pcm2wav.py</a></p>
+:ET
