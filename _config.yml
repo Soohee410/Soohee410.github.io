@@ -25,11 +25,11 @@ contact:
 
 
 # Comment Section (Disqus)
-#disqus-identifier: soo-ps-data-story # add your shortname for Disqus Comment. For example mr-brown
+disqus-identifier: my-hexo-blog-8 # add your shortname for Disqus Comment. For example mr-brown
 
 
 # Google Analytics
-#google-analytics: 'UA-164687013-1' # add your identifier. For example UA-99631805-1.
+google-analytics: 'G-FCT6RW2TK0' # add your identifier. For example UA-99631805-1.
 
 
 # Build settings
