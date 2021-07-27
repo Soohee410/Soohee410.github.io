@@ -96,7 +96,7 @@ train 데이터에는 여러 개의 정답값이 제공되는데 제출 형식�
 
 ### 6-4. 평가 방법
 
-평가에 사용되는 metric은 **MCRMSE**(mean column wise root mean squared error)이다. 각 기호는 $N_t$:  맞춰야하는 컬럼들의 갯수, $y$: 실제 값, $\hat{y}$: 예측 값이다. 제출 형식은 5가지를 예측해야 하지만 **reactivity, degMgpH10, degMg50C**만 채점된다. (3가지만 채점된다는 의미로 봤을 때 $N_t$는 3이지 않을까하고 예상한다🤔.)
+평가에 사용되는 metric은 **MCRMSE**(mean column wise root mean squared error)이다. 각 기호는 $N_t$:  맞춰야하는 컬럼들의 갯수, $y$: 실제 값, $\hat{y}$: 예측 값이다. 제출 형식은 5가지를 예측해야 하지만 **reactivity, degMgpH10, degMg50C**만 채점된다. (3가지만 채점된다는 의미로 봤을 때 $N_t$는 3이지 않을까하고 예상한다🤔)
 
 $\textrm{MCRMSE} = \frac{1}{N_{t}}\sum_{j=1}^{N_{t}}\sqrt{\frac{1}{n} \sum_{i=1}^{n} (y_{ij} - \hat{y}_{ij})^2}$
 
