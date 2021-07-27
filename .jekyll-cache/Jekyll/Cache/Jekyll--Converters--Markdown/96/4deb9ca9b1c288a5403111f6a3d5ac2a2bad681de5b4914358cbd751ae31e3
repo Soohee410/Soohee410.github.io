@@ -1,4 +1,4 @@
-I"�;<p>캐글 필사를 하기로 한 <a href="https://www.kaggle.com/c/stanford-covid-vaccine">OpenVaccine: COVID-19 mRNA Vaccine Degradation Prediction</a> 대회는 바로 시작하기엔 너무 버거웠다😂 기초지식이 없잖아?ㅠㅠ 그래서 필사하기 전에 기초지식을 쌓아보았다. 대부분의 내용은 <a href="https://tootouch.github.io/research/ai_against_covid19/">tootouch님의 깃헙 블로그</a>를 참고하였다. 목차는 다음과 같다.</p>
+I"�;<p>캐글 필사를 하기로 한 <a href="https://www.kaggle.com/c/stanford-covid-vaccine">OpenVaccine: COVID-19 mRNA Vaccine Degradation Prediction</a> 대회는 바로 시작하기엔 너무 버거웠다😂 기초지식이 없잖아?ㅠㅠ 그래서 필사하기 전에 기초지식을 쌓아보았다. 대부분의 내용은 <a href="https://tootouch.github.io/research/ai_against_covid19/">tootouch님의 깃헙 블로그</a>를 참고하였다. 목차는 다음과 같다.</p>
 <blockquote>
   <ol>
     <li>코로나 바이러스란?</li>
@@ -140,7 +140,7 @@
 
 <h3 id="6-4-평가-방법">6-4. 평가 방법</h3>
 
-<p>평가에 사용되는 metric은 <strong>MCRMSE</strong>(mean column wise root mean squared error)이다. 각 기호는 $N_t$:  맞춰야하는 컬럼들의 갯수, $y$: 실제 값, $\hat{y}$: 예측 값이다. 제출 형식은 5가지를 예측해야 하지만 <strong>reactivity, degMgpH10, degMg50C</strong>만 채점된다. (3가지만 채점된다는 의미로 봤을 때 $N_t$는 3이지 않을까하고 예상한다🤔.)</p>
+<p>평가에 사용되는 metric은 <strong>MCRMSE</strong>(mean column wise root mean squared error)이다. 각 기호는 $N_t$:  맞춰야하는 컬럼들의 갯수, $y$: 실제 값, $\hat{y}$: 예측 값이다. 제출 형식은 5가지를 예측해야 하지만 <strong>reactivity, degMgpH10, degMg50C</strong>만 채점된다. (3가지만 채점된다는 의미로 봤을 때 $N_t$는 3이지 않을까하고 예상한다🤔)</p>
 
 <p>$\textrm{MCRMSE} = \frac{1}{N_{t}}\sum_{j=1}^{N_{t}}\sqrt{\frac{1}{n} \sum_{i=1}^{n} (y_{ij} - \hat{y}_{ij})^2}$</p>
 
