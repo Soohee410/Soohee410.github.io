@@ -45,6 +45,18 @@ use_math: True
 
 <img src="/assets/img/post-img/covid-19/covid-19-1.png" width="700px">
 
+RNA는 분자구조와 생물학적 기능에 따라 9가지로 나눈다.
+
+- rRNA(리보솜 RNA, riobosomal RNA): 리보솜을 구성하는 RNA
+- mRNA(전령 RNA, messenger RNA): DNA의 유전 정보를 옮겨적은 일종의 처사진 역할
+- tRNA(운반 RNA, transfer RNA): mRNA의 코돈에 대응하는 안티코돈을 가지고 있다.
+- miRNA(마이크로 RNA, micro RNA): 생물의 유전자 발현을 제어하는 역할
+- snRNA(소형 핵 RNA, smal nuclear RNA): 핵 안에서 RNA를 스플라이싱 하는 기능
+- snoRNA(소형 인 RNA, smal nucleolar RNA): 핵 안에서 RNA의 변형일 일으킨다.
+- aRNA(안티센스 RNA, antisenese RNA): RNA에서 리보솜으로의 번역을 조절하는 역할
+- siRNA(소형 방해 RNA, smal interfering RNA): RNA qkdgofmf dbqkfgksek.
+- piRNA
+
 ## 3. RNA가 DNA보다 불안정한 이유
 
 RNA는 리보오스라고 부르는 당 분자에 인산과 염기가 붙은 구조인 것에 반해 DNA는 다른 부분은 다 동일한데 리보오스가 아닌 디옥시리보오스를 갖고 있다. RNA의 리보오스에 수산기(-OH)가 붙어있는 위치에 DNA의 디옥시리보오스에는 `산소가 빠진` 수소(-H)가 붙어있다. RNA가 가지고 있는 수산기(-OH)는 화학반응에 적극적이라는 특성이 있고 그 결과 남들과 반응을 잘하는 불안정하다는 뜻이다.
