@@ -1,4 +1,4 @@
-I"�;<p>캐글 필사를 하기로 한 <a href="https://www.kaggle.com/c/stanford-covid-vaccine">OpenVaccine: COVID-19 mRNA Vaccine Degradation Prediction</a> 대회는 바로 시작하기엔 너무 버거웠다😂 기초지식이 없잖아?ㅠㅠ 그래서 필사하기 전에 기초지식을 쌓아보았다. 대부분의 내용은 <a href="https://tootouch.github.io/research/ai_against_covid19/">tootouch님의 깃헙 블로그</a>를 참고하였다. 목차는 다음과 같다.</p>
+I"%?<p>캐글 필사를 하기로 한 <a href="https://www.kaggle.com/c/stanford-covid-vaccine">OpenVaccine: COVID-19 mRNA Vaccine Degradation Prediction</a> 대회는 바로 시작하기엔 너무 버거웠다😂 기초지식이 없잖아?ㅠㅠ 그래서 필사하기 전에 기초지식을 쌓아보았다. 대부분의 내용은 <a href="https://tootouch.github.io/research/ai_against_covid19/">tootouch님의 깃헙 블로그</a>를 참고하였다. 목차는 다음과 같다.</p>
 <blockquote>
   <ol>
     <li>코로나 바이러스란?</li>
@@ -44,6 +44,20 @@
 <p><code class="language-plaintext highlighter-rouge">DNA는 개개인마다 다른 고유의 유전 정보를 담고 있다.</code> 유전 정보는 어떠한 세포들을 만들어야 하는지 몸속 장기부터 전체적인 모습까지 어떻게 구성할지에 대한 정보라 할 수 있다. 결국 우리 몸에 필요한 단백질을 적재적소에 만들기 위한 정보이다. 이를 위해서는 누군가가 DNA가 지령한 정보를 <strong>해석</strong>한 뒤 단백질을 만드는 곳에 <strong>전달</strong>해야한다. 이 역할을 RNA가 한다.</p>
 
 <p><img src="/assets/img/post-img/covid-19/covid-19-1.png" width="700px" /></p>
+
+<p>RNA는 분자구조와 생물학적 기능에 따라 9가지로 나눈다.</p>
+
+<ul>
+  <li>rRNA(리보솜 RNA, riobosomal RNA): 리보솜을 구성하는 RNA</li>
+  <li>mRNA(전령 RNA, messenger RNA): DNA의 유전 정보를 옮겨적은 일종의 처사진 역할</li>
+  <li>tRNA(운반 RNA, transfer RNA): mRNA의 코돈에 대응하는 안티코돈을 가지고 있다.</li>
+  <li>miRNA(마이크로 RNA, micro RNA): 생물의 유전자 발현을 제어하는 역할</li>
+  <li>snRNA(소형 핵 RNA, smal nuclear RNA): 핵 안에서 RNA를 스플라이싱 하는 기능</li>
+  <li>snoRNA(소형 인 RNA, smal nucleolar RNA): 핵 안에서 RNA의 변형일 일으킨다.</li>
+  <li>aRNA(안티센스 RNA, antisenese RNA): RNA에서 리보솜으로의 번역을 조절하는 역할</li>
+  <li>siRNA(소형 방해 RNA, smal interfering RNA): RNA qkdgofmf dbqkfgksek.</li>
+  <li>piRNA</li>
+</ul>
 
 <h2 id="3-rna가-dna보다-불안정한-이유">3. RNA가 DNA보다 불안정한 이유</h2>
 
