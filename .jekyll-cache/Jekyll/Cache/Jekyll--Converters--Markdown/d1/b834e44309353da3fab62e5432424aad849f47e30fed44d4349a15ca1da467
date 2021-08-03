@@ -1,4 +1,4 @@
-I"%?<p>캐글 필사를 하기로 한 <a href="https://www.kaggle.com/c/stanford-covid-vaccine">OpenVaccine: COVID-19 mRNA Vaccine Degradation Prediction</a> 대회는 바로 시작하기엔 너무 버거웠다😂 기초지식이 없잖아?ㅠㅠ 그래서 필사하기 전에 기초지식을 쌓아보았다. 대부분의 내용은 <a href="https://tootouch.github.io/research/ai_against_covid19/">tootouch님의 깃헙 블로그</a>를 참고하였다. 목차는 다음과 같다.</p>
+I"bA<p>캐글 필사를 하기로 한 <a href="https://www.kaggle.com/c/stanford-covid-vaccine">OpenVaccine: COVID-19 mRNA Vaccine Degradation Prediction</a> 대회는 바로 시작하기엔 너무 버거웠다😂 기초지식이 없잖아?ㅠㅠ 그래서 필사하기 전에 기초지식을 쌓아보았다. 대부분의 내용은 <a href="https://tootouch.github.io/research/ai_against_covid19/">tootouch님의 깃헙 블로그</a>를 참고하였다. 목차는 다음과 같다.</p>
 <blockquote>
   <ol>
     <li>코로나 바이러스란?</li>
@@ -38,6 +38,8 @@
 </ol>
 
 <p>인간 코로나 바이러스는 진화를 거듭하며 변화되기도 한다(5, 6, 7번). 이중 7번 유형이 2019년 새롭게 발견된 코로나 바이러스로 COVID-19이다. COVID-19는 사람 세포막에서 만들어지는 인지질 이중막 껍데기를 가지고 있다. 인지질막 때문에 바이러스의 외부 단백질의 <code class="language-plaintext highlighter-rouge">변이가 발생할 가능성이 높아지고</code> 그 결과 변이가 발생한 바이러스가 사람이 원래 가지고 있던 면역을 회피할 수 있는 확률이 증가한다. 코로나 바이러스는 인지질 껍질에 호흡기 점액질에 친화력을 가진 스파이크 단백질이 촘촘하게 박혀있다. 이 스파이크 단백질에 의해 호흡기 점막 친화성을 가지게 된다. 즉, 코로나 바이러스가 인후부의 상부호흡기와 기관지 이하의 하부호흡기 점막에 잘 부착할 수 있고 세포 안으로 잘 침투하여 쉽게 증식할 수 있다.</p>
+
+<p><img src="/assets/img/post-img/covid-19/covid-19-5.jpeg" width="700px" /></p>
 
 <h2 id="2-rna란">2. RNA란?</h2>
 
@@ -147,10 +149,16 @@
     </tr>
     <tr>
       <td>predicted_loop_type</td>
-      <td>Vienna RNAfold2 구조의 bpRNA에서 지정된 루프 유형</td>
+      <td>Vienna RNAfold2 구조의 bpRNA에서 지정된 루프 유형(S: stem, M: multiloop, I: internal loop, B: bulge, H:hairpin loop, E: dangling End, X: external loop)</td>
     </tr>
   </tbody>
 </table>
+
+<blockquote>
+  <p>input 데이터에 이와 같은 컬럼을 넣은 이유로 생각되는 건 dangling ends와 같이 다른 염기들과 연결이 적게 된 경우는 반응이 더 잘된다고 한다. 이런 부분들을 넣기 위해서 주어진 것이 아닐까하고 예상한다.</p>
+</blockquote>
+
+<p><img src="/assets/img/post-img/covid-19/covid-19-6.png" width="700px" /></p>
 
 <h3 id="6-4-평가-방법">6-4. 평가 방법</h3>
 
