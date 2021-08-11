@@ -1,4 +1,4 @@
-I"bA<p>캐글 필사를 하기로 한 <a href="https://www.kaggle.com/c/stanford-covid-vaccine">OpenVaccine: COVID-19 mRNA Vaccine Degradation Prediction</a> 대회는 바로 시작하기엔 너무 버거웠다😂 기초지식이 없잖아?ㅠㅠ 그래서 필사하기 전에 기초지식을 쌓아보았다. 대부분의 내용은 <a href="https://tootouch.github.io/research/ai_against_covid19/">tootouch님의 깃헙 블로그</a>를 참고하였다. 목차는 다음과 같다.</p>
+I"PA<p>캐글 필사를 하기로 한 <a href="https://www.kaggle.com/c/stanford-covid-vaccine">OpenVaccine: COVID-19 mRNA Vaccine Degradation Prediction</a> 대회는 바로 시작하기엔 너무 버거웠다😂 기초지식이 없잖아?ㅠㅠ 그래서 필사하기 전에 기초지식을 쌓아보았다. 대부분의 내용은 <a href="https://tootouch.github.io/research/ai_against_covid19/">tootouch님의 깃헙 블로그</a>를 참고하였다. 목차는 다음과 같다.</p>
 <blockquote>
   <ol>
     <li>코로나 바이러스란?</li>
@@ -89,7 +89,7 @@
 
 <h3 id="6-2-목적">6-2. 목적</h3>
 
-<p>이 대회의 목적은 <code class="language-plaintext highlighter-rouge">각 RNA 분자의 각 염기에서 가능한 분해 속도와 각 위치에서의 분해 속도를 예측하는 모델</code>을 만드는 것이고 데이터는 Eterna에서 제공하는 <strong>3,000개의 RNA 분자데이터</strong>를 사용한다. 그 다음 Eterna가 COVID-19 mRNA 백신을 위해 고안한 <strong>2세대 RNA 서열을 바탕으로 모델의 점수를 매길 것</strong>이다. 최종 평가는 스탠포드 대학에서 실험되고 네이처(Nature)에서 모델에 점수를 매긴다고 한다.</p>
+<p>이 대회의 목적은 <code class="language-plaintext highlighter-rouge">각 RNA 분자의 각 염기에서의 분해율과 각 위치에서의 분해율 예측하는 모델</code>을 만드는 것이고 데이터는 Eterna에서 제공하는 <strong>3,000개의 RNA 분자데이터</strong>를 사용한다. 그 다음 Eterna가 COVID-19 mRNA 백신을 위해 고안한 <strong>2세대 RNA 서열을 바탕으로 모델의 점수를 매길 것</strong>이다. 최종 평가는 스탠포드 대학에서 실험되고 네이처(Nature)에서 모델에 점수를 매긴다고 한다.</p>
 
 <h3 id="6-3-데이터">6-3. 데이터</h3>
 

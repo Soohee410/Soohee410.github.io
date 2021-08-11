@@ -1,0 +1,10 @@
+I"�<p>캐글 필사 코드에서 RNN의 kernel initializer를 orthogonal로 사용하였는데 이 부분이 궁금해서 찾아보다가 <a href="https://smerity.com/articles/2016/orthogonal_init.html">흥미로운 글</a>을 발견했는데 이해하기 쉽게 설명되어 있어 일부를 번역하였다! 목차는 다음과 같다.</p>
+<blockquote>
+  <ol>
+    <li>RNN의 문제점</li>
+    <li>Eigenvalues</li>
+    <li>orthogonal matrix이란?</li>
+    <li>init들의 시각화</li>
+  </ol>
+</blockquote>
+:ET

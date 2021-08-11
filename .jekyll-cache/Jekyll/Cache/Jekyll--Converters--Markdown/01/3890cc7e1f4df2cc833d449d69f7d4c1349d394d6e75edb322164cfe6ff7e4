@@ -1,0 +1,16 @@
+I"�<p>캐글 필사를 하기로 한 <a href="https://www.kaggle.com/c/stanford-covid-vaccine">OpenVaccine: COVID-19 mRNA Vaccine Degradation Prediction</a> 대회는 바로 시작하기엔 너무 버거웠다😂 기초지식이 없잖아?ㅠㅠ 그래서 필사하기 전에 기초지식을 쌓아보았다. 대부분의 내용은 <a href="https://tootouch.github.io/research/ai_against_covid19/">tootouch님의 깃헙 블로그</a>를 참고하였다. 목차는 다음과 같다.</p>
+<blockquote>
+  <ol>
+    <li>코로나 바이러스란?</li>
+    <li>RNA란?</li>
+    <li>RNA가 DNA보다 불안정한 이유</li>
+    <li>RNA 바이러스가 돌연변이를 자주 일으키는 이유</li>
+    <li>mRNA가 백신으로 유력한 이유</li>
+    <li>OpenVaccine: COVID-19 mRNA Vaccine Degradation Prediction<br />
+ 6-1. 개요<br />
+ 6-2. 목적<br />
+ 6-3. 데이터<br />
+ 6-4. 평가 방법<br /></li>
+  </ol>
+</blockquote>
+:ET
