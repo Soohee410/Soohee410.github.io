@@ -2,7 +2,7 @@
 layout: post
 title: "[Linear Algebra] RNN에서 orthogonal matrix를 initializer로 써야하는 이유"
 date:   2021-08-11
-image: '/assets/img/covers/covid-19.png'
+image: '/assets/img/covers/linear-algebra.jpg'
 tags: [Linear Algebra]
 use_math: True
 ---

@@ -1,6 +1,6 @@
 ---
 layout: post
-title: "[캐글 필사] OpenVaccine: COVID-19 mRNA Vaccine Degradation Prediction"
+title: "[Kaggle] OpenVaccine: COVID-19 mRNA Vaccine Degradation Prediction"
 date:   2021-07-23
 image: '/assets/img/covers/covid-19.png'
 tags: [Kaggle]
