@@ -74,19 +74,19 @@ RNN 내에서 gradient가 소실되면 정보가 backpropagation되지 않으므
 
 ### 작은 eigenvalue로 인한 소실 행렬
 
-<video controls autoplay loop>
+<video controls loop>
     <source src="/assets/video/orthogonal-matrix/eigenvalue_vanish.m4v" type="video/mp4">
 </video>
 
 ### 1보다 큰 eigenvalue로 인한 폭발 행렬
 
-<video controls autoplay loop>
+<video controls loop>
     <source src="/assets/video/orthogonal-matrix/eigenvalue_explode.m4v" type="video/mp4">
 </video>
 
 ### orthogonal 행렬
 
-<video controls autoplay loop>
+<video controls loop>
     <source src="/assets/video/orthogonal-matrix/eigenvalue_orthogonal.m4v" type="video/mp4">
 </video>
 
