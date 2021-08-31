@@ -5,13 +5,13 @@ permalink: /about/
 image:
 ---
 
-<img src="/assets/img/wc.png" width="700px" align="center">
+<img src="/assets/img/wc2.png" width="700px" align="center">
 
 ***
 
 ## NAME
 
-안녕하세요, 반갑습니다! ``Soo.P``입니다!
+안녕하세요, 반갑습니다! ``Suri``입니다!
 
 <br>
 
