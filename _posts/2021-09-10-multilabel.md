@@ -57,6 +57,7 @@ df['text'].replace('', np.nan, inplace=True)  #비어 있는 행은 null값으�
 df.dropna(how='any', inplace=True)  #null 값 제거
 df.drop_duplicates(subset = ['text'], inplace=True) #중복된 행 제거
 ```
+<br>
 
 이제 텍스트를 토큰화해야 하는데요. 토큰화 패키지로는, [customized KoNLPy](https://github.com/lovit/customized_konlpy)를 이용했습니다. Customized KoNLPy에서는, 일부 토큰들을 직접 지정할 수 있는 기능이 존재하는데, 이는 빈번하게 사용되는 유행어 등을 지정할 때 주로 사용됩니다. 예를 들어, '가성비'라는 단어는 '가격 대비 성능'을 의미하는데, 쇼핑 리뷰에서 빈번하게 등장하는 단어입니다. 하지만, 일반 KoNLPy 품사 태깅으로 토큰화 진행할 경우, '가성비'를 '가', '성비'로 분리하는 모습을 보였습니다. 이와 같이, 쇼핑 리뷰에서 빈번하게 등장하는 유행어(?)지만, 잘 못 토큰화될 가능성이 높은 일부 단어들을, customized KoNLPy를 통해 토큰으로 직접 지정해주었습니다.
 
@@ -72,6 +73,7 @@ for word in words:
     name, poomsa = word
     twi.add_dictionary(name, poomsa)
 ```
+<br>
 
 이후, 리뷰들에 대해 토큰화를 진행합니다. 아래부터 진행되는 코드에 대한 설명은 [딥러닝을 이용한 자연어 처리 입문](https://wikidocs.net/44249)에 자세히 나와있기 때문에, 설명은 생략하겠습니다!
 
@@ -87,6 +89,7 @@ for sentence in df['text']:
     tmp = [word for word in tmp if not word in stopwords]  #불용어 제거
     text_token.append(tmp)
 ```
+<br>
 
 ```python
 from keras.preprocessing.text import Tokenizer
@@ -94,6 +97,7 @@ from keras.preprocessing.text import Tokenizer
 tokenizer = Tokenizer()
 tokenizer.fit_on_texts(text_token)
 ```
+<br>
 
 ```python
 threshold = 3
@@ -116,21 +120,27 @@ print('등장 빈도가 %s번 이하인 희귀 단어의 수: %s'%(threshold - 1
 print("단어 집합에서 희귀 단어의 비율:", (rare_cnt / total_cnt)*100)
 print("전체 등장 빈도에서 희귀 단어 등장 빈도 비율:", (rare_freq / total_freq)*100)
 ```
+<br>
+
 ```
 단어 집합(vocabulary)의 크기 : 44152
 등장 빈도가 2번 이하인 희귀 단어의 수: 26822
 단어 집합에서 희귀 단어의 비율: 60.74922993295887
 전체 등장 빈도에서 희귀 단어 등장 빈도 비율: 1.2691737130692322
 ```
+<br>
 
 ```python
 # 빈도수 3이하인 단어 제거하고 0 추가한 개수 = vocab_size
 vocab_size = total_cnt - rare_cnt + 1
 print('단어 집합의 크기 :',vocab_size)
 ```
+<br>
+
 ```
 단어 집합의 크기 : 17331
 ```
+<br>
 
 전체에서 등장 빈도 수가 3 이하인 단어들은 제외하여, (0을 포함한) 전체 **단어 집합(vocab_size)**의 크기는 17331개로 합니다. 이제 문장을 패딩하기 위해, 문장 길이를 어느정도로 고정할지 정합니다.
 
@@ -142,10 +152,13 @@ X = tokenizer.texts_to_sequences(text_token)
 print('리뷰의 최대 길이 :',max(len(l) for l in X))
 print('리뷰의 평균 길이 :',sum(map(len, X))/len(X))
 ```
+<br>
+
 ```
 리뷰의 최대 길이 : 58
 리뷰의 평균 길이 : 12.36651295354987
 ```
+<br>
 
 ```python
 def below_threshold_len(max_len, nested_list):
@@ -158,9 +171,13 @@ def below_threshold_len(max_len, nested_list):
 max_len = 35
 below_threshold_len(max_len, X)
 ```
+<br>
+
 ```
 전체 샘플 중 길이가 35 이하인 샘플의 비율: 97.29337795864298
 ```
+<br>
+
 문장 길이가 35로 할 경우, 약 97%의 대부분의 샘플을 커버 가능합니다. **문장 길이(max_len)**는 35로 결정합니다. 이제, 각 리뷰 샘플들에 대해 패딩을 진행합니다.
 
 ```python
@@ -169,6 +186,8 @@ from tensorflow.keras.preprocessing.sequence import pad_sequences
 X = pad_sequences(X, maxlen = max_len)
 X
 ```
+<br>
+
 ```
 array([[    0,     0,     0, ..., 11842,    25,   273],
        [    0,     0,     0, ...,   155,  1599,  1868],
@@ -178,12 +197,16 @@ array([[    0,     0,     0, ..., 11842,    25,   273],
        [    0,     0,     0, ...,  1688,    17,   323],
        [    0,     0,     0, ...,    76,     3,   205]])
 ```
+<br>
+
 한편, target에 해당하는 y에는 5개의 label(sentiment, quality/performance, price/event, delivery/service, design/appearance)이 들어가게 됩니다.
 
 ```python
 y = np.array(df.iloc[:,:5])
 y
 ```
+<br>
+
 ```
 array([[1, 0, 0, 1, 0],
        [0, 0, 0, 1, 0],
@@ -193,6 +216,7 @@ array([[1, 0, 0, 1, 0],
        [1, 0, 0, 0, 1],
        [1, 0, 0, 1, 0]], dtype=int64)
 ```
+<br>
 
 자, 이로써 학습에 이용할 X, target인 y를 모두 구축했고, 모델링을 위해 train, test set 분리를 합니다.
 
@@ -229,6 +253,7 @@ def F1score(y_true, y_pred):
     f1_score = 2 * (recall * precision) / (recall + precision + eps)
     return f1_score
 ```
+<br>
 
 본격적으로 fit하기 전에, multi-output 구조에 맞게 다음과 같이 y를 딕셔너리 형태로 변경해줍니다.
 
@@ -241,6 +266,8 @@ y_test_list = {label_names[i]:y_test[:,i] for i in range(n_label)}
 
 y_train_list
 ```
+<br>
+
 ```
 {'sentiment': array([1, 1, 1, ..., 0, 0, 0], dtype=int64),
  'quality/performance': array([0, 1, 0, ..., 1, 1, 1], dtype=int64),
@@ -248,6 +275,7 @@ y_train_list
  'delivery/service': array([0, 0, 1, ..., 0, 0, 0], dtype=int64),
  'design/appearance': array([1, 1, 0, ..., 0, 0, 0], dtype=int64)}
 ```
+<br>
 
 이제 모델 식을 세워줍니다!
 
@@ -271,12 +299,14 @@ def SimpleGRU():
 
 model = SimpleGRU()
 ```
+<br>
 
 ```python
 callback_list = [EarlyStopping(monitor='val_loss', patience=4),
                 ModelCheckpoint(filepath='best_model.h5', monitor='val_loss', save_best_only=True)]
 history = model.fit(X_train, y_train_list, epochs=20, batch_size=60, validation_split=0.1, callbacks=callback_list)
 ```
+<br>
 
 에폭에 따른 각 label들의 성능 값을 시각화해보겠습니다.
 
@@ -313,6 +343,8 @@ plotDF(history1, n_label)
 best_model = load_model('best_model.h5', custom_objects = {'F1score':F1score})
 best_model.evaluate(X_test, y_test_list, batch_size=60)
 ```
+<br>
+
 ```
 665/665 [==============================] - 5s 7ms/step - loss: 0.4103 - sentiment_loss: 0.2328 - quality/performance_loss: 0.0550 - price/event_loss: 0.0165 - delivery/service_loss: 0.0264 - design/appearance_loss: 0.0797 - sentiment_sentiment_F1score: 0.9115 - quality/performance_quality/performance_F1score: 0.9903 - price/event_price/event_F1score: 0.9874 - delivery/service_delivery/service_F1score: 0.9886 - design/appearance_design/appearance_F1score: 0.9455
 [0.4102814495563507,
@@ -370,6 +402,7 @@ def predict_review(sentence, max_len=35):
         ax[1].text(x[i], y[i]+0.03, '{:.2f}%'.format(y[i]*100), horizontalalignment='center')
     simpleaxis(ax[1])
 ```
+<br>
 
 이제 문장을 집어 넣고 분류 결과를 살펴보겠습니다. "퀄리티 괜찮아요"와 "퀄리티 대박 좋아요" 두 문장이 있을 때, 후자의 경우 긍정일 확률이 매우 높아진 것을 볼 수가 있네요!
 
@@ -414,7 +447,7 @@ predict_review(text)
 
 ---
 
-$Reference$
+### Reference
 
 - [딥러닝을 이용한 자연어 처리 입문](https://wikidocs.net/44249)   
 - [customized KoNLPy](https://github.com/lovit/customized_konlpy)  
