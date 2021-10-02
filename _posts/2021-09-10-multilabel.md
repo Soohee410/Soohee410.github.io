@@ -134,7 +134,6 @@ print("전체 등장 빈도에서 희귀 단어 등장 빈도 비율:", (rare_fr
 vocab_size = total_cnt - rare_cnt + 1
 print('단어 집합의 크기 :',vocab_size)
 ```
-<br>
 
 ```
 단어 집합의 크기 : 17331
@@ -151,7 +150,6 @@ X = tokenizer.texts_to_sequences(text_token)
 print('리뷰의 최대 길이 :',max(len(l) for l in X))
 print('리뷰의 평균 길이 :',sum(map(len, X))/len(X))
 ```
-<br>
 
 ```
 리뷰의 최대 길이 : 58
@@ -170,7 +168,6 @@ def below_threshold_len(max_len, nested_list):
 max_len = 35
 below_threshold_len(max_len, X)
 ```
-<br>
 
 ```
 전체 샘플 중 길이가 35 이하인 샘플의 비율: 97.29337795864298
@@ -185,7 +182,6 @@ from tensorflow.keras.preprocessing.sequence import pad_sequences
 X = pad_sequences(X, maxlen = max_len)
 X
 ```
-<br>
 
 ```
 array([[    0,     0,     0, ..., 11842,    25,   273],
@@ -204,7 +200,6 @@ array([[    0,     0,     0, ..., 11842,    25,   273],
 y = np.array(df.iloc[:,:5])
 y
 ```
-<br>
 
 ```
 array([[1, 0, 0, 1, 0],
@@ -265,7 +260,6 @@ y_test_list = {label_names[i]:y_test[:,i] for i in range(n_label)}
 
 y_train_list
 ```
-<br>
 
 ```
 {'sentiment': array([1, 1, 1, ..., 0, 0, 0], dtype=int64),
@@ -342,7 +336,6 @@ plotDF(history1, n_label)
 best_model = load_model('best_model.h5', custom_objects = {'F1score':F1score})
 best_model.evaluate(X_test, y_test_list, batch_size=60)
 ```
-<br>
 
 ```
 665/665 [==============================] - 5s 7ms/step - loss: 0.4103 - sentiment_loss: 0.2328 - quality/performance_loss: 0.0550 - price/event_loss: 0.0165 - delivery/service_loss: 0.0264 - design/appearance_loss: 0.0797 - sentiment_sentiment_F1score: 0.9115 - quality/performance_quality/performance_F1score: 0.9903 - price/event_price/event_F1score: 0.9874 - delivery/service_delivery/service_F1score: 0.9886 - design/appearance_design/appearance_F1score: 0.9455
