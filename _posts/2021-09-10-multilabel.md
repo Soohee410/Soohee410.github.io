@@ -120,7 +120,6 @@ print('등장 빈도가 %s번 이하인 희귀 단어의 수: %s'%(threshold - 1
 print("단어 집합에서 희귀 단어의 비율:", (rare_cnt / total_cnt)*100)
 print("전체 등장 빈도에서 희귀 단어 등장 빈도 비율:", (rare_freq / total_freq)*100)
 ```
-<br>
 
 ```
 단어 집합(vocabulary)의 크기 : 44152
