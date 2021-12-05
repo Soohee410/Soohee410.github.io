@@ -1,2 +1,0 @@
-I"�<p>wav file을 split한 파일을 받아 google speech recognition을 돌리는 중에 에러가 발생했다. 이 파일은 <code class="language-plaintext highlighter-rouge">librosa</code>로는 읽혀지지만 <code class="language-plaintext highlighter-rouge">wave</code>로는 읽혀지지 않아서 의아했다. speech_recognition module에서 에러가 난거지만 그 안의 함수들도 함께 에러가 난거여서 원인을 찾는 것이 생각보다 어려웠다..일주일 걸렸다..ㅠ</p>
-:ET
