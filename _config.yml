@@ -27,9 +27,13 @@ contact:
 # Comment Section (Disqus)
 disqus-identifier: my-hexo-blog-8 # add your shortname for Disqus Comment. For example mr-brown
 
-
+# Analytics
+analytics:
+  provider: 'google-gtag'
+  
 # Google Analytics
-google-analytics: 'G-3ERS73YCCD' # add your identifier. For example UA-99631805-1.
+google:
+  tracking_id: 'G-3ERS73YCCD' # add your identifier. For example UA-99631805-1.
 
 
 # Build settings
