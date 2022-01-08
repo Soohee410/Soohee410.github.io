@@ -1,20 +1,20 @@
-I"�8<p>이번 포스팅에서는 object detection의 기본 개념과 RCNN, Fast RCNN, Faster RCNN, YOLO에 대해서 알아보고자 합니다.</p>
+I"9<p>이번 포스팅은 object detection의 기본 개념과 RCNN, Fast RCNN, Faster RCNN, YOLO에 대해서 알아보고자 한다.</p>
 
 <hr />
 
 <h1 id="object-detection이란">Object Detection이란?</h1>
 
-<p>object detection은 사진이나 영상과 같은 디지털 이미지에서 <code class="language-plaintext highlighter-rouge">물체를 찾아내고</code> 그 <code class="language-plaintext highlighter-rouge">물체가 어떤 것</code>(예를 들면, 인간, 동물, 차 등)인지 판별하는 작업입니다. 최종 목적은 <strong>“어떤 물체가 어디에 있는지”</strong>입니다. 즉 2가지의 task를 해결해야 합니다.</p>
+<p>object detection은 사진이나 영상과 같은 디지털 이미지에서 <code class="language-plaintext highlighter-rouge">물체를 찾아내고</code> 그 <code class="language-plaintext highlighter-rouge">물체가 어떤 것</code>(예를 들면, 인간, 동물, 차 등)인지 판별하는 작업이다. 최종 목적은 <strong>“어떤 물체가 어디에 있는지”</strong>이다. 즉 2가지의 task를 해결해야 한다.</p>
 
 <hr />
 
 <h1 id="object-detection-주요-알고리즘">Object Detection 주요 알고리즘</h1>
 
-<p>딥러닝 기반의 object detection 알고리즘은 2-stage detector와 1-stage detector 두가지로 나뉩니다.</p>
+<p>딥러닝 기반의 object detection 알고리즘은 2-stage detector와 1-stage detector 두가지로 나뉜다.</p>
 
-<p>Two-stage detector는 deep feature를 이용하여 <code class="language-plaintext highlighter-rouge">1. 물체의 영역을 찾아내고</code> <code class="language-plaintext highlighter-rouge">2. 분류합니다.</code> 이 방법은 높은 detection 정확도를 가지지만 이미지 별로 추론 단계를 거치기 때문에 일반적으로 <code class="language-plaintext highlighter-rouge">속도가 느립니다.</code></p>
+<p>Two-stage detector는 deep feature를 이용하여 <code class="language-plaintext highlighter-rouge">1. 물체의 영역을 찾아내고</code> <code class="language-plaintext highlighter-rouge">2. 분류합니다.</code> 이 방법은 높은 detection 정확도를 가지지만 이미지 별로 추론 단계를 거치기 때문에 일반적으로 <code class="language-plaintext highlighter-rouge">속도가 느리다.</code></p>
 
-<p>One-stage detector는 영역을 제안하지 않고 이미지 위의 bounding box를 예측합니다. 이 알고리즘은 two-stage detector보다 속도가 빠르고 구조적으로 단순하다는 장점이 있지만 불규칙한 모양의 물체나 작은 물체들을 인식하는 task에서는 <code class="language-plaintext highlighter-rouge">정확도가 떨어집니다.</code></p>
+<p>One-stage detector는 영역을 제안하지 않고 이미지 위의 bounding box를 예측한다. 이 알고리즘은 two-stage detector보다 속도가 빠르고 구조적으로 단순하다는 장점이 있지만 불규칙한 모양의 물체나 작은 물체들을 인식하는 task에서는 <code class="language-plaintext highlighter-rouge">정확도가 떨어진다.</code></p>
 
 <ul>
   <li>Two-stage object detection algorithms
@@ -38,7 +38,7 @@
   </li>
 </ul>
 
-<p><strong>Object detection은 2가지 문제를 해결해야 합니다.</strong></p>
+<p><strong>다시 정리하자면 Object detection은 아래의 2가지 문제를 해결해야 한다.</strong></p>
 
 <ol>
   <li>임의의 물체 갯수를 찾아내기</li>
@@ -53,7 +53,7 @@
 
 <ol>
   <li>이미지를 input으로 집어 넣음</li>
-  <li>selective search 알고리즘을 통해 ROI(약 2000개)를 추출하고 잘라냄(*selectvie search: 객체와 주변간의 색감, 질감차이, 다른 물체에 애워쌓여있는지 여부 등을 파악해서 다양한 전략으로 물체의 위치를 파악하는 알고리즘)</li>
+  <li>selective search 알고리즘을 통해 ROI(약 2000개)를 추출하고 잘라냄(*selectvie search: 객체와 주변간의 색감, 질감차이, 다른 물체에 애워쌓여 있는지 여부 등을 파악해서 다양한 전략으로 물체의 위치를 파악하는 알고리즘)</li>
   <li>227x227 사이즈로 warping함</li>
   <li>warped image를 각각 CNN 모델에 집어 넣고 feature vector를 추출함</li>
   <li>각각 binary SVM classification, bounding box regression을 진행하여 결과를 도출함</li>
@@ -65,7 +65,7 @@
 
 <p><img src="/assets/img/post-img/object-detection/FastRCNN.png" width="700px" /></p>
 
-<p>아래의 RCNN 단점들을 보완한 모델이며 이름에서 알 수 있듯이 속도가 빨라진 모델입니다.</p>
+<p>아래의 RCNN 단점들을 보완한 모델이며 이름에서 알 수 있듯이 <code class="language-plaintext highlighter-rouge">속도가 빨라진</code> 모델</p>
 <ul>
   <li>227x227 사이즈로 warping 시키면서 성능 손실이 발생함</li>
   <li>selective search를 통해 2000개의 이미지 proposal 후보를 모두 CNN 모델에 집어 넣으면서 시간이 매우 오래 걸림</li>
@@ -92,7 +92,7 @@
 
 <p><img src="/assets/img/post-img/object-detection/FastRCNN-loss.png" width="500px" /></p>
 
-<p>classfication은 log loss, bouding box regression은 smooth L1 loss를 사용합니다.</p>
+<p>classfication은 log loss, bouding box regression은 smooth L1 loss를 사용한다.</p>
 
 <hr />
 
@@ -100,7 +100,7 @@
 
 <p><img src="/assets/img/post-img/object-detection/FasterRCNN.png" width="700px" /></p>
 
-<p>region proposal을 GPU를 통해 학습합니다. Fast RCNN에서 selective search가 했던 일을 Faster RCNN에서 RPN이 대신 하고 나머지는 Fast RCNN과 동일합니다.</p>
+<p>region proposal을 GPU를 통해 학습한다. Fast RCNN에서 selective search가 했던 일을 Faster RCNN에서 RPN이 대신 하고 나머지는 Fast RCNN과 동일하다.</p>
 <ol>
   <li>VGG net을 이용하여 feature map 추출</li>
   <li>RPN 네트워크로 물체가 있을 법한 위치를 찾음(RPN 구조는 아래 그림 참고)
@@ -115,7 +115,7 @@
 
 <p><img src="/assets/img/post-img/object-detection/YOLO.png" width="700px" /></p>
 
-<p>YOLO는 위의 모델들과 다르게 One-stage object detection alogorithm입니다. YOLO는 아래의 특징들을 가지고 있습니다.</p>
+<p>YOLO는 위의 모델들과 다르게 One-stage object detection alogorithm이다. YOLO는 아래의 특징들을 가지고 있다.</p>
 <ul>
   <li>객체 검출을 하나의 회귀 문제로 보기 때문에 매우 빠름</li>
   <li>예측을 할 때 이미지 전체를 처리하기 때문에 background error가 작음</li>
@@ -125,7 +125,7 @@
 
 <ol>
   <li>input image를 S x S 그리드로 나눔. 어떤 객체의 중심이 특정 그리드 셀 안에 위치한다면 그 그리드 셀이 해당 객체를 검출해야 함</li>
-  <li>각각의 그리드 셀은 B개의 bouding box와 그 bounding box의 confidence score를 예측함
+  <li>각각의 그리드 셀은 B개의 <code class="language-plaintext highlighter-rouge">bouding box</code>와 그 bounding box의 <code class="language-plaintext highlighter-rouge">confidence score</code>를 예측함
     <ul>
       <li>bounding box: 정규화된 x, y, w, h</li>
       <li>confidence score: 객체 포함 확률 * bouding box 정확도</li>
@@ -142,11 +142,11 @@
 </ol>
 
 <h2 id="yolo의-loss-function">YOLO의 loss function</h2>
-<p>최적화를 쉽게 하기 위해 sum-squared error 기반입니다.</p>
+<p>최적화를 쉽게 하기 위해 sum-squared error를 사용하였다.</p>
 <ul>
   <li>localization loss: bounding box 위치 예측</li>
   <li>classification loss: 클래스 예측
-YOLO의 문제점을 보완하기 위해 loss를 아래처럼 개선하여 사용합니다.</li>
+YOLO는 아래의 문제점을 보완하기 위해 loss를 개선하여 사용한다.</li>
   <li>문제점1: 배경 영역이 객체가 없는 영역보다 더 크기 때문에 불균형을 초래함
     <ul>
       <li>개선법: localization loss의 가중치를 증가시키고 그 중에서 객체가 없는 그리드 셀의 confidence loss보다 객체가 있는 confidence loss의 가중치를 증가시킴($λ_{coord}$와 $λ_{noobj}$로 조절)</li>
@@ -185,7 +185,7 @@ YOLO의 문제점을 보완하기 위해 loss를 아래처럼 개선하여 사�
 
 <h2 id="yolo의-inference">YOLO의 Inference</h2>
 
-<p>추론 단계에서 하나의 객체를 여러 그리드 셀이 동시에 검출하는 경우가 발생하기 떄문에 non-maximal suppression 방법을 적용합니다. non-maximal suppression이란 가장 confidence가 높은 bounding box와 IOU가 일정 이상(보통 0.5)인 bounding box는 동일한 물체를 detect했다고 판단하여 지우는 작업(confidence score를 0으로 바꿈)입니다. 코드를 보면 더 이해하기 쉽습니다.</p>
+<p>추론 단계에서 하나의 객체를 여러 그리드 셀이 동시에 검출하는 경우가 발생하기 떄문에 non-maximal suppression 방법을 적용한다. non-maximal suppression이란 가장 confidence가 높은 bounding box와 IOU가 일정 이상(보통 0.5)인 bounding box는 동일한 물체를 detect했다고 판단하여 지우는 작업(confidence score를 0으로 바꿈)이다. 코드를 보면 더 이해하기 쉽다.</p>
 
 <div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">def</span> <span class="nf">nms</span><span class="p">(</span><span class="n">boxes</span><span class="p">,</span> <span class="n">probs</span><span class="p">,</span> <span class="n">threshold</span><span class="p">):</span>
     <span class="s">"""Non-Maximum supression.
@@ -216,15 +216,16 @@ YOLO의 문제점을 보완하기 위해 loss를 아래처럼 개선하여 사�
 
 <p>$Reference.$</p>
 <ul>
-  <li><a href="https://viso.ai/deep-learning/object-detection/">https://viso.ai/deep-learning/object-detection/</a></li>
-  <li><a href="https://nuggy875.tistory.com/21">https://nuggy875.tistory.com/21</a></li>
-  <li><a href="https://medium.com/zylapp/review-of-deep-learning-algorithms-for-object-detection-c1f3d437b852">https://medium.com/zylapp/review-of-deep-learning-algorithms-for-object-detection-c1f3d437b852</a></li>
-  <li><a href="https://arxiv.org/pdf/1908.03673.pdf">https://arxiv.org/pdf/1908.03673.pdf</a></li>
-  <li><a href="https://89douner.tistory.com/88">https://89douner.tistory.com/88</a></li>
-  <li><a href="https://deepsense.ai/region-of-interest-pooling-explained/">https://deepsense.ai/region-of-interest-pooling-explained/</a></li>
-  <li><a href="https://ganghee-lee.tistory.com/33">https://ganghee-lee.tistory.com/33</a></li>
-  <li><a href="https://bkshin.tistory.com/entry/%EB%85%BC%EB%AC%B8-%EB%A6%AC%EB%B7%B0-YOLOYou-Only-Look-Once">https://bkshin.tistory.com/entry/%EB%85%BC%EB%AC%B8-%EB%A6%AC%EB%B7%B0-YOLOYou-Only-Look-Once</a></li>
-  <li><a href="https://arxiv.org/pdf/2104.11892.pdf">https://arxiv.org/pdf/2104.11892.pdf</a></li>
-  <li><a href="https://www.researchgate.net/publication/335895380_Cucumber_Fruits_Detection_in_Greenhouses_Based_on_Instance_Segmentation">https://www.researchgate.net/publication/335895380_Cucumber_Fruits_Detection_in_Greenhouses_Based_on_Instance_Segmentation</a></li>
+  <li><a href="https://viso.ai/deep-learning/object-detection/">viso.ai의 Object Detection in 2021</a></li>
+  <li><a href="https://nuggy875.tistory.com/21">nuggy875의 R-CNN: 딥러닝을 이용한 첫 2-stage Detector</a></li>
+  <li><a href="https://medium.com/zylapp/review-of-deep-learning-algorithms-for-object-detection-c1f3d437b852">Review of Deep Learning Algorithms for Object Detection</a></li>
+  <li><a href="https://arxiv.org/pdf/1908.03673.pdf">Recent Advances in Deep Learning for Object Detection</a></li>
+  <li><a href="https://89douner.tistory.com/88">89douner의 RCNN</a></li>
+  <li><a href="https://deepsense.ai/region-of-interest-pooling-explained/">deepsense.ai의 Region of interest pooling explained</a></li>
+  <li><a href="https://ganghee-lee.tistory.com/33">프라이데이의 컴퓨터비전에서의 기본 용어 및 개념 정리</a></li>
+  <li><a href="https://bkshin.tistory.com/entry/%EB%85%BC%EB%AC%B8-%EB%A6%AC%EB%B7%B0-YOLOYou-Only-Look-Once">bkshin의 논문리뷰-YOLO(You Only Look Once) 톺아보기</a></li>
+  <li><a href="https://arxiv.org/pdf/2104.11892.pdf">A Survey of Modern Deep Learning based Object
+Detection Models</a></li>
+  <li><a href="https://www.researchgate.net/publication/335895380_Cucumber_Fruits_Detection_in_Greenhouses_Based_on_Instance_Segmentation">Cucumber Fruits Detection in Greenhouses Based on Instance Segmentation</a></li>
 </ul>
 :ET
