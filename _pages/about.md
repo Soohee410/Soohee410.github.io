@@ -28,3 +28,8 @@ image:
 ## CONTACT
 
 rimiiii.u@gmail.com
+
+<br>
+
+## PORTFOLIO
+[Click to here 👩🏻‍💻](https://rimiiii.notion.site/Rimiiii-AI-Research-Engineer-72e6adcb5151438da7f5771e3ed74e65)

@@ -1,0 +1,25 @@
+I"�<h1 id="multivariable-fractional-polynomialsmfp란">Multivariable Fractional Polynomials(MFP)란?</h1>
+
+<p>희귀 모델에서 중요한 예측 변수를 선택하여 예측률을 높이는 전략을 사용한다. 모델 구축 시 선형 모델이 식을 잘 표현할 수 있지만 선형성 가정이 올바르지 않아 최종 모델이 잘못 지정될 수 있다. 그래서 비선형성이 특징인 MFP가 있다. MFP는 <code class="language-plaintext highlighter-rouge">분수 다항식(fractional polynomials)</code>과 <code class="language-plaintext highlighter-rouge">후진 소거(backward elimination)</code>의 조합으로 이루어져 있다. 여기서 분수 다항식이란 이름 그대로 분수로 이루어져 있는 다항식을 뜻하며, log, 정수가 아닌 지수(exponentiation), 지수 반복 허용의 3가지를 허용한다. 즉, 중요한 변수를 선택하고 연속 예측 변수에 적합한 기능적 형태를 결정하는 두가지 목표를 가진 다변수 모델을 만드는 기법이다.</p>
+
+<hr />
+
+<h1 id="mfp의-취약점">MFP의 취약점</h1>
+<p>MFP는 predictor를 선택할 때 데이터의 작은 변화에 매우 민감하게 반응한다. 이런 불안정성을 극복하기 위해 <a href="https://www.frontiersin.org/articles/10.3389/fonc.2020.00329/full">bootstap resampling</a>을 이용한다. 사용방법은 간단하다. 먼저 spearman correlation coefficient를 구하여 예측 정보가 변수 간에 공유될 가능성을 파악하고 높은 상관관계가 있는 변수를 찾아낸다. 이 변수는 향 후 <strong>우선 순위</strong>로 지정될 수 있다. <a href="https://journals.sagepub.com/doi/pdf/10.1177/1536867X0900900403">Bootstrap assessment of the stability of
+multivariable models 논문</a>을 참고하여 prostate cancer data를 이용한 실험을 예시로 들겠다. prostrate cancer data는 아래의 변수를 가지고 있고 lpsa를 예측하는 것이 주 태스크이다.
+<img src="/assets/img/post-img/mfp/data-description.png" width="700px" /></p>
+
+<p>spearman correlation coefficient를 구했을 때 lpas와 상관관계가 높은 예측 변수는 cavol이다.
+<img src="/assets/img/post-img/mfp/correlation-coefficient.png" width="700px" /></p>
+
+<p>R의 mfpboot 함수를 사용해서 mfp를 boostrap으로 100개를 resampling한 결과 age는 주요 변수가 아니고 svi, cavol(예상한대로), weight, pgg45가 중요한 변수이다. Obs는 변수를 중요하게 뽑은 갯수라고 해석하면 되는데 cavol의 경우 100개 중에 100개를 뽑았다는 것을 의미한다.
+<img src="/assets/img/post-img/mfp/mfpboot.png" width="700px" /></p>
+
+<hr />
+
+<p>$Reference.$</p>
+<ul>
+  <li><a href="https://mfp.imbi.uni-freiburg.de/">https://mfp.imbi.uni-freiburg.de/</a></li>
+  <li><a href="http://www2.uaem.mx/r-mirror/web/packages/mfp/vignettes/mfp.pdf">http://www2.uaem.mx/r-mirror/web/packages/mfp/vignettes/mfp.pdf</a></li>
+</ul>
+:ET
