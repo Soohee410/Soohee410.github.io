@@ -1,2 +1,0 @@
-I"<p>MIMIC-IV 프로젝트를 하기 전에 MIMIC-IV 데이터의 <code class="language-plaintext highlighter-rouge">구조와 내용</code>을 이해하려한다. <!--more-->MIMIC-IV는 미국 메사추세츠 주 보스턴에 있는 제 3의 academic medical center에 실제 입원한 환자들이 머문 정보가 포함된 데이터베이스이다. MIMIC-IV에는 병원에 머무르는 동안 각 환자에 대한 포괄적인 정보(laboratory measurements, medications, administered, vital signs documented 등)가 포함된다. MIMIC-IV는 데이터 출처를 반영하기 위해 모듈로 분리되어 있으며 현재는 <code class="language-plaintext highlighter-rouge">5개의 모듈</code>로 되어있다.(note 모듈도 있으나 현재는 사용이 불가능하다.)</p>
-:ET
