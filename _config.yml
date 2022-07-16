@@ -1,5 +1,5 @@
 title: Suri's Data Journal
-logo: logo2.png # you can add own logo.
+logo: #logo2.png # you can add own logo.
 description: Data-Driven AMAZING Decision Maker가 되고 싶은, Suri입니다!
 baseurl: "/" # the subpath of your site, e.g. /blog
 url: "https://soohee410.github.io" # the base hostname & protocol for your site, e.g. http://example.com
@@ -10,7 +10,7 @@ author:
   name: Suri
   image: '/assets/img/small_profile4.jpg'
   job: Suri's Data Journal
-  bio: 👩‍🏃‍♀️💡
+  bio: DATA Analysis/Storytelling/Decision-Making을 좋아해요.\n현재는 사람들의 편리한 검색 생활을 도모하는 일을 하고 있어요🤳
   email: ggohee0410@gmail.com
 
 
