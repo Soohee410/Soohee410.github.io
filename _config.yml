@@ -16,18 +16,19 @@ author:
 
 # Contact links
 contact:
-  - name: Blog
-    link: https://blog.naver.com/ggohee0410
-  - name: Instagram
-    link: https://www.instagram.com/suri.bak/
+#  - name: Github
+#    link: https://github.com/Soohee410
+    #link: https://blog.naver.com/ggohee0410
+#  - name: Instagram
+    #link: https://www.instagram.com/suri.bak/
     #link: https://instagram.com/soop0410
-  - name: Linkedin
-    link: https://www.linkedin.com/in/soohee-park-265901202/
+#  - name: Linkedin
+#    link: https://www.linkedin.com/in/soohee-park-265901202/
     #link: https://www.linkedin.com/in/soohee-park-265901202
 
 
 # Comment Section (Disqus)
-#disqus-identifier: soo-ps-data-story # add your shortname for Disqus Comment. For example mr-brown
+disqus-identifier: soo-ps-data-story # add your shortname for Disqus Comment. For example mr-brown
 
 
 # Google Analytics
